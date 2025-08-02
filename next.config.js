@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Output configuration for Netlify deployment
-  output: 'standalone',
+  // Keep default Next.js output for Netlify plugin to handle
   
   experimental: {
     optimizeCss: true,
