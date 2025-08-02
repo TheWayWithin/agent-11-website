@@ -4,32 +4,12 @@
 [build]
   # Build configuration for Next.js 15
   command = "npm run build"
-  publish = ".next"
+  # Let @netlify/plugin-nextjs determine publish directory
   
   # Build environment
   environment = { NODE_ENV = "production", NEXT_TELEMETRY_DISABLED = "1", NODE_VERSION = "18" }
 
-[build.processing]
-  # Skip processing for optimized assets
-  skip_processing = false
-
-[build.processing.css]
-  # CSS optimization (Tailwind already optimized)
-  bundle = true
-  minify = true
-
-[build.processing.js]
-  # JavaScript optimization
-  bundle = true
-  minify = true
-
-[build.processing.html]
-  # HTML optimization
-  pretty_urls = true
-
-[build.processing.images]
-  # Image optimization (Next.js handles this)
-  compress = true
+# Let @netlify/plugin-nextjs handle all processing
 
 # Production redirects - let Netlify Next.js plugin handle routing
 
