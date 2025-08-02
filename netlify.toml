@@ -1,0 +1,142 @@
+# AGENT-11 Website - Production Deployment Configuration
+# Optimized for Next.js 15 App Router with performance, security, and reliability
+
+[build]
+  # Build configuration for Next.js 15
+  command = "npm run build"
+  publish = ".next"
+  
+  # Build environment
+  environment = { NODE_ENV = "production", NEXT_TELEMETRY_DISABLED = "1" }
+
+[build.processing]
+  # Skip processing for optimized assets
+  skip_processing = false
+
+[build.processing.css]
+  # CSS optimization (Tailwind already optimized)
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  # JavaScript optimization
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  # HTML optimization
+  pretty_urls = true
+
+[build.processing.images]
+  # Image optimization (Next.js handles this)
+  compress = true
+
+# Production redirects and rewrites
+[[redirects]]
+  # Redirect root to www subdomain
+  from = "https://agent-11.com/*"
+  to = "https://www.agent-11.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  # Next.js App Router API routes
+  from = "/api/*"
+  to = "/.netlify/functions/___nextjs_api_handler"
+  status = 200
+
+[[redirects]]
+  # Next.js App Router fallback
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security headers for production
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    
+    # Performance headers
+    X-DNS-Prefetch-Control = "on"
+    
+    # Custom headers
+    X-Powered-By = "AGENT-11"
+
+# Static asset caching (1 year)
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# API route headers
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, stale-while-revalidate=3600"
+    Access-Control-Allow-Origin = "https://www.agent-11.com"
+
+# Fonts and media optimization
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "font/woff2"
+
+# Environment-specific settings
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
+# Functions configuration for API routes
+[functions]
+  # Next.js serverless functions
+  directory = ".netlify/functions"
+  node_bundler = "esbuild"
+
+# Deploy contexts
+[context.production]
+  command = "npm run build"
+  
+[context.production.environment]
+  NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[context.deploy-preview]
+  command = "npm run build"
+  
+[context.branch-deploy]
+  command = "npm run build"
+
+# Plugin configuration for Next.js 15
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-submit-sitemap"
+  
+  [plugins.inputs]
+    baseUrl = "https://www.agent-11.com"
+    sitemapPath = "/sitemap.xml"
+    providers = [
+      "google",
+      "bing"
+    ]
+
+# Forms (if needed for future contact forms)
+[template]
+  incoming-hooks = ["GitHub"]
+
+# Large Media (if needed for future assets)
+[lfs]
+  gitlfs = false
