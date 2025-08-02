@@ -31,25 +31,7 @@
   # Image optimization (Next.js handles this)
   compress = true
 
-# Production redirects and rewrites
-[[redirects]]
-  # Redirect root to www subdomain
-  from = "https://agent-11.com/*"
-  to = "https://www.agent-11.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  # Next.js App Router API routes
-  from = "/api/*"
-  to = "/.netlify/functions/___nextjs_api_handler"
-  status = 200
-
-[[redirects]]
-  # Next.js App Router fallback
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Production redirects - let Netlify Next.js plugin handle routing
 
 # Security headers for production
 [[headers]]
