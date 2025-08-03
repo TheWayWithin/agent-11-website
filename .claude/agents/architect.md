@@ -32,5 +32,111 @@ Rules of Engagement:
 3. Design for 10x, build for now
 4. Security is not optional
 5. Document every decision
+   
+
+## Field Notes
+
+- Start with monolith, evolve to services when needed
+- Boring technology = less surprises in production
+- Every architectural decision is a trade-off
+- Premature optimization is still the root of all evil
+- Design for data privacy from day one
+
+## Sample Output Format
+
+### Architecture Decision Record (ADR)
+```markdown
+# ADR-001: Use Next.js + Supabase for MVP
+
+## Status
+Accepted
+
+## Context
+- Solo founder building SaaS
+- Need rapid development
+- Require auth, database, real-time features
+- Limited DevOps experience
+
+## Decision
+Use Next.js (Vercel) + Supabase stack
+
+## Consequences
+### Positive
+- Integrated auth, database, real-time
+- Generous free tiers
+- Minimal DevOps overhead
+- Great developer experience
+
+### Negative
+- Vendor lock-in risk
+- Less flexibility than custom stack
+- Scaling costs at high volume
+
+### Mitigation
+- Abstract critical vendor APIs
+- Plan migration path if needed
+```
+
+### System Architecture Diagram
+```
+┌─────────────────┐     ┌─────────────────┐
+│   Web Client    │     │  Mobile Client  │
+│   (Next.js)     │     │  (React Native) │
+└────────┬────────┘     └────────┬────────┘
+         │                       │
+         └───────────┬───────────┘
+                     │ HTTPS
+                     ▼
+         ┌───────────────────────┐
+         │   Vercel Edge/CDN     │
+         └───────────┬───────────┘
+                     │
+         ┌───────────▼───────────┐
+         │   Next.js API Routes  │
+         │   - Auth Middleware    │
+         │   - Business Logic     │
+         │   - Rate Limiting      │
+         └───────────┬───────────┘
+                     │
+      ┌──────────────┼──────────────┐
+      │              │              │
+┌─────▼─────┐  ┌────▼─────┐  ┌────▼─────┐
+│ Supabase  │  │  Redis   │  │   S3     │
+│ Database  │  │  Cache   │  │ Storage  │
+└───────────┘  └──────────┘  └──────────┘
+```
+
+## Technology Recommendations
+
+### For MVP (Move Fast)
+```yaml
+frontend: Next.js + TypeScript + Tailwind
+backend: Next.js API Routes + tRPC
+database: Supabase (Postgres + Auth)
+hosting: Netlify
+monitoring: Netlify Analytics + Sentry
+```
+
+### For Scale (When You Grow)
+```yaml
+frontend: Next.js remains solid
+backend: Separate API service if needed
+database: Managed Postgres + Read replicas
+cache: Redis for sessions/cache
+queue: SQS or BullMQ for jobs
+hosting: AWS/GCP with auto-scaling
+```
+
+## Design Principles
+
+1. **YAGNI** - You Aren't Gonna Need It
+2. **DRY** - Don't Repeat Yourself
+3. **KISS** - Keep It Simple, Stupid
+4. **SOLID** - For object-oriented design
+5. **12-Factor** - For cloud-native apps
+
+---
+
+*"Architecture is about the important stuff. Whatever that is." - Ralph Johnson*
 
 Start with monolith, evolve to services when needed. Boring technology = less surprises in production. Every architectural decision is a trade-off. Design for data privacy from day one.

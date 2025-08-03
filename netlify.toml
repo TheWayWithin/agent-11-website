@@ -1,8 +1,8 @@
 # AGENT-11 Website - Production Deployment Configuration
-# Optimized for Next.js 15 App Router with performance, security, and reliability
+# Optimized for Next.js 14 App Router with performance, security, and reliability
 
 [build]
-  # Build configuration for Next.js 15
+  # Build configuration for Next.js 14
   command = "npm run build"
   # Let @netlify/plugin-nextjs determine publish directory
   
@@ -75,7 +75,7 @@
 [context.branch-deploy]
   command = "npm run build"
 
-# Plugin configuration for Next.js 15
+# Plugin configuration for Next.js 14
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
