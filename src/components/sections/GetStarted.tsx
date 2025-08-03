@@ -5,24 +5,24 @@ export default function GetStarted() {
   const quickStartSteps = [
     {
       step: '01',
-      title: 'Deploy Your Team',
-      description: 'One command to deploy your personal 11-agent development team',
-      command: 'npx agent-11 init --squad=core',
-      time: '30 seconds'
+      title: 'Choose Your Squad',
+      description: 'Deploy Core Squad (4 agents) for most projects, Full Squad (12 agents) for complex builds',
+      command: 'curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core',
+      time: 'Under 5 minutes'
     },
     {
       step: '02', 
-      title: 'Describe Your Vision',
-      description: 'Tell THE STRATEGIST what you want to build in natural language',
-      command: '@strategist "Build a user authentication system with social login"',
+      title: 'Start Building',
+      description: 'Your project-local agents understand your codebase and work together seamlessly',
+      command: '@coordinator "Build a user authentication system with social login"',
       time: '2 minutes'
     },
     {
       step: '03',
-      title: 'Watch the Magic',
-      description: 'Your agents collaborate to deliver production-ready code',
-      command: '🎯 Strategy → 💻 Code → ✅ Tests → 🚀 Deploy',
-      time: '15 minutes'
+      title: 'Deploy & Scale',
+      description: 'Production-ready code with tests, documentation, and deployment guides',
+      command: '🎯 Strategy → 🏗️ Architecture → 💻 Code → ✅ Tests → 📚 Docs → 🚀 Deploy',
+      time: '2-4 weeks'
     }
   ]
 
@@ -39,7 +39,7 @@ export default function GetStarted() {
         'Local deployment'
       ],
       cta: 'Get Started Free',
-      ctaLink: 'https://github.com/agent-11/framework',
+      ctaLink: 'https://github.com/TheWayWithin/agent-11/',
       highlighted: true
     },
     {
@@ -146,6 +146,87 @@ export default function GetStarted() {
           </div>
         </div>
 
+        {/* Squad Selection Section */}
+        <div className="max-w-5xl mx-auto mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Choose Your Squad Size
+            </h3>
+            <p className="text-gray-600 text-lg">
+              Each project gets its own local team that understands your codebase perfectly
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Minimal Squad */}
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <div className="text-center mb-4">
+                <div className="text-2xl font-bold text-gray-900 mb-2">Minimal Squad</div>
+                <div className="text-sm text-gray-600 mb-4">Perfect for prototyping</div>
+                <div className="text-3xl font-bold text-primary-600">2 Agents</div>
+              </div>
+              <div className="space-y-2 text-sm text-gray-600 mb-6">
+                <div>• THE COORDINATOR</div>
+                <div>• THE DEVELOPER</div>
+              </div>
+              <div className="bg-gray-900 rounded-lg p-3 font-mono text-xs">
+                <div className="text-green-400">
+                  $ bash -s minimal
+                </div>
+              </div>
+            </div>
+
+            {/* Core Squad */}
+            <div className="bg-primary-50 rounded-xl p-6 border-2 border-primary-200 relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  Recommended
+                </span>
+              </div>
+              <div className="text-center mb-4">
+                <div className="text-2xl font-bold text-gray-900 mb-2">Core Squad</div>
+                <div className="text-sm text-gray-600 mb-4">Ideal for most projects</div>
+                <div className="text-3xl font-bold text-primary-600">4 Agents</div>
+              </div>
+              <div className="space-y-2 text-sm text-gray-600 mb-6">
+                <div>• THE COORDINATOR</div>
+                <div>• THE STRATEGIST</div>
+                <div>• THE ARCHITECT</div>
+                <div>• THE DEVELOPER</div>
+              </div>
+              <div className="bg-gray-900 rounded-lg p-3 font-mono text-xs">
+                <div className="text-green-400">
+                  $ bash -s core
+                </div>
+              </div>
+            </div>
+
+            {/* Full Squad */}
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <div className="text-center mb-4">
+                <div className="text-2xl font-bold text-gray-900 mb-2">Full Squad</div>
+                <div className="text-sm text-gray-600 mb-4">For complex projects</div>
+                <div className="text-3xl font-bold text-primary-600">12 Agents</div>
+              </div>
+              <div className="space-y-2 text-sm text-gray-600 mb-6">
+                <div>• All Core Squad agents +</div>
+                <div>• THE TESTER</div>
+                <div>• THE DESIGNER</div>
+                <div>• THE DOCUMENTER</div>
+                <div>• THE OPERATOR</div>
+                <div>• THE SUPPORT</div>
+                <div>• THE ANALYST</div>
+                <div>• THE MARKETER</div>
+              </div>
+              <div className="bg-gray-900 rounded-lg p-3 font-mono text-xs">
+                <div className="text-green-400">
+                  $ bash -s full
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Pricing Section */}
         <div className="max-w-6xl mx-auto mb-20">
           <div className="text-center mb-12">
@@ -223,7 +304,7 @@ export default function GetStarted() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Link 
-              href="https://github.com/agent-11/framework"
+              href="https://github.com/TheWayWithin/agent-11/"
               className="btn-primary text-lg px-8 py-4"
               target="_blank"
               rel="noopener noreferrer"
@@ -303,7 +384,7 @@ export default function GetStarted() {
                   />
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Link
-                      href="https://github.com/agent-11/framework"
+                      href="https://github.com/TheWayWithin/agent-11/"
                       className="btn-primary group"
                       target="_blank"
                       rel="noopener noreferrer"

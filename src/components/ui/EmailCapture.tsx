@@ -97,7 +97,7 @@ export default function EmailCapture({
         </p>
         <div className="text-sm text-green-600">
           While you wait, <a 
-            href="https://github.com/agent-11/framework" 
+            href="https://github.com/TheWayWithin/agent-11/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="underline hover:text-green-800"

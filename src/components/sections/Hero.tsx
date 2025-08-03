@@ -33,35 +33,40 @@ export default function Hero() {
             <span className="font-bold">98% success rate</span>
           </div>
 
+          {/* Repository Tagline */}
+          <div className="text-lg text-primary-600 font-medium mb-4 animate-fade-in">
+            One Founder. Eleven Specialists. Unlimited Potential.
+          </div>
+
           {/* Main Headline - Dogfooding Story */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up">
             <span className="block text-gray-900">The Ultimate Proof:</span>
             <span className="block text-gradient">AGENT-11 Built AGENT-11</span>
           </h1>
 
-          {/* Authentic Subheadline with Real Metrics */}
+          {/* Authentic Subheadline with Repository Metrics */}
           <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto text-balance animate-slide-up" style={{animationDelay: '0.2s'}}>
-            We used AGENT-11 to build AGENT-11 itself. <strong>6 weeks became 3 weeks.</strong> Unknown reliability became <strong>98% success rate.</strong> 
-            Complex setup became <strong>&lt;1 second installation.</strong> The same squad that built this is ready to build your next project.
+            We used AGENT-11 to build AGENT-11 itself. <strong>3-6 months became 2-4 weeks.</strong> $10-50k became <strong>&lt;$500 per feature.</strong> 
+            5-10 person teams became <strong>1 founder + 11 specialists.</strong> The same squad that built this is ready for your project.
           </p>
 
-          {/* Real Metrics Bar */}
+          {/* Repository Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mb-10 animate-slide-up" style={{animationDelay: '0.3s'}}>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-primary-600">6→3</div>
-              <div className="text-sm text-gray-600">weeks faster</div>
+              <div className="text-2xl font-bold text-primary-600">2-4</div>
+              <div className="text-sm text-gray-600">weeks to MVP</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-green-600">98%</div>
-              <div className="text-sm text-gray-600">success rate</div>
+              <div className="text-2xl font-bold text-green-600">&lt;$500</div>
+              <div className="text-sm text-gray-600">per feature</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-blue-600">&lt;1s</div>
-              <div className="text-sm text-gray-600">installation</div>
+              <div className="text-2xl font-bold text-blue-600">1</div>
+              <div className="text-sm text-gray-600">founder</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-purple-600">430+</div>
-              <div className="text-sm text-gray-600">lines of code</div>
+              <div className="text-2xl font-bold text-purple-600">11</div>
+              <div className="text-sm text-gray-600">specialists</div>
             </div>
           </div>
 
@@ -148,44 +153,44 @@ export default function Hero() {
                 <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse-gentle"></div>
                 <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse-gentle" style={{animationDelay: '0.1s'}}></div>
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse-gentle" style={{animationDelay: '0.2s'}}></div>
-                <span className="text-gray-400 text-sm ml-4 animate-fade-in">AGENT-11 Building AGENT-11 (Real Development Session)</span>
+                <span className="text-gray-400 text-sm ml-4 animate-fade-in">Project-Local Squad Deployment (Real Installation)</span>
               </div>
               
               {/* Real Development Story */}
               <div className="font-mono text-sm text-gray-300 space-y-2">
                 <div className="flex items-center animate-slide-up">
                   <span className="text-green-400 animate-pulse-gentle">$</span>
-                  <span className="ml-2">@coordinator &quot;Build a production deployment system&quot;</span>
+                  <span className="ml-2">curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core</span>
                 </div>
                 <div className="text-blue-400 animate-slide-up" style={{animationDelay: '0.1s'}}>
-                  <span className="animate-bounce-gentle">🎯</span>
-                  <span className="ml-2">THE COORDINATOR: Analyzing requirements...</span>
+                  <span className="animate-bounce-gentle">📁</span>
+                  <span className="ml-2">Installing project-local agents to .claude/agents/...</span>
                 </div>
                 <div className="text-purple-400 animate-slide-up" style={{animationDelay: '0.2s'}}>
-                  <span className="animate-bounce-gentle">🏗️</span>
-                  <span className="ml-2">THE ARCHITECT: Designing system architecture...</span>
+                  <span className="animate-bounce-gentle">🧠</span>
+                  <span className="ml-2">THE COORDINATOR: Understanding your codebase context...</span>
                 </div>
                 <div className="text-green-400 animate-slide-up" style={{animationDelay: '0.3s'}}>
                   <span className="animate-bounce-gentle">💻</span>
-                  <span className="ml-2">THE DEVELOPER: Writing 430+ lines of production code...</span>
+                  <span className="ml-2">THE DEVELOPER: Ready to build with full project knowledge...</span>
                 </div>
                 <div className="text-yellow-400 animate-slide-up" style={{animationDelay: '0.4s'}}>
-                  <span className="animate-bounce-gentle">✅</span>
-                  <span className="ml-2">THE TESTER: Validating with comprehensive test suite...</span>
+                  <span className="animate-bounce-gentle">🏗️</span>
+                  <span className="ml-2">THE ARCHITECT: System design optimized for your stack...</span>
                 </div>
                 <div className="text-orange-400 animate-slide-up" style={{animationDelay: '0.5s'}}>
-                  <span className="animate-bounce-gentle">📚</span>
-                  <span className="ml-2">THE DOCUMENTER: Creating 6 professional guides...</span>
+                  <span className="animate-bounce-gentle">🎯</span>
+                  <span className="ml-2">THE STRATEGIST: Aligned with your project goals...</span>
                 </div>
                 <div className="flex items-center animate-slide-up text-green-300" style={{animationDelay: '0.6s'}}>
                   <span className="text-green-400 animate-pulse-gentle">✅</span>
                   <span className="ml-2 font-bold">
-                    SUCCESS: 98% success rate, &lt;1s installation, production-ready!
+                    SUCCESS: 4 specialists deployed, project-local, context-aware!
                     <span className="animate-bounce-gentle inline-block ml-2">🎉</span>
                   </span>
                 </div>
                 <div className="text-gray-500 text-xs animate-slide-up mt-4" style={{animationDelay: '0.7s'}}>
-                  Timeline: 6 weeks → 3 weeks | Quality: Enterprise-grade | Status: Proven in production
+                  Timeline: Under 5 minutes | Scope: Project-local deployment | Status: Ready to build
                 </div>
               </div>
               
