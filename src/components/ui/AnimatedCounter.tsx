@@ -58,9 +58,31 @@ export default function AnimatedCounter({
       return
     }
 
-    // Only animate if value actually changed
-    if (currentValue === previousValue && hasAnimated) {
+    // Handle string values that shouldn't animate (like "430+", "3 weeks", "98%", "<1s")
+    if (typeof value === 'string' && (
+      value.includes('+') || 
+      value.includes('weeks') || 
+      value.includes('%') || 
+      value.includes('<') ||
+      value.includes('s') ||
+      isNaN(parseValue(value))
+    )) {
+      setDisplayValue(value)
+      setHasAnimated(true)
       return
+    }
+
+    // Only animate if value actually changed significantly
+    const significantChange = Math.abs(currentValue - previousValue) > (currentValue * 0.01) // 1% change threshold
+    if (!significantChange && hasAnimated && previousValue !== 0) {
+      return
+    }
+
+    // Debounce rapid changes - prevent animation if last animation was recent
+    if (isAnimating) {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current)
+      }
     }
 
     setIsAnimating(true)
@@ -95,7 +117,7 @@ export default function AnimatedCounter({
         cancelAnimationFrame(rafRef.current)
       }
     }
-  }, [value, currentValue, previousValue, duration, formatter, triggerAnimation, hasAnimated])
+  }, [value, currentValue, previousValue, duration, formatter, triggerAnimation, hasAnimated, isAnimating])
 
   return (
     <span 

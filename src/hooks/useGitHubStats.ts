@@ -49,7 +49,7 @@ export function useGitHubStats(options: UseGitHubStatsOptions = {}): UseGitHubSt
   const {
     owner,
     repo,
-    refreshInterval = 5 * 60 * 1000, // 5 minutes
+    refreshInterval = 10 * 60 * 1000, // 10 minutes - reduced frequency to prevent flickering
     autoRefresh = true
   } = options
 
@@ -85,9 +85,19 @@ export function useGitHubStats(options: UseGitHubStatsOptions = {}): UseGitHubSt
         activityResponse.json() as Promise<GitHubApiResponse<GitHubEvent[]>>
       ])
 
-      // Handle stats
+      // Handle stats with stability check
       if (statsData.success) {
-        setStats(statsData.data)
+        // Only update if data actually changed significantly to prevent flickering
+        const newStats = statsData.data
+        const hasSignificantChange = !stats || 
+          Math.abs((newStats.stars || 0) - (stats.stars || 0)) > 5 ||
+          Math.abs((newStats.contributors || 0) - (stats.contributors || 0)) > 2 ||
+          Math.abs((newStats.recentActivity || 0) - (stats.recentActivity || 0)) > 5
+        
+        if (hasSignificantChange) {
+          setStats(newStats)
+        }
+        
         if (statsData.lastUpdated) {
           setLastUpdated(statsData.lastUpdated)
         }
@@ -118,7 +128,7 @@ export function useGitHubStats(options: UseGitHubStatsOptions = {}): UseGitHubSt
     } finally {
       setLoading(false)
     }
-  }, [buildUrl])
+  }, [buildUrl, stats])
 
   const refresh = useCallback(async () => {
     setLoading(true)

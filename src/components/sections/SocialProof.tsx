@@ -70,14 +70,21 @@ export default function SocialProof() {
   }
 
   // Authentic metrics from real AGENT-11 development
-  const displayStats = {
-    stars: loading ? '2,847' : error ? '2,847' : formatNumber(stats?.stars || 2847),
+  // Static values that should never change (authentic development data)
+  const authenticMetrics = {
     linesOfCode: '430+', // Real lines of code from AGENT-11 building itself
-    developmentTime: '3 weeks', // Real timeline from 6 weeks to 3 weeks
+    developmentTime: '3 weeks', // Real timeline from 6 weeks to 3 weeks  
     successRate: '98%', // Documented success rate from real development
     installationTime: '<1s', // Actual installation time achieved
+  }
+
+  // Dynamic values that can update from API (but with stability)
+  const displayStats = {
+    ...authenticMetrics,
+    stars: loading ? '2,847' : error ? '2,847' : formatNumber(stats?.stars || 2847),
     contributors: loading ? '156' : error ? '156' : formatNumber(stats?.contributors || 156),
-    activity: loading ? '47' : error ? '47' : formatActivity(stats?.recentActivity || 47)
+    activity: loading ? '47' : error ? '47' : formatActivity(stats?.recentActivity || 47),
+    discordMembers: '2,400+' // Static community metric
   }
 
   return (
@@ -100,7 +107,7 @@ export default function SocialProof() {
                 <AnimatedCounter 
                   value={displayStats.linesOfCode} 
                   className="group-hover:text-blue-600"
-                  triggerAnimation={!loading}
+                  triggerAnimation={false} // Static authentic value
                 />
               </div>
               <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Lines of Code</div>
@@ -113,7 +120,7 @@ export default function SocialProof() {
                 <AnimatedCounter 
                   value={displayStats.developmentTime} 
                   className="group-hover:text-purple-600"
-                  triggerAnimation={!loading}
+                  triggerAnimation={false} // Static authentic value
                 />
               </div>
               <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Development Time</div>
@@ -126,7 +133,7 @@ export default function SocialProof() {
                 <AnimatedCounter 
                   value={displayStats.successRate} 
                   className="group-hover:text-green-700"
-                  triggerAnimation={!loading}
+                  triggerAnimation={false} // Static authentic value
                 />
               </div>
               <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Success Rate</div>
@@ -139,7 +146,7 @@ export default function SocialProof() {
                 <AnimatedCounter 
                   value={displayStats.installationTime} 
                   className="group-hover:text-orange-600"
-                  triggerAnimation={!loading}
+                  triggerAnimation={false} // Static authentic value
                 />
               </div>
               <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Installation Time</div>
@@ -219,7 +226,7 @@ export default function SocialProof() {
             <div className="space-y-2 text-center group hover-lift animate-stagger-fade-1">
               <div className="text-2xl group-hover:animate-bounce-gentle">💬</div>
               <div className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                <AnimatedCounter value="2,400+" triggerAnimation={!loading} />
+                <AnimatedCounter value={displayStats.discordMembers} triggerAnimation={false} />
               </div>
               <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Discord Members</div>
               <div className="w-8 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
