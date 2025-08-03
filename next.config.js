@@ -1,17 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Keep default Next.js output for Netlify plugin to handle
-  
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['prismjs', 'react', 'react-dom'],
-  },
-  turbopack: {
-    resolveExtensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
-  },
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
+  // Removed experimental features for deployment stability
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [

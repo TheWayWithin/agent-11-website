@@ -3,6 +3,7 @@ import githubApi from '@/lib/github-api'
 import { GitHubApiError } from '@/types/github'
 
 export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic' // Prevent static rendering
 export const revalidate = 300 // ISR: revalidate every 5 minutes
 
 export async function GET(request: NextRequest) {
