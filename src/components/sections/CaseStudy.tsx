@@ -5,94 +5,68 @@ import { useState } from 'react'
 
 const developmentTimeline = [
   {
-    day: 'Day 1',
-    phase: 'Strategic Analysis',
+    week: 'Week 1',
+    phase: 'Format Standardization',
     specialist: 'THE COORDINATOR',
-    duration: '2 hours',
+    duration: 'Week-long coordination',
     icon: '🎯',
     color: 'blue',
     activities: [
-      'Analyzed project requirements and scope',
-      'Defined multi-agent architecture approach',
-      'Created comprehensive project roadmap',
-      'Established success metrics and validation criteria'
+      'Standardized agent metadata format across all specialists',
+      'Established file-based agent storage in .claude/agents/ directory',
+      'Prevented scope creep through explicit task boundaries',
+      'Orchestrated sequential specialist pipeline approach'
     ],
-    outcome: 'Complete strategic foundation established'
+    outcome: 'Complete project foundation with standardized agent format',
+    insight: '"Explicit delegation wins: \'Figure it out\' fails, specific instructions succeed"'
   },
   {
-    day: 'Day 3',
-    phase: 'System Architecture',
-    specialist: 'THE ARCHITECT',
-    duration: '45 minutes',
+    week: 'Week 2',
+    phase: 'Infrastructure & Deployment',
+    specialist: 'THE ARCHITECT → THE DEVELOPER',
+    duration: 'Architecture design + Implementation',
     icon: '🏗️',
     color: 'purple',
     activities: [
-      'Designed deployment system architecture',
-      'Created modular installation framework',
-      'Defined cross-platform compatibility strategy',
-      'Established backup and rollback mechanisms'
+      'Designed file-based agent system architecture',
+      'Implemented 430+ lines of cross-platform installation scripts',
+      'Created Git-based agent distribution system',
+      'Built one-line installation as core design principle'
     ],
-    outcome: 'Production-ready architecture blueprint'
+    outcome: 'Production deployment system with <1 second installation',
+    insight: '"File-based agents beat runtime agents: Simpler, more portable, version-controllable"'
   },
   {
-    day: 'Day 7',
-    phase: 'Core Development',
-    specialist: 'THE DEVELOPER',
-    duration: '2 hours',
-    icon: '💻',
-    color: 'green',
-    activities: [
-      'Implemented 430+ lines of production code',
-      'Built automated installation system',
-      'Created squad deployment mechanisms',
-      'Integrated cross-platform compatibility'
-    ],
-    outcome: 'Fully functional deployment system'
-  },
-  {
-    day: 'Day 14',
-    phase: 'Quality Assurance',
+    week: 'Week 2-3',
+    phase: 'Quality Validation',
     specialist: 'THE TESTER',
-    duration: '30 minutes',
+    duration: 'Comprehensive validation',
     icon: '✅',
     color: 'yellow',
     activities: [
-      'Comprehensive test suite execution',
-      'Cross-platform validation testing',
-      'Performance benchmarking analysis',
-      'Edge case scenario validation'
+      'Validated 100% documentation command accuracy',
+      'Conducted comprehensive system testing across platforms',
+      'Achieved 98% deployment success rate',
+      'Confirmed zero critical production issues'
     ],
-    outcome: '98% success rate validated'
+    outcome: 'Production-ready system with validated reliability',
+    insight: 'Sequential workflow (architect → developer → tester) more effective than parallel processing'
   },
   {
-    day: 'Day 18',
-    phase: 'Documentation',
-    specialist: 'THE DOCUMENTER',
-    duration: '45 minutes',
+    week: 'Week 3',
+    phase: 'Documentation & UX',
+    specialist: 'THE DOCUMENTER → THE SUPPORT',
+    duration: 'Documentation creation + UX optimization',
     icon: '📚',
     color: 'orange',
     activities: [
-      'Created 6 comprehensive installation guides',
-      'Developed troubleshooting documentation',
-      'Built user experience optimization guides',
-      'Established community support resources'
+      'Created 6 comprehensive guides (2,000+ lines of documentation)',
+      'Optimized user journey from installation to first use',
+      'Analyzed user experience and achieved 85/100 rating',
+      'Validated self-service support capability'
     ],
-    outcome: 'Professional documentation suite'
-  },
-  {
-    day: 'Day 21',
-    phase: 'User Experience',
-    specialist: 'THE SUPPORT',
-    duration: '30 minutes',
-    icon: '🤝',
-    color: 'indigo',
-    activities: [
-      'Optimized installation user flow',
-      'Created error handling and feedback systems',
-      'Established support and troubleshooting workflows',
-      'Validated end-to-end user experience'
-    ],
-    outcome: '85/100 professional UX rating'
+    outcome: 'Complete documentation suite with optimized user experience',
+    insight: 'Clear role boundaries prevent agent mission drift and improve outcomes'
   }
 ]
 
@@ -211,7 +185,7 @@ export default function CaseStudy() {
               </div>
               <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
                 <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse-gentle"></span>
-                {developmentTimeline[activePhase].day} • {developmentTimeline[activePhase].duration}
+                {developmentTimeline[activePhase].week} • {developmentTimeline[activePhase].duration}
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-2">
                 {developmentTimeline[activePhase].phase}
@@ -240,12 +214,25 @@ export default function CaseStudy() {
                 <h5 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
                   <span>🎯</span> Outcome Achieved
                 </h5>
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
                   <div className="flex items-center gap-2 text-green-700">
                     <span className="text-xl">🎉</span>
                     <span className="font-medium">{developmentTimeline[activePhase].outcome}</span>
                   </div>
                 </div>
+                
+                {developmentTimeline[activePhase].insight && (
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                      <span>💡</span> Key Insight
+                    </h5>
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                      <div className="text-blue-800 italic">
+                        {developmentTimeline[activePhase].insight}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -292,15 +279,20 @@ export default function CaseStudy() {
                 </svg>
               </Link>
               
-              <button className="btn-secondary group hover-glow">
+              <Link 
+                href="https://github.com/TheWayWithin/agent-11/blob/main/CASE-STUDY.md" 
+                className="btn-secondary group hover-glow"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg className="w-5 h-5 mr-2 group-hover:animate-bounce-gentle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                View Full Documentation
+                Read Full Case Study
                 <svg className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
