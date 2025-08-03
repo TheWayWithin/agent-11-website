@@ -26,12 +26,19 @@ export default function EmailCapture({
   className = ''
 }: EmailCaptureProps) {
   const [email, setEmail] = useState('')
+  const [honeypot, setHoneypot] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Check honeypot - if filled, it's likely spam
+    if (honeypot) {
+      console.log('Bot detected, ignoring submission')
+      return
+    }
     
     if (!email.trim()) {
       setError('Email is required')
@@ -47,14 +54,10 @@ export default function EmailCapture({
     setError(null)
 
     try {
-      // Netlify Forms submission
-      const formData = new FormData()
-      formData.append('form-name', 'lead-magnet-capture')
-      formData.append('email', email)
-      formData.append('lead-magnet', leadMagnet)
-      formData.append('variant', variant)
-      formData.append('timestamp', new Date().toISOString())
-
+      // Use native form submission for better Netlify Forms compatibility
+      const form = e.target as HTMLFormElement
+      const formData = new FormData(form)
+      
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -151,10 +154,30 @@ export default function EmailCapture({
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="space-y-4" name="lead-magnet-capture" method="POST" data-netlify="true">
+      <form 
+        onSubmit={handleSubmit} 
+        className="space-y-4" 
+        name="lead-magnet-capture" 
+        method="POST" 
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
         <input type="hidden" name="form-name" value="lead-magnet-capture" />
         <input type="hidden" name="lead-magnet" value={leadMagnet} />
         <input type="hidden" name="variant" value={variant} />
+        <input type="hidden" name="timestamp" value={new Date().toISOString()} />
+        
+        {/* Honeypot field - hidden from users but visible to bots */}
+        <div style={{ display: 'none' }}>
+          <label>
+            Don&apos;t fill this out if you&apos;re human: 
+            <input 
+              name="bot-field" 
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+            />
+          </label>
+        </div>
         
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="flex-1">

@@ -70,6 +70,22 @@ export default function RootLayout({
       </head>
       <body className={`antialiased font-sans ${inter.className}`}>
         {children}
+        
+        {/* Static form for Netlify form detection - hidden from users */}
+        <form 
+          name="lead-magnet-capture" 
+          method="POST" 
+          data-netlify="true" 
+          data-netlify-honeypot="bot-field"
+          style={{ display: 'none' }}
+        >
+          <input type="hidden" name="form-name" value="lead-magnet-capture" />
+          <input name="bot-field" />
+          <input type="email" name="email" />
+          <input name="lead-magnet" />
+          <input name="variant" />
+          <input name="timestamp" />
+        </form>
       </body>
     </html>
   )

@@ -101,18 +101,34 @@
 [build.processing.html]
   pretty_urls = true
 
-# Form notifications and integrations
+# Form processing and notifications
+[forms]
+  # Enable form processing
+  processing = true
+
+# Email notifications for form submissions
 [[forms]]
-  name = "email-capture-hero"
+  name = "lead-magnet-capture"
   
-[[forms]]
-  name = "email-capture-modal"
-  
-[[forms]]
-  name = "email-capture-inline"
-  
-[[forms]]
-  name = "email-capture-footer"
+  # Form settings
+  [forms.settings]
+    # Redirect after successful submission (optional)
+    # redirect = "/thank-you"
+    
+    # Email notifications
+    [forms.settings.notification]
+      enabled = true
+      # Add your email for notifications
+      # to = ["your-email@example.com"]
+      subject = "New AGENT-11 Lead Magnet Request"
+      
+  # Spam detection
+  [forms.settings.spam]
+    honeypot = "bot-field"
+    
+  # Custom success message (optional)
+  [forms.settings.success]
+    message = "Thanks! Check your email for the AGENT-11 Quick Start Kit."
 
 # Large Media (if needed for future assets)
 [lfs]
