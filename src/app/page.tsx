@@ -1,7 +1,10 @@
+'use client'
+
 import { lazy, Suspense } from 'react'
 import Hero from '@/components/sections/Hero'
 import Problem from '@/components/sections/Problem'
 import PerformanceMonitor from '@/components/ui/PerformanceMonitor'
+// Email capture system temporarily disabled for build stability
 
 // Lazy load sections that are below the fold
 const SolutionDemo = lazy(() => import('@/components/sections/SolutionDemo'))
@@ -31,6 +34,8 @@ const SectionSkeleton = () => (
 )
 
 export default function Home() {
+  // Exit intent modal temporarily disabled
+
   return (
     <main className="min-h-screen">
       <PerformanceMonitor />
@@ -59,6 +64,8 @@ export default function Home() {
       <Suspense fallback={<SectionSkeleton />}>
         <GetStarted />
       </Suspense>
+
+      {/* Email capture system temporarily disabled for build stability */}
     </main>
   )
 }

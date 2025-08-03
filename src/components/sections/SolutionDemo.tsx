@@ -4,6 +4,7 @@ import { useState, Suspense, lazy } from 'react'
 import AgentCard from '../ui/AgentCard'
 import CodeBlock from '../ui/CodeBlock'
 import TerminalSimulation, { TerminalControls } from '../ui/TerminalSimulation'
+import EmailCapture from '../ui/EmailCapture'
 import { allAgents, coreAgents } from '../../data/agentExamples'
 import { collaborationScenarios, getScenarioById } from '../../data/collaborationScenarios'
 
@@ -456,6 +457,28 @@ export default function SolutionDemo() {
                 Cancel anytime
               </div>
             </div>
+          </div>
+
+          {/* Advanced Developer Lead Magnet */}
+          <div className="max-w-2xl mx-auto">
+            <EmailCapture
+              variant="inline"
+              leadMagnet="Advanced Collaboration Patterns + Enterprise Templates"
+              title="Want More Advanced Examples?"
+              description="Get exclusive access to advanced collaboration patterns, enterprise templates, and optimization strategies used by 2,847+ developers."
+              placeholder="Enter your email for advanced examples"
+              buttonText="Get Advanced Content"
+              showSocialProof={true}
+              onSuccess={() => {
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'conversion', {
+                    event_category: 'post_demo_capture',
+                    event_label: 'advanced_examples',
+                    value: 1
+                  })
+                }
+              }}
+            />
           </div>
         </div>
       </div>

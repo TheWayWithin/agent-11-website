@@ -1,16 +1,30 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 import { useGitHubStatsOnly } from '@/hooks/useGitHubStats'
 import AnimatedCounter from '@/components/ui/AnimatedCounter'
+import EmailCapture from '@/components/ui/EmailCapture'
 
 export default function Hero() {
+  const [showEmailCapture, setShowEmailCapture] = useState(false)
   const { stars, loading, error, isStale } = useGitHubStatsOnly({
     refreshInterval: 5 * 60 * 1000, // 5 minutes
     autoRefresh: true
   })
 
   // Star count formatting is now handled by AnimatedCounter component
+
+  const handleEmailSuccess = () => {
+    // Track conversion
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        event_category: 'hero_lead_magnet',
+        event_label: 'quick_start_kit',
+        value: 1
+      })
+    }
+  }
 
   return (
     <section className="relative bg-gradient-to-br from-gray-50 to-white section-padding">
@@ -73,17 +87,36 @@ export default function Hero() {
               <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
             
-            <button className="btn-secondary group hover-glow relative overflow-hidden">
+            <button 
+              onClick={() => setShowEmailCapture(!showEmailCapture)}
+              className="btn-secondary group hover-glow relative overflow-hidden"
+            >
               <svg className="w-5 h-5 mr-2 group-hover:animate-bounce-gentle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m2-10a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              Watch 2-Min Demo
+              Get Quick Start Kit
               <svg className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>
               </svg>
               <div className="absolute inset-0 -z-10 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
           </div>
+
+          {/* Strategic Lead Magnet */}
+          {showEmailCapture && (
+            <div className="max-w-lg mx-auto mb-16 animate-slide-up">
+              <EmailCapture
+                variant="hero"
+                leadMagnet="AGENT-11 Quick Start Kit + Templates"
+                title="🚀 Get Started in Under 5 Minutes"
+                description="Everything you need: setup scripts, configuration templates, real-world examples, and performance optimization tips."
+                placeholder="Enter your email for instant access"
+                buttonText="Download Free Kit"
+                showSocialProof={true}
+                onSuccess={handleEmailSuccess}
+              />
+            </div>
+          )}
 
           {/* Hero Visual Placeholder */}
           <div className="relative max-w-4xl mx-auto animate-fade-in hover-lift" style={{animationDelay: '0.6s'}}>

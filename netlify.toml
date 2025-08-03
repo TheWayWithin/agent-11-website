@@ -90,9 +90,29 @@
       "bing"
     ]
 
-# Forms (if needed for future contact forms)
+# Netlify Forms configuration for email capture
 [template]
   incoming-hooks = ["GitHub"]
+
+# Form handling configuration
+[build.processing]
+  skip_processing = false
+  
+[build.processing.html]
+  pretty_urls = true
+
+# Form notifications and integrations
+[[forms]]
+  name = "email-capture-hero"
+  
+[[forms]]
+  name = "email-capture-modal"
+  
+[[forms]]
+  name = "email-capture-inline"
+  
+[[forms]]
+  name = "email-capture-footer"
 
 # Large Media (if needed for future assets)
 [lfs]
