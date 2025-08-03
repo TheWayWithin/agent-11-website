@@ -8,6 +8,7 @@ import PerformanceMonitor from '@/components/ui/PerformanceMonitor'
 
 // Lazy load sections that are below the fold
 const SolutionDemo = lazy(() => import('@/components/sections/SolutionDemo'))
+const CaseStudy = lazy(() => import('@/components/sections/CaseStudy'))
 const ProofOfSpeed = lazy(() => import('@/components/sections/ProofOfSpeed'))
 const SocialProof = lazy(() => import('@/components/sections/SocialProof'))
 const TechnicalConfidence = lazy(() => import('@/components/sections/TechnicalConfidence'))
@@ -50,11 +51,15 @@ export default function Home() {
       </Suspense>
       
       <Suspense fallback={<SectionSkeleton />}>
-        <ProofOfSpeed />
+        <CaseStudy />
       </Suspense>
       
       <Suspense fallback={<SectionSkeleton />}>
         <SocialProof />
+      </Suspense>
+      
+      <Suspense fallback={<SectionSkeleton />}>
+        <ProofOfSpeed />
       </Suspense>
       
       <Suspense fallback={<SectionSkeleton />}>
