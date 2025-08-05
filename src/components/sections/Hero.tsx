@@ -47,22 +47,22 @@ export default function Hero() {
           {/* Mission-Focused Subheadline */}
           <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto text-balance animate-slide-up" style={{animationDelay: '0.2s'}}>
             From <strong>BUILD</strong> to <strong>MVP</strong> to <strong>DEPLOY</strong> - execute 11 proven missions with project-local agents that understand your codebase. 
-            <strong>4-8 hours</strong> for features, <strong>1-3 days</strong> for MVPs, <strong>&lt;$500</strong> per mission.
+            <strong>One person working alone</strong> built AGENT-11 in <strong>1 day</strong>, this website in <strong>+1 day</strong>. No team required.
           </p>
 
           {/* Mission Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mb-10 animate-slide-up" style={{animationDelay: '0.3s'}}>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-primary-600">11</div>
+              <div className="text-2xl font-bold text-primary-600">1</div>
+              <div className="text-sm text-gray-600">day to build AGENT-11</div>
+            </div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
+              <div className="text-2xl font-bold text-green-600">1</div>
+              <div className="text-sm text-gray-600">person working alone</div>
+            </div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
+              <div className="text-2xl font-bold text-blue-600">11</div>
               <div className="text-sm text-gray-600">proven missions</div>
-            </div>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-green-600">4-8h</div>
-              <div className="text-sm text-gray-600">BUILD missions</div>
-            </div>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-blue-600">1-3d</div>
-              <div className="text-sm text-gray-600">MVP missions</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
               <div className="text-2xl font-bold text-purple-600">/coord</div>
@@ -199,7 +199,7 @@ export default function Hero() {
                   </span>
                 </div>
                 <div className="text-gray-500 text-xs animate-slide-up mt-4" style={{animationDelay: '0.7s'}}>
-                  Total Time: 6.2 hours | Tests: 47 passed | Security: Validated | Cost: $387
+                  Solo founder: 1 day AGENT-11 + 1 day website | No team, no meetings, no handoffs
                 </div>
               </div>
               
