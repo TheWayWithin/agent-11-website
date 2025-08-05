@@ -79,11 +79,11 @@ export default function SolutionDemo() {
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Meet Your 11-Agent Development Team
+            Execute Complex Missions with <span className="text-gradient">/coord</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto text-balance">
-            Every startup needs specialists. Now you can afford them all. 
-            Watch your personal dev team collaborate with real code examples.
+            From BUILD to MVP to DEPLOY - watch how project-local agents collaborate 
+            to complete missions faster than traditional development teams.
           </p>
         </div>
 
@@ -98,8 +98,8 @@ export default function SolutionDemo() {
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              <span className="hidden sm:inline">Agent Collaboration</span>
-              <span className="sm:hidden">Collaboration</span>
+              <span className="hidden sm:inline">Mission Execution</span>
+              <span className="sm:hidden">Missions</span>
             </button>
             <button
               onClick={() => setViewMode('demo')}
@@ -109,7 +109,7 @@ export default function SolutionDemo() {
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              Live Demo
+              /coord Commands
             </button>
             <button
               onClick={() => setViewMode('code')}
@@ -119,7 +119,7 @@ export default function SolutionDemo() {
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              Code Examples
+              Mission Results
             </button>
             <button
               onClick={() => setViewMode('comparison')}
@@ -186,11 +186,11 @@ export default function SolutionDemo() {
             <div className="space-y-6">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Watch Your Agents Collaborate in Real-Time
+                  Watch Mission Execution in Real-Time
                 </h3>
                 <p className="text-gray-600 max-w-3xl mx-auto mb-6">
-                  See how multiple AI agents work together seamlessly, from planning to deployment. 
-                  Each scenario shows realistic agent collaboration with proper handoffs and timing.
+                  See how /coord commands trigger coordinated missions with seamless agent handoffs. 
+                  Each scenario demonstrates how project-local agents understand context and deliver results.
                 </p>
                 
                 {/* Scenario Selector */}

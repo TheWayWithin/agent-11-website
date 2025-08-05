@@ -33,40 +33,40 @@ export default function Hero() {
             <span className="font-bold">98% success rate</span>
           </div>
 
-          {/* Repository Tagline */}
+          {/* Mission-Focused Tagline */}
           <div className="text-lg text-primary-600 font-medium mb-4 animate-fade-in">
-            One Founder. Eleven Specialists. Unlimited Potential.
+            One Command. Multiple Missions. Unlimited Results.
           </div>
 
-          {/* Main Headline - Dogfooding Story */}
+          {/* Main Headline - Mission-Focused */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up">
-            <span className="block text-gray-900">The Ultimate Proof:</span>
-            <span className="block text-gradient">AGENT-11 Built AGENT-11</span>
+            <span className="block text-gray-900">Execute Complex Missions</span>
+            <span className="block text-gradient">With One /coord Command</span>
           </h1>
 
-          {/* Authentic Subheadline with Repository Metrics */}
+          {/* Mission-Focused Subheadline */}
           <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto text-balance animate-slide-up" style={{animationDelay: '0.2s'}}>
-            We used AGENT-11 to build AGENT-11 itself. <strong>3-6 months became 2-4 weeks.</strong> $10-50k became <strong>&lt;$500 per feature.</strong> 
-            5-10 person teams became <strong>1 founder + 11 specialists.</strong> The same squad that built this is ready for your project.
+            From <strong>BUILD</strong> to <strong>MVP</strong> to <strong>DEPLOY</strong> - execute 11 proven missions with project-local agents that understand your codebase. 
+            <strong>4-8 hours</strong> for features, <strong>1-3 days</strong> for MVPs, <strong>&lt;$500</strong> per mission.
           </p>
 
-          {/* Repository Metrics Bar */}
+          {/* Mission Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mb-10 animate-slide-up" style={{animationDelay: '0.3s'}}>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-primary-600">2-4</div>
-              <div className="text-sm text-gray-600">weeks to MVP</div>
+              <div className="text-2xl font-bold text-primary-600">11</div>
+              <div className="text-sm text-gray-600">proven missions</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-green-600">&lt;$500</div>
-              <div className="text-sm text-gray-600">per feature</div>
+              <div className="text-2xl font-bold text-green-600">4-8h</div>
+              <div className="text-sm text-gray-600">BUILD missions</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-blue-600">1</div>
-              <div className="text-sm text-gray-600">founder</div>
+              <div className="text-2xl font-bold text-blue-600">1-3d</div>
+              <div className="text-sm text-gray-600">MVP missions</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-purple-600">11</div>
-              <div className="text-sm text-gray-600">specialists</div>
+              <div className="text-2xl font-bold text-purple-600">/coord</div>
+              <div className="text-sm text-gray-600">one command</div>
             </div>
           </div>
 
@@ -76,23 +76,32 @@ export default function Hero() {
               <div className="w-3 h-3 bg-red-500 rounded-full"></div>
               <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
               <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-              <span className="text-gray-400 text-sm ml-4">Deploy Your Squad in &lt;1 Second</span>
+              <span className="text-gray-400 text-sm ml-4">Execute Your First Mission in &lt;1 Minute</span>
             </div>
-            <div className="font-mono text-green-400 text-sm sm:text-base flex items-center justify-between bg-gray-800 rounded-lg p-4">
-              <div className="flex items-center min-w-0 flex-1">
-                <span className="text-green-400 mr-2">$</span>
-                <span className="text-gray-300 truncate">curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core</span>
+            <div className="font-mono text-green-400 text-sm sm:text-base bg-gray-800 rounded-lg p-4 space-y-2">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center min-w-0 flex-1">
+                  <span className="text-green-400 mr-2">$</span>
+                  <span className="text-gray-300 truncate">curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core</span>
+                </div>
+                <button 
+                  onClick={() => navigator.clipboard.writeText('curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core')}
+                  className="ml-4 px-3 py-1 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded transition-colors shrink-0"
+                  title="Copy install command"
+                >
+                  Copy
+                </button>
               </div>
-              <button 
-                onClick={() => navigator.clipboard.writeText('curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core')}
-                className="ml-4 px-3 py-1 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded transition-colors shrink-0"
-                title="Copy command"
-              >
-                Copy
-              </button>
+              <div className="flex items-center">
+                <span className="text-green-400 mr-2">$</span>
+                <span className="text-gray-300">/coord build requirements.md</span>
+              </div>
+              <div className="text-purple-400 text-xs">
+                <span className="animate-pulse">🚀</span> Mission executing... BUILD complete in 4-8 hours
+              </div>
             </div>
             <div className="text-gray-400 text-xs mt-2 text-center">
-              Same command that built this website. Tested. Proven. Production-ready.
+              Install once, execute unlimited missions. Project-local deployment for maximum context.
             </div>
           </div>
 
@@ -153,44 +162,44 @@ export default function Hero() {
                 <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse-gentle"></div>
                 <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse-gentle" style={{animationDelay: '0.1s'}}></div>
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse-gentle" style={{animationDelay: '0.2s'}}></div>
-                <span className="text-gray-400 text-sm ml-4 animate-fade-in">Project-Local Squad Deployment (Real Installation)</span>
+                <span className="text-gray-400 text-sm ml-4 animate-fade-in">Mission Execution (Live Example)</span>
               </div>
               
-              {/* Real Development Story */}
+              {/* Mission Execution Story */}
               <div className="font-mono text-sm text-gray-300 space-y-2">
                 <div className="flex items-center animate-slide-up">
                   <span className="text-green-400 animate-pulse-gentle">$</span>
-                  <span className="ml-2">curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core</span>
+                  <span className="ml-2">/coord build "User authentication system with JWT"</span>
                 </div>
                 <div className="text-blue-400 animate-slide-up" style={{animationDelay: '0.1s'}}>
-                  <span className="animate-bounce-gentle">📁</span>
-                  <span className="ml-2">Installing project-local agents to .claude/agents/...</span>
+                  <span className="animate-bounce-gentle">🎯</span>
+                  <span className="ml-2">Mission: BUILD initiated | Duration: 4-8 hours | Priority: High</span>
                 </div>
                 <div className="text-purple-400 animate-slide-up" style={{animationDelay: '0.2s'}}>
                   <span className="animate-bounce-gentle">🧠</span>
-                  <span className="ml-2">THE COORDINATOR: Understanding your codebase context...</span>
+                  <span className="ml-2">COORDINATOR: Breaking down authentication requirements...</span>
                 </div>
-                <div className="text-green-400 animate-slide-up" style={{animationDelay: '0.3s'}}>
-                  <span className="animate-bounce-gentle">💻</span>
-                  <span className="ml-2">THE DEVELOPER: Ready to build with full project knowledge...</span>
-                </div>
-                <div className="text-yellow-400 animate-slide-up" style={{animationDelay: '0.4s'}}>
+                <div className="text-yellow-400 animate-slide-up" style={{animationDelay: '0.3s'}}>
                   <span className="animate-bounce-gentle">🏗️</span>
-                  <span className="ml-2">THE ARCHITECT: System design optimized for your stack...</span>
+                  <span className="ml-2">ARCHITECT: Designing JWT token flow & database schema...</span>
+                </div>
+                <div className="text-green-400 animate-slide-up" style={{animationDelay: '0.4s'}}>
+                  <span className="animate-bounce-gentle">💻</span>
+                  <span className="ml-2">DEVELOPER: Implementing auth routes, middleware, validation...</span>
                 </div>
                 <div className="text-orange-400 animate-slide-up" style={{animationDelay: '0.5s'}}>
-                  <span className="animate-bounce-gentle">🎯</span>
-                  <span className="ml-2">THE STRATEGIST: Aligned with your project goals...</span>
+                  <span className="animate-bounce-gentle">🧪</span>
+                  <span className="ml-2">TESTER: Running security tests, edge cases, load testing...</span>
                 </div>
                 <div className="flex items-center animate-slide-up text-green-300" style={{animationDelay: '0.6s'}}>
                   <span className="text-green-400 animate-pulse-gentle">✅</span>
                   <span className="ml-2 font-bold">
-                    SUCCESS: 4 specialists deployed, project-local, context-aware!
-                    <span className="animate-bounce-gentle inline-block ml-2">🎉</span>
+                    BUILD Mission Complete! Authentication system deployed & tested.
+                    <span className="animate-bounce-gentle inline-block ml-2">🚀</span>
                   </span>
                 </div>
                 <div className="text-gray-500 text-xs animate-slide-up mt-4" style={{animationDelay: '0.7s'}}>
-                  Timeline: Under 5 minutes | Scope: Project-local deployment | Status: Ready to build
+                  Total Time: 6.2 hours | Tests: 47 passed | Security: Validated | Cost: $387
                 </div>
               </div>
               
