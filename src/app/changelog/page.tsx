@@ -12,6 +12,62 @@ interface ChangelogEntry {
 
 const changelogEntries: ChangelogEntry[] = [
   {
+    version: '2.3.0',
+    date: '2025-06-01',
+    type: 'Major',
+    changes: [
+      {
+        category: 'Added',
+        items: [
+          'Field Manual launch with 1,370+ line Architecture SOP',
+          '17 mission types catalog (expanded from 6)',
+          '6 slash commands (/coord, /recon, /design-review, /pmd, /report, /meeting)',
+          'MCP integration framework (15+ supported MCPs)',
+          'Security-First Development principles documentation',
+          'Tool permission framework for agent safety',
+          'Extended thinking guidance for complex decisions',
+          'Agent-specific tool specification standards'
+        ]
+      },
+      {
+        category: 'Changed',
+        items: [
+          'Enhanced agent documentation (7,777+ lines total)',
+          'Improved coordination protocols with Task tool enforcement',
+          'Better context editing guidance with strategic clearing points',
+          'Strengthened self-verification protocols for quality'
+        ]
+      }
+    ]
+  },
+  {
+    version: '2.2.0',
+    date: '2025-03-15',
+    type: 'Major',
+    changes: [
+      {
+        category: 'Added',
+        items: [
+          'Context Preservation System (87.5% reduction in rework)',
+          'Agent-to-agent handoff protocols (agent-context.md, handoff-notes.md)',
+          'Evidence repository for comprehensive audit trails',
+          'Pause/resume capability for long-running missions',
+          'Zero context loss across multi-agent workflows',
+          'Rolling context accumulation system'
+        ]
+      },
+      {
+        category: 'Changed',
+        items: [
+          'Improved mission completion time (37.5% faster delivery)',
+          'Enhanced coordinator delegation protocol',
+          'Better context file integrity throughout missions',
+          'Stronger enforcement mechanisms for handoffs'
+        ]
+      }
+    ]
+  },
+  {
     version: '2.1.0',
     date: '2024-12-15',
     type: 'Major',
@@ -269,14 +325,14 @@ export default function ChangelogPage() {
               <div className="bg-white rounded-lg p-4">
                 <div className="flex items-center mb-3">
                   <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
-                    v2.2.0
+                    v2.4.0
                   </div>
-                  <span className="text-gray-500 ml-2">Q1 2025</span>
+                  <span className="text-gray-500 ml-2">Q3 2025</span>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Enhanced Integrations</h3>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Slack and Discord bot integration</li>
-                  <li>• GitHub Actions workflows</li>
+                  <li>• Advanced GitHub Actions workflows</li>
                   <li>• Jira and Linear ticket sync</li>
                   <li>• Custom webhook support</li>
                 </ul>
@@ -284,9 +340,9 @@ export default function ChangelogPage() {
               <div className="bg-white rounded-lg p-4">
                 <div className="flex items-center mb-3">
                   <div className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
-                    v2.3.0
+                    v3.0.0
                   </div>
-                  <span className="text-gray-500 ml-2">Q2 2025</span>
+                  <span className="text-gray-500 ml-2">Q4 2025</span>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Enterprise Features</h3>
                 <ul className="text-sm text-gray-600 space-y-1">
