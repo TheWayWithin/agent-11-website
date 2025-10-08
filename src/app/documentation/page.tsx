@@ -32,7 +32,7 @@ const docSections: DocSection[] = [
           <h3 className="text-xl font-semibold text-gray-900 mb-3">2. Your First Mission</h3>
           <p className="text-gray-600 mb-4">Execute your first mission with the /coord command:</p>
           <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm space-y-2">
-            <div className="text-green-400">$ /coord build "User authentication system"</div>
+            <div className="text-green-400">$ /coord build &quot;User authentication system&quot;</div>
             <div className="text-blue-400">🎯 Mission: BUILD initiated | Duration: 4-8 hours</div>
             <div className="text-purple-400">🧠 COORDINATOR: Breaking down requirements...</div>
             <div className="text-yellow-400">🏗️ ARCHITECT: Designing system architecture...</div>
@@ -247,15 +247,15 @@ const docSections: DocSection[] = [
             <div className="text-gray-400"># .agent11/config.yaml</div>
             <div className="text-white mt-2">
               <div>project:</div>
-              <div className="ml-4">name: "my-awesome-app"</div>
-              <div className="ml-4">stack: ["nextjs", "typescript", "tailwind"]</div>
-              <div className="ml-4">database: "postgresql"</div>
+              <div className="ml-4">name: &quot;my-awesome-app&quot;</div>
+              <div className="ml-4">stack: [&quot;nextjs&quot;, &quot;typescript&quot;, &quot;tailwind&quot;]</div>
+              <div className="ml-4">database: &quot;postgresql&quot;</div>
               <div className="mt-2">missions:</div>
               <div className="ml-4">build:</div>
-              <div className="ml-8">timeout: "8h"</div>
+              <div className="ml-8">timeout: &quot;8h&quot;</div>
               <div className="ml-8">test_required: true</div>
               <div className="ml-4">deploy:</div>
-              <div className="ml-8">environment: "staging"</div>
+              <div className="ml-8">environment: &quot;staging&quot;</div>
               <div className="ml-8">auto_migrate: true</div>
             </div>
           </div>
@@ -301,16 +301,16 @@ const docSections: DocSection[] = [
           <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
             <div className="text-gray-400"># .agent11/missions/custom-deploy.yaml</div>
             <div className="text-white mt-2">
-              <div>name: "custom-deploy"</div>
-              <div>description: "Deploy with custom validation"</div>
-              <div>agents: ["coordinator", "developer", "tester", "operator"]</div>
+              <div>name: &quot;custom-deploy&quot;</div>
+              <div>description: &quot;Deploy with custom validation&quot;</div>
+              <div>agents: [&quot;coordinator&quot;, &quot;developer&quot;, &quot;tester&quot;, &quot;operator&quot;]</div>
               <div>steps:</div>
-              <div className="ml-4">- name: "Run custom tests"</div>
-              <div className="ml-8">agent: "tester"</div>
-              <div className="ml-8">command: "npm run test:e2e"</div>
-              <div className="ml-4">- name: "Deploy to staging"</div>
-              <div className="ml-8">agent: "operator"</div>
-              <div className="ml-8">command: "kubectl apply -f k8s/"</div>
+              <div className="ml-4">- name: &quot;Run custom tests&quot;</div>
+              <div className="ml-8">agent: &quot;tester&quot;</div>
+              <div className="ml-8">command: &quot;npm run test:e2e&quot;</div>
+              <div className="ml-4">- name: &quot;Deploy to staging&quot;</div>
+              <div className="ml-8">agent: &quot;operator&quot;</div>
+              <div className="ml-8">command: &quot;kubectl apply -f k8s/&quot;</div>
             </div>
           </div>
         </div>

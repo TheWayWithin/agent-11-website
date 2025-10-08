@@ -169,7 +169,7 @@ export default function Hero() {
               <div className="font-mono text-sm text-gray-300 space-y-2">
                 <div className="flex items-center animate-slide-up">
                   <span className="text-green-400 animate-pulse-gentle">$</span>
-                  <span className="ml-2">/coord build "User authentication system with JWT"</span>
+                  <span className="ml-2">/coord build &quot;User authentication system with JWT&quot;</span>
                 </div>
                 <div className="text-blue-400 animate-slide-up" style={{animationDelay: '0.1s'}}>
                   <span className="animate-bounce-gentle">🎯</span>

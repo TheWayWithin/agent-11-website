@@ -113,7 +113,7 @@ export default function DiscordPage() {
           
           <div className="space-y-6">
             <div className="bg-white rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">✅ Do's</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">✅ Do&apos;s</h3>
               <ul className="space-y-2 text-gray-600">
                 <li>• Be respectful and constructive in all interactions</li>
                 <li>• Share your mission results and learnings with the community</li>
@@ -124,7 +124,7 @@ export default function DiscordPage() {
             </div>
             
             <div className="bg-white rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">❌ Don'ts</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">❌ Don&apos;ts</h3>
               <ul className="space-y-2 text-gray-600">
                 <li>• Spam, self-promote excessively, or post off-topic content</li>
                 <li>• Share sensitive information like API keys or credentials</li>

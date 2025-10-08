@@ -209,7 +209,7 @@ export default function PricingPage() {
 
           {/* Pricing Grid */}
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            {pricingTiers.map((tier, index) => (
+            {pricingTiers.map((tier) => (
               <div
                 key={tier.name}
                 className={`relative bg-white rounded-2xl border-2 p-8 ${

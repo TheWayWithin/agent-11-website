@@ -244,7 +244,7 @@ export default function FeaturesPage() {
               {['All', 'Development', 'Strategic'].map((category) => (
                 <button
                   key={category}
-                  onClick={() => setSelectedCategory(category as any)}
+                  onClick={() => setSelectedCategory(category as 'All' | 'Development' | 'Strategic')}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     selectedCategory === category
                       ? 'bg-white text-gray-900 shadow-sm'
@@ -259,7 +259,7 @@ export default function FeaturesPage() {
               {['All', 'Low', 'Medium', 'High'].map((complexity) => (
                 <button
                   key={complexity}
-                  onClick={() => setSelectedComplexity(complexity as any)}
+                  onClick={() => setSelectedComplexity(complexity as 'All' | 'Low' | 'Medium' | 'High')}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     selectedComplexity === complexity
                       ? 'bg-white text-gray-900 shadow-sm'

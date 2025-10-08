@@ -233,7 +233,7 @@ export default function ChangelogPage() {
               Migration Guides
             </h2>
             <p className="text-gray-600 mb-6">
-              Need help upgrading? We've got you covered with detailed migration guides for major version changes.
+              Need help upgrading? We&apos;ve got you covered with detailed migration guides for major version changes.
             </p>
             <div className="space-y-4">
               <div className="bg-white rounded-lg p-4 flex items-center justify-between">
@@ -260,10 +260,10 @@ export default function ChangelogPage() {
           {/* Roadmap Preview */}
           <div className="mt-16 bg-gray-50 rounded-xl p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              What's Coming Next
+              What&apos;s Coming Next
             </h2>
             <p className="text-gray-600 mb-6">
-              Peek at what we're working on for future releases.
+              Peek at what we&apos;re working on for future releases.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg p-4">
