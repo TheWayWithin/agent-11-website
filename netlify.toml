@@ -101,12 +101,8 @@
 [build.processing.html]
   pretty_urls = true
 
-# Form processing and notifications
-[forms]
-  # Enable form processing
-  processing = true
-
-# Email notifications for form submissions
+# Form processing configuration
+# Using array syntax for multiple form definitions
 [[forms]]
   name = "lead-magnet-capture"
   
