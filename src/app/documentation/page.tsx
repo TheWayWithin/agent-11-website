@@ -318,6 +318,320 @@ const docSections: DocSection[] = [
     )
   },
   {
+    id: 'field-manual',
+    title: 'Field Manual',
+    description: 'Professional-grade architecture documentation and best practices (1,370+ lines)',
+    content: (
+      <div className="space-y-6">
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">What is the Field Manual?</h3>
+          <p className="text-gray-600 mb-4">
+            The AGENT-11 Field Manual is a comprehensive 1,370+ line documentation system that provides professional-grade
+            architecture templates, security-first development principles, and production-ready patterns.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Architecture SOP</h3>
+          <p className="text-gray-600 mb-4">
+            The Architecture Standard Operating Procedure is the cornerstone of the Field Manual. It provides:
+          </p>
+          <ul className="space-y-2">
+            <li className="flex items-start">
+              <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2 mt-2"></div>
+              <div>
+                <strong className="text-gray-900">System Design Templates:</strong> Pre-structured formats for documenting architecture decisions
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2 mt-2"></div>
+              <div>
+                <strong className="text-gray-900">Technical Specifications:</strong> Component diagrams, data models, and API contracts
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2 mt-2"></div>
+              <div>
+                <strong className="text-gray-900">Security Architecture:</strong> Authentication flows, authorization models, and encryption strategies
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2 mt-2"></div>
+              <div>
+                <strong className="text-gray-900">Scalability Planning:</strong> Performance targets, caching strategies, and database optimization
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Access the Field Manual</h3>
+          <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+            <div className="space-y-3">
+              <div>
+                <div className="text-sm font-medium text-gray-700 mb-1">Architecture SOP:</div>
+                <code className="text-sm bg-gray-900 text-green-400 px-3 py-1 rounded">/field-manual/architecture-sop.md</code>
+              </div>
+              <div>
+                <div className="text-sm font-medium text-gray-700 mb-1">Repository:</div>
+                <a href="https://github.com/TheWayWithin/agent-11/tree/main/field-manual" className="text-sm text-primary-600 hover:text-primary-700" target="_blank" rel="noopener noreferrer">
+                  View on GitHub →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
+    id: 'context-preservation',
+    title: 'Context Preservation Protocol',
+    description: 'Zero context loss system for multi-agent workflows (87.5% less rework)',
+    content: (
+      <div className="space-y-6">
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">What is Context Preservation?</h3>
+          <p className="text-gray-600 mb-4">
+            AGENT-11&apos;s Context Preservation System ensures zero context loss across multi-agent workflows through
+            persistent context files and mandatory handoff protocols. This results in <strong>87.5% reduction in rework</strong> and
+            <strong> 37.5% faster completion time</strong>.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Three Core Context Files</h3>
+          <div className="space-y-4">
+            <div className="bg-white border border-gray-200 rounded-lg p-4">
+              <div className="flex items-center mb-2">
+                <div className="text-2xl mr-3">📋</div>
+                <h4 className="font-semibold text-gray-900">agent-context.md</h4>
+              </div>
+              <p className="text-sm text-gray-600 mb-2">Rolling accumulation of all findings, decisions, and critical information</p>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Mission objectives and accumulated findings</li>
+                <li>• Technical decisions and known issues</li>
+                <li>• Dependencies and blockers</li>
+              </ul>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg p-4">
+              <div className="flex items-center mb-2">
+                <div className="text-2xl mr-3">🤝</div>
+                <h4 className="font-semibold text-gray-900">handoff-notes.md</h4>
+              </div>
+              <p className="text-sm text-gray-600 mb-2">Specific context for the next agent in workflow</p>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Immediate task and critical context</li>
+                <li>• Warnings and specific instructions</li>
+                <li>• Test results and verification steps</li>
+              </ul>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg p-4">
+              <div className="flex items-center mb-2">
+                <div className="text-2xl mr-3">📦</div>
+                <h4 className="font-semibold text-gray-900">evidence-repository.md</h4>
+              </div>
+              <p className="text-sm text-gray-600 mb-2">Centralized collection of artifacts and supporting materials</p>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Screenshots and code snippets</li>
+                <li>• Test results and API responses</li>
+                <li>• Error logs and debugging artifacts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Handoff Protocol</h3>
+          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+            <ol className="space-y-3 text-sm text-gray-600">
+              <li className="flex items-start">
+                <strong className="text-gray-900 mr-2">1.</strong>
+                <span>Agent reads agent-context.md and handoff-notes.md before starting work</span>
+              </li>
+              <li className="flex items-start">
+                <strong className="text-gray-900 mr-2">2.</strong>
+                <span>Agent maintains awareness of mission context during execution</span>
+              </li>
+              <li className="flex items-start">
+                <strong className="text-gray-900 mr-2">3.</strong>
+                <span>Agent updates handoff-notes.md with findings for next specialist</span>
+              </li>
+              <li className="flex items-start">
+                <strong className="text-gray-900 mr-2">4.</strong>
+                <span>Coordinator merges findings into agent-context.md for mission continuity</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
+    id: 'mcp-integration',
+    title: 'MCP Integration Guide',
+    description: 'Model Context Protocol setup and 15+ supported integrations',
+    content: (
+      <div className="space-y-6">
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">What is MCP?</h3>
+          <p className="text-gray-600 mb-4">
+            Model Context Protocol (MCP) servers extend AGENT-11 capabilities with specialized services for infrastructure,
+            payments, development tools, and testing frameworks.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Quick Setup</h3>
+          <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm space-y-2">
+            <div className="text-gray-400"># 1. Copy environment template</div>
+            <div className="text-green-400">$ cp .env.mcp.template .env.mcp</div>
+            <div className="text-gray-400 mt-4"># 2. Add your API keys to .env.mcp</div>
+            <div className="text-gray-400"># 3. Run setup script</div>
+            <div className="text-green-400">$ ./mcp-setup.sh</div>
+            <div className="text-gray-400 mt-4"># 4. Verify installation</div>
+            <div className="text-green-400">$ ./mcp-setup.sh --verify</div>
+            <div className="text-gray-400 mt-4"># 5. Restart Claude Code for changes to take effect</div>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Supported MCPs</h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white border border-gray-200 rounded-lg p-4">
+              <h4 className="font-semibold text-gray-900 mb-2">🚀 Infrastructure</h4>
+              <ul className="space-y-1 text-sm text-gray-600">
+                <li>• Railway - Backend services</li>
+                <li>• Netlify - Frontend hosting</li>
+                <li>• Supabase - Database & auth</li>
+              </ul>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-4">
+              <h4 className="font-semibold text-gray-900 mb-2">💳 Commerce</h4>
+              <ul className="space-y-1 text-sm text-gray-600">
+                <li>• Stripe - Payments</li>
+                <li>• Subscriptions management</li>
+                <li>• Webhook handling</li>
+              </ul>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-4">
+              <h4 className="font-semibold text-gray-900 mb-2">🔧 Development</h4>
+              <ul className="space-y-1 text-sm text-gray-600">
+                <li>• GitHub - PRs & issues</li>
+                <li>• Context7 - Library docs</li>
+                <li>• Firecrawl - Web scraping</li>
+              </ul>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-4">
+              <h4 className="font-semibold text-gray-900 mb-2">🧪 Testing</h4>
+              <ul className="space-y-1 text-sm text-gray-600">
+                <li>• Playwright - Browser automation</li>
+                <li>• E2E testing</li>
+                <li>• Visual regression</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
+    id: 'security-first',
+    title: 'Security-First Development',
+    description: 'Critical software development principles and security protocols',
+    content: (
+      <div className="space-y-6">
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Core Principle</h3>
+          <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-4">
+            <p className="font-bold text-red-900 mb-2">NEVER compromise security for convenience.</p>
+            <p className="text-red-800">
+              When encountering security features or policies, understand why they exist before making changes.
+              Find ways to work WITH security features, not around them.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Strategic Solution Checklist</h3>
+          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+            <p className="text-sm text-gray-600 mb-3">Before implementing any fix, verify:</p>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">✅</span>
+                <span>Does this maintain all security requirements?</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">✅</span>
+                <span>Is this the architecturally correct solution?</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">✅</span>
+                <span>Will this create technical debt?</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">✅</span>
+                <span>Are there better long-term solutions?</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">✅</span>
+                <span>Have I understood the original design intent?</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Anti-Patterns to Avoid</h3>
+          <div className="space-y-2">
+            {[
+              'Removing security features to make things work',
+              'Adding any types to bypass TypeScript errors',
+              'Using @ts-ignore without understanding the issue',
+              'Disabling linters or security scanners',
+              'Implementing quick fixes that break design patterns'
+            ].map((pattern, index) => (
+              <div key={index} className="flex items-start bg-white border border-gray-200 rounded-lg p-3">
+                <span className="text-red-600 mr-2">❌</span>
+                <span className="text-sm text-gray-700">{pattern}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Root Cause Analysis Protocol</h3>
+          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+            <ol className="space-y-2 text-sm text-gray-600">
+              <li className="flex items-start">
+                <strong className="text-gray-900 mr-2">PAUSE:</strong>
+                <span>Don&apos;t rush to implement the first solution</span>
+              </li>
+              <li className="flex items-start">
+                <strong className="text-gray-900 mr-2">RESEARCH:</strong>
+                <span>Understand the system design and constraints</span>
+              </li>
+              <li className="flex items-start">
+                <strong className="text-gray-900 mr-2">PROPOSE:</strong>
+                <span>Present multiple solutions with trade-offs</span>
+              </li>
+              <li className="flex items-start">
+                <strong className="text-gray-900 mr-2">IMPLEMENT:</strong>
+                <span>Choose the solution that maintains system integrity</span>
+              </li>
+              <li className="flex items-start">
+                <strong className="text-gray-900 mr-2">DOCUMENT:</strong>
+                <span>Record why decisions were made for future reference</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
     id: 'troubleshooting',
     title: 'Troubleshooting',
     description: 'Common issues and solutions',

@@ -286,9 +286,10 @@ export default function SocialProof() {
                   >
                     <Image
                       src={contributor.avatar_url}
-                      alt={contributor.login}
+                      alt={`${contributor.login} - AGENT-11 contributor`}
                       width={32}
                       height={32}
+                      loading="lazy"
                       className="w-8 h-8 rounded-full border-2 border-white shadow-md group-hover:border-primary-300 transition-all duration-300 group-hover:shadow-lg"
                     />
                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 animate-pulse-gentle">

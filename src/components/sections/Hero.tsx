@@ -23,14 +23,14 @@ export default function Hero() {
     <section className="relative bg-gradient-to-br from-gray-50 to-white section-padding">
       <div className="container">
         <div className="text-center max-w-5xl mx-auto">
-          {/* Authentic Proof Badge */}
-          <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-6 py-3 rounded-full text-sm font-medium mb-8 animate-fade-in hover-glow transition-all duration-300 hover:scale-105 border border-green-200">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse-gentle"></span>
-            <span className="animate-bounce-gentle">✨</span>
-            <span className="font-bold">PROVEN:</span>
-            <span>AGENT-11 built AGENT-11 itself</span>
-            <span className="mx-2 text-green-600">•</span>
-            <span className="font-bold">98% success rate</span>
+          {/* Modernization Badge */}
+          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-6 py-3 rounded-full text-sm font-medium mb-8 animate-fade-in hover-glow transition-all duration-300 hover:scale-105 border border-blue-200">
+            <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse-gentle"></span>
+            <span className="animate-bounce-gentle">⚡</span>
+            <span className="font-bold">PHASE 1 & 2 MODERNIZATION:</span>
+            <span>87.5% Less Rework, 37.5% Faster Delivery</span>
+            <span className="mx-2 text-blue-600">•</span>
+            <span className="font-bold">Context Preservation System</span>
           </div>
 
           {/* Mission-Focused Tagline */}
@@ -45,28 +45,38 @@ export default function Hero() {
           </h1>
 
           {/* Mission-Focused Subheadline */}
-          <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto text-balance animate-slide-up" style={{animationDelay: '0.2s'}}>
-            From <strong>BUILD</strong> to <strong>MVP</strong> to <strong>DEPLOY</strong> - execute 11 proven missions with project-local agents that understand your codebase. 
-            <strong>One person working alone</strong> built AGENT-11 in <strong>1 day</strong>, this website in <strong>+1 day</strong>. No team required.
+          <p className="text-xl text-gray-600 mb-6 max-w-4xl mx-auto text-balance animate-slide-up" style={{animationDelay: '0.2s'}}>
+            From <strong>BUILD</strong> to <strong>MVP</strong> to <strong>DEPLOY</strong> - execute 17 proven missions with project-local agents that understand your codebase.
+            Features <strong>Context Preservation</strong>, <strong>Extended Thinking</strong>, and <strong>1,370-line Field Manual</strong> for professional-grade architecture.
           </p>
+
+          {/* Professional Documentation Badge */}
+          <div className="flex justify-center mb-8 animate-slide-up" style={{animationDelay: '0.25s'}}>
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-50 to-blue-50 text-purple-700 px-5 py-2 rounded-full text-sm border border-purple-200">
+              <span>📚</span>
+              <span className="font-medium">Professional-Grade Documentation</span>
+              <span className="mx-1 text-purple-500">•</span>
+              <span className="font-bold">1,370+ Line Field Manual</span>
+            </div>
+          </div>
 
           {/* Mission Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mb-10 animate-slide-up" style={{animationDelay: '0.3s'}}>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-primary-600">1</div>
-              <div className="text-sm text-gray-600">day to build AGENT-11</div>
+              <div className="text-2xl font-bold text-blue-600">87.5%</div>
+              <div className="text-sm text-gray-600">less rework</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-green-600">1</div>
-              <div className="text-sm text-gray-600">person working alone</div>
+              <div className="text-2xl font-bold text-green-600">37.5%</div>
+              <div className="text-sm text-gray-600">faster delivery</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-blue-600">11</div>
-              <div className="text-sm text-gray-600">proven missions</div>
+              <div className="text-2xl font-bold text-purple-600">7,777+</div>
+              <div className="text-sm text-gray-600">lines of docs</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-purple-600">/coord</div>
-              <div className="text-sm text-gray-600">one command</div>
+              <div className="text-2xl font-bold text-orange-600">17</div>
+              <div className="text-sm text-gray-600">mission types</div>
             </div>
           </div>
 
@@ -154,8 +164,23 @@ export default function Hero() {
             </div>
           )}
 
+          {/* Creator Attribution - Subtle Footer */}
+          <div className="mt-8 text-sm text-gray-600 dark:text-gray-400 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 animate-fade-in" style={{animationDelay: '0.55s'}}>
+            <span className="flex items-center gap-2">
+              🛠️ Built by <Link href="/about" className="text-primary-600 hover:text-primary-700 font-medium transition-colors">Jamie Watters</Link>
+            </span>
+            <span className="hidden sm:inline">|</span>
+            <span className="flex items-center gap-2">
+              Part of the <Link href="/portfolio" className="text-primary-600 hover:text-primary-700 font-medium transition-colors">Solo Founder Ecosystem</Link>
+            </span>
+            <span className="hidden sm:inline">|</span>
+            <span>
+              <Link href="https://jamiewatters.work" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 font-medium transition-colors">JamieWatters.work</Link>
+            </span>
+          </div>
+
           {/* Authentic Development Story */}
-          <div className="relative max-w-4xl mx-auto animate-fade-in hover-lift" style={{animationDelay: '0.6s'}}>
+          <div className="relative max-w-4xl mx-auto mt-12 animate-fade-in hover-lift" style={{animationDelay: '0.6s'}}>
             <div className="bg-gray-900 rounded-xl p-6 shadow-2xl relative overflow-hidden">
               {/* Terminal Header */}
               <div className="flex items-center gap-2 mb-4">

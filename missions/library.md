@@ -4,6 +4,29 @@
 
 This library contains standardized mission protocols for common development scenarios. Each mission provides a proven execution pattern for multi-agent collaboration.
 
+### Project Setup Missions
+
+#### 🚀 DEV-SETUP - Greenfield Project Initialization
+**File**: `dev-setup.md`  
+**Purpose**: Initialize new projects with ideation analysis and tracking  
+**Duration**: 30-45 minutes  
+**Required**: Ideation document (PRD, vision, architecture)  
+**Squad**: Coordinator, Strategist, Documenter
+
+#### 🎯 DEV-ALIGNMENT - Existing Project Understanding
+**File**: `dev-alignment.md`  
+**Purpose**: Align AGENT-11 with existing codebases and establish tracking  
+**Duration**: 45-60 minutes  
+**Required**: Existing codebase, ideation docs (optional)  
+**Squad**: Coordinator, Architect, Developer, Strategist
+
+#### 🔌 CONNECT-MCP - MCP Discovery & Connection
+**File**: `connect-mcp.md`  
+**Purpose**: Identify, install, and configure required MCP servers based on project needs  
+**Duration**: 45-90 minutes  
+**Required**: Project requirements, API keys for services  
+**Squad**: Coordinator, Strategist, Developer, Tester, Documenter
+
 ### Core Development Missions
 
 #### 🏗️ BUILD - New Feature Development
@@ -41,7 +64,21 @@ This library contains standardized mission protocols for common development scen
 **Required**: System or feature to document  
 **Squad**: Documenter, Developer, Architect
 
+#### 📐 ARCHITECTURE - System Architecture Documentation
+**File**: `mission-architecture.md`  
+**Purpose**: Create or update comprehensive architecture documentation  
+**Duration**: 2-3 hours  
+**Required**: Existing codebase or design requirements  
+**Squad**: Strategist, Architect, Developer, Documenter
+
 ### Strategic Missions
+
+#### 📋 PRODUCT-DESCRIPTION - Product Definition with Risk Management
+**File**: `mission-product-description.md`  
+**Purpose**: Create comprehensive product description with risk assessment  
+**Duration**: 2-3 hours  
+**Required**: Product vision or PRD  
+**Squad**: Strategist, Analyst, Marketer, Documenter
 
 #### 💡 MVP - Minimum Viable Product
 **File**: `mission-mvp.md`  
@@ -84,6 +121,22 @@ This library contains standardized mission protocols for common development scen
 **Duration**: 2-4 hours  
 **Required**: Release scope and timeline  
 **Squad**: Coordinator, Developer, Operator, Marketer
+
+### Operations Missions
+
+#### 🔍 GENESIS - Project Reconnaissance
+**File**: `operation-genesis.md`  
+**Purpose**: Deep reconnaissance and analysis of project requirements  
+**Duration**: 1-2 hours  
+**Required**: None (self-contained intelligence gathering)  
+**Squad**: Coordinator, Strategist, Analyst
+
+#### 🎨 RECON - Design Intelligence
+**File**: `operation-recon.md`  
+**Purpose**: Design system reconnaissance and UI/UX intelligence gathering  
+**Duration**: 1-3 hours  
+**Required**: None (autonomous design analysis)  
+**Squad**: Coordinator, Designer, Analyst
 
 ## Mission Execution Guide
 

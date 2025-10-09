@@ -6,6 +6,43 @@
 **Complexity**: Medium to High  
 **Squad Required**: Full team engagement
 
+## Quick Start
+
+### Ready to Build Features? (3 minutes)
+
+**Step 1**: Copy the requirements template
+```bash
+cp templates/mission-inputs/requirements.md ./build-requirements.md
+```
+
+**Step 2**: Complete these critical sections
+- **Core Features & User Stories**: Specific acceptance criteria
+- **Technical Requirements**: Performance, security, integration needs
+- **Business Rules**: Logic constraints and validation rules
+- **Success Metrics**: How you'll measure success
+- **Quality Standards**: Testing and documentation requirements
+
+**Step 3**: Execute mission
+```bash
+/coord build build-requirements.md
+```
+
+**What You'll Get**: Production-ready code with full testing, documentation, and deployment configuration.
+
+**Example Requirements Format**:
+```markdown
+### User Story: User Authentication
+- **As a** new user
+- **I want** to create an account with email/password
+- **So that** I can access personalized features
+
+**Acceptance Criteria:**
+- [ ] User can register with valid email and password (8+ chars)
+- [ ] System sends email verification before activation
+- [ ] User can login with verified credentials
+- [ ] Failed login attempts are rate-limited (5 attempts/hour)
+```
+
 ## Mission Briefing
 
 Transform product requirements into production-ready implementation. This mission takes you from concept through deployment-ready code with full testing and documentation.
@@ -18,10 +55,25 @@ Transform product requirements into production-ready implementation. This missio
 
 ## Mission Phases
 
-### Phase 1: Strategic Analysis (30-45 minutes)
+### Phase 1: Strategic Analysis (30-45 minutes) - IMMEDIATE ACTION
 
 **Lead**: @strategist  
 **Objective**: Transform requirements into actionable user stories
+
+**COORDINATOR PROTOCOL**:
+1. **UPDATE project-plan.md** with Phase 1 tasks:
+   ```markdown
+   ## Mission: BUILD [Feature Name]
+   
+   ### Phase 1: Strategic Analysis (In Progress)
+   - [ ] Create detailed user stories in INVEST format (assigned to @strategist)
+   - [ ] Define clear acceptance criteria (assigned to @strategist)
+   - [ ] Identify edge cases and error states (assigned to @strategist)
+   - [ ] Prioritize features for MVP vs future iterations (assigned to @strategist)
+   - [ ] Define success metrics and KPIs (assigned to @strategist)
+   ```
+
+2. **IMMEDIATELY CALL @strategist** - do not plan or wait
 
 ```bash
 @strategist Review the provided requirements and:
@@ -32,16 +84,22 @@ Transform product requirements into production-ready implementation. This missio
 5. Define success metrics and KPIs
 ```
 
+3. **WAIT FOR @strategist RESPONSE** 
+4. **UPDATE project-plan.md** mark completed tasks [x] and add Phase 2 tasks
+5. **LOG TO progress.md** any issues encountered during this phase
+
 **Deliverables**:
 - User stories with acceptance criteria
 - Feature prioritization matrix
 - Success metrics defined
 
-### Phase 2: Technical Architecture (30-45 minutes)
+### Phase 2: Technical Architecture (30-45 minutes) - IMMEDIATE ACTION
 
 **Lead**: @architect  
 **Support**: @developer  
 **Objective**: Design robust technical foundation
+
+**COORDINATOR ACTION**: After @strategist completes, immediately call @architect
 
 ```bash
 @architect Based on the requirements and user stories:
@@ -51,6 +109,8 @@ Transform product requirements into production-ready implementation. This missio
 4. Identify integration points
 5. Document architectural decisions and trade-offs
 ```
+
+**WAIT FOR @architect RESPONSE** before proceeding to Phase 3
 
 **Deliverables**:
 - Architecture design document

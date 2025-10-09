@@ -412,54 +412,70 @@ export default function GetStarted() {
 
         {/* Footer */}
         <footer className="mt-20 pt-16 border-t border-gray-200">
-          <div className="grid md:grid-cols-4 gap-8 text-sm">
-            <div className="md:col-span-2">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+            <div>
               <div className="text-2xl font-bold text-primary-600 mb-4">AGENT-11</div>
-              <p className="text-gray-600 mb-4 max-w-md">
-                Your personal dev team that never sleeps. Built by developers, for developers, 
+              <p className="text-gray-600 mb-4">
+                Your personal dev team that never sleeps. Built by developers, for developers,
                 to transform solo struggle into specialist success.
               </p>
               <div className="flex gap-4">
-                <Link href="#" className="text-gray-400 hover:text-primary-600 transition-colors">
+                <Link href="https://github.com/TheWayWithin" className="text-gray-400 hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                  </svg>
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-primary-600 transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                   </svg>
                 </Link>
               </div>
             </div>
-            
+
             <div>
               <h4 className="font-semibold text-gray-900 mb-4">Product</h4>
               <ul className="space-y-2 text-gray-600">
-                <li><Link href="#" className="hover:text-primary-600 transition-colors">Features</Link></li>
-                <li><Link href="#" className="hover:text-primary-600 transition-colors">Pricing</Link></li>
-                <li><Link href="#" className="hover:text-primary-600 transition-colors">Documentation</Link></li>
-                <li><Link href="#" className="hover:text-primary-600 transition-colors">Changelog</Link></li>
+                <li><Link href="/features" className="hover:text-primary-600 transition-colors">Features</Link></li>
+                <li><Link href="/pricing" className="hover:text-primary-600 transition-colors">Pricing</Link></li>
+                <li><Link href="/documentation" className="hover:text-primary-600 transition-colors">Documentation</Link></li>
+                <li><Link href="/changelog" className="hover:text-primary-600 transition-colors">Changelog</Link></li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold text-gray-900 mb-4">Community</h4>
               <ul className="space-y-2 text-gray-600">
-                <li><Link href="#" className="hover:text-primary-600 transition-colors">Discord</Link></li>
-                <li><Link href="#" className="hover:text-primary-600 transition-colors">GitHub</Link></li>
-                <li><Link href="#" className="hover:text-primary-600 transition-colors">Blog</Link></li>
-                <li><Link href="#" className="hover:text-primary-600 transition-colors">Support</Link></li>
+                <li><Link href="/discord" className="hover:text-primary-600 transition-colors">Discord</Link></li>
+                <li><Link href="https://github.com/TheWayWithin/agent-11" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">GitHub</Link></li>
+                <li><Link href="/blog" className="hover:text-primary-600 transition-colors">Blog</Link></li>
+                <li><Link href="/support" className="hover:text-primary-600 transition-colors">Support</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Solo Founder Ecosystem</h4>
+              <ul className="space-y-2 text-gray-600">
+                <li><Link href="/" className="hover:text-primary-600 transition-colors">AGENT-11</Link></li>
+                <li><Link href="https://jamiewatters.work" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">JamieWatters.work</Link></li>
+                <li><Link href="https://evolve-7.com" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">Evolve-7</Link></li>
+                <li><Link href="https://llmtxtmastery.com" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">LLM.txt Mastery</Link></li>
+                <li><Link href="https://aimpactscanner.com" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">AI Impact Scanner</Link></li>
+                <li><Link href="https://solomarket.work" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">Solo Market</Link></li>
+                <li><Link href="https://aisearchmastery.com/mastery-ai-framework/" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">Mastery-AI</Link></li>
+                <li><Link href="https://github.com/TheWayWithin/BOS-AI" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">BOS-AI</Link></li>
+                <li><Link href="https://aisearchmastery.com" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">AI Search Mastery</Link></li>
               </ul>
             </div>
           </div>
-          
-          <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center text-gray-600 text-sm">
-            <div>© 2025 AGENT-11. Open source and proud of it.</div>
-            <div className="flex gap-6 mt-4 sm:mt-0">
-              <Link href="#" className="hover:text-primary-600 transition-colors">Privacy</Link>
-              <Link href="#" className="hover:text-primary-600 transition-colors">Terms</Link>
-              <Link href="#" className="hover:text-primary-600 transition-colors">License</Link>
+
+          <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center text-gray-600 text-sm gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+              <span>© 2025 AGENT-11 by <Link href="/about" className="text-primary-600 hover:text-primary-700 transition-colors">Jamie Watters</Link>.</span>
+              <span className="hidden sm:inline">|</span>
+              <span>Open source and proud of it.</span>
+            </div>
+            <div className="flex gap-6">
+              <Link href="/portfolio" className="hover:text-primary-600 transition-colors">Ecosystem</Link>
+              <Link href="https://github.com/TheWayWithin/agent-11" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">GitHub</Link>
+              <Link href="/privacy" className="hover:text-primary-600 transition-colors">Privacy</Link>
+              <Link href="/terms" className="hover:text-primary-600 transition-colors">Terms</Link>
+              <Link href="/license" className="hover:text-primary-600 transition-colors">License</Link>
             </div>
           </div>
         </footer>
