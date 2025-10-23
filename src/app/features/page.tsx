@@ -773,70 +773,248 @@ export default function FeaturesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              15+ MCP Integrations for Enhanced Capabilities
+              MCP Integration - 8 Pre-Integrated Services
             </h2>
             <p className="text-xl text-gray-600">
-              Model Context Protocol servers extend agent functionality with specialized services
+              AGENT-11 includes pre-configured integrations with 8 essential development services, reducing context overhead by 40-80% and enabling 30+ hours of autonomous operation.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-5 border border-blue-200">
+              <div className="font-bold text-gray-900 mb-2 flex items-center">
+                <span className="text-xl mr-2">🔧</span>
+                Core Services
+              </div>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li><strong>Context7</strong> - Library docs & code analysis</li>
+                <li><strong>GitHub</strong> - PRs, issues, CI/CD</li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-5 border border-green-200">
+              <div className="font-bold text-gray-900 mb-2 flex items-center">
+                <span className="text-xl mr-2">💻</span>
+                Development Stack
+              </div>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li><strong>Supabase</strong> - Postgres, auth, real-time</li>
+                <li><strong>Stripe</strong> - Payments, subscriptions</li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-lg p-5 border border-orange-200">
               <div className="font-bold text-gray-900 mb-2 flex items-center">
                 <span className="text-xl mr-2">🚀</span>
                 Infrastructure
               </div>
-              <ul className="space-y-1 text-sm text-gray-600">
-                <li>• Railway</li>
-                <li>• Netlify</li>
-                <li>• Supabase</li>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li><strong>Netlify</strong> - Frontend, edge functions</li>
+                <li><strong>Railway</strong> - Backend, databases, cron</li>
               </ul>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
-              <div className="font-bold text-gray-900 mb-2 flex items-center">
-                <span className="text-xl mr-2">💳</span>
-                Commerce
-              </div>
-              <ul className="space-y-1 text-sm text-gray-600">
-                <li>• Stripe</li>
-                <li>• Payment processing</li>
-                <li>• Subscriptions</li>
-              </ul>
-            </div>
-
-            <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
-              <div className="font-bold text-gray-900 mb-2 flex items-center">
-                <span className="text-xl mr-2">🔧</span>
-                Development
-              </div>
-              <ul className="space-y-1 text-sm text-gray-600">
-                <li>• GitHub</li>
-                <li>• Context7</li>
-                <li>• Firecrawl</li>
-              </ul>
-            </div>
-
-            <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-5 border border-purple-200">
               <div className="font-bold text-gray-900 mb-2 flex items-center">
                 <span className="text-xl mr-2">🧪</span>
-                Testing
+                Testing & Quality
               </div>
-              <ul className="space-y-1 text-sm text-gray-600">
-                <li>• Playwright</li>
-                <li>• Browser automation</li>
-                <li>• E2E testing</li>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li><strong>Playwright</strong> - Browser automation</li>
+                <li><strong>Filesystem</strong> - Local project mgmt</li>
               </ul>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 text-center">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">MCP-First Development</h3>
-            <p className="text-gray-600">
-              Agents prioritize MCP servers over manual implementation for efficiency and consistency.
-              <br />
-              Setup guides included in documentation with fallback strategies for unavailable MCPs.
+          <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 mb-6 border border-primary-200">
+            <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">MCP Profile System</h3>
+            <p className="text-gray-600 mb-4 text-center">
+              Choose the right profile for your workflow - each optimized for specific development contexts:
             </p>
+            <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-3 text-sm">
+              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
+                <div className="font-bold text-primary-600 mb-1">Core</div>
+                <div className="text-xs text-gray-600">3 services<br/>Basic development</div>
+              </div>
+              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
+                <div className="font-bold text-green-600 mb-1">Fullstack</div>
+                <div className="text-xs text-gray-600">8 services<br/>Complete web apps</div>
+              </div>
+              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
+                <div className="font-bold text-purple-600 mb-1">Testing</div>
+                <div className="text-xs text-gray-600">4 services<br/>QA workflows</div>
+              </div>
+              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
+                <div className="font-bold text-blue-600 mb-1">Database</div>
+                <div className="text-xs text-gray-600">4 services<br/>DB-focused work</div>
+              </div>
+              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
+                <div className="font-bold text-orange-600 mb-1">Payments</div>
+                <div className="text-xs text-gray-600">4 services<br/>Payment integration</div>
+              </div>
+              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
+                <div className="font-bold text-red-600 mb-1">Deployment</div>
+                <div className="text-xs text-gray-600">5 services<br/>Production deploy</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 text-center border border-green-200">
+            <div className="flex items-center justify-center gap-6 flex-wrap">
+              <div>
+                <div className="text-3xl font-bold text-green-600 mb-1">40-80%</div>
+                <div className="text-sm text-gray-600">Context Reduction</div>
+              </div>
+              <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
+              <div>
+                <div className="text-3xl font-bold text-blue-600 mb-1">30+ Hours</div>
+                <div className="text-sm text-gray-600">Autonomous Operation</div>
+              </div>
+              <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
+              <div>
+                <div className="text-3xl font-bold text-purple-600 mb-1">8 Services</div>
+                <div className="text-sm text-gray-600">Pre-Integrated</div>
+              </div>
+            </div>
+            <p className="text-gray-600 mt-4 text-sm">
+              <strong>Performance Impact:</strong> MCP profile loading enables longer autonomous operation and more complex multi-agent workflows.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Advanced Features Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Advanced Capabilities
+            </h2>
+            <p className="text-xl text-gray-600">
+              Enterprise-grade features for maximum efficiency and performance
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Memory Management */}
+            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+              <div className="text-4xl mb-4">🎯</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Memory Management</h3>
+              <div className="text-3xl font-bold text-orange-600 mb-4">84% Token Reduction</div>
+              <p className="text-gray-600 mb-6">
+                Persistent file-based memory system that learns and remembers across sessions.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">84% token reduction</strong>
+                    <p className="text-sm text-gray-600">in multi-session workflows</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">Cross-session learning</strong>
+                    <p className="text-sm text-gray-600">Knowledge persists between restarts</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">Structured XML storage</strong>
+                    <p className="text-sm text-gray-600">Clear, human-readable memory files</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">30+ hour autonomous operation</strong>
+                    <p className="text-sm text-gray-600">vs. 2-4 hours without memory</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Extended Thinking */}
+            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+              <div className="text-4xl mb-4">🧠</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Extended Thinking</h3>
+              <div className="text-3xl font-bold text-purple-600 mb-4">10-30% Better Solutions</div>
+              <p className="text-gray-600 mb-6">
+                Strategic reasoning modes for complex tasks requiring deep analysis.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">5 thinking modes</strong>
+                    <p className="text-sm text-gray-600">From basic to ultra-deep reasoning</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">10-30% solution quality improvement</strong>
+                    <p className="text-sm text-gray-600">for complex tasks</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">Strategic allocation</strong>
+                    <p className="text-sm text-gray-600">Use deeper thinking where it matters most</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">Cost-optimized</strong>
+                    <p className="text-sm text-gray-600">Match thinking depth to task complexity</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Context Optimization */}
+            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Context Optimization</h3>
+              <div className="text-3xl font-bold text-blue-600 mb-4">40-80% Reduction</div>
+              <p className="text-gray-600 mb-6">
+                Intelligent context management for optimal performance.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">40-80% context reduction</strong>
+                    <p className="text-sm text-gray-600">via MCP profile loading</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">Strategic context clearing</strong>
+                    <p className="text-sm text-gray-600">Preserve critical information</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">Memory integration</strong>
+                    <p className="text-sm text-gray-600">Long-term knowledge persistence</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-2"></div>
+                  <div>
+                    <strong className="text-gray-900">Multi-session workflows</strong>
+                    <p className="text-sm text-gray-600">Seamless pause and resume</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

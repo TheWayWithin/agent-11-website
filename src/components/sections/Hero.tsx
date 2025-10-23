@@ -61,22 +61,46 @@ export default function Hero() {
           </div>
 
           {/* Mission Metrics Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mb-10 animate-slide-up" style={{animationDelay: '0.3s'}}>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto mb-10 animate-slide-up" style={{animationDelay: '0.3s'}}>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="text-2xl font-bold text-orange-600">84%</div>
+              <div className="text-sm text-gray-600">Token Reduction</div>
+            </div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="text-2xl font-bold text-green-600">39%</div>
+              <div className="text-sm text-gray-600">Faster Delivery</div>
+            </div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="text-2xl font-bold text-blue-600">30+</div>
+              <div className="text-sm text-gray-600">Hour Operation</div>
+            </div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="text-2xl font-bold text-purple-600">8</div>
+              <div className="text-sm text-gray-600">MCP Services</div>
+            </div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="text-2xl font-bold text-indigo-600">22</div>
+              <div className="text-sm text-gray-600">Field Guides</div>
+            </div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="text-2xl font-bold text-pink-600">22+</div>
+              <div className="text-sm text-gray-600">Templates</div>
+            </div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="text-2xl font-bold text-blue-600">87.5%</div>
-              <div className="text-sm text-gray-600">less rework</div>
+              <div className="text-sm text-gray-600">Less Rework</div>
             </div>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-green-600">37.5%</div>
-              <div className="text-sm text-gray-600">faster delivery</div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="text-2xl font-bold text-teal-600">98%</div>
+              <div className="text-sm text-gray-600">Success Rate</div>
             </div>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-purple-600">7,777+</div>
-              <div className="text-sm text-gray-600">lines of docs</div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="text-2xl font-bold text-red-600">20</div>
+              <div className="text-sm text-gray-600">Mission Types</div>
             </div>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <div className="text-2xl font-bold text-orange-600">17</div>
-              <div className="text-sm text-gray-600">mission types</div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="text-2xl font-bold text-yellow-600">&lt;1s</div>
+              <div className="text-sm text-gray-600">Deploy Time</div>
             </div>
           </div>
 
