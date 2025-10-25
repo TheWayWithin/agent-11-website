@@ -20,13 +20,20 @@
     # Security headers
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    
+
+    # HSTS - Prevents SSL stripping attacks (NEW - Phase 1 Security Enhancement)
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # Enhanced Permissions-Policy - Blocks additional attack vectors (ENHANCED - Phase 1)
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+
+    # CSP Report-Only - Monitor violations before enforcement (NEW - Phase 1)
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com; report-uri /api/csp-report"
+
     # Performance headers
     X-DNS-Prefetch-Control = "on"
-    
+
     # Custom headers
     X-Powered-By = "AGENT-11"
 
