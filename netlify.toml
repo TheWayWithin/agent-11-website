@@ -28,8 +28,8 @@
     # Enhanced Permissions-Policy - Blocks additional attack vectors (ENHANCED - Phase 1)
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
 
-    # CSP Report-Only - Monitor violations before enforcement (NEW - Phase 1)
-    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com; report-uri /api/csp-report"
+    # CSP Enforcement - Active Content Security Policy (PHASE 2 - A+ SECURITY)
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://api.github.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 
     # Performance headers
     X-DNS-Prefetch-Control = "on"
