@@ -1,4 +1,4 @@
-Contact: mailto:security@agent-11.com
+Contact: mailto:support@aisearchmastery.com
 Contact: https://github.com/TheWayWithin/agent-11/security/advisories
 Expires: 2026-10-28T00:00:00.000Z
 Canonical: https://www.agent-11.com/.well-known/security.txt
