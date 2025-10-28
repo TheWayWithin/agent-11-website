@@ -79,6 +79,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.agent-11.com',
   },
+  verification: {
+    google: '5Nh5uUhbcSpIrNu4URA_5U9kUMvbx1zP0NWRNFF0SXg',
+  },
   other: {
     'theme-color': '#1e3a8a',
   },
