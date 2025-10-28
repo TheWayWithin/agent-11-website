@@ -1,0 +1,23 @@
+# humanstxt.org
+
+/* TEAM */
+Creator: Jamie Watters
+Site: https://jamiewatters.work
+GitHub: https://github.com/TheWayWithin
+Location: [Location to be provided by Jamie]
+
+/* THANKS */
+Built with: AGENT-11 Multi-Agent Framework
+Special thanks: Claude by Anthropic, Next.js team, Netlify team
+Framework: AGENT-11 - Your Personal Dev Team That Never Sleeps
+
+/* SITE */
+Last update: 2025-10-28
+Standards: HTML5, CSS3, TypeScript
+Components: Next.js 14, React 18, Tailwind CSS
+Tools: VS Code, Claude Code, AGENT-11 Framework
+Hosting: Netlify
+Version: 1.0.0
+Language: TypeScript/JavaScript
+Doctype: HTML5
+IDE: Claude Code with AGENT-11 agents

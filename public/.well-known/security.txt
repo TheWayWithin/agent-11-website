@@ -1,0 +1,10 @@
+Contact: mailto:security@agent-11.com
+Contact: https://github.com/TheWayWithin/agent-11/security/advisories
+Expires: 2026-10-28T00:00:00.000Z
+Canonical: https://www.agent-11.com/.well-known/security.txt
+Preferred-Languages: en
+Policy: https://www.agent-11.com/security-policy
+
+# Security Disclosure for AGENT-11
+# Report vulnerabilities via GitHub Security Advisories or email.
+# We take security seriously and respond to reports within 48 hours.
