@@ -27,10 +27,10 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-6 py-3 rounded-full text-sm font-medium mb-8 animate-fade-in hover-glow transition-all duration-300 hover:scale-105 border border-blue-200">
             <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse-gentle"></span>
             <span className="animate-bounce-gentle">⚡</span>
-            <span className="font-bold">PHASE 1 & 2 MODERNIZATION:</span>
-            <span>87.5% Less Rework, 37.5% Faster Delivery</span>
+            <span className="font-bold">v3.0 VALIDATION SYSTEM:</span>
+            <span>87.5% Less Rework, 37.5% Faster</span>
             <span className="mx-2 text-blue-600">•</span>
-            <span className="font-bold">Context Preservation System</span>
+            <span className="font-bold">100% Schema Validation</span>
           </div>
 
           {/* Mission-Focused Tagline */}
@@ -102,6 +102,10 @@ export default function Hero() {
               <div className="text-2xl font-bold text-yellow-600">&lt;1s</div>
               <div className="text-sm text-gray-600">Deploy Time</div>
             </div>
+            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="text-2xl font-bold text-green-600">100%</div>
+              <div className="text-sm text-gray-600">Schema Validation</div>
+            </div>
           </div>
 
           {/* One-Line Installation */}
@@ -116,10 +120,10 @@ export default function Hero() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center min-w-0 flex-1">
                   <span className="text-green-400 mr-2">$</span>
-                  <span className="text-gray-300 truncate">curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core</span>
+                  <span className="text-gray-300 truncate">curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full</span>
                 </div>
-                <button 
-                  onClick={() => navigator.clipboard.writeText('curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core')}
+                <button
+                  onClick={() => navigator.clipboard.writeText('curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full')}
                   className="ml-4 px-3 py-1 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded transition-colors shrink-0"
                   title="Copy install command"
                 >

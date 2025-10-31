@@ -208,10 +208,10 @@ export default function HeroVariations({ variant = 'dogfooding' }: HeroVariation
             <div className="font-mono text-green-400 text-sm sm:text-base flex items-center justify-between bg-gray-800 rounded-lg p-4">
               <div className="flex items-center min-w-0 flex-1">
                 <span className="text-green-400 mr-2">$</span>
-                <span className="text-gray-300 truncate">curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core</span>
+                <span className="text-gray-300 truncate">curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full</span>
               </div>
-              <button 
-                onClick={() => navigator.clipboard.writeText('curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core')}
+              <button
+                onClick={() => navigator.clipboard.writeText('curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full')}
                 className="ml-4 px-3 py-1 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded transition-colors shrink-0"
                 title="Copy command"
               >

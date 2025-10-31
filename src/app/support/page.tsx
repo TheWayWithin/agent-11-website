@@ -122,7 +122,7 @@ export default function SupportPage() {
                 How do I install AGENT-11?
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Run: curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core
+                Run: curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full
               </p>
             </div>
 

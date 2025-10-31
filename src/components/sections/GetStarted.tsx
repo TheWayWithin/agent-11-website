@@ -7,7 +7,7 @@ export default function GetStarted() {
       step: '01',
       title: 'Choose Your Squad',
       description: 'Deploy Core Squad (4 agents) for most projects, Full Squad (12 agents) for complex builds',
-      command: 'curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core',
+      command: 'curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full',
       time: 'Under 5 minutes'
     },
     {

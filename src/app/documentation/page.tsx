@@ -22,7 +22,7 @@ const docSections: DocSection[] = [
           <p className="text-gray-600 mb-4">Deploy your project-local squad with a single command:</p>
           <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
             <div className="text-green-400">
-              $ curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/deployment/scripts/install.sh | bash -s core
+              $ curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full
             </div>
           </div>
           <p className="text-sm text-gray-500 mt-2">This installs the Core squad (4 agents) to your project directory.</p>
