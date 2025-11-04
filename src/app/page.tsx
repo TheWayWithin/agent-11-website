@@ -7,6 +7,7 @@ import PerformanceMonitor from '@/components/ui/PerformanceMonitor'
 // Email capture system temporarily disabled for build stability
 
 // Lazy load sections that are below the fold
+const GetStartedGuide = lazy(() => import('@/components/sections/GetStartedGuide'))
 const SolutionDemo = lazy(() => import('@/components/sections/SolutionDemo'))
 const CaseStudy = lazy(() => import('@/components/sections/CaseStudy'))
 const WorkflowDemo = lazy(() => import('@/components/sections/WorkflowDemo'))
@@ -44,8 +45,14 @@ export default function Home() {
       
       {/* Above the fold - load immediately */}
       <Hero />
+
+      {/* Getting Started Guide - lazy loaded after hero */}
+      <Suspense fallback={<SectionSkeleton />}>
+        <GetStartedGuide />
+      </Suspense>
+
       <Problem />
-      
+
       {/* Below the fold - lazy load with suspense */}
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionDemo />
