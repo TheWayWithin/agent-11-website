@@ -26,56 +26,6 @@ export default function GetStarted() {
     }
   ]
 
-  const pricingTiers = [
-    {
-      name: 'Open Source',
-      price: 'Free',
-      description: 'Perfect for indie hackers and side projects',
-      features: [
-        'Full 11-agent framework',
-        'Community support',
-        'GitHub integration', 
-        'Basic templates',
-        'Local deployment'
-      ],
-      cta: 'Get Started Free',
-      ctaLink: 'https://github.com/TheWayWithin/agent-11/',
-      highlighted: true
-    },
-    {
-      name: 'Pro',
-      price: '$29/month',
-      description: 'For serious founders and consultants',
-      features: [
-        'Everything in Open Source',
-        'Cloud deployment',
-        'Priority support',
-        'Advanced templates',
-        'Team collaboration',
-        'Usage analytics'
-      ],
-      cta: 'Start 14-Day Trial',
-      ctaLink: '#',
-      highlighted: false
-    },
-    {
-      name: 'Enterprise',
-      price: 'Custom',
-      description: 'For teams and organizations',
-      features: [
-        'Everything in Pro',
-        'Custom agents',
-        'SLA guarantees',
-        'Dedicated support',
-        'On-premise deployment',
-        'Security audit'
-      ],
-      cta: 'Contact Sales',
-      ctaLink: '#',
-      highlighted: false
-    }
-  ]
-
   return (
     <section className="bg-white section-padding">
       <div className="container">
@@ -227,72 +177,104 @@ export default function GetStarted() {
           </div>
         </div>
 
-        {/* Pricing Section */}
+        {/* Support Section - Replaces Old Pricing */}
         <div className="max-w-6xl mx-auto mb-20">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Choose Your Development Superpower
+              100% Free Forever
             </h3>
             <p className="text-gray-600 text-lg">
-              Start free, scale when you&apos;re ready. No commitment, no credit card required.
+              Every agent. Every mission. Every feature. No trials. No limits.
             </p>
           </div>
-          
-          <div className="grid lg:grid-cols-3 gap-8">
-            {pricingTiers.map((tier, index) => (
-              <div 
-                key={index}
-                className={`rounded-2xl p-8 ${
-                  tier.highlighted 
-                    ? 'bg-primary-600 text-white ring-4 ring-primary-200 transform scale-105' 
-                    : 'bg-gray-50 text-gray-900'
-                }`}
-              >
-                {tier.highlighted && (
-                  <div className="text-center mb-4">
-                    <span className="bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                
-                <div className="text-center mb-8">
-                  <h4 className="text-2xl font-bold mb-2">{tier.name}</h4>
-                  <div className="text-4xl font-bold mb-2">{tier.price}</div>
-                  <p className={tier.highlighted ? 'text-primary-100' : 'text-gray-600'}>
-                    {tier.description}
-                  </p>
-                </div>
-                
-                <ul className="space-y-3 mb-8">
-                  {tier.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-3">
-                      <svg 
-                        className={`w-5 h-5 ${tier.highlighted ? 'text-primary-200' : 'text-green-500'}`} 
-                        fill="currentColor" 
-                        viewBox="0 0 20 20"
-                      >
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <Link
-                  href={tier.ctaLink}
-                  className={`block w-full text-center py-3 px-6 rounded-lg font-semibold transition-colors duration-200 ${
-                    tier.highlighted
-                      ? 'bg-white text-primary-600 hover:bg-gray-100'
-                      : 'bg-primary-600 text-white hover:bg-primary-700'
-                  }`}
-                  target={tier.ctaLink.startsWith('http') ? '_blank' : undefined}
-                  rel={tier.ctaLink.startsWith('http') ? 'noopener noreferrer' : undefined}
-                >
-                  {tier.cta}
-                </Link>
+
+          <div className="grid lg:grid-cols-5 gap-8">
+            {/* Left: Free & Open Source - 60% width */}
+            <div className="lg:col-span-3 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border-2 border-cyan-500/50 rounded-2xl p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-4xl">⚡</span>
+                <h4 className="text-2xl font-bold text-gray-900">100% Free Forever</h4>
               </div>
-            ))}
+
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-gray-700">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>All 11 specialized agents</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-700">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Complete mission framework</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-700">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Unlimited projects</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-700">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Full documentation access</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-700">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Community support</span>
+                </li>
+              </ul>
+
+              <Link
+                href="https://github.com/TheWayWithin/agent-11"
+                className="block w-full text-center py-3 px-6 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-semibold transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Started Free
+              </Link>
+            </div>
+
+            {/* Right: Support Jamie - 40% width */}
+            <div className="lg:col-span-2 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border-2 border-yellow-500/50 rounded-2xl p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-4xl">☕</span>
+                <h4 className="text-2xl font-bold text-gray-900">Support Jamie</h4>
+              </div>
+
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                Solo dev building this for founders like you. Every coffee fuels more features.
+              </p>
+
+              <ul className="space-y-2 text-sm text-gray-600 mb-8">
+                <li>• Maintain servers & docs</li>
+                <li>• Build new agents & missions</li>
+                <li>• Provide community support</li>
+                <li>• Keep everything free forever</li>
+              </ul>
+
+              <Link
+                href="https://buymeacoffee.com/jamiewatters"
+                className="block w-full text-center py-3 px-6 bg-yellow-500 hover:bg-yellow-600 text-black rounded-lg font-semibold transition-colors mb-3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ☕ Buy Me a Coffee
+              </Link>
+
+              <Link
+                href="https://github.com/TheWayWithin/agent-11"
+                className="block w-full text-center py-2 px-6 border-2 border-gray-300 hover:border-gray-400 text-gray-700 rounded-lg font-medium transition-colors text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ⭐ Star on GitHub
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -432,7 +414,7 @@ export default function GetStarted() {
               <h4 className="font-semibold text-gray-900 mb-4">Product</h4>
               <ul className="space-y-2 text-gray-600">
                 <li><Link href="/features" className="hover:text-primary-600 transition-colors">Features</Link></li>
-                <li><Link href="/pricing" className="hover:text-primary-600 transition-colors">Pricing</Link></li>
+                <li><Link href="/pricing" className="hover:text-primary-600 transition-colors">Support</Link></li>
                 <li><Link href="/documentation" className="hover:text-primary-600 transition-colors">Documentation</Link></li>
                 <li><Link href="/changelog" className="hover:text-primary-600 transition-colors">Changelog</Link></li>
               </ul>
