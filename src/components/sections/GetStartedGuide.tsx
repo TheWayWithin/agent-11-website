@@ -215,18 +215,20 @@ export default function GetStartedGuide() {
                           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                           <span className="text-gray-400 text-xs ml-4">This installs all 11 agents</span>
                         </div>
-                        <div className="font-mono text-xs sm:text-sm flex items-center justify-between group">
-                          <div className="flex items-center min-w-0 flex-1">
-                            <span className="text-green-400 shrink-0">$</span>
-                            <span className="ml-2 text-gray-300 truncate">curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full</span>
+                        <div className="font-mono text-xs sm:text-sm group">
+                          <div className="flex items-start gap-3">
+                            <div className="flex items-start min-w-0 flex-1">
+                              <span className="text-green-400 shrink-0">$</span>
+                              <span className="ml-2 text-gray-300 break-all">curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full</span>
+                            </div>
+                            <button
+                              onClick={() => copyToClipboard('curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full')}
+                              className="px-3 py-1.5 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded shrink-0 transition-colors"
+                              title="Copy install command"
+                            >
+                              Copy
+                            </button>
                           </div>
-                          <button
-                            onClick={() => copyToClipboard('curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full')}
-                            className="opacity-0 group-hover:opacity-100 transition-opacity ml-4 px-3 py-1 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded shrink-0"
-                            title="Copy install command"
-                          >
-                            Copy
-                          </button>
                         </div>
                       </div>
                       <p className="text-sm text-gray-600 mt-2">
