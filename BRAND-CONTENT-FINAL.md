@@ -170,7 +170,7 @@ Before implementation can begin:
 
 2. **Social Media URLs**
    - GitHub: https://github.com/TheWayWithin ✅
-   - LinkedIn: [your URL]
+   - LinkedIn: https://www.linkedin.com/in/jamie-watters-solo
    - Twitter/X: [your URL]
 
 3. **Professional Photo** (800×800px)

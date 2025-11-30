@@ -123,7 +123,7 @@ Before we can implement the /about and /portfolio pages, please provide:
 
 2. **Social Media URLs**
    - GitHub: https://github.com/TheWayWithin ✅ (already have)
-   - LinkedIn: [your URL]
+   - LinkedIn: https://www.linkedin.com/in/jamie-watters-solo
    - Twitter/X: [your URL]
 
 3. **Professional Photo** (800×800px)

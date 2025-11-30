@@ -148,7 +148,7 @@ Whether you're shipping your first MVP or scaling your tenth product, the tools 
 
 **Contact Options:**
 - GitHub: [@TheWayWithin](https://github.com/TheWayWithin)
-- LinkedIn: [Connect for collaboration](#) *(placeholder - needs actual URL)*
+- LinkedIn: [Connect for collaboration](https://www.linkedin.com/in/jamie-watters-solo)
 - Twitter/X: [Follow for updates](#) *(placeholder - needs actual URL)*
 
 ---
