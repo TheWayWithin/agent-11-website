@@ -12,6 +12,63 @@ interface ChangelogEntry {
 
 const changelogEntries: ChangelogEntry[] = [
   {
+    version: '4.1.0',
+    date: '2025-11-28',
+    type: 'Major',
+    changes: [
+      {
+        category: 'Added',
+        items: [
+          'MCP Context Optimization with 60-90% token reduction',
+          '13 mission-specific MCP profiles (minimal-core, research-only, frontend-deploy, etc.)',
+          '/mcp-switch [profile] command for dynamic profile switching',
+          'Sprint 6: Persistence Protocol Enforcement for guaranteed file operations'
+        ]
+      },
+      {
+        category: 'Changed',
+        items: [
+          'Optimized context window usage across all missions',
+          'Enhanced profile switching for mission-specific tool sets',
+          'Improved token efficiency for long-running operations'
+        ]
+      }
+    ]
+  },
+  {
+    version: '4.0.0',
+    date: '2025-11-15',
+    type: 'Major',
+    changes: [
+      {
+        category: 'Added',
+        items: [
+          'Opus 4.5 Dynamic Model Selection for intelligent task routing',
+          'Task tool model parameter (opus, sonnet, haiku) for per-delegation control',
+          'Tiered model strategy: Opus (complex) → Sonnet (standard) → Haiku (simple)',
+          'Coordinator-as-Executor Pattern for 100% file persistence',
+          'Structured JSON output from specialists with automatic file operation execution'
+        ]
+      },
+      {
+        category: 'Changed',
+        items: [
+          '+15% mission success rate with better orchestration decisions',
+          '-28% iterations with fewer retry cycles',
+          '-24% total cost through efficiency gains',
+          'Zero silent failures - file persistence guaranteed by architecture'
+        ]
+      },
+      {
+        category: 'Fixed',
+        items: [
+          'Critical file persistence bug causing 100% reproducible silent failures',
+          'Files now persist reliably (up from ~30% baseline to 100%)'
+        ]
+      }
+    ]
+  },
+  {
     version: '2.3.0',
     date: '2025-06-01',
     type: 'Major',
@@ -325,9 +382,9 @@ export default function ChangelogPage() {
               <div className="bg-white rounded-lg p-4">
                 <div className="flex items-center mb-3">
                   <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
-                    v2.4.0
+                    v4.2.0
                   </div>
-                  <span className="text-gray-500 ml-2">Q3 2025</span>
+                  <span className="text-gray-500 ml-2">Q1 2026</span>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Enhanced Integrations</h3>
                 <ul className="text-sm text-gray-600 space-y-1">
@@ -340,9 +397,9 @@ export default function ChangelogPage() {
               <div className="bg-white rounded-lg p-4">
                 <div className="flex items-center mb-3">
                   <div className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
-                    v3.0.0
+                    v5.0.0
                   </div>
-                  <span className="text-gray-500 ml-2">Q4 2025</span>
+                  <span className="text-gray-500 ml-2">Q2 2026</span>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Enterprise Features</h3>
                 <ul className="text-sm text-gray-600 space-y-1">

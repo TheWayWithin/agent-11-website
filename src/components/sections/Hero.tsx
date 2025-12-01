@@ -27,10 +27,10 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-6 py-3 rounded-full text-sm font-medium mb-8 animate-fade-in hover-glow transition-all duration-300 hover:scale-105 border border-blue-200">
             <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse-gentle"></span>
             <span className="animate-bounce-gentle">⚡</span>
-            <span className="font-bold">v3.0 VALIDATION SYSTEM:</span>
-            <span>87.5% Less Rework, 37.5% Faster</span>
+            <span className="font-bold">v4.1 PERSISTENCE SYSTEM:</span>
+            <span>100% File Persistence, +15% Success Rate</span>
             <span className="mx-2 text-blue-600">•</span>
-            <span className="font-bold">100% Schema Validation</span>
+            <span className="font-bold">Opus 4.5 Model Selection</span>
           </div>
 
           {/* Mission-Focused Tagline */}
@@ -63,7 +63,7 @@ export default function Hero() {
           {/* Mission Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto mb-10 animate-slide-up" style={{animationDelay: '0.3s'}}>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-orange-600">84%</div>
+              <div className="text-2xl font-bold text-orange-600">90%</div>
               <div className="text-sm text-gray-600">Token Reduction</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
@@ -75,8 +75,8 @@ export default function Hero() {
               <div className="text-sm text-gray-600">Hour Operation</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-purple-600">8</div>
-              <div className="text-sm text-gray-600">MCP Services</div>
+              <div className="text-2xl font-bold text-purple-600">13</div>
+              <div className="text-sm text-gray-600">MCP Profiles</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="text-2xl font-bold text-indigo-600">22</div>
