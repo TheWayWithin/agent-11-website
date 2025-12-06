@@ -24,6 +24,15 @@ const supportOptions: SupportOption[] = [
     benefit: 'One-time contribution • Completely optional • Show your thanks'
   },
   {
+    icon: '💬',
+    title: 'Connect with Jamie',
+    description: 'Have questions? Want to chat about your project? I\'m always happy to connect with fellow founders. Reach out on Twitter (@Jamie_within) or LinkedIn—no sales pitch, just genuine conversation.',
+    cta: 'Connect on Twitter',
+    link: 'https://twitter.com/Jamie_within',
+    buttonStyle: 'bg-gray-900 hover:bg-gray-800 text-white',
+    benefit: 'Direct access • @Jamie_within • linkedin.com/in/jamie-watters-solo'
+  },
+  {
     icon: '⭐',
     title: 'Star on GitHub',
     description: 'Takes 5 seconds, means the world. GitHub stars help other developers discover AGENT-11 and validate the project\'s value. Visibility = more contributors = better framework.',
@@ -136,10 +145,10 @@ export default function PricingPage() {
               🎉 FULLY OPEN SOURCE • MIT LICENSE • NO USAGE LIMITS • NO CREDIT CARD EVER
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              100% Free Forever - No Hidden Costs, No Limits
+              100% Free & Open Source Forever
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              AGENT-11 is completely free and always will be. Every feature. Every agent. Every mission. Built by solo founders, for solo founders. If you find it valuable, support continued development through our community.
+              Fork it. Tweak it. Make it yours. AGENT-11 is fully open source under MIT license—copy the code, customize the agents, adapt it to your workflow, or just benefit from ongoing development. Built by solo founders, for solo founders. No strings attached.
             </p>
           </div>
 
@@ -149,7 +158,7 @@ export default function PricingPage() {
             <div className="bg-white rounded-2xl border-2 border-gray-200 shadow-sm p-8">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Free & Open Source</h3>
-                <p className="text-gray-600 mb-6">Everything. Forever. No Catches.</p>
+                <p className="text-gray-600 mb-6">Copy it. Use it. Tweak it. Make it yours.</p>
 
                 <div className="mb-6">
                   <div className="text-5xl font-bold text-gray-900 mb-1">$0</div>
