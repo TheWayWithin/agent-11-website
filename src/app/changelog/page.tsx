@@ -12,6 +12,101 @@ interface ChangelogEntry {
 
 const changelogEntries: ChangelogEntry[] = [
   {
+    version: '6.1.1',
+    date: '2026-05-07',
+    type: 'Patch',
+    changes: [
+      {
+        category: 'Fixed',
+        items: [
+          'Stale "Manual merge recommended" advisory no longer appears when migrate-v5-to-v6.sh runs as a subprocess of install.sh --upgrade',
+          'Standalone migrate-v5-to-v6.sh now points users at install.sh --upgrade as the recommended automatic path'
+        ]
+      }
+    ]
+  },
+  {
+    version: '6.1.0',
+    date: '2026-05-07',
+    type: 'Minor',
+    changes: [
+      {
+        category: 'Added',
+        items: [
+          'install.sh --upgrade flag — single-command v5 to v6 migration with full rollback',
+          'install.sh --dry-run — preview the migration plan without making changes',
+          'install.sh --non-interactive — bulk-mode contract for CI and multi-repo scripts',
+          'Settings.json surgical merge — your values win on conflict; user customisations preserved through upgrade',
+          'restore-pre-upgrade.sh — first-class rollback with --list, --latest, --backup, --settings modes',
+          'docs/UPGRADE.md — focused upgrade guide for v5.x users',
+          'Five end-to-end test fixtures (43/43 checks) covering clean v5, custom settings, malformed JSON, partial migration, and already-v6 cases'
+        ]
+      },
+      {
+        category: 'Changed',
+        items: [
+          'migrate-v5-to-v6.sh distinguishes three previously-ambiguous cases (already-v6, completed-previously, in-progress) with itemised actions',
+          'Post-install summary no longer claims tool deferring is enabled when settings.json was not actually merged'
+        ]
+      }
+    ]
+  },
+  {
+    version: '6.0.0',
+    date: '2026-05-03',
+    type: 'Major',
+    changes: [
+      {
+        category: 'Added',
+        items: [
+          'Karpathy operating constitution — seven behavioural principles (PAUSE-AND-PLAN, state assumptions, prefer minimal diffs, verify by running) replace prompt-based "always do X" rules',
+          'Universal Router (/coord [mission]) — deterministic mission-based routing across 13 missions in three modes (greenfield, surgical, maintenance). No more NLP intent inference',
+          'Native MCP tool deferring via ENABLE_TOOL_SEARCH=auto — roughly 80% context reduction on MCP-heavy sessions',
+          'Quality-gate hooks in .claude/settings.json — advisory PostToolUse for tsc/ruff/rubocop, PreToolUse confirmation for destructive Bash',
+          'Phase Handoff blocks — structured 5-field schema (Findings / Decisions / Warnings / Open Items / Evidence) appended to agent-context.md',
+          '3-tier skills model aligned with Anthropic\'s Agent Skills open standard',
+          'Routines for Mode C operational work (PR review, nightly QA, backlog triage)',
+          'migrate-v5-to-v6.sh — one-command migration script for v5.x users'
+        ]
+      },
+      {
+        category: 'Changed',
+        items: [
+          'library/CLAUDE.md shrunk from 575 lines to 78 lines (-86%)',
+          'project/commands/coord.md shrunk from 549 lines to 134 lines',
+          'Active context tracking reduced from 5 files to 3',
+          'progress.md demoted to write-only by default (read only on staleness checks)'
+        ]
+      },
+      {
+        category: 'Removed',
+        items: [
+          'MCP profile system (.mcp-profiles/, /mcp-switch command) — replaced by native tool deferring',
+          'Static handoff-notes.md workflow — folded into agent-context.md as Phase Handoff blocks',
+          'NLP-based mission intent inference in /coord — replaced by deterministic dispatch'
+        ]
+      }
+    ]
+  },
+  {
+    version: '5.0.0',
+    date: '2025-12-31',
+    type: 'Major',
+    changes: [
+      {
+        category: 'Added',
+        items: [
+          'Plan-Driven Development System — /foundations init, /bootstrap [template], /plan status, /coord continue, /skills',
+          '7 production-ready SaaS skills with auto-loading by task keywords (auth, payments, multitenancy, billing, email, onboarding, analytics)',
+          'Quality Gates System — Python gate runner with build/test/lint/security/review/deploy gates and 3 severity levels',
+          'Stack Profiles for multi-framework support (nextjs-supabase, remix-railway, sveltekit-supabase)',
+          'Smart Delegation Routing — 10-path routing table with skill injection',
+          'Vision Integrity Verification (ALIGNED, MINOR_DRIFT, MAJOR_DRIFT, OUT_OF_SCOPE)'
+        ]
+      }
+    ]
+  },
+  {
     version: '4.1.0',
     date: '2025-11-28',
     type: 'Major',
@@ -376,37 +471,35 @@ export default function ChangelogPage() {
               What&apos;s Coming Next
             </h2>
             <p className="text-gray-600 mb-6">
-              Peek at what we&apos;re working on for future releases.
+              Where v6 is heading after the bulk-migration validation pass.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg p-4">
                 <div className="flex items-center mb-3">
                   <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
-                    v4.2.0
+                    v6.2
                   </div>
-                  <span className="text-gray-500 ml-2">Q1 2026</span>
+                  <span className="text-gray-500 ml-2">In planning</span>
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Enhanced Integrations</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Auto-detect v5 markers</h3>
                 <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Slack and Discord bot integration</li>
-                  <li>• Advanced GitHub Actions workflows</li>
-                  <li>• Jira and Linear ticket sync</li>
-                  <li>• Custom webhook support</li>
+                  <li>• Auto-on detection when running install.sh on a v5 install</li>
+                  <li>• Deferred from v6.1 pending production validation of --upgrade</li>
+                  <li>• Now unblocked: 17 successful real-world upgrades validated the path</li>
                 </ul>
               </div>
               <div className="bg-white rounded-lg p-4">
                 <div className="flex items-center mb-3">
-                  <div className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
-                    v5.0.0
+                  <div className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                    Track
                   </div>
-                  <span className="text-gray-500 ml-2">Q2 2026</span>
+                  <span className="text-gray-500 ml-2">on GitHub</span>
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Enterprise Features</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Latest plans &amp; releases</h3>
                 <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Multi-tenant support</li>
-                  <li>• Advanced analytics dashboard</li>
-                  <li>• Role-based access control</li>
-                  <li>• Audit logging and compliance</li>
+                  <li>• Sprint specs live in <code>sprints/</code> on the repo</li>
+                  <li>• Tagged releases at <a href="https://github.com/TheWayWithin/agent-11/releases" className="text-primary-600 hover:text-primary-700" target="_blank" rel="noopener noreferrer">github.com/TheWayWithin/agent-11/releases</a></li>
+                  <li>• Star or watch the repo for release notifications</li>
                 </ul>
               </div>
             </div>

@@ -6,15 +6,15 @@ export default function GetStarted() {
     {
       step: '01',
       title: 'Choose Your Squad',
-      description: 'Deploy Core Squad (4 agents) for most projects, Full Squad (12 agents) for complex builds',
+      description: 'Deploy Core Squad (4 agents) for most projects, Full Squad (11 specialists) for complex builds',
       command: 'curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full',
       time: 'Under 5 minutes'
     },
     {
-      step: '02', 
+      step: '02',
       title: 'Start Building',
-      description: 'Your project-local agents understand your codebase and work together seamlessly',
-      command: '@coordinator "Build a user authentication system with social login"',
+      description: 'Run a mission with deterministic dispatch — no NLP guessing about intent. 13 missions across greenfield, surgical, and maintenance modes.',
+      command: '/coord build requirements.md',
       time: '2 minutes'
     },
     {

@@ -413,16 +413,16 @@ export default function FeaturesPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">Context Preservation System</h3>
               <div className="text-primary-600 font-bold mb-3">87.5% Less Rework</div>
               <p className="text-gray-600 mb-4">
-                Zero context loss across multi-agent workflows. Agent-to-agent handoff protocols ensure every decision and finding is preserved.
+                Zero context loss across multi-agent workflows. v6 consolidated tracking from 5 files to 3 — leaner, faster handoffs.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-1.5"></div>
-                  <span>agent-context.md for mission-wide context</span>
+                  <span>agent-context.md as the single accumulator for mission state</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-1.5"></div>
-                  <span>handoff-notes.md for specialist handoffs</span>
+                  <span>Phase Handoff blocks (Findings / Decisions / Warnings / Open Items / Evidence)</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-1.5"></div>
@@ -542,6 +542,75 @@ export default function FeaturesPage() {
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-2 mt-1.5"></div>
                   <span>Fallback strategies documented</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="text-3xl mb-4">🧭</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Karpathy Constitution</h3>
+              <div className="text-indigo-600 font-bold mb-3">Behavioural posture, not rules</div>
+              <p className="text-gray-600 mb-4">
+                Seven principles every specialist applies by default. Replaces ~150 lines of &quot;always do X&quot; prompt rules with a single posture that actually changes how agents work.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>PAUSE-AND-PLAN before any non-trivial change</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>State assumptions out loud, prefer minimal diffs</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Verify by running. Refuse to roleplay completion</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="text-3xl mb-4">🪝</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Quality-Gate Hooks</h3>
+              <div className="text-amber-600 font-bold mb-3">Enforced, not requested</div>
+              <p className="text-gray-600 mb-4">
+                v6 ships <code className="text-sm bg-gray-50 px-1.5 py-0.5 rounded">.claude/settings.json</code> with native Claude Code hooks. Quality checks that used to be prompt suggestions are now real enforcement.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>PostToolUse: tsc / ruff / rubocop on every Edit/Write</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>PreToolUse: confirmation for destructive Bash (rm -rf, force push, hard reset)</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Auto-skip when toolchain is absent. Promote advisory to blocking with one flag</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="text-3xl mb-4">📚</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">3-Tier Skills Model</h3>
+              <div className="text-teal-600 font-bold mb-3">Aligned with Agent Skills standard</div>
+              <p className="text-gray-600 mb-4">
+                Skills are the unit of domain knowledge in v6. Aligned with Anthropic&apos;s open Agent Skills standard so they&apos;re portable across the ecosystem.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Tier 1: behavioural (loaded via CLAUDE.md)</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Tier 2: project-domain (your own skills/ folder)</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Tier 3: marketplace (7 SaaS skills shipped: auth, payments, multitenancy, billing, email, onboarding, analytics)</span>
                 </li>
               </ul>
             </div>
@@ -827,34 +896,22 @@ export default function FeaturesPage() {
           </div>
 
           <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 mb-6 border border-primary-200">
-            <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">MCP Profile System</h3>
+            <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">Native Tool Deferring (new in v6)</h3>
             <p className="text-gray-600 mb-4 text-center">
-              Choose the right profile for your workflow - each optimized for specific development contexts:
+              v6 retired the hand-rolled MCP profile system in favour of Claude Code&apos;s native primitive: <code className="text-sm bg-white px-1.5 py-0.5 rounded">ENABLE_TOOL_SEARCH=auto</code>. Specialists discover MCP tools on demand instead of loading every tool into every session.
             </p>
-            <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-3 text-sm">
-              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
-                <div className="font-bold text-primary-600 mb-1">Core</div>
-                <div className="text-xs text-gray-600">3 services<br/>Basic development</div>
+            <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="font-bold text-primary-600 mb-2">How it works</div>
+                <div className="text-xs text-gray-600">Threshold-based loading. Tools discovered via <code className="text-xs bg-gray-50 px-1 rounded">tool_search_tool_regex</code> only when a task needs them.</div>
               </div>
-              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
-                <div className="font-bold text-green-600 mb-1">Fullstack</div>
-                <div className="text-xs text-gray-600">8 services<br/>Complete web apps</div>
+              <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="font-bold text-green-600 mb-2">Why it&apos;s better</div>
+                <div className="text-xs text-gray-600">No hand-maintained profile JSON. No <code className="text-xs bg-gray-50 px-1 rounded">/mcp-switch</code> command. The framework gets out of the way.</div>
               </div>
-              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
-                <div className="font-bold text-purple-600 mb-1">Testing</div>
-                <div className="text-xs text-gray-600">4 services<br/>QA workflows</div>
-              </div>
-              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
-                <div className="font-bold text-blue-600 mb-1">Database</div>
-                <div className="text-xs text-gray-600">4 services<br/>DB-focused work</div>
-              </div>
-              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
-                <div className="font-bold text-orange-600 mb-1">Payments</div>
-                <div className="text-xs text-gray-600">4 services<br/>Payment integration</div>
-              </div>
-              <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
-                <div className="font-bold text-red-600 mb-1">Deployment</div>
-                <div className="text-xs text-gray-600">5 services<br/>Production deploy</div>
+              <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="font-bold text-purple-600 mb-2">What ships</div>
+                <div className="text-xs text-gray-600"><code className="text-xs bg-gray-50 px-1 rounded">.claude/settings.json</code> ships with the flag enabled. No extra setup. Works on every fresh install.</div>
               </div>
             </div>
           </div>
@@ -862,7 +919,7 @@ export default function FeaturesPage() {
           <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 text-center border border-green-200">
             <div className="flex items-center justify-center gap-6 flex-wrap">
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-1">40-80%</div>
+                <div className="text-3xl font-bold text-green-600 mb-1">~80%</div>
                 <div className="text-sm text-gray-600">Context Reduction</div>
               </div>
               <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
@@ -872,12 +929,12 @@ export default function FeaturesPage() {
               </div>
               <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
               <div>
-                <div className="text-3xl font-bold text-purple-600 mb-1">8 Services</div>
-                <div className="text-sm text-gray-600">Pre-Integrated</div>
+                <div className="text-3xl font-bold text-purple-600 mb-1">Zero</div>
+                <div className="text-sm text-gray-600">Profile Maintenance</div>
               </div>
             </div>
             <p className="text-gray-600 mt-4 text-sm">
-              <strong>Performance Impact:</strong> MCP profile loading enables longer autonomous operation and more complex multi-agent workflows.
+              <strong>Performance Impact:</strong> measured ~80% context reduction on MCP-heavy sessions. The budget goes back to the user&apos;s actual problem.
             </p>
           </div>
         </div>
@@ -988,8 +1045,8 @@ export default function FeaturesPage() {
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-2"></div>
                   <div>
-                    <strong className="text-gray-900">40-80% context reduction</strong>
-                    <p className="text-sm text-gray-600">via MCP profile loading</p>
+                    <strong className="text-gray-900">~80% context reduction</strong>
+                    <p className="text-sm text-gray-600">via native Tool Search + defer_loading</p>
                   </div>
                 </li>
                 <li className="flex items-start">

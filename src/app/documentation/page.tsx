@@ -520,24 +520,24 @@ const docSections: DocSection[] = [
                 <div className="text-2xl mr-3">📋</div>
                 <h4 className="font-semibold text-gray-900">agent-context.md</h4>
               </div>
-              <p className="text-sm text-gray-600 mb-2">Rolling accumulation of all findings, decisions, and critical information</p>
+              <p className="text-sm text-gray-600 mb-2">Single accumulator for mission state, findings, and inter-agent handoffs</p>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• Mission objectives and accumulated findings</li>
                 <li>• Technical decisions and known issues</li>
-                <li>• Dependencies and blockers</li>
+                <li>• Phase Handoff blocks (Findings / Decisions / Warnings / Open Items / Evidence)</li>
               </ul>
             </div>
 
             <div className="bg-white border border-gray-200 rounded-lg p-4">
               <div className="flex items-center mb-2">
-                <div className="text-2xl mr-3">🤝</div>
-                <h4 className="font-semibold text-gray-900">handoff-notes.md</h4>
+                <div className="text-2xl mr-3">🗺️</div>
+                <h4 className="font-semibold text-gray-900">project-plan.md</h4>
               </div>
-              <p className="text-sm text-gray-600 mb-2">Specific context for the next agent in workflow</p>
+              <p className="text-sm text-gray-600 mb-2">Living plan that drives mission orchestration end to end</p>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Immediate task and critical context</li>
-                <li>• Warnings and specific instructions</li>
-                <li>• Test results and verification steps</li>
+                <li>• Phase structure with task lists and gate definitions</li>
+                <li>• Source of truth for /plan status and /coord continue</li>
+                <li>• Read at session start; updated as work progresses</li>
               </ul>
             </div>
 
@@ -562,21 +562,22 @@ const docSections: DocSection[] = [
             <ol className="space-y-3 text-sm text-gray-600">
               <li className="flex items-start">
                 <strong className="text-gray-900 mr-2">1.</strong>
-                <span>Agent reads agent-context.md and handoff-notes.md before starting work</span>
+                <span>Specialist reads agent-context.md (with the latest Phase Handoff block) before starting work</span>
               </li>
               <li className="flex items-start">
                 <strong className="text-gray-900 mr-2">2.</strong>
-                <span>Agent maintains awareness of mission context during execution</span>
+                <span>Specialist maintains awareness of mission context during execution</span>
               </li>
               <li className="flex items-start">
                 <strong className="text-gray-900 mr-2">3.</strong>
-                <span>Agent updates handoff-notes.md with findings for next specialist</span>
+                <span>At phase boundary, specialist appends a Phase Handoff block (Findings / Decisions / Warnings / Open Items / Evidence) to agent-context.md</span>
               </li>
               <li className="flex items-start">
                 <strong className="text-gray-900 mr-2">4.</strong>
-                <span>Coordinator merges findings into agent-context.md for mission continuity</span>
+                <span>Next specialist reads the latest block as the entry point for their work — single file, no choreography</span>
               </li>
             </ol>
+            <p className="text-xs text-gray-500 mt-3 italic">v6 retired the separate handoff-notes.md file. Phase Handoff blocks live inside agent-context.md as a structured 5-field schema.</p>
           </div>
         </div>
       </div>
