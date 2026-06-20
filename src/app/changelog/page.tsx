@@ -498,21 +498,7 @@ export default function ChangelogPage() {
             <p className="text-gray-600 mb-6">
               Where v6 is heading after the bulk-migration validation pass.
             </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-lg p-4">
-                <div className="flex items-center mb-3">
-                  <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
-                    v6.2
-                  </div>
-                  <span className="text-gray-500 ml-2">In planning</span>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Auto-detect v5 markers</h3>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Auto-on detection when running install.sh on a v5 install</li>
-                  <li>• Deferred from v6.1 pending production validation of --upgrade</li>
-                  <li>• Now unblocked: 17 successful real-world upgrades validated the path</li>
-                </ul>
-              </div>
+            <div className="grid md:grid-cols-1 gap-6">
               <div className="bg-white rounded-lg p-4">
                 <div className="flex items-center mb-3">
                   <div className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">

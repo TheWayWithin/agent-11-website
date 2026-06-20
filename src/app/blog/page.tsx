@@ -218,7 +218,7 @@ export default function BlogPage() {
             </button>
           </div>
           <p className="text-sm text-gray-500 mt-4">
-            Join 2,847+ developers. Unsubscribe anytime.
+            Get new posts in your inbox. Unsubscribe anytime.
           </p>
         </div>
       </section>

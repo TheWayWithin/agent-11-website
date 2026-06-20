@@ -5,9 +5,9 @@ export default function GetStarted() {
   const quickStartSteps = [
     {
       step: '01',
-      title: 'Choose Your Squad',
-      description: 'Deploy Core Squad (4 agents) for most projects, Full Squad (11 specialists) for complex builds',
-      command: 'curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full',
+      title: 'Deploy Your Squad',
+      description: 'One command installs all 11 specialist agents into your project.',
+      command: 'bash <(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)',
       time: 'Under 5 minutes'
     },
     {
@@ -38,11 +38,11 @@ export default function GetStarted() {
             Join thousands of developers who have transformed their solo struggle 
             into specialist success. Your personal dev team is 5 minutes away.
           </p>
-          
-          {/* Social Proof Counter */}
+
+          {/* Open Source Badge */}
           <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-6 py-3 rounded-full text-lg font-semibold mb-12">
             <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
-            <span>2,847 developers shipped faster this week</span>
+            <span>Free and open source under the MIT licence</span>
           </div>
         </div>
 
@@ -96,83 +96,33 @@ export default function GetStarted() {
           </div>
         </div>
 
-        {/* Squad Selection Section */}
+        {/* Your Full Squad Section */}
         <div className="max-w-5xl mx-auto mb-20">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Choose Your Squad Size
+              Your Full Squad
             </h3>
             <p className="text-gray-600 text-lg">
-              Each project gets its own local team that understands your codebase perfectly
+              Every install deploys all 11 specialists, ready for your codebase from the first mission
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Minimal Squad */}
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-              <div className="text-center mb-4">
-                <div className="text-2xl font-bold text-gray-900 mb-2">Minimal Squad</div>
-                <div className="text-sm text-gray-600 mb-4">Perfect for prototyping</div>
-                <div className="text-3xl font-bold text-primary-600">2 Agents</div>
-              </div>
-              <div className="space-y-2 text-sm text-gray-600 mb-6">
-                <div>• THE COORDINATOR</div>
-                <div>• THE DEVELOPER</div>
-              </div>
-              <div className="bg-gray-900 rounded-lg p-3 font-mono text-xs">
-                <div className="text-green-400">
-                  $ bash -s minimal
-                </div>
-              </div>
-            </div>
 
-            {/* Core Squad */}
-            <div className="bg-primary-50 rounded-xl p-6 border-2 border-primary-200 relative">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                  Recommended
-                </span>
-              </div>
-              <div className="text-center mb-4">
-                <div className="text-2xl font-bold text-gray-900 mb-2">Core Squad</div>
-                <div className="text-sm text-gray-600 mb-4">Ideal for most projects</div>
-                <div className="text-3xl font-bold text-primary-600">4 Agents</div>
-              </div>
-              <div className="space-y-2 text-sm text-gray-600 mb-6">
-                <div>• THE COORDINATOR</div>
-                <div>• THE STRATEGIST</div>
-                <div>• THE ARCHITECT</div>
-                <div>• THE DEVELOPER</div>
-              </div>
-              <div className="bg-gray-900 rounded-lg p-3 font-mono text-xs">
-                <div className="text-green-400">
-                  $ bash -s core
-                </div>
-              </div>
+          <div className="bg-primary-50 rounded-xl p-8 border-2 border-primary-200">
+            <div className="text-center mb-6">
+              <div className="text-3xl font-bold text-primary-600">11 Agents</div>
             </div>
-
-            {/* Full Squad */}
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-              <div className="text-center mb-4">
-                <div className="text-2xl font-bold text-gray-900 mb-2">Full Squad</div>
-                <div className="text-sm text-gray-600 mb-4">For complex projects</div>
-                <div className="text-3xl font-bold text-primary-600">12 Agents</div>
-              </div>
-              <div className="space-y-2 text-sm text-gray-600 mb-6">
-                <div>• All Core Squad agents +</div>
-                <div>• THE TESTER</div>
-                <div>• THE DESIGNER</div>
-                <div>• THE DOCUMENTER</div>
-                <div>• THE OPERATOR</div>
-                <div>• THE SUPPORT</div>
-                <div>• THE ANALYST</div>
-                <div>• THE MARKETER</div>
-              </div>
-              <div className="bg-gray-900 rounded-lg p-3 font-mono text-xs">
-                <div className="text-green-400">
-                  $ bash -s full
-                </div>
-              </div>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2 text-sm text-gray-600">
+              <div>• THE COORDINATOR</div>
+              <div>• THE STRATEGIST</div>
+              <div>• THE ARCHITECT</div>
+              <div>• THE DEVELOPER</div>
+              <div>• THE DESIGNER</div>
+              <div>• THE TESTER</div>
+              <div>• THE DOCUMENTER</div>
+              <div>• THE OPERATOR</div>
+              <div>• THE ANALYST</div>
+              <div>• THE MARKETER</div>
+              <div>• THE SUPPORT</div>
             </div>
           </div>
         </div>
@@ -491,7 +441,7 @@ export default function GetStarted() {
 
           <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center text-gray-600 text-sm gap-4">
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-              <span>© 2025 AGENT-11 by <Link href="/about" className="text-primary-600 hover:text-primary-700 transition-colors">Jamie Watters</Link>.</span>
+              <span>© 2026 AGENT-11 by <Link href="/about" className="text-primary-600 hover:text-primary-700 transition-colors">Jamie Watters</Link>.</span>
               <span className="hidden sm:inline">|</span>
               <span>Open source and proud of it.</span>
             </div>

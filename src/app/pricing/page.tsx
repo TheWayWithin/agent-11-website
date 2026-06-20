@@ -77,11 +77,11 @@ const whySupportMatters = [
 
 const freeTierFeatures = [
   'All 11 specialist agents + coordinator',
-  '17 mission types (build, deploy, fix, refactor, test)',
+  '13 missions',
   '6 slash commands (/coord, /recon, /design-review, /pmd, /meeting, /report)',
   'Context preservation system (zero context loss)',
   'Extended thinking capabilities',
-  'Field Manual (3,000+ lines of documentation)',
+  'Field Manual (32 guides)',
   'Memory management system',
   'Unlimited projects & commercial use',
   'Community support (GitHub, Discord)',

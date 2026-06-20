@@ -1,19 +1,19 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Latest: v2.3.0 - Changelog',
-  description: 'AGENT-11 changelog and version history. Latest release v2.3.0 includes Field Manual, 17 mission types, and 6 slash commands. See what\'s new in the multi-agent framework by Jamie Watters.',
+  title: 'Latest: v6.2.0 - Changelog',
+  description: 'AGENT-11 changelog and version history. Latest release v6.2.0 brings read-only quality gates, the ratchet optimiser, and a phase-gated meta-loop. See what\'s new in the multi-agent framework by Jamie Watters.',
   keywords: [
     'agent-11 changelog',
     'version history',
-    'v2.3.0',
+    'v6.2.0',
     'field manual release',
     'whats new',
     'release notes'
   ],
   openGraph: {
-    title: 'Latest: v2.3.0 - AGENT-11 Changelog',
-    description: 'AGENT-11 changelog and version history. Latest release v2.3.0 includes Field Manual, 17 mission types, and 6 slash commands.',
+    title: 'Latest: v6.2.0 - AGENT-11 Changelog',
+    description: 'AGENT-11 changelog and version history. Latest release v6.2.0 brings read-only quality gates, the ratchet optimiser, and a phase-gated meta-loop.',
     url: 'https://www.agent-11.com/changelog',
   },
   alternates: {

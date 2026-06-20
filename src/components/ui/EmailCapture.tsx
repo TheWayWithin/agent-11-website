@@ -224,7 +224,7 @@ export default function EmailCapture({
       {showSocialProof && (
         <div className="mt-4 text-center">
           <div className={`text-xs ${variant === 'footer' ? 'text-primary-200' : 'text-gray-500'}`}>
-            🔒 No spam ever. Used by 2,847+ developers.
+            🔒 No spam ever. Unsubscribe anytime.
           </div>
         </div>
       )}

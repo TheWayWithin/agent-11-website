@@ -264,9 +264,9 @@ export default function WorkflowDemo() {
           </p>
           <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm max-w-2xl mx-auto">
             <div className="flex items-center justify-between">
-              <span className="text-green-400">$ curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full</span>
+              <span className="text-green-400">$ bash &lt;(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)</span>
               <button
-                onClick={() => navigator.clipboard.writeText('curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full')}
+                onClick={() => navigator.clipboard.writeText('bash <(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)')}
                 className="ml-4 px-3 py-1 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded transition-colors"
               >
                 Copy

@@ -172,54 +172,6 @@ const missions: Mission[] = [
     cost: '$200-500',
     features: ['Codebase analysis', 'Architecture review', 'Technical debt assessment', 'Documentation creation', 'Team alignment', 'Optimization recommendations'],
     useCases: ['Existing project onboarding', 'Technical audit', 'Team handoff', 'Legacy system understanding', 'Architecture documentation']
-  },
-  {
-    id: 'architecture',
-    name: 'ARCHITECTURE',
-    emoji: '🏛️',
-    description: 'System architecture design and technical planning',
-    duration: '4-6 hours',
-    complexity: 'High',
-    category: 'Strategic',
-    cost: '$400-1000',
-    features: ['System design', 'Technology selection', 'Scalability planning', 'Security architecture', 'Documentation creation', 'Technical specifications'],
-    useCases: ['New system design', 'Architecture refactoring', 'Scalability planning', 'Technology evaluation', 'Technical roadmapping']
-  },
-  {
-    id: 'product-description',
-    name: 'PRODUCT-DESC',
-    emoji: '📋',
-    description: 'Product requirements and specification documentation',
-    duration: '2-4 hours',
-    complexity: 'Medium',
-    category: 'Strategic',
-    cost: '$200-500',
-    features: ['Requirements gathering', 'User stories', 'Technical specifications', 'Acceptance criteria', 'Stakeholder alignment', 'Project planning'],
-    useCases: ['Product planning', 'Feature specification', 'Stakeholder communication', 'Development roadmap', 'MVP definition']
-  },
-  {
-    id: 'genesis',
-    name: 'GENESIS',
-    emoji: '🌟',
-    description: 'Complete project initialization from concept to deployment',
-    duration: '1-2 days',
-    complexity: 'High',
-    category: 'Strategic',
-    cost: '$1000-2500',
-    features: ['Full project setup', 'Architecture design', 'Development environment', 'Core features', 'Testing suite', 'Production deployment'],
-    useCases: ['Startup MVP', 'New product launch', 'Hackathon project', 'Proof of concept', 'Greenfield development']
-  },
-  {
-    id: 'library',
-    name: 'LIBRARY',
-    emoji: '📖',
-    description: 'Reusable component library or package development',
-    duration: '3-6 hours',
-    complexity: 'Medium',
-    category: 'Development',
-    cost: '$300-800',
-    features: ['Component development', 'API design', 'Documentation', 'Testing suite', 'Versioning', 'Package publishing'],
-    useCases: ['UI component library', 'Utility package', 'SDK development', 'Plugin creation', 'Shared components']
   }
 ]
 
@@ -266,7 +218,7 @@ export default function FeaturesPage() {
 
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              17 Proven Missions, One <span className="text-gradient">/coord</span> Command
+              13 Proven Missions, One <span className="text-gradient">/coord</span> Command
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
               From emergency fixes to complete MVPs, execute complex development missions
@@ -842,57 +794,11 @@ export default function FeaturesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              MCP Integration - 8 Pre-Integrated Services
+              MCP Integration - Native Tool Search
             </h2>
             <p className="text-xl text-gray-600">
-              AGENT-11 includes pre-configured integrations with 8 essential development services, reducing context overhead by 40-80% and enabling 30+ hours of autonomous operation.
+              AGENT-11 uses Claude Code&apos;s native tool-search primitive. Specialists discover MCP servers at runtime instead of loading a fixed list into every session, reducing context overhead by 40-80% and enabling 30+ hours of autonomous operation.
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-5 border border-blue-200">
-              <div className="font-bold text-gray-900 mb-2 flex items-center">
-                <span className="text-xl mr-2">🔧</span>
-                Core Services
-              </div>
-              <ul className="space-y-1 text-sm text-gray-700">
-                <li><strong>Context7</strong> - Library docs & code analysis</li>
-                <li><strong>GitHub</strong> - PRs, issues, CI/CD</li>
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-5 border border-green-200">
-              <div className="font-bold text-gray-900 mb-2 flex items-center">
-                <span className="text-xl mr-2">💻</span>
-                Development Stack
-              </div>
-              <ul className="space-y-1 text-sm text-gray-700">
-                <li><strong>Supabase</strong> - Postgres, auth, real-time</li>
-                <li><strong>Stripe</strong> - Payments, subscriptions</li>
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-lg p-5 border border-orange-200">
-              <div className="font-bold text-gray-900 mb-2 flex items-center">
-                <span className="text-xl mr-2">🚀</span>
-                Infrastructure
-              </div>
-              <ul className="space-y-1 text-sm text-gray-700">
-                <li><strong>Netlify</strong> - Frontend, edge functions</li>
-                <li><strong>Railway</strong> - Backend, databases, cron</li>
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-5 border border-purple-200">
-              <div className="font-bold text-gray-900 mb-2 flex items-center">
-                <span className="text-xl mr-2">🧪</span>
-                Testing & Quality
-              </div>
-              <ul className="space-y-1 text-sm text-gray-700">
-                <li><strong>Playwright</strong> - Browser automation</li>
-                <li><strong>Filesystem</strong> - Local project mgmt</li>
-              </ul>
-            </div>
           </div>
 
           <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 mb-6 border border-primary-200">
@@ -1005,8 +911,8 @@ export default function FeaturesPage() {
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-2"></div>
                   <div>
-                    <strong className="text-gray-900">5 thinking modes</strong>
-                    <p className="text-sm text-gray-600">From basic to ultra-deep reasoning</p>
+                    <strong className="text-gray-900">3 thinking modes</strong>
+                    <p className="text-sm text-gray-600">Standard, think hard, and think harder</p>
                   </div>
                 </li>
                 <li className="flex items-start">

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Open Source Framework - Pricing',
-  description: 'AGENT-11 is 100% free and open-source. Deploy all 11 specialists, access 17 mission types, and use unlimited projects with MIT License. Optional Pro Support available. Built by Jamie Watters.',
+  description: 'AGENT-11 is 100% free and open-source. Deploy all 11 specialists, access 13 missions, and use unlimited projects with MIT License. Optional Pro Support available. Built by Jamie Watters.',
   keywords: [
     'agent-11 pricing',
     'open source',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Open Source Framework - AGENT-11 Pricing',
-    description: 'AGENT-11 is 100% free and open-source. Deploy all 11 specialists, access 17 mission types, and use unlimited projects with MIT License. Optional Pro Support available.',
+    description: 'AGENT-11 is 100% free and open-source. Deploy all 11 specialists, access 13 missions, and use unlimited projects with MIT License. Optional Pro Support available.',
     url: 'https://www.agent-11.com/pricing',
   },
   alternates: {

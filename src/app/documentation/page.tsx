@@ -22,10 +22,16 @@ const docSections: DocSection[] = [
           <p className="text-gray-600 mb-4">Deploy your project-local squad with a single command:</p>
           <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
             <div className="text-green-400">
-              $ curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full
+              $ bash &lt;(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)
             </div>
           </div>
-          <p className="text-sm text-gray-500 mt-2">This installs the Core squad (4 agents) to your project directory.</p>
+          <p className="text-sm text-gray-500 mt-2">This deploys all 11 specialist agents to your project directory.</p>
+          <p className="text-gray-600 mt-4 mb-2">Already on v5? Upgrade to v6 with:</p>
+          <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+            <div className="text-green-400">
+              $ bash &lt;(curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh) --upgrade
+            </div>
+          </div>
         </div>
 
         <div>
@@ -39,34 +45,13 @@ const docSections: DocSection[] = [
             <div className="text-green-300">✅ Mission complete! 47 tests passed, security validated.</div>
           </div>
         </div>
-
-        <div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">3. Available Squad Sizes</h3>
-          <div className="grid md:grid-cols-3 gap-4">
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <div className="font-semibold text-gray-900">Minimal (2 agents)</div>
-              <div className="text-sm text-gray-600">Perfect for fixes and simple tasks</div>
-              <div className="text-xs text-gray-500 mt-2">bash -s minimal</div>
-            </div>
-            <div className="bg-primary-50 p-4 rounded-lg border-2 border-primary-200">
-              <div className="font-semibold text-gray-900">Core (4 agents)</div>
-              <div className="text-sm text-gray-600">Ideal for most development needs</div>
-              <div className="text-xs text-gray-500 mt-2">bash -s core</div>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <div className="font-semibold text-gray-900">Full (11 agents)</div>
-              <div className="text-sm text-gray-600">Complete team for complex projects</div>
-              <div className="text-xs text-gray-500 mt-2">bash -s full</div>
-            </div>
-          </div>
-        </div>
       </div>
     )
   },
   {
     id: 'mission-reference',
     title: 'Mission Reference',
-    description: 'Complete guide to all 11 available missions',
+    description: 'Complete guide to all 13 missions',
     content: (
       <div className="space-y-8">
         <div>
@@ -78,6 +63,18 @@ const docSections: DocSection[] = [
                 description: 'New feature development (4-8 hours)',
                 usage: '/coord build "Feature description"',
                 example: '/coord build "User profile management with image upload"'
+              },
+              {
+                name: 'DEV-SETUP',
+                description: 'Set up a greenfield project from an ideation document',
+                usage: '/coord dev-setup [ideation file]',
+                example: '/coord dev-setup ideation.md'
+              },
+              {
+                name: 'DEV-ALIGNMENT',
+                description: 'Align AGENT-11 with an existing (brownfield) codebase',
+                usage: '/coord dev-alignment',
+                example: '/coord dev-alignment'
               },
               {
                 name: 'FIX',
@@ -188,6 +185,25 @@ const docSections: DocSection[] = [
             ))}
           </div>
         </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">Control Commands</h3>
+          <p className="text-gray-600 mb-4">Steer an in-progress mission without starting a new one:</p>
+          <div className="space-y-2">
+            <div>
+              <code className="text-sm bg-gray-100 px-2 py-1 rounded">/coord continue</code>
+              <span className="text-sm text-gray-600 ml-2">Resume from project-plan.md after a pause</span>
+            </div>
+            <div>
+              <code className="text-sm bg-gray-100 px-2 py-1 rounded">/coord complete phase N</code>
+              <span className="text-sm text-gray-600 ml-2">Mark phase N done and move to the next</span>
+            </div>
+            <div>
+              <code className="text-sm bg-gray-100 px-2 py-1 rounded">/coord vision-check</code>
+              <span className="text-sm text-gray-600 ml-2">Check current work against the original vision</span>
+            </div>
+          </div>
+        </div>
       </div>
     )
   },
@@ -197,32 +213,26 @@ const docSections: DocSection[] = [
     description: 'Meet your 11 AI specialists and their unique capabilities',
     content: (
       <div className="space-y-6">
+        <p className="text-gray-600">Every install deploys all 11 specialists to your project.</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { name: 'THE COORDINATOR', emoji: '🧠', specialty: 'Mission orchestration and agent coordination', squad: 'All' },
-            { name: 'THE DEVELOPER', emoji: '💻', specialty: 'Full-stack development and implementation', squad: 'All' },
-            { name: 'THE ARCHITECT', emoji: '🏗️', specialty: 'System design and technical architecture', squad: 'Core+' },
-            { name: 'THE TESTER', emoji: '🧪', specialty: 'Quality assurance and automated testing', squad: 'Core+' },
-            { name: 'THE STRATEGIST', emoji: '🎯', specialty: 'Product requirements and strategic planning', squad: 'Full' },
-            { name: 'THE OPERATOR', emoji: '⚙️', specialty: 'DevOps, deployment, and infrastructure', squad: 'Full' },
-            { name: 'THE MARKETER', emoji: '📈', specialty: 'Growth strategy and user acquisition', squad: 'Full' },
-            { name: 'THE SUPPORT', emoji: '🤝', specialty: 'Customer support and issue resolution', squad: 'Full' },
-            { name: 'THE DOCUMENTER', emoji: '📚', specialty: 'Technical documentation and knowledge', squad: 'Full' },
-            { name: 'THE ANALYST', emoji: '📊', specialty: 'Data analysis and performance metrics', squad: 'Full' },
-            { name: 'THE DESIGNER', emoji: '🎨', specialty: 'UI/UX design and user experience', squad: 'Full' }
+            { name: 'THE COORDINATOR', emoji: '🧠', specialty: 'Mission orchestration and agent coordination' },
+            { name: 'THE DEVELOPER', emoji: '💻', specialty: 'Full-stack development and implementation' },
+            { name: 'THE ARCHITECT', emoji: '🏗️', specialty: 'System design and technical architecture' },
+            { name: 'THE TESTER', emoji: '🧪', specialty: 'Quality assurance and automated testing' },
+            { name: 'THE STRATEGIST', emoji: '🎯', specialty: 'Product requirements and strategic planning' },
+            { name: 'THE OPERATOR', emoji: '⚙️', specialty: 'DevOps, deployment, and infrastructure' },
+            { name: 'THE MARKETER', emoji: '📈', specialty: 'Growth strategy and user acquisition' },
+            { name: 'THE SUPPORT', emoji: '🤝', specialty: 'Customer support and issue resolution' },
+            { name: 'THE DOCUMENTER', emoji: '📚', specialty: 'Technical documentation and knowledge' },
+            { name: 'THE ANALYST', emoji: '📊', specialty: 'Data analysis and performance metrics' },
+            { name: 'THE DESIGNER', emoji: '🎨', specialty: 'UI/UX design and user experience' }
           ].map((agent, index) => (
             <div key={index} className="bg-white border border-gray-200 rounded-lg p-6">
               <div className="flex items-center mb-3">
                 <div className="text-2xl mr-3">{agent.emoji}</div>
                 <div>
                   <div className="font-semibold text-gray-900">{agent.name}</div>
-                  <div className={`text-xs px-2 py-1 rounded-full ${
-                    agent.squad === 'All' ? 'bg-green-100 text-green-700' :
-                    agent.squad === 'Core+' ? 'bg-blue-100 text-blue-700' :
-                    'bg-purple-100 text-purple-700'
-                  }`}>
-                    {agent.squad} Squad{agent.squad !== 'All' ? 's' : ''}
-                  </div>
                 </div>
               </div>
               <p className="text-sm text-gray-600">{agent.specialty}</p>
@@ -239,101 +249,51 @@ const docSections: DocSection[] = [
     content: (
       <div className="space-y-6">
         <div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">Project Configuration</h3>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Project Context</h3>
           <p className="text-gray-600 mb-4">
-            AGENT-11 automatically detects your project context, but you can customize behavior with a configuration file:
+            AGENT-11 detects your project context automatically. To give agents project-specific guidance,
+            add your conventions, architecture decisions, and coding standards to your project&apos;s CLAUDE.md file.
+            Agents read this at the start of every mission.
           </p>
-          <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
-            <div className="text-gray-400"># .agent11/config.yaml</div>
-            <div className="text-white mt-2">
-              <div>project:</div>
-              <div className="ml-4">name: &quot;my-awesome-app&quot;</div>
-              <div className="ml-4">stack: [&quot;nextjs&quot;, &quot;typescript&quot;, &quot;tailwind&quot;]</div>
-              <div className="ml-4">database: &quot;postgresql&quot;</div>
-              <div className="mt-2">missions:</div>
-              <div className="ml-4">build:</div>
-              <div className="ml-8">timeout: &quot;8h&quot;</div>
-              <div className="ml-8">test_required: true</div>
-              <div className="ml-4">deploy:</div>
-              <div className="ml-8">environment: &quot;staging&quot;</div>
-              <div className="ml-8">auto_migrate: true</div>
-            </div>
-          </div>
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">Environment Variables</h3>
-          <div className="overflow-x-auto">
-            <table className="w-full border border-gray-200 rounded-lg">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-4 py-2 text-left font-semibold text-gray-900">Variable</th>
-                  <th className="px-4 py-2 text-left font-semibold text-gray-900">Description</th>
-                  <th className="px-4 py-2 text-left font-semibold text-gray-900">Default</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                <tr>
-                  <td className="px-4 py-2 font-mono text-sm">AGENT11_SQUAD_SIZE</td>
-                  <td className="px-4 py-2 text-sm text-gray-600">Squad size (minimal, core, full)</td>
-                  <td className="px-4 py-2 text-sm text-gray-500">core</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-2 font-mono text-sm">AGENT11_LOG_LEVEL</td>
-                  <td className="px-4 py-2 text-sm text-gray-600">Logging verbosity (debug, info, warn, error)</td>
-                  <td className="px-4 py-2 text-sm text-gray-500">info</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-2 font-mono text-sm">AGENT11_AUTO_APPROVE</td>
-                  <td className="px-4 py-2 text-sm text-gray-600">Skip manual approval for low-risk missions</td>
-                  <td className="px-4 py-2 text-sm text-gray-500">false</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Harness Configuration</h3>
+          <p className="text-gray-600 mb-4">
+            Tool permissions, environment variables, and hooks are configured in Claude Code&apos;s settings file,
+            <code className="text-sm bg-gray-100 px-2 py-1 rounded mx-1">.claude/settings.json</code>
+            (or <code className="text-sm bg-gray-100 px-2 py-1 rounded mx-1">.claude/settings.local.json</code> for
+            machine-local overrides).
+          </p>
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">Custom Missions</h3>
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">Mission Customisation</h3>
           <p className="text-gray-600 mb-4">
-            Full Squad customers can create custom missions tailored to their workflows:
+            Missions live as Markdown files under your project&apos;s
+            <code className="text-sm bg-gray-100 px-2 py-1 rounded mx-1">missions/</code> directory.
+            Copy an existing mission file and edit its phases and agent assignments to tailor a workflow to your needs.
           </p>
-          <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
-            <div className="text-gray-400"># .agent11/missions/custom-deploy.yaml</div>
-            <div className="text-white mt-2">
-              <div>name: &quot;custom-deploy&quot;</div>
-              <div>description: &quot;Deploy with custom validation&quot;</div>
-              <div>agents: [&quot;coordinator&quot;, &quot;developer&quot;, &quot;tester&quot;, &quot;operator&quot;]</div>
-              <div>steps:</div>
-              <div className="ml-4">- name: &quot;Run custom tests&quot;</div>
-              <div className="ml-8">agent: &quot;tester&quot;</div>
-              <div className="ml-8">command: &quot;npm run test:e2e&quot;</div>
-              <div className="ml-4">- name: &quot;Deploy to staging&quot;</div>
-              <div className="ml-8">agent: &quot;operator&quot;</div>
-              <div className="ml-8">command: &quot;kubectl apply -f k8s/&quot;</div>
-            </div>
-          </div>
         </div>
       </div>
     )
   },
   {
     id: 'field-manual',
-    title: 'Field Manual - 22 Comprehensive Guides',
-    description: '22 professional guides organized into 5 categories covering core workflows to advanced features',
+    title: 'Field Manual - 32 Guides',
+    description: '32 professional guides (around 14,400 lines) covering core workflows to advanced features',
     content: (
       <div className="space-y-8">
         <div>
           <h3 className="text-2xl font-semibold text-gray-900 mb-3">Complete Documentation Library</h3>
           <p className="text-gray-600 mb-6">
-            The AGENT-11 Field Manual provides 22 comprehensive guides covering everything from getting started to advanced optimization techniques.
+            The AGENT-11 Field Manual provides 32 guides (around 14,400 lines) covering everything from getting started to advanced optimization techniques. A selection is shown below.
           </p>
         </div>
 
         {/* Core Guides */}
         <div>
           <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-            <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm mr-3">5 Guides</span>
             Core Guides
           </h3>
           <div className="grid md:grid-cols-2 gap-4">
@@ -363,7 +323,6 @@ const docSections: DocSection[] = [
         {/* Advanced Features */}
         <div>
           <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-            <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm mr-3">6 Guides</span>
             Advanced Features
           </h3>
           <div className="grid md:grid-cols-2 gap-4">
@@ -405,7 +364,6 @@ const docSections: DocSection[] = [
         {/* Implementation Guides */}
         <div>
           <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-            <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm mr-3">4 Guides</span>
             Implementation Guides
           </h3>
           <div className="grid md:grid-cols-2 gap-4">
@@ -431,8 +389,7 @@ const docSections: DocSection[] = [
         {/* Workflows & Missions */}
         <div>
           <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-            <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm mr-3">5 Guides</span>
-            Workflows & Missions
+            Workflows &amp; Missions
           </h3>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-white border border-gray-200 rounded-lg p-4">
@@ -461,8 +418,7 @@ const docSections: DocSection[] = [
         {/* Design & Quality */}
         <div>
           <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-            <span className="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm mr-3">2 Guides</span>
-            Design & Quality
+            Design &amp; Quality
           </h3>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-white border border-gray-200 rounded-lg p-4">
@@ -478,7 +434,7 @@ const docSections: DocSection[] = [
 
         {/* Total Summary */}
         <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 text-center border border-primary-200">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">Total: 22 Comprehensive Guides</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Total: 32 Guides</h3>
           <p className="text-gray-600 mb-4">
             Complete documentation covering all aspects of AGENT-11 from basic setup to advanced optimization
           </p>
@@ -761,19 +717,19 @@ const docSections: DocSection[] = [
               },
               {
                 issue: "Agents seem to be making incorrect assumptions",
-                solution: "Add a .agent11/context.md file with project-specific information, architecture decisions, and coding standards."
+                solution: "Add project-specific information, architecture decisions, and coding standards to your project's CLAUDE.md file, and capture mission findings in agent-context.md."
               },
               {
                 issue: "Mission takes longer than expected",
-                solution: "Check the mission log with '/coord status' to see current progress. Complex missions may require multiple iterations."
+                solution: "Check project-plan.md to see current phase and progress. Resume an in-progress mission at any time with '/coord continue'. Complex missions may require multiple iterations."
               },
               {
                 issue: "Installation fails on Windows",
-                solution: "Use WSL2 or Git Bash. PowerShell installation coming in v2.1."
+                solution: "Use WSL2 or Git Bash to run the install command."
               },
               {
-                issue: "Cannot execute strategic missions",
-                solution: "Strategic missions (MVP, MIGRATE, SECURITY, etc.) require the Full squad. Upgrade with 'agent11 upgrade full'."
+                issue: "Want to update to the latest version",
+                solution: "Run the installer with the --upgrade flag: bash <(curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh) --upgrade"
               }
             ].map((item, index) => (
               <div key={index} className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">

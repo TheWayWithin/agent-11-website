@@ -219,10 +219,10 @@ export default function GetStartedGuide() {
                           <div className="flex items-start gap-3">
                             <div className="flex items-start min-w-0 flex-1">
                               <span className="text-green-400 shrink-0">$</span>
-                              <span className="ml-2 text-gray-300 break-all">curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full</span>
+                              <span className="ml-2 text-gray-300 break-all">bash &lt;(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)</span>
                             </div>
                             <button
-                              onClick={() => copyToClipboard('curl -sSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/install.sh | bash -s full')}
+                              onClick={() => copyToClipboard('bash <(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)')}
                               className="px-3 py-1.5 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded shrink-0 transition-colors"
                               title="Copy install command"
                             >
@@ -428,7 +428,7 @@ export default function GetStartedGuide() {
 
                   <div className="mt-6 bg-gray-50 border border-gray-200 rounded-lg p-4">
                     <p className="text-sm text-gray-600">
-                      <strong>💡 Pro Tip:</strong> AGENT-11 supports 20 mission types total. These are the most common starting points.
+                      <strong>💡 Pro Tip:</strong> AGENT-11 supports 13 missions. These are the most common starting points.
                       Explore the full mission catalog below for advanced workflows like testing, optimization, and migration.
                     </p>
                   </div>
@@ -483,7 +483,7 @@ export default function GetStartedGuide() {
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <div>
-                        <strong className="text-gray-900">20 mission types</strong>
+                        <strong className="text-gray-900">13 missions</strong>
                         <p className="text-sm text-gray-600">Available via /coord command (e.g., /coord build, /coord deploy)</p>
                       </div>
                     </div>
