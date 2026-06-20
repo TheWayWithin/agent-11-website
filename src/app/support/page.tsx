@@ -95,7 +95,7 @@ export default function SupportPage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                 Email Support
               </h3>
-              <p className="text-gray-600 mb-4">Direct support for technical issues and billing questions</p>
+              <p className="text-gray-600 mb-4">Direct support for technical issues and setup questions</p>
               <div className="text-primary-600 font-medium group-hover:text-primary-700 transition-colors">
                 Get help →
               </div>
@@ -137,10 +137,10 @@ export default function SupportPage() {
 
             <div className="bg-white rounded-lg border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                How much do missions cost?
+                How much does AGENT-11 cost?
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Mission costs vary by complexity: FIX missions ($50-200), BUILD missions ($200-500), and strategic missions like MVP ($800-2000). You only pay for executed missions.
+                AGENT-11 is free and open source (MIT). There are no licence fees and no per-mission charges. Your only cost is your own Claude Code / Anthropic API usage, which depends on how much you run it.
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export default function SupportPage() {
                 Is my code secure with AGENT-11?
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Yes. Agents run locally in your project environment. No code is sent to external servers. All operations are sandboxed and logged for transparency.
+                AGENT-11 is a set of files installed locally in your project&apos;s .claude/ directory; the agents and your code stay in your repo. Like any Claude Code session, the code and context you work on are processed by Claude (Anthropic). There is no AGENT-11 server, and nothing is sent to us.
               </p>
             </div>
           </div>

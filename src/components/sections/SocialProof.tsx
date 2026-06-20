@@ -81,10 +81,10 @@ export default function SocialProof() {
   // Dynamic values that can update from API (but with stability)
   const displayStats = {
     ...authenticMetrics,
-    stars: loading ? '2,847' : error ? '2,847' : formatNumber(stats?.stars || 2847),
-    contributors: loading ? '156' : error ? '156' : formatNumber(stats?.contributors || 156),
-    activity: loading ? '47' : error ? '47' : formatActivity(stats?.recentActivity || 47),
-    discordMembers: '2,400+' // Static community metric
+    stars: loading ? '—' : error ? '—' : formatNumber(stats?.stars ?? 0),
+    contributors: loading ? '—' : error ? '—' : formatNumber(stats?.contributors ?? 0),
+    activity: loading ? '—' : error ? '—' : formatActivity(stats?.recentActivity ?? 0),
+    discordMembers: '—' // No published Discord count; show live GitHub stats only (see WEBSITE-UPDATE-SPEC-v6.2.0.md)
   }
 
   return (

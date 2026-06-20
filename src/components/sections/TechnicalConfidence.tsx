@@ -8,54 +8,35 @@ const techTabs = [
     label: 'Architecture',
     icon: '🏗️',
     content: {
-      title: 'How Agents Communicate & Collaborate',
-      description: 'Built on a distributed, event-driven architecture that ensures your agents work together seamlessly.',
+      title: 'How the squad is put together',
+      description: 'AGENT-11 is a set of Markdown agent definitions installed into your project and run inside Claude Code. No runtime to host, no service to run.',
       features: [
         {
-          name: 'Event-Driven Coordination',
-          description: 'Agents communicate through a message bus, ensuring clean separation and reliable collaboration.'
+          name: 'File-based agents',
+          description: 'Each specialist is a Markdown file in .claude/agents/. You can read, edit, and version-control every one.'
         },
         {
-          name: 'Context Sharing',
-          description: 'Shared context allows agents to build on each other\'s work without duplication.'
+          name: 'Coordinator orchestration',
+          description: 'The /coord command runs a mission: the coordinator delegates to specialists and gates each phase on evidence.'
         },
         {
-          name: 'Dependency Resolution', 
-          description: 'Automatic task ordering ensures agents work in the right sequence.'
+          name: 'Persistent context',
+          description: 'A small set of tracking files (project-plan.md, agent-context.md, evidence-repository.md) carries state across sessions and handoffs.'
         },
         {
-          name: 'Rollback Capability',
-          description: 'Failed operations can be safely rolled back without affecting other agents.'
+          name: 'Read-only quality gates',
+          description: 'The criteria that judge the work are unwritable by the agents doing it, so a passing gate means the work was done.'
         }
       ],
-      codeExample: `// Agent Communication Example
-interface AgentMessage {
-  from: AgentId
-  to: AgentId | 'broadcast'
-  type: 'task' | 'result' | 'error'
-  payload: any
-  context: SharedContext
-}
+      codeExample: `# Installed into your project
+.claude/
+  agents/        # 11 specialist definitions (Markdown)
+  commands/      # /coord and the other slash commands
+  settings.json  # tool permissions + read-only gate rules
 
-class AgentCoordinator {
-  async executeWorkflow(request: WorkflowRequest) {
-    // 1. Parse requirements
-    const requirements = await this.strategist.analyze(request)
-    
-    // 2. Generate implementation plan
-    const plan = await this.architect.design(requirements)
-    
-    // 3. Parallel execution with dependencies
-    const results = await Promise.allSettled([
-      this.developer.implement(plan.backend),
-      this.designer.createUI(plan.frontend),
-      this.tester.generateTests(plan.testCases)
-    ])
-    
-    // 4. Integration and deployment
-    return await this.operator.deploy(results)
-  }
-}`
+# Run a mission
+/coord build requirements.md
+/coord continue        # phase-gated: advances only on evidence`
     }
   },
   {
@@ -63,46 +44,32 @@ class AgentCoordinator {
     label: 'Integrations',
     icon: '🔌',
     content: {
-      title: 'Supported Tools & Platforms',
-      description: 'AGENT-11 integrates with your existing development workflow and scales with your toolchain.',
+      title: 'Works with your existing workflow',
+      description: 'AGENT-11 runs inside Claude Code and reaches external tools through native MCP tool-search. No extra API keys for AGENT-11 itself.',
       features: [
         {
-          name: 'Version Control',
-          description: 'Native Git integration with GitHub, GitLab, and Bitbucket support.'
+          name: 'Claude Code native',
+          description: 'Runs in the Claude Code CLI, desktop, or IDE. Nothing else to install or host.'
         },
         {
-          name: 'IDE Integration',
-          description: 'VS Code extension with intelligent code completion and agent collaboration.'
+          name: 'Version control',
+          description: 'Git-native. Works with GitHub, GitLab, and Bitbucket like any repo.'
         },
         {
-          name: 'CI/CD Pipeline',
-          description: 'GitHub Actions, Jenkins, and CircleCI integration for automated deployments.'
+          name: 'MCP tool-search',
+          description: 'Specialists discover MCP servers at runtime (Supabase, Stripe, Playwright, Context7, and more) via ENABLE_TOOL_SEARCH=auto.'
         },
         {
-          name: 'Cloud Platforms',
-          description: 'Deploy to AWS, Azure, GCP, or Vercel with optimized configurations.'
+          name: 'Your deploy targets',
+          description: 'Ship to Railway, Netlify, Vercel, or wherever your project already deploys.'
         }
       ],
-      codeExample: `# GitHub Actions Integration
-name: AGENT-11 Deployment
-on: [push]
+      codeExample: `# Install in one command
+bash <(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: agent-11/github-action@v1
-        with:
-          squad: 'core'
-          workflow: 'deploy-production'
-          secrets: \${{ secrets.AGENT_11_API_KEY }}
-      
-      # Agents handle the rest:
-      # - THE TESTER runs comprehensive test suite
-      # - THE OPERATOR manages deployment pipeline  
-      # - THE ANALYST monitors performance metrics
-      # - THE SUPPORT sets up monitoring alerts`
+# MCP tools are discovered at runtime, no profile switching:
+#   ENABLE_TOOL_SEARCH=auto   (set in .claude/settings.json)
+# A specialist searches for what it needs, e.g. mcp__supabase`
     }
   },
   {
@@ -110,49 +77,34 @@ jobs:
     label: 'Customization',
     icon: '⚙️',
     content: {
-      title: 'Extend & Modify Your Agents',
-      description: 'Every agent can be customized to match your coding style, preferences, and domain requirements.',
+      title: 'Make the squad yours',
+      description: 'Every agent, command, and skill is a plain file in your repo. Change anything; it is your copy.',
       features: [
         {
-          name: 'Custom Prompts',
-          description: 'Modify agent behavior with domain-specific instructions and coding standards.'
+          name: 'Edit the agents',
+          description: 'Tune any specialist by editing its Markdown definition in .claude/agents/.'
         },
         {
-          name: 'Plugin System',
-          description: 'Add new capabilities with a rich ecosystem of community plugins.'
+          name: 'Project skills',
+          description: 'Drop domain skills into skills/ (plus the bundled SaaS skills: auth, payments, billing, email, and more).'
         },
         {
-          name: 'Template Library',
-          description: 'Pre-built templates for common frameworks, languages, and architectures.'
+          name: 'Project instructions',
+          description: 'A lean CLAUDE.md sets the constitution and conventions every agent follows in your project.'
         },
         {
-          name: 'Agent Marketplace',
-          description: 'Share and discover specialized agents created by the community.'
+          name: 'Templates',
+          description: 'Reusable templates for plans, architecture, handoffs, and mission inputs.'
         }
       ],
-      codeExample: `// Custom Agent Configuration
-export const myCustomDeveloper = {
-  ...baseDeveloper,
-  preferences: {
-    language: 'TypeScript',
-    framework: 'Next.js',
-    testing: 'Jest + React Testing Library',
-    styling: 'Tailwind CSS',
-    database: 'Prisma + PostgreSQL'
-  },
-  codeStyle: {
-    maxLineLength: 100,
-    quotes: 'single',
-    semicolons: false,
-    trailingCommas: true
-  },
-  customInstructions: \`
-    Always use functional components with hooks.
-    Prefer composition over inheritance.
-    Write comprehensive TypeScript types.
-    Include error boundaries for all routes.
-  \`
-}`
+      codeExample: `---
+name: developer
+# Edit any specialist's definition directly
+---
+# Your conventions, applied by every mission:
+- TypeScript + Next.js, Tailwind, Prisma + PostgreSQL
+- Functional components with hooks
+- Comprehensive types; error boundaries on all routes`
     }
   },
   {
@@ -160,45 +112,37 @@ export const myCustomDeveloper = {
     label: 'Security',
     icon: '🔒',
     content: {
-      title: 'Data Handling & Privacy Practices',
-      description: 'Your code and data remain secure with enterprise-grade privacy and security measures.',
+      title: 'Local files, open code, honest about the rest',
+      description: 'AGENT-11 has no servers. The agents and your code live in your repo. Your code and context are processed by Claude (Anthropic), exactly like any other Claude Code session.',
       features: [
         {
-          name: 'Local Processing',
-          description: 'Sensitive code analysis happens locally. Only metadata crosses network boundaries.'
+          name: 'No AGENT-11 servers',
+          description: 'Nothing is sent to us, because there is nothing to send it to. It is files in your project.'
         },
         {
-          name: 'Zero Data Retention',
-          description: 'We don\'t store your code, secrets, or proprietary information on our servers.'
+          name: 'Read-only gates + Bash guard',
+          description: 'Agents cannot edit the quality gates that judge them, enforced by permissions.deny plus a pre-tool-use hook.'
         },
         {
-          name: 'Encrypted Communication',
-          description: 'All agent communication uses end-to-end encryption with rotating keys.'
+          name: 'Honest about Claude',
+          description: 'Like any Claude Code use, your code and context are processed by Anthropic. We do not claim a sandbox that does not exist.'
         },
         {
-          name: 'Open Source Transparency',
-          description: 'Full source code available for security auditing and compliance verification.'
+          name: 'Open source (MIT)',
+          description: 'Every line is on GitHub for you to audit, fork, and verify.'
         }
       ],
-      codeExample: `// Security Configuration
+      codeExample: `// .claude/settings.json — read-only quality gates
 {
-  "security": {
-    "mode": "local-first",
-    "encryption": {
-      "algorithm": "AES-256-GCM",
-      "keyRotation": "24h"
-    },
-    "dataHandling": {
-      "codeRetention": "none",
-      "logsRetention": "local",
-      "metricsAnonymization": true
-    },
-    "compliance": {
-      "gdpr": true,
-      "hipaa": true,
-      "soc2": true
-    }
+  "permissions": {
+    "deny": [
+      "Edit(.quality-gates.json)",
+      "Write(.quality-gates.json)",
+      "Edit(gates/**)",
+      "Write(gates/**)"
+    ]
   }
+  // + a PreToolUse hook blocks Bash writes to gate paths
 }`
     }
   }
@@ -215,8 +159,8 @@ export default function TechnicalConfidence() {
             Built for Developers, By Developers
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto text-balance">
-            Every technical decision was made with developer experience in mind. 
-            Open, extensible, and production-ready from day one.
+            Every technical decision is in the open. Plain files in your repo,
+            run inside Claude Code, nothing hidden behind a service.
           </p>
         </div>
 
@@ -292,15 +236,15 @@ export default function TechnicalConfidence() {
 
         {/* Technical Badges */}
         <div className="mt-16 text-center">
-          <h3 className="text-xl font-semibold text-gray-900 mb-8">Trusted Technology Stack</h3>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8 max-w-4xl mx-auto">
+          <h3 className="text-xl font-semibold text-gray-900 mb-8">Built On</h3>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 max-w-4xl mx-auto">
             {[
-              { name: 'TypeScript', icon: '📘' },
-              { name: 'React', icon: '⚛️' },
-              { name: 'Node.js', icon: '🟢' },
-              { name: 'Docker', icon: '🐳' },
-              { name: 'Kubernetes', icon: '☸️' },
+              { name: 'Claude Code', icon: '🤖' },
+              { name: 'Markdown', icon: '📝' },
+              { name: 'Bash', icon: '🐚' },
+              { name: 'Python', icon: '🐍' },
+              { name: 'MCP', icon: '🔌' },
               { name: 'GitHub', icon: '🐙' }
             ].map((tech, index) => (
               <div key={index} className="flex flex-col items-center gap-2 p-4 bg-white rounded-lg shadow-sm">

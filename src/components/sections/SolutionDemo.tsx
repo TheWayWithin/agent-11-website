@@ -419,8 +419,8 @@ export default function SolutionDemo() {
             </h3>
             
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Join thousands of developers who&apos;ve 10x&apos;d their productivity with Agent-11. 
-              Start building with your personal team of AI specialists today.
+              This is the squad I build my own products with, open-sourced so you can
+              inspect it, verify it, and run it yourself. Free and MIT-licensed.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -432,7 +432,7 @@ export default function SolutionDemo() {
               </button>
               
               <button className="btn-secondary">
-                View Pricing
+                Browse the Code
               </button>
             </div>
             
@@ -442,19 +442,19 @@ export default function SolutionDemo() {
                 <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                Free 7-day trial
+                Free &amp; open source (MIT)
               </div>
               <div className="flex items-center gap-1">
                 <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                No credit card required
+                Install in one command
               </div>
               <div className="flex items-center gap-1">
                 <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                Cancel anytime
+                Inspect every line
               </div>
             </div>
           </div>
@@ -465,7 +465,7 @@ export default function SolutionDemo() {
               variant="inline"
               leadMagnet="Advanced Collaboration Patterns + Enterprise Templates"
               title="Want More Advanced Examples?"
-              description="Get exclusive access to advanced collaboration patterns, enterprise templates, and optimization strategies used by 2,847+ developers."
+              description="Get advanced collaboration patterns and templates for building with AGENT-11."
               placeholder="Enter your email for advanced examples"
               buttonText="Get Advanced Content"
               showSocialProof={true}

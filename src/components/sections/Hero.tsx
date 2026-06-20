@@ -71,8 +71,8 @@ export default function Hero() {
               <div className="text-sm text-gray-600">Faster Delivery</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-blue-600">30+</div>
-              <div className="text-sm text-gray-600">Hour Operation</div>
+              <div className="text-2xl font-bold text-blue-600">11</div>
+              <div className="text-sm text-gray-600">Specialists</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="text-2xl font-bold text-purple-600">7</div>
@@ -139,7 +139,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="text-gray-400 text-xs mt-2 text-center">
-              Install once, execute unlimited missions. Project-local deployment for maximum context.
+              Install once, run the squad locally. Your code stays in your repo, and you stay the judge at every gate.
             </div>
           </div>
 

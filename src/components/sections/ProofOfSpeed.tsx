@@ -134,24 +134,23 @@ export default function ProofOfSpeed() {
         {/* Real Example */}
         <div className="mt-16 bg-gray-900 rounded-2xl p-8 text-center">
           <div className="text-white mb-6">
-            <h3 className="text-2xl font-bold mb-4">Real Example: Sarah&apos;s SaaS MVP</h3>
+            <h3 className="text-2xl font-bold mb-4">Real Example: AGENT-11 built AGENT-11</h3>
             <div className="grid sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
               <div>
-                <div className="text-red-400 text-3xl font-bold mb-2">3 weeks</div>
-                <div className="text-gray-300">Solo development</div>
+                <div className="text-red-400 text-3xl font-bold mb-2">6 weeks</div>
+                <div className="text-gray-300">Estimated solo</div>
               </div>
               <div className="text-4xl text-gray-500">→</div>
               <div>
-                <div className="text-green-400 text-3xl font-bold mb-2">48 hours</div>
-                <div className="text-gray-300">With AGENT-11</div>
+                <div className="text-green-400 text-3xl font-bold mb-2">3 weeks</div>
+                <div className="text-gray-300">With the squad</div>
               </div>
             </div>
           </div>
           <blockquote className="text-gray-300 italic text-lg max-w-2xl mx-auto">
-            &quot;I launched my MVP in a weekend instead of a month. The quality was better than anything I&apos;d built solo. 
-            My agents caught security issues I didn&apos;t even know existed.&quot;
+            &quot;AGENT-11&apos;s own deployment system was built by AGENT-11. The whole build is open: read the code, the case study, and the decisions for yourself.&quot;
           </blockquote>
-          <div className="text-gray-400 mt-4">- Sarah K., Indie Hacker</div>
+          <div className="text-gray-400 mt-4">- Jamie Watters, builder of AGENT-11</div>
         </div>
       </div>
     </section>
