@@ -29,7 +29,7 @@ const developmentTimeline = [
     color: 'purple',
     activities: [
       'Designed file-based agent system architecture',
-      'Implemented 430+ lines of cross-platform installation scripts',
+      'Implemented cross-platform installation scripts',
       'Created Git-based agent distribution system',
       'Built one-line installation as core design principle'
     ],
@@ -44,9 +44,9 @@ const developmentTimeline = [
     icon: '✅',
     color: 'yellow',
     activities: [
-      'Validated 100% documentation command accuracy',
+      'Validated documentation command accuracy',
       'Conducted comprehensive system testing across platforms',
-      'Achieved 98% deployment success rate',
+      'Validated deployment across platforms',
       'Confirmed zero critical production issues'
     ],
     outcome: 'Production-ready system with validated reliability',
@@ -60,9 +60,9 @@ const developmentTimeline = [
     icon: '📚',
     color: 'orange',
     activities: [
-      'Created 6 comprehensive guides (2,000+ lines of documentation)',
-      'Optimized user journey from installation to first use',
-      'Analyzed user experience and achieved 85/100 rating',
+      'Created a comprehensive documentation suite',
+      'Optimised the user journey from installation to first use',
+      'Refined the experience from install to first use',
       'Validated self-service support capability'
     ],
     outcome: 'Complete documentation suite with optimized user experience',
@@ -71,12 +71,11 @@ const developmentTimeline = [
 ]
 
 const metrics = [
-  { label: 'Timeline', before: '6 weeks planned', after: '3 weeks actual', improvement: '50% faster' },
-  { label: 'Reliability', before: 'Unknown success rate', after: '98% validated', improvement: 'Production proven' },
-  { label: 'Installation', before: '10+ minutes manual', after: '<1 second automated', improvement: '600x faster' },
-  { label: 'Code Quality', before: 'Single developer', after: '430+ lines reviewed', improvement: 'Multi-specialist' },
-  { label: 'Documentation', before: 'Basic README', after: '6 comprehensive guides', improvement: 'Professional grade' },
-  { label: 'User Experience', before: 'Frustrating setup', after: '85/100 rating', improvement: 'Self-service ready' }
+  { label: 'Build', before: 'Solo, every role at once', after: 'A coordinated 11-agent squad', improvement: 'Open to read' },
+  { label: 'Installation', before: 'Multi-step manual setup', after: 'One command, seconds', improvement: 'Observable' },
+  { label: 'Architecture', before: 'Runtime agents', after: 'File-based agents in .claude/', improvement: 'Portable, version-controlled' },
+  { label: 'Documentation', before: 'Basic README', after: 'A full field manual (32 guides)', improvement: 'In the open' },
+  { label: 'Verification', before: 'Trust the agent', after: 'Read-only gates, evidence-gated', improvement: 'Cannot self-certify' }
 ]
 
 export default function CaseStudy() {
@@ -247,9 +246,9 @@ export default function CaseStudy() {
             
             <div className="grid sm:grid-cols-2 gap-6 mb-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-green-600 mb-2">98%</div>
-                <div className="text-gray-600">Success Rate Achieved</div>
-                <div className="text-sm text-gray-500 mt-1">Validated in production use</div>
+                <div className="text-4xl font-bold text-green-600 mb-2">MIT</div>
+                <div className="text-gray-600">Open Source</div>
+                <div className="text-sm text-gray-500 mt-1">Read and verify every line</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-blue-600 mb-2">&lt;1s</div>
@@ -259,7 +258,7 @@ export default function CaseStudy() {
             </div>
 
             <p className="text-lg text-gray-700 mb-8">
-              The same squad that built this deployment system in 3 weeks is ready to build your next project. 
+              The same squad that built this deployment system is ready to build your next project.
               <strong>This isn&apos;t a demo or prototype – it&apos;s the real production system running AGENT-11.</strong>
             </p>
 

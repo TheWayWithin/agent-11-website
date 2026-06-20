@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     default: 'AGENT-11 | Your Personal Dev Team That Never Sleeps - by Jamie Watters',
     template: '%s | AGENT-11'
   },
-  description: 'Stop wearing 11 hats. Get 11 specialists instead. Multi-agent development framework by Jamie Watters. Build software 10x faster with your personal team of AI specialists. Deploy in minutes, ship in hours.',
+  description: 'Stop wearing 11 hats. Get 11 specialists instead. Free, open source multi-agent development framework by Jamie Watters. Ship faster with your personal team of AI specialists. Install in seconds.',
   keywords: [
     'AI development',
     'developer tools',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.agent-11.com',
     title: 'AGENT-11 | Your Personal Dev Team That Never Sleeps - by Jamie Watters',
-    description: 'Stop wearing 11 hats. Get 11 specialists instead. Multi-agent development framework by Jamie Watters. Build software 10x faster with your personal team of AI specialists.',
+    description: 'Stop wearing 11 hats. Get 11 specialists instead. Free, open source multi-agent development framework by Jamie Watters. Ship faster with your personal team of AI specialists.',
     siteName: 'AGENT-11',
     images: [
       {
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AGENT-11 | Your Personal Dev Team That Never Sleeps - by Jamie Watters',
-    description: 'Stop wearing 11 hats. Get 11 specialists instead. Multi-agent development framework by Jamie Watters. Build software 10x faster with your personal team of AI specialists.',
+    description: 'Stop wearing 11 hats. Get 11 specialists instead. Free, open source multi-agent development framework by Jamie Watters. Ship faster with your personal team of AI specialists.',
     creator: '@agent11dev',
     images: ['/og-image.png'],
   },

@@ -63,14 +63,6 @@ export default function Hero() {
           {/* Mission Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto mb-10 animate-slide-up" style={{animationDelay: '0.3s'}}>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-orange-600">90%</div>
-              <div className="text-sm text-gray-600">Token Reduction</div>
-            </div>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-green-600">39%</div>
-              <div className="text-sm text-gray-600">Faster Delivery</div>
-            </div>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="text-2xl font-bold text-blue-600">11</div>
               <div className="text-sm text-gray-600">Specialists</div>
             </div>
@@ -79,20 +71,12 @@ export default function Hero() {
               <div className="text-sm text-gray-600">SaaS Skills</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-indigo-600">22</div>
+              <div className="text-2xl font-bold text-indigo-600">32</div>
               <div className="text-sm text-gray-600">Field Guides</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-pink-600">22+</div>
+              <div className="text-2xl font-bold text-pink-600">26</div>
               <div className="text-sm text-gray-600">Templates</div>
-            </div>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-blue-600">87.5%</div>
-              <div className="text-sm text-gray-600">Less Rework</div>
-            </div>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-teal-600">98%</div>
-              <div className="text-sm text-gray-600">Success Rate</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="text-2xl font-bold text-red-600">13</div>

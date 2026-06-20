@@ -14,38 +14,38 @@ const testimonials = [
     name: 'AGENT-11 Development Team',
     role: 'Self-Built System',
     avatar: '🤖',
-    quote: "The fact that AGENT-11 built its own deployment system with 98% success rate changed my perspective on AI development completely. This isn't theoretical - it's documented reality.",
+    quote: "AGENT-11 built its own deployment system. This isn't theoretical: the whole build is open, so you can read the code and the decisions for yourself.",
     metrics: "Self-built system",
     featured: true
   },
   {
-    id: 'timeline',
-    type: 'The Time Saver',
-    name: 'Real Development Results',
-    role: 'Documented Timeline',
-    avatar: '⏱️',
-    quote: "I was skeptical until I saw the documented development timeline. 6-week project completed in 3 weeks with production-grade quality and comprehensive testing.",
-    metrics: "6 weeks → 3 weeks",
+    id: 'open-source',
+    type: 'The Open Build',
+    name: 'Public Codebase',
+    role: 'MIT Licensed',
+    avatar: '📂',
+    quote: "Free and open source under the MIT licence. Fork it, read it, adapt it. Nothing is hidden behind a paywall or a benchmark you cannot check.",
+    metrics: "Free and open source",
     featured: false
   },
   {
-    id: 'quality',
-    type: 'The Quality Achiever',
-    name: 'Production Validation',
-    role: 'Live System Metrics',
+    id: 'squad',
+    type: 'The Full Squad',
+    name: 'Eleven Specialists',
+    role: '13 Missions',
     avatar: '✅',
-    quote: "430+ lines of production code, 6 comprehensive guides, zero critical issues found in testing. The same squad that built this is ready to build my next project.",
-    metrics: "98% success rate",
+    quote: "Every install deploys all 11 specialist agents and 13 missions, ready for your codebase from the first command. The same squad that built this is ready to build your next project.",
+    metrics: "11 agents, 13 missions",
     featured: false
   },
   {
     id: 'installation',
-    type: 'The Speed Demon',
+    type: 'The Quick Install',
     name: 'Deployment Performance',
-    role: 'Installation Metrics',
+    role: 'Installation Time',
     avatar: '⚡',
-    quote: "From 10+ minute manual setups to sub-second installation. The deployment system they built for themselves works flawlessly across all scenarios.",
-    metrics: "10min → <1sec",
+    quote: "One command installs the whole squad in seconds. The deployment system the squad built for itself works the same way on your machine.",
+    metrics: "Install in seconds",
     featured: false
   }
 ]
@@ -69,13 +69,12 @@ export default function SocialProof() {
     return activity > 50 ? '50+' : `${activity}`
   }
 
-  // Authentic metrics from real AGENT-11 development
-  // Static values that should never change (authentic development data)
+  // Genuine, observable facts about AGENT-11 (no unsourced comparisons)
   const authenticMetrics = {
-    linesOfCode: '430+', // Real lines of code from AGENT-11 building itself
-    developmentTime: '3 weeks', // Real timeline from 6 weeks to 3 weeks  
-    successRate: '98%', // Documented success rate from real development
-    installationTime: '<1s', // Actual installation time achieved
+    agents: '11', // Specialist agents deployed on every install
+    missions: '13', // Missions available via /coord
+    filePersistence: '100%', // Architectural fact: file-based agents persist to disk
+    installationTime: '<1s', // Observable install time
   }
 
   // Dynamic values that can update from API (but with stability)
@@ -84,7 +83,6 @@ export default function SocialProof() {
     stars: loading ? '—' : error ? '—' : formatNumber(stats?.stars ?? 0),
     contributors: loading ? '—' : error ? '—' : formatNumber(stats?.contributors ?? 0),
     activity: loading ? '—' : error ? '—' : formatActivity(stats?.recentActivity ?? 0),
-    discordMembers: '—' // No published Discord count; show live GitHub stats only (see WEBSITE-UPDATE-SPEC-v6.2.0.md)
   }
 
   return (
@@ -103,54 +101,54 @@ export default function SocialProof() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16">
             <div className="text-center group hover-lift animate-stagger-fade-1">
               <div className="text-3xl font-bold text-gray-900 mb-1 transition-all duration-300">
-                <span className="text-2xl mr-1">💻</span>
-                <AnimatedCounter 
-                  value={displayStats.linesOfCode} 
+                <span className="text-2xl mr-1">🤖</span>
+                <AnimatedCounter
+                  value={displayStats.agents}
                   className="group-hover:text-blue-600"
                   triggerAnimation={false} // Static authentic value
                 />
               </div>
-              <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Lines of Code</div>
-              <div className="text-xs text-gray-500">Self-built production system</div>
+              <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Specialist Agents</div>
+              <div className="text-xs text-gray-500">Deployed on every install</div>
               <div className="w-12 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mt-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="text-center group hover-lift animate-stagger-fade-2">
               <div className="text-3xl font-bold text-gray-900 mb-1 transition-all duration-300">
-                <span className="text-2xl mr-1">⏱️</span>
-                <AnimatedCounter 
-                  value={displayStats.developmentTime} 
+                <span className="text-2xl mr-1">🎯</span>
+                <AnimatedCounter
+                  value={displayStats.missions}
                   className="group-hover:text-purple-600"
                   triggerAnimation={false} // Static authentic value
                 />
               </div>
-              <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Development Time</div>
-              <div className="text-xs text-gray-500">50% faster than solo</div>
+              <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Missions</div>
+              <div className="text-xs text-gray-500">Run via the /coord command</div>
               <div className="w-12 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto mt-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="text-center group hover-lift animate-stagger-fade-3">
               <div className="text-3xl font-bold text-green-600 mb-1 group-hover:animate-bounce-gentle">
-                <span className="text-2xl mr-1">✅</span>
-                <AnimatedCounter 
-                  value={displayStats.successRate} 
+                <span className="text-2xl mr-1">💾</span>
+                <AnimatedCounter
+                  value={displayStats.filePersistence}
                   className="group-hover:text-green-700"
                   triggerAnimation={false} // Static authentic value
                 />
               </div>
-              <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Success Rate</div>
-              <div className="text-xs text-gray-500">Validated in production</div>
+              <div className="text-gray-600 group-hover:text-gray-700 transition-colors">File Persistence</div>
+              <div className="text-xs text-gray-500">File-based agents write to disk</div>
               <div className="w-12 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto mt-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="text-center group hover-lift animate-stagger-fade-4">
               <div className="text-3xl font-bold text-gray-900 mb-1 transition-all duration-300">
                 <span className="text-2xl mr-1">⚡</span>
-                <AnimatedCounter 
-                  value={displayStats.installationTime} 
+                <AnimatedCounter
+                  value={displayStats.installationTime}
                   className="group-hover:text-orange-600"
                   triggerAnimation={false} // Static authentic value
                 />
               </div>
               <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Installation Time</div>
-              <div className="text-xs text-gray-500">From 10+ minutes to instant</div>
+              <div className="text-xs text-gray-500">One command, install in seconds</div>
               <div className="w-12 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mt-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           </div>
@@ -222,15 +220,7 @@ export default function SocialProof() {
         <div className="bg-gray-50 rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-8">Join the Community</h3>
           
-          <div className="grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto mb-8">
-            <div className="space-y-2 text-center group hover-lift animate-stagger-fade-1">
-              <div className="text-2xl group-hover:animate-bounce-gentle">💬</div>
-              <div className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                <AnimatedCounter value={displayStats.discordMembers} triggerAnimation={false} />
-              </div>
-              <div className="text-gray-600 group-hover:text-gray-700 transition-colors">Discord Members</div>
-              <div className="w-8 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
+          <div className="grid sm:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
             <div className="space-y-2 text-center group hover-lift animate-stagger-fade-2">
               <div className="text-2xl group-hover:animate-bounce-gentle">🔧</div>
               <div className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
@@ -323,14 +313,6 @@ export default function SocialProof() {
           ) : null}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up-delayed-2">
-            <button className="btn-secondary group hover-glow animate-stagger-fade-1">
-              <svg className="w-5 h-5 mr-2 group-hover:animate-bounce-gentle" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0190 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
-              </svg>
-              Join Discord
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-            
             <button className="btn-secondary group hover-glow animate-stagger-fade-2">
               <svg className="w-5 h-5 mr-2 group-hover:animate-bounce-gentle" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>

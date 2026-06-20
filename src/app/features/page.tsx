@@ -224,20 +224,6 @@ export default function FeaturesPage() {
               From emergency fixes to complete MVPs, execute complex development missions
               with project-local agents that understand your codebase.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <span className="text-blue-600 font-bold">87.5%</span>
-                <span className="text-gray-600">less rework</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-green-600 font-bold">37.5%</span>
-                <span className="text-gray-600">faster delivery</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-purple-600 font-bold">1,370+</span>
-                <span className="text-gray-600">line Field Manual</span>
-              </div>
-            </div>
           </div>
 
           {/* Mission Filters */}
@@ -308,15 +294,9 @@ export default function FeaturesPage() {
 
                 <p className="text-gray-600 mb-4">{mission.description}</p>
 
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <div className="text-sm text-gray-500">Duration</div>
-                    <div className="font-semibold text-gray-900">{mission.duration}</div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500">Cost Range</div>
-                    <div className="font-semibold text-green-600">{mission.cost}</div>
-                  </div>
+                <div className="mb-4">
+                  <div className="text-sm text-gray-500">Duration</div>
+                  <div className="font-semibold text-gray-900">{mission.duration}</div>
                 </div>
 
                 <div className="mb-4">
@@ -499,9 +479,9 @@ export default function FeaturesPage() {
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <div className="text-3xl mb-4">🔄</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Context Preservation System</h3>
-              <div className="text-primary-600 font-bold mb-3">87.5% Less Rework</div>
+              <div className="text-primary-600 font-bold mb-3">Zero context loss</div>
               <p className="text-gray-600 mb-4">
-                Zero context loss across multi-agent workflows. v6 consolidated tracking from 5 files to 3 — leaner, faster handoffs.
+                Zero context loss across multi-agent workflows. v6 consolidated tracking from 5 files to 3 for leaner, faster handoffs.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-start">
@@ -522,7 +502,7 @@ export default function FeaturesPage() {
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <div className="text-3xl mb-4">🧠</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Extended Thinking</h3>
-              <div className="text-green-600 font-bold mb-3">37.5% Faster Delivery</div>
+              <div className="text-green-600 font-bold mb-3">Deeper reasoning on demand</div>
               <p className="text-gray-600 mb-4">
                 Three thinking modes for optimal decision-making: standard, think hard, and think harder for critical components.
               </p>
@@ -545,7 +525,7 @@ export default function FeaturesPage() {
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <div className="text-3xl mb-4">📚</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Field Manual</h3>
-              <div className="text-purple-600 font-bold mb-3">1,370+ Lines</div>
+              <div className="text-purple-600 font-bold mb-3">32 Guides</div>
               <p className="text-gray-600 mb-4">
                 Professional-grade architecture documentation with comprehensive system design guides and best practices.
               </p>
@@ -933,7 +913,7 @@ export default function FeaturesPage() {
               MCP Integration - Native Tool Search
             </h2>
             <p className="text-xl text-gray-600">
-              AGENT-11 uses Claude Code&apos;s native tool-search primitive. Specialists discover MCP servers at runtime instead of loading a fixed list into every session, reducing context overhead by 40-80% and enabling 30+ hours of autonomous operation.
+              AGENT-11 uses Claude Code&apos;s native tool-search primitive. Specialists discover MCP servers at runtime instead of loading a fixed list into every session, cutting context overhead and supporting long-running autonomous operation.
             </p>
           </div>
 
@@ -961,13 +941,8 @@ export default function FeaturesPage() {
           <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 text-center border border-green-200">
             <div className="flex items-center justify-center gap-6 flex-wrap">
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-1">~80%</div>
-                <div className="text-sm text-gray-600">Context Reduction</div>
-              </div>
-              <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
-              <div>
-                <div className="text-3xl font-bold text-blue-600 mb-1">30+ Hours</div>
-                <div className="text-sm text-gray-600">Autonomous Operation</div>
+                <div className="text-3xl font-bold text-green-600 mb-1">On-demand</div>
+                <div className="text-sm text-gray-600">Tool Loading</div>
               </div>
               <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
               <div>
@@ -976,7 +951,7 @@ export default function FeaturesPage() {
               </div>
             </div>
             <p className="text-gray-600 mt-4 text-sm">
-              <strong>Performance Impact:</strong> measured ~80% context reduction on MCP-heavy sessions. The budget goes back to the user&apos;s actual problem.
+              Tools load only when a task needs them, so the context budget goes back to the user&apos;s actual problem.
             </p>
           </div>
         </div>
@@ -999,18 +974,11 @@ export default function FeaturesPage() {
             <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
               <div className="text-4xl mb-4">🎯</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Memory Management</h3>
-              <div className="text-3xl font-bold text-orange-600 mb-4">84% Token Reduction</div>
+              <div className="text-3xl font-bold text-orange-600 mb-4">Persistent Knowledge</div>
               <p className="text-gray-600 mb-6">
                 Persistent file-based memory system that learns and remembers across sessions.
               </p>
               <ul className="space-y-3">
-                <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 mt-2"></div>
-                  <div>
-                    <strong className="text-gray-900">84% token reduction</strong>
-                    <p className="text-sm text-gray-600">in multi-session workflows</p>
-                  </div>
-                </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 mt-2"></div>
                   <div>
@@ -1028,8 +996,8 @@ export default function FeaturesPage() {
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 mt-2"></div>
                   <div>
-                    <strong className="text-gray-900">30+ hour autonomous operation</strong>
-                    <p className="text-sm text-gray-600">vs. 2-4 hours without memory</p>
+                    <strong className="text-gray-900">Long-running autonomous operation</strong>
+                    <p className="text-sm text-gray-600">Memory keeps work going across sessions</p>
                   </div>
                 </li>
               </ul>
@@ -1039,7 +1007,7 @@ export default function FeaturesPage() {
             <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
               <div className="text-4xl mb-4">🧠</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Extended Thinking</h3>
-              <div className="text-3xl font-bold text-purple-600 mb-4">10-30% Better Solutions</div>
+              <div className="text-3xl font-bold text-purple-600 mb-4">Deeper Reasoning</div>
               <p className="text-gray-600 mb-6">
                 Strategic reasoning modes for complex tasks requiring deep analysis.
               </p>
@@ -1049,13 +1017,6 @@ export default function FeaturesPage() {
                   <div>
                     <strong className="text-gray-900">3 thinking modes</strong>
                     <p className="text-sm text-gray-600">Standard, think hard, and think harder</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-2"></div>
-                  <div>
-                    <strong className="text-gray-900">10-30% solution quality improvement</strong>
-                    <p className="text-sm text-gray-600">for complex tasks</p>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -1079,7 +1040,7 @@ export default function FeaturesPage() {
             <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
               <div className="text-4xl mb-4">⚡</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Context Optimization</h3>
-              <div className="text-3xl font-bold text-blue-600 mb-4">40-80% Reduction</div>
+              <div className="text-3xl font-bold text-blue-600 mb-4">On-Demand Loading</div>
               <p className="text-gray-600 mb-6">
                 Intelligent context management for optimal performance.
               </p>
@@ -1087,8 +1048,8 @@ export default function FeaturesPage() {
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-2"></div>
                   <div>
-                    <strong className="text-gray-900">~80% context reduction</strong>
-                    <p className="text-sm text-gray-600">via native Tool Search + defer_loading</p>
+                    <strong className="text-gray-900">Native Tool Search</strong>
+                    <p className="text-sm text-gray-600">Tools load via defer_loading only when needed</p>
                   </div>
                 </li>
                 <li className="flex items-start">

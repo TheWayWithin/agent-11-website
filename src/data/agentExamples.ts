@@ -27,8 +27,8 @@ export const allAgents: AgentExample[] = [
     description: 'Elite product strategy specialist. Rapid MVP definition, user stories in INVEST format, laser focus on shipping.',
     specialties: ['Product Strategy', 'User Stories', 'MVP Definition', 'Market Research'],
     metrics: [
-      { label: 'Features Defined', value: '247' },
-      { label: 'MVP Success Rate', value: '94%' }
+      { label: 'Focus', value: 'MVP scope' },
+      { label: 'Output', value: 'INVEST user stories' }
     ],
     codeExample: {
       language: 'markdown',
@@ -66,8 +66,8 @@ export const allAgents: AgentExample[] = [
     description: 'Elite full-stack engineer. Ships clean, working code fast. Balances speed with quality.',
     specialties: ['Full-Stack Dev', 'Clean Code', 'Problem Solving', 'API Design'],
     metrics: [
-      { label: 'Lines of Code', value: '89K+' },
-      { label: 'Bug Rate', value: '<2%' }
+      { label: 'Focus', value: 'Full-stack code' },
+      { label: 'Approach', value: 'Security-first' }
     ],
     codeExample: {
       language: 'typescript',
@@ -175,8 +175,8 @@ app.post('/login', rateLimit, async (req, res) => {
     description: 'Elite QA specialist. Finds bugs before users do, automates everything possible.',
     specialties: ['Test Automation', 'Bug Detection', 'Edge Cases', 'Performance Testing'],
     metrics: [
-      { label: 'Tests Written', value: '3.2K+' },
-      { label: 'Bug Prevention', value: '98%' }
+      { label: 'Focus', value: 'Test automation' },
+      { label: 'Output', value: 'Edge-case coverage' }
     ],
     codeExample: {
       language: 'typescript',
@@ -270,8 +270,8 @@ describe('AuthService', () => {
     description: 'Elite DevOps specialist. Makes deployments boring (reliable), automates everything.',
     specialties: ['CI/CD', 'Infrastructure', 'Monitoring', 'Security'],
     metrics: [
-      { label: 'Deployments', value: '1.8K+' },
-      { label: 'Uptime', value: '99.97%' }
+      { label: 'Focus', value: 'CI/CD pipelines' },
+      { label: 'Output', value: 'Monitored deploys' }
     ],
     codeExample: {
       language: 'yaml',
@@ -381,8 +381,8 @@ jobs:
     description: 'Elite system design specialist. Makes technical decisions that scale, chooses proven technologies.',
     specialties: ['System Design', 'Scalability', 'API Architecture', 'Database Design'],
     metrics: [
-      { label: 'Systems Designed', value: '67' },
-      { label: 'Scale Factor', value: '100x+' }
+      { label: 'Focus', value: 'System design' },
+      { label: 'Output', value: 'Scalable architecture' }
     ],
     codeExample: {
       language: 'typescript',
@@ -470,8 +470,8 @@ export class DatabaseCluster {
     description: 'Elite UX/UI specialist. Creates beautiful AND functional interfaces, designs for conversion.',
     specialties: ['UX Design', 'UI Systems', 'Conversion Optimization', 'Accessibility'],
     metrics: [
-      { label: 'Designs Created', value: '420+' },
-      { label: 'Conversion Lift', value: '+73%' }
+      { label: 'Focus', value: 'UX and UI' },
+      { label: 'Output', value: 'Design systems' }
     ],
     codeExample: {
       language: 'css',
@@ -586,8 +586,8 @@ export class DatabaseCluster {
     description: 'Elite technical writer. Creates documentation that developers actually read and users understand.',
     specialties: ['API Docs', 'User Guides', 'Technical Writing', 'Knowledge Management'],
     metrics: [
-      { label: 'Docs Written', value: '890+' },
-      { label: 'User Satisfaction', value: '4.8/5' }
+      { label: 'Focus', value: 'Technical writing' },
+      { label: 'Output', value: 'API docs and guides' }
     ],
     codeExample: {
       language: 'markdown',
@@ -767,7 +767,6 @@ Test credentials:
 
 ## Support
 - 📧 Email: api-support@yourapp.com
-- 💬 Discord: https://discord.gg/yourapp
 - 📖 More docs: https://docs.yourapp.com`
     }
   },
@@ -780,8 +779,8 @@ Test credentials:
     description: 'Elite customer success specialist. Solves user problems with empathy and efficiency.',
     specialties: ['Customer Success', 'Issue Resolution', 'User Education', 'Feedback Analysis'],
     metrics: [
-      { label: 'Tickets Resolved', value: '4.7K+' },
-      { label: 'Satisfaction Score', value: '4.9/5' }
+      { label: 'Focus', value: 'Customer success' },
+      { label: 'Output', value: 'Issue resolution' }
     ],
     codeExample: {
       language: 'markdown',
@@ -867,8 +866,8 @@ Added new article: "Troubleshooting Mobile Login Issues"
     description: 'Elite data specialist. Finds insights that drive growth, measures what matters.',
     specialties: ['Data Analysis', 'Growth Metrics', 'A/B Testing', 'Business Intelligence'],
     metrics: [
-      { label: 'Reports Generated', value: '1.2K+' },
-      { label: 'Revenue Impact', value: '+$2.4M' }
+      { label: 'Focus', value: 'Data analysis' },
+      { label: 'Output', value: 'Growth insights' }
     ],
     codeExample: {
       language: 'python',
@@ -1126,8 +1125,8 @@ print(f"   Active → Convert: {funnel_analysis['conversion_rates']['conversion_
     description: 'Elite growth specialist. Acquires users efficiently, creates content that converts.',
     specialties: ['Growth Marketing', 'Content Strategy', 'Conversion Copy', 'Campaign Management'],
     metrics: [
-      { label: 'Campaigns Run', value: '340+' },
-      { label: 'User Acquisition', value: '+125K' }
+      { label: 'Focus', value: 'Growth marketing' },
+      { label: 'Output', value: 'Campaigns and copy' }
     ],
     codeExample: {
       language: 'markdown',
@@ -1387,8 +1386,8 @@ Based on similar campaigns and market research:
     description: 'Elite mission commander. Orchestrates complex operations, manages multi-agent missions.',
     specialties: ['Project Management', 'Team Coordination', 'Mission Planning', 'Resource Allocation'],
     metrics: [
-      { label: 'Missions Completed', value: '890+' },
-      { label: 'Success Rate', value: '97.2%' }
+      { label: 'Focus', value: 'Mission planning' },
+      { label: 'Output', value: 'Multi-agent coordination' }
     ],
     codeExample: {
       language: 'yaml',

@@ -18,12 +18,12 @@ export default function PortfolioPage() {
       tagline: 'Your Elite Development Squad in Claude Code',
       status: 'Active Development',
       statusColor: 'bg-green-100 text-green-800',
-      problem: 'Solo developers waste 60-80% of their time on coordination, context-switching, and rework. You have the skills to build it, but wearing every hat (strategist, developer, tester, deployer) simultaneously is crushing productivity.',
-      solution: 'AGENT-11 deploys 11 specialized AI agents directly into Claude Code as your personal dev team. Execute complex missions with a single /coord command. Each agent has specialist-level expertise, explicit tool permissions, and context preservation that eliminates 87.5% of rework.',
+      problem: 'Solo developers lose huge chunks of their time to coordination, context-switching, and rework. You have the skills to build it, but wearing every hat (strategist, developer, tester, deployer) simultaneously is crushing productivity.',
+      solution: 'AGENT-11 deploys 11 specialized AI agents directly into Claude Code as your personal dev team. Execute complex missions with a single /coord command. Each agent has specialist-level expertise, explicit tool permissions, and context preservation that cuts rework between specialists.',
       capabilities: [
         '13 pre-built missions (BUILD, FIX, MVP, DEPLOY, OPTIMIZE, and more)',
         'Context Preservation System (zero context loss between specialists)',
-        'Extended Thinking Protocols (37.5% faster delivery)',
+        'Extended Thinking Protocols (deeper reasoning on complex tasks)',
         '32-guide Field Manual (professional-grade architecture templates)',
         'Native MCP tool-search (agents find and load any connected MCP on demand)',
         'Read-only quality gates and measured keep-or-revert loops (v6.2): agents cannot game their own success criteria'

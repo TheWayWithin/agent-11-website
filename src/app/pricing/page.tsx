@@ -46,7 +46,7 @@ const supportOptions: SupportOption[] = [
     title: 'Share Your Experience',
     description: 'Built something cool with AGENT-11? Share your success story. Tweet about your wins, write a blog post, tell other founders. Authentic word-of-mouth is the highest compliment.',
     cta: 'Share on Twitter/X',
-    link: 'https://twitter.com/intent/tweet?text=Just%20shipped%20with%20%40agent11_dev%20-%20multi-agent%20dev%20framework%20that%20actually%20works.%20100%25%20free%2C%20saved%20me%2087.5%25%20rework.%20Check%20it%20out%3A%20https%3A%2F%2Fwww.agent-11.com',
+    link: 'https://twitter.com/intent/tweet?text=Just%20shipped%20with%20%40agent11_dev%20-%20multi-agent%20dev%20framework%20that%20actually%20works.%20100%25%20free%20and%20open%20source.%20Check%20it%20out%3A%20https%3A%2F%2Fwww.agent-11.com',
     buttonStyle: 'bg-blue-500 hover:bg-blue-600 text-white',
     benefit: 'Community-driven • No cost • Genuine impact'
   }
@@ -87,7 +87,7 @@ const freeTierFeatures = [
   'Field Manual (32 guides)',
   'Memory management system',
   'Unlimited projects & commercial use',
-  'Community support (GitHub, Discord)',
+  'Community support (GitHub)',
   'MIT License (build anything, no royalties)'
 ]
 

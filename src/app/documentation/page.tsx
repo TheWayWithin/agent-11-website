@@ -330,7 +330,7 @@ const docSections: DocSection[] = [
               <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
                 Memory Management ⭐
               </h4>
-              <p className="text-sm text-gray-600">84% token reduction, cross-session learning</p>
+              <p className="text-sm text-gray-600">Cross-session learning and persistent knowledge</p>
             </div>
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-4">
               <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
@@ -342,7 +342,7 @@ const docSections: DocSection[] = [
               <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
                 Context Optimization ⭐
               </h4>
-              <p className="text-sm text-gray-600">40-80% context reduction strategies</p>
+              <p className="text-sm text-gray-600">On-demand tool loading and context strategies</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-4">
               <h4 className="font-semibold text-gray-900 mb-2">Enhanced Prompting</h4>
@@ -456,15 +456,15 @@ const docSections: DocSection[] = [
   {
     id: 'context-preservation',
     title: 'Context Preservation Protocol',
-    description: 'Zero context loss system for multi-agent workflows (87.5% less rework)',
+    description: 'Zero context loss system for multi-agent workflows',
     content: (
       <div className="space-y-6">
         <div>
           <h3 className="text-xl font-semibold text-gray-900 mb-3">What is Context Preservation?</h3>
           <p className="text-gray-600 mb-4">
             AGENT-11&apos;s Context Preservation System ensures zero context loss across multi-agent workflows through
-            persistent context files and mandatory handoff protocols. This results in <strong>87.5% reduction in rework</strong> and
-            <strong> 37.5% faster completion time</strong>.
+            persistent context files and mandatory handoff protocols. Specialists pick up exactly where the last one left off,
+            which cuts rework and keeps missions moving.
           </p>
         </div>
 
@@ -748,13 +748,6 @@ const docSections: DocSection[] = [
               <p className="text-gray-600 text-sm mb-3">Comprehensive guides and references</p>
               <Link href="/documentation" className="text-primary-600 hover:text-primary-700 text-sm font-medium">
                 Browse Documentation →
-              </Link>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h4 className="font-semibold text-gray-900 mb-2">💬 Discord Community</h4>
-              <p className="text-gray-600 text-sm mb-3">Get help from the community</p>
-              <Link href="/discord" className="text-primary-600 hover:text-primary-700 text-sm font-medium">
-                Join Discord →
               </Link>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-6">

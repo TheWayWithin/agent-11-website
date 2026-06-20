@@ -10,7 +10,6 @@ const workflowPatterns = [
     description: 'Complex technical projects requiring high reliability',
     useCase: 'Building production systems, deploying critical infrastructure',
     timeline: '3-5 days',
-    successRate: '98%',
     icon: '🏭',
     color: 'blue',
     specialists: [
@@ -22,7 +21,7 @@ const workflowPatterns = [
       { name: 'THE SUPPORT', role: 'UX optimization', duration: '30min', icon: '🤝' }
     ],
     outcome: 'Production-ready system with comprehensive documentation and testing',
-    realExample: 'Used to build AGENT-11&apos;s own deployment system - 98% success rate validated'
+    realExample: 'Used to build AGENT-11&apos;s own deployment system, with the whole build open to read'
   },
   {
     id: 'rapid-prototyping',
@@ -30,7 +29,6 @@ const workflowPatterns = [
     description: 'Validating new feature ideas and building proof-of-concepts',
     useCase: 'Quick idea validation, MVP development, feature testing',
     timeline: '2-4 hours',
-    successRate: '95%',
     icon: '⚡',
     color: 'green',
     specialists: [
@@ -47,7 +45,6 @@ const workflowPatterns = [
     description: 'When current approach isn&apos;t working and need expert intervention',
     useCase: 'Debugging complex issues, architectural decisions, technical blockers',
     timeline: '1-3 hours',
-    successRate: '92%',
     icon: '🔧',
     color: 'orange',
     specialists: [
@@ -64,7 +61,6 @@ const workflowPatterns = [
     description: 'Ensuring production-ready quality through comprehensive validation',
     useCase: 'Pre-launch validation, quality audits, production readiness',
     timeline: '2-3 hours',
-    successRate: '99%',
     icon: '🛡️',
     color: 'purple',
     specialists: [
@@ -74,7 +70,7 @@ const workflowPatterns = [
       { name: 'THE DOCUMENTER', role: 'Documentation review', duration: '30min', icon: '📚' }
     ],
     outcome: 'Production-ready system with validated quality metrics',
-    realExample: 'Achieved 98% success rate through systematic quality validation'
+    realExample: 'Systematic quality validation across every stage before release'
   }
 ]
 
@@ -137,7 +133,6 @@ export default function WorkflowDemo() {
                 <div className="text-sm opacity-90 mb-3">{pattern.description}</div>
                 <div className="flex items-center gap-4 text-xs">
                   <span>⏱️ {pattern.timeline}</span>
-                  <span>✅ {pattern.successRate}</span>
                 </div>
               </button>
             ))}
@@ -154,8 +149,6 @@ export default function WorkflowDemo() {
               <p className="text-gray-600 mb-4">{workflow.useCase}</p>
               <div className="inline-flex items-center gap-4 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm">
                 <span>⏱️ {workflow.timeline}</span>
-                <span>•</span>
-                <span>✅ {workflow.successRate} success rate</span>
               </div>
             </div>
 
@@ -260,7 +253,7 @@ export default function WorkflowDemo() {
             Ready to Deploy Your Specialist Squad?
           </h3>
           <p className="text-gray-600 mb-6">
-            These proven workflows are ready to use. Same patterns that built AGENT-11 in 3 weeks.
+            These proven workflows are ready to use. The same patterns that built AGENT-11 itself.
           </p>
           <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm max-w-2xl mx-auto">
             <div className="flex items-center justify-between">

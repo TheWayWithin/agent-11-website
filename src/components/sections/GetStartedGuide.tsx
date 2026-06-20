@@ -563,10 +563,6 @@ export default function GetStartedGuide() {
                     <ul className="space-y-2 text-sm text-gray-700">
                       <li className="flex items-center gap-2">
                         <span className="text-green-600">•</span>
-                        <span>Join our <a href="https://discord.gg/agent11" className="text-primary-600 hover:underline font-medium">Discord community</a> for support</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="text-green-600">•</span>
                         <span>Report issues on <a href="https://github.com/TheWayWithin/agent-11/issues" className="text-primary-600 hover:underline font-medium">GitHub</a></span>
                       </li>
                       <li className="flex items-center gap-2">

@@ -45,7 +45,7 @@ export default function SupportPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Link
               href="/documentation"
               className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow group"
@@ -55,20 +55,6 @@ export default function SupportPage() {
                 Documentation
               </h3>
               <p className="text-gray-600 mb-4">Comprehensive guides, API references, and mission tutorials</p>
-              <div className="text-primary-600 font-medium group-hover:text-primary-700 transition-colors">
-                Get help →
-              </div>
-            </Link>
-
-            <Link
-              href="/discord"
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow group"
-            >
-              <div className="text-4xl mb-4">💬</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
-                Discord Community
-              </h3>
-              <p className="text-gray-600 mb-4">Get help from 4,800+ developers and the AGENT-11 team</p>
               <div className="text-primary-600 font-medium group-hover:text-primary-700 transition-colors">
                 Get help →
               </div>
@@ -128,10 +114,10 @@ export default function SupportPage() {
 
             <div className="bg-white rounded-lg border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Which squad size should I choose?
+                Do I choose which agents to install?
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Minimal (2 agents) for simple fixes, Core (4 agents) for most development tasks, and Full (11 agents) for complex projects and strategic missions like MVP development.
+                No. Every install deploys all 11 specialists, and the coordinator pulls in whichever the mission needs. There is no squad size to pick.
               </p>
             </div>
 
