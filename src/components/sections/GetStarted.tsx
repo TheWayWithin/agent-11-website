@@ -418,7 +418,6 @@ export default function GetStarted() {
               <ul className="space-y-2 text-gray-600">
                 <li><Link href="/discord" className="hover:text-primary-600 transition-colors">Discord</Link></li>
                 <li><Link href="https://github.com/TheWayWithin/agent-11" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">GitHub</Link></li>
-                <li><Link href="/blog" className="hover:text-primary-600 transition-colors">Blog</Link></li>
                 <li><Link href="/support" className="hover:text-primary-600 transition-colors">Support</Link></li>
               </ul>
             </div>

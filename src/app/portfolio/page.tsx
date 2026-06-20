@@ -25,7 +25,8 @@ export default function PortfolioPage() {
         'Context Preservation System (zero context loss between specialists)',
         'Extended Thinking Protocols (37.5% faster delivery)',
         '32-guide Field Manual (professional-grade architecture templates)',
-        'Native MCP tool-search (agents find and load any connected MCP on demand)'
+        'Native MCP tool-search (agents find and load any connected MCP on demand)',
+        'Read-only quality gates and measured keep-or-revert loops (v6.2): agents cannot game their own success criteria'
       ],
       perfectFor: [
         'Solo founders building MVPs in weeks, not months',

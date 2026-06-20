@@ -137,6 +137,25 @@ Add the v6.2.0 / v6.0 feature set (Canonical Facts) to the surfaces that sell th
 4. **Performance metrics** (87.5% rework, 37.5%/39% faster, 98% success, 10x, 95% fewer bugs): which are defensible/sourced vs marketing estimates to drop or soften? Jamie to confirm what is real. Default: keep only what traces to the dogfooding case study, soften the rest.
 5. **Field Manual framing**: "32 guides / 14,400 lines" or a rounder honest number?
 
+## Progress log
+
+- **2026-06-20 — P0 integrity DEPLOYED** (commit `c25d9cf`): invented pricing/billing, fake testimonial, fabricated stats, SaaS fiction (TechnicalConfidence), security overclaim, and autonomy overclaims all removed.
+- **2026-06-20 — P1 accuracy DEPLOYED** (commit `016ba31`): 13 missions, 11 agents, canonical install, retired squad-size model, fake commands/config removed, Field Manual size, v6.2 metadata, copyright 2026, residual "2,847" removed (EmailCapture + blog).
+- **2026-06-20 — P2 freshness IN PROGRESS**: v6.2 Loop Discipline story added to selling pages; blog de-promoted from nav.
+- **README** repositioned to V&M 4.2 and pushed in the agent-11 repo (commit `6304e30`).
+
+## Remaining stale items & plan (the "/blog and friends" list)
+
+These are tracked, not yet fully resolved. Each needs either a quick action or a Jamie decision.
+
+| Item | State | Plan / decision needed |
+|------|-------|------------------------|
+| **/blog** | De-promoted from nav (P2). Posts are ~18 months stale with fabricated authors (Sarah Chen, Dr. Alex Rodriguez, Mike Thompson, Jessica Park, David Kim) and no v6 coverage. | The fabricated-author posts should not stay live even unlinked (truth over hype). **Decision:** (a) remove the blog route entirely, or (b) replace with real build-in-public posts. Recommended: remove the route now; reintroduce when there is real content. |
+| **/discord** | Live. Stats unverifiable: "4,847 Active Members", "1,200+ Daily Messages", "847 Missions Shared". "Join Discord Server" buttons have no `href` (non-functional). | Replace the invented stats with real numbers or remove the stat blocks; wire the real Discord invite URL into the buttons or remove them. **Decision:** real Discord numbers + invite link, or drop the page's social-proof entirely. |
+| **HeroVariations.tsx** | Dormant (NOT imported by page.tsx, not rendered). Still contains "2,847", old install command, "24/7 availability". | Low priority because it is not live. **Plan:** update it to match Hero.tsx for future A/B use, or delete the file. Recommended: delete unless A/B testing is imminent. |
+| **sitemap.ts** | Stale comment "v2.3.0 release date" + lastModified `2025-06-01`. | Minor SEO. **Plan:** refresh lastModified dates. |
+| **Performance metrics** (87.5% rework, 39% faster, 98% success, 10x, 95% fewer bugs) | Live across several pages; some trace to the dogfooding case study, some are marketing estimates. | **Decision (Jamie):** confirm which are defensible/sourced; soften or drop the rest. Truth over hype: keep only what traces to real evidence. |
+
 ## Out of scope
 
 - No framework changes (this is website-only).

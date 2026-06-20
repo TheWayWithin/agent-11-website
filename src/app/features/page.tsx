@@ -347,6 +347,142 @@ export default function FeaturesPage() {
         </div>
       </section>
 
+      {/* Loop Discipline (v6.2) Section */}
+      <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20 mb-6">
+              <span>🛡️</span>
+              <span className="font-bold">NEW IN v6.2</span>
+              <span>Loop Discipline</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Agents that cannot game their own tests
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              The trust problem with autonomous agents is simple: an agent that can edit the test can pass the test. v6.2 closes that gap. Loops are watched first and merged by you. A passing gate means the work was done, not that the bar was lowered.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="text-3xl mb-4">🔒</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Read-only quality gates</h3>
+              <div className="text-red-600 font-bold mb-3">Unwritable by every agent</div>
+              <p className="text-gray-600 mb-4">
+                The files that judge an agent&apos;s work are off limits to the agent. A passing gate means the work was done, not that the bar was lowered.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2 mt-1.5"></div>
+                  <span><code className="text-xs bg-gray-50 px-1 rounded">.quality-gates.json</code> and <code className="text-xs bg-gray-50 px-1 rounded">gates/</code> locked by permissions.deny</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>A Bash-write guard hook backs up the permission block</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>No agent can rewrite its own success criteria</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="text-3xl mb-4">✅</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Default-fail verification</h3>
+              <div className="text-green-600 font-bold mb-3">Evidence, not assertion</div>
+              <p className="text-gray-600 mb-4">
+                Every success criterion starts failing. It flips to pass only on captured command output. Claiming done is not enough: the agent has to show the run.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Criteria fail by default until proven</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Pass requires real, captured output</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>No roleplayed completion</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="text-3xl mb-4">⚙️</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Ratchet mission-optimize</h3>
+              <div className="text-blue-600 font-bold mb-3">Keep-or-revert, you merge</div>
+              <p className="text-gray-600 mb-4">
+                Optimisation runs as a measured loop in an isolated git worktree. It keeps a change only if it beats a baseline and hard-reverts the rest. It never auto-merges, so you stay the judge.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Beat the baseline or get reverted</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Every attempt logged, the loop caps itself</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>You decide at merge time</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="text-3xl mb-4">🔍</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">code-review-loop skill</h3>
+              <div className="text-purple-600 font-bold mb-3">Critic and fixer, separated</div>
+              <p className="text-gray-600 mb-4">
+                A read-only critic raises evidence-backed findings. A separate read-write fixer addresses only those findings. The pair re-audits until the work is clean or the loop caps out.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Critic cannot edit the code it judges</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Fixer addresses only raised findings</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Re-audit until clean or capped</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="text-3xl mb-4">🚦</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Phase-gated meta-loop</h3>
+              <div className="text-amber-600 font-bold mb-3">Advances on evidence only</div>
+              <p className="text-gray-600 mb-4">
+                <code className="text-xs bg-gray-50 px-1 rounded">/coord continue</code> advances only on evidence and converges on two clean rounds. It spends a per-phase error budget, then escalates instead of grinding.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Converges on two clean rounds</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Per-phase error budget, then escalates</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Restarts from the last passed gate</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Context Preservation & Modernization Section */}
       <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
