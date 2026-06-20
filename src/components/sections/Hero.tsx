@@ -27,10 +27,10 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-6 py-3 rounded-full text-sm font-medium mb-8 animate-fade-in hover-glow transition-all duration-300 hover:scale-105 border border-blue-200">
             <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse-gentle"></span>
             <span className="animate-bounce-gentle">⚡</span>
-            <span className="font-bold">v6.1.1 LEAN ORCHESTRATOR:</span>
-            <span>78-line CLAUDE.md, Karpathy posture, ~80% MCP context reduction</span>
+            <span className="font-bold">v6.2.0 LOOP DISCIPLINE:</span>
+            <span>read-only quality gates, measured keep-or-revert loops, evidence-gated verification</span>
             <span className="mx-2 text-blue-600">•</span>
-            <span className="font-bold">One-command upgrade from v5</span>
+            <span className="font-bold">Agents cannot game their own tests</span>
           </div>
 
           {/* Mission-Focused Tagline */}
@@ -47,7 +47,7 @@ export default function Hero() {
           {/* Mission-Focused Subheadline */}
           <p className="text-xl text-gray-600 mb-6 max-w-4xl mx-auto text-balance animate-slide-up" style={{animationDelay: '0.2s'}}>
             From <strong>BUILD</strong> to <strong>MVP</strong> to <strong>DEPLOY</strong> — execute 13 proven missions with project-local agents that understand your codebase.
-            v6 ships <strong>Karpathy posture</strong>, <strong>native tool deferring</strong>, and <strong>quality-gate hooks</strong> on every fresh install.
+            v6.2 adds <strong>read-only quality gates</strong>, the <strong>ratchet optimiser</strong>, and a <strong>scored review loop</strong> on top of the v6 Karpathy posture and native tool deferring.
           </p>
 
           {/* Professional Documentation Badge */}

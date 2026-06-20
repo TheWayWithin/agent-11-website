@@ -12,6 +12,31 @@ interface ChangelogEntry {
 
 const changelogEntries: ChangelogEntry[] = [
   {
+    version: '6.2.0',
+    date: '2026-06-20',
+    type: 'Minor',
+    changes: [
+      {
+        category: 'Security',
+        items: [
+          'Read-only quality gates: .quality-gates.json and gates/ are unwritable by every agent via permissions.deny, so an agent cannot loosen the criteria that judge its own work',
+          'PreToolUse read-only gate guard hook blocks Bash writes (redirection, tee, sed -i, cp, mv) to gate paths, closing the route the deny rules do not cover',
+          'Default-fail verification: every success criterion starts failing and flips to pass only on captured command output'
+        ]
+      },
+      {
+        category: 'Added',
+        items: [
+          'Ratchet mission-optimize: optimisation as a measured loop in an isolated worktree, keep-or-revert against a baseline, fully logged, hard-capped, never auto-merged',
+          'code-review-loop skill: a read-only critic raises evidence-backed findings, a read-write fixer addresses only those, re-audit until clean or capped',
+          'Phase-gated meta-loop in /coord continue: converges on two clean rounds, spends a per-phase error budget then escalates, restarts from the last evidence-passed gate',
+          'Loop discipline field-manual guide and a mission-optimize input template',
+          'Bulk-ops toolkit for fleet-wide updates across multiple repos'
+        ]
+      }
+    ]
+  },
+  {
     version: '6.1.1',
     date: '2026-05-07',
     type: 'Patch',
