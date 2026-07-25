@@ -1,21 +1,34 @@
 import type { Metadata } from 'next'
+import {
+  getProfilePageSchema,
+  getBreadcrumbSchema,
+  renderStructuredData,
+} from '@/lib/structured-data'
+import { PAGE_UPDATED } from '@/lib/page-dates'
+import { SITE_URL } from '@/lib/seo'
+
+const DESCRIPTION =
+  'Jamie Watters builds AGENT-11 and other open-source tools for solo founders, in the open. Why the framework exists, how he works, and what else he has shipped.'
 
 export const metadata: Metadata = {
-  title: 'About Jamie Watters - AGENT-11 Creator & Solo Founder Advocate',
-  description: 'Meet Jamie Watters, creator of AGENT-11 and builder of tools that help solo founders ship fast. Explore the philosophy, expertise, and ecosystem behind the framework.',
+  title: 'About Jamie Watters - AGENT-11 Creator',
+  description: DESCRIPTION,
   keywords: ['jamie watters', 'agent-11 creator', 'solo founder tools', 'ai framework developer', 'multi-agent systems', 'claude code agents', 'developer tools', 'solo founder ecosystem'],
+  authors: [{ name: 'Jamie Watters', url: 'https://jamiewatters.work' }],
   openGraph: {
     title: 'Building Tools for Solo Founders Who Ship Fast',
-    description: 'Hi, I\'m Jamie Watters. I build AI frameworks like AGENT-11 that help solo founders turn technical complexity into competitive advantage.',
+    description: DESCRIPTION,
     type: 'profile',
-    images: ['/og-image.png']
+    url: `${SITE_URL}/about`,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Jamie Watters - AGENT-11 Creator',
-    description: 'Creator of AGENT-11 and builder of tools that help solo founders ship fast.',
-    images: ['/og-image.png']
-  }
+    description: DESCRIPTION,
+  },
+  alternates: {
+    canonical: `${SITE_URL}/about`,
+  },
 }
 
 export default function AboutLayout({
@@ -23,5 +36,11 @@ export default function AboutLayout({
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return (
+    <>
+      {renderStructuredData(getProfilePageSchema({ dateModified: PAGE_UPDATED.about }))}
+      {renderStructuredData(getBreadcrumbSchema([{ name: 'About', path: '/about' }]))}
+      {children}
+    </>
+  )
 }

@@ -1,8 +1,14 @@
 import { Metadata } from 'next'
+import { getWebPageSchema, getBreadcrumbSchema, renderStructuredData } from '@/lib/structured-data'
+import { PAGE_UPDATED } from '@/lib/page-dates'
+import { SITE_URL } from '@/lib/seo'
+
+const DESCRIPTION =
+  'AGENT-11 release history, newest first. v6.2.0 (June 2026) added read-only quality gates, default-fail verification, the ratchet optimiser and a meta-loop.'
 
 export const metadata: Metadata = {
   title: 'Latest: v6.2.0 - Changelog',
-  description: 'AGENT-11 changelog and version history. Latest release v6.2.0 brings read-only quality gates, the ratchet optimiser, and a phase-gated meta-loop. See what\'s new in the multi-agent framework by Jamie Watters.',
+  description: DESCRIPTION,
   keywords: [
     'agent-11 changelog',
     'version history',
@@ -13,11 +19,11 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Latest: v6.2.0 - AGENT-11 Changelog',
-    description: 'AGENT-11 changelog and version history. Latest release v6.2.0 brings read-only quality gates, the ratchet optimiser, and a phase-gated meta-loop.',
-    url: 'https://www.agent-11.com/changelog',
+    description: DESCRIPTION,
+    url: `${SITE_URL}/changelog`,
   },
   alternates: {
-    canonical: 'https://www.agent-11.com/changelog',
+    canonical: `${SITE_URL}/changelog`,
   },
 }
 
@@ -26,5 +32,18 @@ export default function ChangelogLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <>{children}</>
+  return (
+    <>
+      {renderStructuredData(
+        getWebPageSchema({
+          name: 'AGENT-11 Changelog',
+          description: DESCRIPTION,
+          path: '/changelog',
+          dateModified: PAGE_UPDATED.changelog,
+        })
+      )}
+      {renderStructuredData(getBreadcrumbSchema([{ name: 'Changelog', path: '/changelog' }]))}
+      {children}
+    </>
+  )
 }

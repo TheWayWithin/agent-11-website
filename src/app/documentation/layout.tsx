@@ -1,8 +1,14 @@
 import { Metadata } from 'next'
+import { getWebPageSchema, getBreadcrumbSchema, renderStructuredData } from '@/lib/structured-data'
+import { PAGE_UPDATED } from '@/lib/page-dates'
+import { SITE_URL } from '@/lib/seo'
+
+const DESCRIPTION =
+  'AGENT-11 documentation: install the framework, run the 13 /coord missions, configure the 11 specialist agents, and troubleshoot. Covers release v6.2.0.'
 
 export const metadata: Metadata = {
   title: 'Field Manual - Documentation',
-  description: 'Complete AGENT-11 documentation including 1,370+ line Architecture SOP, deployment guides, and best practices. Your comprehensive guide to multi-agent development by Jamie Watters.',
+  description: DESCRIPTION,
   keywords: [
     'agent-11 documentation',
     'field manual',
@@ -13,11 +19,11 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Field Manual - AGENT-11 Documentation',
-    description: 'Complete AGENT-11 documentation including 1,370+ line Architecture SOP, deployment guides, and best practices. Your comprehensive guide to multi-agent development.',
-    url: 'https://www.agent-11.com/documentation',
+    description: DESCRIPTION,
+    url: `${SITE_URL}/documentation`,
   },
   alternates: {
-    canonical: 'https://www.agent-11.com/documentation',
+    canonical: `${SITE_URL}/documentation`,
   },
 }
 
@@ -26,5 +32,20 @@ export default function DocumentationLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <>{children}</>
+  return (
+    <>
+      {renderStructuredData(
+        getWebPageSchema({
+          name: 'AGENT-11 Documentation',
+          description: DESCRIPTION,
+          path: '/documentation',
+          dateModified: PAGE_UPDATED.documentation,
+        })
+      )}
+      {renderStructuredData(
+        getBreadcrumbSchema([{ name: 'Documentation', path: '/documentation' }])
+      )}
+      {children}
+    </>
+  )
 }

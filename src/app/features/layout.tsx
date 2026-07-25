@@ -1,8 +1,14 @@
 import { Metadata } from 'next'
+import { getWebPageSchema, getBreadcrumbSchema, renderStructuredData } from '@/lib/structured-data'
+import { PAGE_UPDATED } from '@/lib/page-dates'
+import { SITE_URL } from '@/lib/seo'
+
+const DESCRIPTION =
+  'All 13 AGENT-11 missions, the 11 specialist agents, and the v6.2 quality gates that stop agents grading their own work. Free and open source, MIT licensed.'
 
 export const metadata: Metadata = {
   title: '13 Mission Types - Features',
-  description: 'Explore AGENT-11\'s 13 specialized mission types for rapid software development. From BUILD to FIX, MVP to DEPLOY - your AI squad handles it all. Built by Jamie Watters.',
+  description: DESCRIPTION,
   keywords: [
     'agent-11 features',
     '13 mission types',
@@ -14,11 +20,11 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: '13 Mission Types - AGENT-11 Features',
-    description: 'Explore AGENT-11\'s 13 specialized mission types for rapid software development. From BUILD to FIX, MVP to DEPLOY - your AI squad handles it all.',
-    url: 'https://www.agent-11.com/features',
+    description: DESCRIPTION,
+    url: `${SITE_URL}/features`,
   },
   alternates: {
-    canonical: 'https://www.agent-11.com/features',
+    canonical: `${SITE_URL}/features`,
   },
 }
 
@@ -27,5 +33,18 @@ export default function FeaturesLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <>{children}</>
+  return (
+    <>
+      {renderStructuredData(
+        getWebPageSchema({
+          name: 'AGENT-11 Features',
+          description: DESCRIPTION,
+          path: '/features',
+          dateModified: PAGE_UPDATED.features,
+        })
+      )}
+      {renderStructuredData(getBreadcrumbSchema([{ name: 'Features', path: '/features' }]))}
+      {children}
+    </>
+  )
 }
