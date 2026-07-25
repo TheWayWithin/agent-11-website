@@ -1,0 +1,26 @@
+# agent-11-website — Issue & Project Register
+
+**This is the single source of truth for what is open in this repo.** One row per
+issue/project. Detail lives in the linked doc; this file is the index the Mission
+Control reconcile (`repo-reconcile.py`) reads and mirrors to the cockpit.
+
+## ID convention (collision-safe)
+
+Mission Control owns the bare `ISS-`/`PRJ-`/`T-` namespaces. **Every agent-11-website ID
+carries the `A11W-` prefix** so it can never collide with a Mission-Control-native
+ID or another repo's. Raise issues here with `python3 ~/shared/scripts/repo-issue.py`.
+
+---
+
+## Open
+
+| ID | Title | Status | Severity | Detail | MC-SYNC |
+|----|-------|--------|----------|--------|---------|
+| A11W-ISS-3 | AI-visibility gaps on agent-11.com (scanner 65/100): no date metadata anywhere (Y.1.1 30), meta description 194 chars (trim to 150-160), no FAQPage schema despite FAQ-shaped content (AI.2.3 30), transparency 35, heading hierarchy 50, image alt text 50 | Open | low | — | pending |
+| A11W-ISS-2 | llms.txt missing (404) on agent-11.com — high-value for the framework's AI/GitHub audience; add and date it | ✅ Resolved 2026-07-25 — Dated llms.txt live at agent-11.com/llms.txt (llmstxt.org format, all claims sourced to repo/site); scripts/check-llms.sh ships alongside and passes 29/29 against production | medium | — | pending |
+| A11W-ISS-1 | No analytics on live site: neither Plausible nor GA loads on agent-11.com — add Plausible (PRJ-25 standard) + signup/install conversion goal | ✅ Resolved 2026-07-25 — Plausible live on agent-11.com (new-format script, CSP updated); Signup + Install Copy custom-event goals wired in code and registered; Plausible verification passed 2026-07-25 | medium | — | pending |
+
+## Recently closed
+
+| ID | Title | Status | Commit | Detail |
+|----|-------|--------|--------|--------|
