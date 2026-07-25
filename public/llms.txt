@@ -46,6 +46,6 @@ AGENT-11 is free and MIT licensed. There is no paid tier, subscription, or per-m
 
 - [License](https://agent-11.com/license): The MIT licence reproduced on-site with a plain-English reading. The repository `LICENSE` file is the authoritative text.
 - [Portfolio](https://agent-11.com/portfolio): Jamie Watters' wider set of tools. Mostly about products other than AGENT-11, and several entries are at planning or in-development stage.
-- [Privacy policy](https://agent-11.com/privacy): Site privacy policy, last updated December 2024 and not reviewed since; it predates the site's current analytics setup.
-- [Terms of service](https://agent-11.com/terms): Site terms, last updated December 2024. Its billing section describes a paid, per-mission model that the framework does not use — the free, MIT-licensed position on /pricing and in the repository LICENSE is the accurate one.
+- [Privacy policy](https://agent-11.com/privacy): Site privacy policy, rewritten 2026-07-25 to match what the site actually does. No cookies are set and no tracking is used; visits are counted with cookieless Plausible analytics, and the only personal data the site can hold is an email address voluntarily submitted through its Netlify-hosted form.
+- [Terms of service](https://agent-11.com/terms): Site terms, rewritten 2026-07-25. States plainly that there is no payment, no subscription and no account, and that the software is governed by the MIT licence. Consistent with /pricing and the repository LICENSE.
 - [Sitemap](https://agent-11.com/sitemap.xml): Machine-readable index of every page on this site.

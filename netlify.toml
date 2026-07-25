@@ -29,7 +29,12 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
 
     # CSP Enforcement - Active Content Security Policy (PHASE 2 - A+ SECURITY)
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://api.github.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    # Must stay byte-identical to the policy in src/middleware.ts. When two CSP
+    # headers are sent, the browser enforces the intersection, so any drift
+    # silently blocks something. This one still whitelisted Google Tag Manager
+    # and Google Analytics - neither of which the site loads - while omitting
+    # plausible.io, which it does. Corrected under A11W-ISS-4.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://plausible.io https://api.github.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 
     # Performance headers
     X-DNS-Prefetch-Control = "on"

@@ -28,13 +28,18 @@ export const PAGE_UPDATED = {
   /** 2026-07-25: removed the non-functional email support card. */
   support: '2026-07-25',
   /**
-   * 2025-08-04: last change to this file. The page's own body still says
-   * "December 2024", which predates the file itself — that inaccuracy is
-   * tracked separately as A11W-ISS-4. The date here is the verifiable one.
+   * 2026-07-25 (A11W-ISS-4): rewritten to describe what the site actually
+   * does — Plausible, Netlify Forms, no cookies — replacing a policy that
+   * referenced accounts and payments that have never existed.
    */
-  privacy: '2025-08-04',
-  /** 2025-08-04: see the note on privacy above. */
-  terms: '2025-08-04',
-  /** 2025-08-04: last change to this file. */
-  license: '2025-08-04',
+  privacy: '2026-07-25',
+  /**
+   * 2026-07-25 (A11W-ISS-4): rewritten for the free, MIT-licensed reality,
+   * replacing a pay-per-mission billing section for a product that is not
+   * and has never been sold.
+   */
+  terms: '2026-07-25',
+  /** 2026-07-25 (A11W-ISS-4): removed the unreal "Enterprise Services" tier
+   *  and corrected the copyright line to match the repository LICENSE. */
+  license: '2026-07-25',
 } as const

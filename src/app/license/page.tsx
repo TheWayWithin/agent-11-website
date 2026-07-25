@@ -43,7 +43,7 @@ export default function LicensePage() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">MIT License</h2>
             <div className="bg-gray-50 rounded-lg p-6 font-mono text-sm">
-              <p className="mb-4">Copyright (c) 2024 AGENT-11</p>
+              <p className="mb-4">Copyright (c) 2025 Jamie Watters</p>
               
               <p className="mb-4">
                 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -93,18 +93,27 @@ export default function LicensePage() {
             </ul>
           </section>
 
+          {/* The former "Enterprise Services" section listed premium mission
+              libraries, an enterprise SLA, hosted infrastructure and paid
+              custom development under "separate commercial licenses". None of
+              those exist, have existed, or are planned — removed under
+              A11W-ISS-4 rather than left implying a paid tier. */}
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Enterprise Services</h2>
-            <p className="text-gray-700 mb-4">
-              While the core framework is open source, enterprise services, support, and 
-              hosted solutions are provided under separate commercial licenses. These include:
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">There Is No Paid Tier</h2>
+            <p className="text-gray-700">
+              Everything is under the licence above. There is no premium edition, no hosted
+              service, no enterprise agreement and no support contract to buy — what is in the
+              repository is the whole product. If you want to support the work, that is what{' '}
+              <a
+                href="https://buymeacoffee.com/jamiewatters"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700"
+              >
+                Buy Me a Coffee
+              </a>{' '}
+              is for, and it is entirely voluntary.
             </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>Premium mission libraries</li>
-              <li>Enterprise support and SLA</li>
-              <li>Hosted agent infrastructure</li>
-              <li>Custom integrations and development</li>
-            </ul>
           </section>
 
           <section className="mb-8">

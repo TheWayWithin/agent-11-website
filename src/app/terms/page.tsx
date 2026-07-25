@@ -26,102 +26,173 @@ export default function TermsPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="prose prose-gray max-w-none">
           <h1 className="text-4xl font-bold text-gray-900 mb-8">Terms of Service</h1>
-          {/* The date is the day this page's file last changed, from the
-              repository history. The old "December 2024" line predated the
-              file itself. */}
           <p className="text-lg text-gray-600 mb-8">
             Last updated{' '}
             <time dateTime={PAGE_UPDATED.terms}>{formatUpdated(PAGE_UPDATED.terms)}</time>
           </p>
 
           <section className="mb-8">
+            <p className="text-gray-700 mb-4">
+              <strong>The short version.</strong> AGENT-11 is a free, open-source framework
+              released under the MIT licence. There is nothing to buy, no account to create and
+              no subscription. These terms cover your use of this website; the software itself is
+              governed by its licence, and where the two ever disagree, the licence wins.
+            </p>
+          </section>
+
+          <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Acceptance of Terms</h2>
             <p className="text-gray-700 mb-4">
-              By using AGENT-11, you agree to be bound by these Terms of Service. If you do not 
-              agree to these terms, do not use our service.
+              By using this website you agree to these terms. If you do not agree with them, please
+              stop using the site. You do not need to accept anything to use the AGENT-11 software
+              itself beyond the terms of the{' '}
+              <a
+                href="https://github.com/TheWayWithin/agent-11/blob/main/LICENSE"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700"
+              >
+                MIT licence
+              </a>
+              .
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Description of Service</h2>
             <p className="text-gray-700 mb-4">
-              AGENT-11 provides AI-powered development tools and agents that help developers 
-              execute missions and automate development workflows. Our service includes:
+              AGENT-11 is a set of agent definitions, mission workflows and configuration files
+              that you install into your own project&apos;s <code>.claude/</code> directory and run
+              with Claude Code. It includes:
             </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>Project-local AI agent deployment</li>
-              <li>Mission execution capabilities</li>
-              <li>Development workflow automation</li>
-              <li>Code analysis and generation tools</li>
+            <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
+              <li>Eleven specialist agent profiles, installed locally in your project</li>
+              <li>Mission workflows run through the <code>/coord</code> command</li>
+              <li>Field-manual documentation and templates</li>
             </ul>
+            <p className="text-gray-700">
+              There is no AGENT-11 server, hosted product or API. The framework runs on your
+              machine, inside your own Claude Code session, against your own repository. This
+              website is documentation and a download pointer, nothing more.
+            </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">User Responsibilities</h2>
-            <p className="text-gray-700 mb-4">You agree to:</p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>Use the service in compliance with all applicable laws</li>
-              <li>Not use the service for illegal or unauthorized purposes</li>
-              <li>Maintain the security of your account credentials</li>
-              <li>Not attempt to reverse engineer or compromise our systems</li>
-              <li>Respect intellectual property rights</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Payment and Billing</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">No Payment, No Account</h2>
             <p className="text-gray-700 mb-4">
-              AGENT-11 operates on a mission-based pricing model:
+              AGENT-11 is free. To be specific:
             </p>
+            <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
+              <li>There are no licence fees, mission charges or subscriptions</li>
+              <li>There is no account to create and no credentials to keep safe</li>
+              <li>This site takes no payments and stores no payment details</li>
+              <li>
+                Contributions through{' '}
+                <a
+                  href="https://buymeacoffee.com/jamiewatters"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 hover:text-primary-700"
+                >
+                  Buy Me a Coffee
+                </a>{' '}
+                are entirely voluntary, buy you nothing, and are handled by that platform under its
+                own terms
+              </li>
+            </ul>
+            <p className="text-gray-700">
+              Running AGENT-11 does cost you your own Claude Code or Anthropic API usage, which you
+              pay to Anthropic, not to us.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Responsibilities</h2>
+            <p className="text-gray-700 mb-4">When you use AGENT-11, you agree to:</p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>You pay only for successfully executed missions</li>
-              <li>Failed missions are not charged</li>
-              <li>Pricing varies by mission complexity and squad size</li>
-              <li>Payments are processed securely through third-party providers</li>
+              <li>Use it in compliance with all applicable laws</li>
+              <li>Comply with the terms of any service you point it at, including Anthropic&apos;s</li>
+              <li>Review AI-generated code before you ship it</li>
+              <li>Respect the intellectual property rights of others in what you build</li>
             </ul>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Intellectual Property</h2>
             <p className="text-gray-700 mb-4">
-              Your code and intellectual property remain yours. AGENT-11 agents process your 
-              code locally and do not claim ownership of your work. Our service and underlying 
-              technology remain our property.
+              Your code and intellectual property remain yours. AGENT-11 claims no ownership of
+              anything you build with it, and no rights over your repository.
+            </p>
+            <p className="text-gray-700">
+              The framework itself is copyright Jamie Watters and licensed to you under the MIT
+              licence, which lets you use, modify, distribute and sell it, commercially or
+              privately, provided you keep the copyright and licence notice. The full text is on
+              the <Link href="/license" className="text-primary-600 hover:text-primary-700">licence page</Link>{' '}
+              and in the repository. The content of this website — its copy, design and images —
+              is not covered by that licence and remains the author&apos;s.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Limitation of Liability</h2>
             <p className="text-gray-700 mb-4">
-              AGENT-11 is provided as-is. We are not liable for any damages arising from the 
-              use of our service. Your use of AI-generated code is at your own risk and 
-              responsibility.
+              AGENT-11 is provided <strong>as is, without warranty of any kind</strong>, as set out
+              in the MIT licence. It is a tool that instructs an AI model to write and change code
+              in your repository. It can get things wrong. Review its output, keep your work in
+              version control, and treat anything it produces as a draft until you have checked it.
             </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Termination</h2>
-            <p className="text-gray-700 mb-4">
-              Either party may terminate this agreement at any time. Upon termination, your 
-              access to the service will cease, but you retain ownership of your code and data.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Changes to Terms</h2>
-            <p className="text-gray-700 mb-4">
-              We may update these terms from time to time. Continued use of the service 
-              constitutes acceptance of updated terms.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Information</h2>
             <p className="text-gray-700">
-              For questions about these Terms of Service, contact us at{' '}
-              <a href="mailto:legal@agent-11.com" className="text-primary-600 hover:text-primary-700">
-                legal@agent-11.com
+              To the extent permitted by law, the author is not liable for any claim, damages or
+              other liability arising from your use of the framework or this website.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Stopping</h2>
+            <p className="text-gray-700">
+              There is nothing to cancel. Stop using the site whenever you like; delete the
+              <code> .claude/</code> directory to remove the framework from a project. Your code and
+              data are unaffected either way. Your rights under the MIT licence for code you have
+              already obtained continue to apply.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Changes to These Terms</h2>
+            <p className="text-gray-700">
+              These terms may change as the project does. The date at the top of this page always
+              reflects the last change, and the history of every edit is public in the{' '}
+              <a
+                href="https://github.com/TheWayWithin/agent-11-website"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700"
+              >
+                website repository
               </a>
+              .
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact</h2>
+            <p className="text-gray-700">
+              AGENT-11 is a personal open-source project by Jamie Watters. There is no company
+              behind it, no support desk and no legal department. For anything about these terms or
+              the project, open an issue at{' '}
+              <a
+                href="https://github.com/TheWayWithin/agent-11/issues"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700"
+              >
+                github.com/TheWayWithin/agent-11/issues
+              </a>
+              , or email{' '}
+              <a href="mailto:privacy@agent-11.com" className="text-primary-600 hover:text-primary-700">
+                privacy@agent-11.com
+              </a>{' '}
+              if it needs to be private.
             </p>
           </section>
         </div>

@@ -26,9 +26,6 @@ export default function PrivacyPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="prose prose-gray max-w-none">
           <h1 className="text-4xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
-          {/* The date is the day this page's file last changed, from the
-              repository history. The old "December 2024" line predated the
-              file itself. */}
           <p className="text-lg text-gray-600 mb-8">
             Last updated{' '}
             <time dateTime={PAGE_UPDATED.privacy}>{formatUpdated(PAGE_UPDATED.privacy)}</time>
@@ -37,77 +34,198 @@ export default function PrivacyPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Overview</h2>
             <p className="text-gray-700 mb-4">
-              AGENT-11 is committed to protecting your privacy. This Privacy Policy explains how we collect, 
-              use, and safeguard your information when you use our AI-powered development platform.
+              <strong>The short version.</strong> This site sets no cookies and does not track you.
+              It counts visits with privacy-friendly analytics that cannot identify you. The only
+              personal information it can hold is an email address, and only if you type one into
+              the form yourself. There are no accounts, no payments and no advertising.
             </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Information We Collect</h2>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Personal Information</h3>
-            <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
-              <li>Email address (when you subscribe to updates or create an account)</li>
-              <li>Name and contact information (when provided voluntarily)</li>
-              <li>Payment information (processed securely by third-party payment processors)</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Usage Information</h3>
-            <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
-              <li>Mission execution logs and performance metrics</li>
-              <li>System configuration and deployment information</li>
-              <li>Error reports and diagnostic information</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Code and Project Data</h3>
-            <p className="text-gray-700 mb-4">
-              <strong>Important:</strong> AGENT-11 agents run locally on your machine. Your source code never 
-              leaves your local environment and is not transmitted to our servers.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">How We Use Your Information</h2>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>To provide and improve our services</li>
-              <li>To process payments and manage subscriptions</li>
-              <li>To send important updates about the service</li>
-              <li>To provide customer support</li>
-              <li>To analyze usage patterns and improve performance</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Data Security</h2>
-            <p className="text-gray-700 mb-4">
-              We implement industry-standard security measures to protect your information:
-            </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>End-to-end encryption for data transmission</li>
-              <li>Secure local processing (no code uploaded to servers)</li>
-              <li>Regular security audits and updates</li>
-              <li>Limited access to personal information on a need-to-know basis</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Rights</h2>
-            <p className="text-gray-700 mb-4">You have the right to:</p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>Access your personal information</li>
-              <li>Correct inaccurate information</li>
-              <li>Delete your personal information</li>
-              <li>Opt out of marketing communications</li>
-              <li>Export your data</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
             <p className="text-gray-700">
-              If you have questions about this Privacy Policy, please contact us at{' '}
+              AGENT-11 itself is software you install and run on your own machine. It has no server
+              of ours to talk to, so it sends us nothing at all.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">What This Site Collects</h2>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">Analytics</h3>
+            <p className="text-gray-700 mb-4">
+              We use{' '}
+              <a
+                href="https://plausible.io/data-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700"
+              >
+                Plausible Analytics
+              </a>
+              , which is cookieless and collects no personal data. It records aggregate counts only:
+              page views, the page you came from, rough country, and whether you are on desktop or
+              mobile. None of it is tied to you or kept as a profile. We also count two specific
+              actions so we know which parts of the site are useful:
+            </p>
+            <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
+              <li>
+                <strong>Install Copy</strong> — someone copied the install command. It records that
+                it happened, not who did it.
+              </li>
+              <li>
+                <strong>Signup</strong> — someone submitted the email form, and which resource they
+                asked for. The email address itself is not sent to Plausible.
+              </li>
+            </ul>
+            <p className="text-gray-700 mb-6">
+              Plausible is the only third-party service this site loads. If you block it, everything
+              on the site still works.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">If you submit the email form</h3>
+            <p className="text-gray-700 mb-4">
+              The form on this site is handled by Netlify Forms. Submitting it stores exactly four
+              things, plus an anti-spam field:
+            </p>
+            <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
+              <li>The email address you typed</li>
+              <li>Which resource you asked for</li>
+              <li>Which form on the site you used</li>
+              <li>The time you submitted it</li>
+              <li>A hidden honeypot field, used only to discard bot submissions</li>
+            </ul>
+            <p className="text-gray-700 mb-6">
+              That submission is stored in the Netlify dashboard for this site, where Jamie can read
+              it and send you what you asked for. It is not sold, shared, published, or used for
+              advertising, and it is not passed to any other service.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">Hosting</h3>
+            <p className="text-gray-700 mb-6">
+              The site is hosted on Netlify. Like any web host, Netlify processes the requests your
+              browser makes — including your IP address — in order to serve you the pages. That
+              handling is covered by{' '}
+              <a
+                href="https://www.netlify.com/privacy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700"
+              >
+                Netlify&apos;s privacy policy
+              </a>
+              .
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">What this site does not do</h3>
+            <ul className="list-disc list-inside text-gray-700 space-y-2">
+              <li>It sets no cookies, so there is no cookie banner to click</li>
+              <li>It loads no analytics beyond Plausible, no ad network and no tracking pixel</li>
+              <li>It does not follow you across other websites or build a profile of you</li>
+              <li>It has no accounts, logins, or passwords</li>
+              <li>It takes no payments and stores no payment details</li>
+              <li>Its fonts are served from this site, not from a third party</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Code and Project Data</h2>
+            <p className="text-gray-700 mb-4">
+              <strong>Important:</strong> AGENT-11 is a set of files installed in your own
+              project&apos;s <code>.claude/</code> directory. Your source code stays in your
+              repository. There is no AGENT-11 server, so none of your code, prompts or mission
+              output is ever sent to us — we could not receive it if we wanted to.
+            </p>
+            <p className="text-gray-700">
+              What does leave your machine is whatever your own Claude Code session sends to
+              Anthropic in order to work, exactly as it would without AGENT-11. That is between you
+              and Anthropic, under their terms and privacy policy.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Links to Other Sites</h2>
+            <p className="text-gray-700">
+              This site links out to GitHub, Buy Me a Coffee, X and LinkedIn. Following any of those
+              links takes you to a service with its own privacy policy and its own tracking. Nothing
+              is shared with them until you click.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">How Your Information Is Kept</h2>
+            <p className="text-gray-700 mb-4">
+              This is a small project, so here is the honest version rather than a list of
+              certifications:
+            </p>
+            <ul className="list-disc list-inside text-gray-700 space-y-2">
+              <li>The site is served over HTTPS, and HTTP requests are redirected to it</li>
+              <li>
+                Form submissions are held in the Netlify dashboard for this site, which only Jamie
+                can access
+              </li>
+              <li>
+                The less that is collected, the less there is to lose — which is the main reason so
+                little is collected
+              </li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Choices</h2>
+            <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
+              <li>
+                <strong>Analytics:</strong> block <code>plausible.io</code> in your browser or an ad
+                blocker and the site records nothing about your visit. There is nothing to opt into,
+                because nothing about you is stored either way.
+              </li>
+              <li>
+                <strong>Your email:</strong> ask and it will be deleted from the form store. Ask and
+                you will be told what is held. There is no other record of you to export.
+              </li>
+              <li>
+                <strong>Don&apos;t submit the form</strong> and this site holds nothing about you at
+                all.
+              </li>
+            </ul>
+            <p className="text-gray-700">
+              Requests go to the contact address below, where a person reads them. This is a
+              one-person project, so there is no ticketing system and no guaranteed response time.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Changes to This Policy</h2>
+            <p className="text-gray-700">
+              If what the site collects changes, this page changes with it, and the date at the top
+              is updated. Every edit is public in the{' '}
+              <a
+                href="https://github.com/TheWayWithin/agent-11-website"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700"
+              >
+                website repository
+              </a>
+              , so you can check what changed and when rather than taking our word for it.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact</h2>
+            <p className="text-gray-700">
+              AGENT-11 is a personal open-source project by Jamie Watters; there is no company
+              behind it and no data protection department. For anything on this page, including
+              deleting your email address, contact{' '}
               <a href="mailto:privacy@agent-11.com" className="text-primary-600 hover:text-primary-700">
                 privacy@agent-11.com
               </a>
+              . For anything public, open an issue at{' '}
+              <a
+                href="https://github.com/TheWayWithin/agent-11/issues"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700"
+              >
+                github.com/TheWayWithin/agent-11/issues
+              </a>
+              .
             </p>
           </section>
         </div>
