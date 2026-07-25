@@ -16,6 +16,8 @@ ID or another repo's. Raise issues here with `python3 ~/shared/scripts/repo-issu
 
 | ID | Title | Status | Severity | Detail | MC-SYNC |
 |----|-------|--------|----------|--------|---------|
+| A11W-ISS-9 | Confirm privacy@agent-11.com actually delivers - it is the only contact on /terms and /privacy and its deliverability is unverified | Open | medium | — | pending |
+| A11W-ISS-8 | /pricing contradicts the rest of the site: funds 'maintain servers'/'server costs' (no such infra) and counts '11 agents + coordinator' (12) against 11-inclusive everywhere else | Open | low | — | pending |
 | A11W-ISS-7 | Site changelog lists versions and dates not in the framework CHANGELOG (e.g. v2.1.0) | Open | medium | — | pending |
 | A11W-ISS-6 | Lead-magnet form promises an email that nothing sends | Open | medium | — | pending |
 | A11W-ISS-5 | Canonical points at www.agent-11.com but the site serves on the apex (www 301s to it): AImpactScanner scores Canonical Tag Configuration 40/100 'cross-domain canonical' and Indexability 85/100; decide one host and align metadataBase, alternates.canonical, sitemap.ts, robots.ts and src/lib/seo.ts SITE_URL | Open | medium | — | pending |

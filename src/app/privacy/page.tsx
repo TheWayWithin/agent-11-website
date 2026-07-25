@@ -66,8 +66,8 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
               <li>
-                <strong>Install Copy</strong> — someone copied the install command. It records that
-                it happened, not who did it.
+                <strong>Install Copy</strong> — someone used the copy button on the home page to
+                copy the install command. It records that it happened, not who did it.
               </li>
               <li>
                 <strong>Signup</strong> — someone submitted the email form, and which resource they
@@ -75,26 +75,35 @@ export default function PrivacyPage() {
               </li>
             </ul>
             <p className="text-gray-700 mb-6">
-              Plausible is the only third-party service this site loads. If you block it, everything
-              on the site still works.
+              Plausible is the only third-party service your browser loads on this site. If you
+              block it, everything on the site still works.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">Public GitHub figures</h3>
+            <p className="text-gray-700 mb-6">
+              Some pages show public numbers from the AGENT-11 repository, such as stars and recent
+              activity. Your browser asks this site for them and this site asks GitHub — the request
+              is made by our server, not by you, so GitHub does not see your visit. Following one of
+              our links to GitHub is a different matter, and is covered below.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-3">If you submit the email form</h3>
             <p className="text-gray-700 mb-4">
-              The form on this site is handled by Netlify Forms. Submitting it stores exactly four
-              things, plus an anti-spam field:
+              The form on this site is handled by Netlify Forms. What the page sends is exactly
+              this, and nothing else:
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
               <li>The email address you typed</li>
               <li>Which resource you asked for</li>
-              <li>Which form on the site you used</li>
+              <li>Which form on the site you used, and which page it was on</li>
               <li>The time you submitted it</li>
               <li>A hidden honeypot field, used only to discard bot submissions</li>
             </ul>
             <p className="text-gray-700 mb-6">
-              That submission is stored in the Netlify dashboard for this site, where Jamie can read
-              it and send you what you asked for. It is not sold, shared, published, or used for
-              advertising, and it is not passed to any other service.
+              Netlify records its own delivery details alongside that, as any form host does. The
+              submission is stored in this site&apos;s Netlify account, where Jamie can read it and
+              send you what you asked for. It is not sold, shared, published, or used for
+              advertising, and it is not passed on to any other service.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Hosting</h3>
@@ -157,8 +166,8 @@ export default function PrivacyPage() {
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>The site is served over HTTPS, and HTTP requests are redirected to it</li>
               <li>
-                Form submissions are held in the Netlify dashboard for this site, which only Jamie
-                can access
+                Form submissions are held in this site&apos;s Netlify account rather than in a
+                database of our own, and are read by one person
               </li>
               <li>
                 The less that is collected, the less there is to lose — which is the main reason so

@@ -71,9 +71,10 @@ export default function TermsPage() {
               <li>Field-manual documentation and templates</li>
             </ul>
             <p className="text-gray-700">
-              There is no AGENT-11 server, hosted product or API. The framework runs on your
-              machine, inside your own Claude Code session, against your own repository. This
-              website is documentation and a download pointer, nothing more.
+              There is no hosted AGENT-11 product, no API and no back end the framework reports to.
+              It runs on your machine, inside your own Claude Code session, against your own
+              repository. This website exists to document it and point you at the install command;
+              the only thing you can submit to it is an email address, if you choose to.
             </p>
           </section>
 

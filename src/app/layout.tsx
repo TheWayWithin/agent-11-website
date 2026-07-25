@@ -163,8 +163,12 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#1e3a8a" />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="dns-prefetch" href="https://api.github.com" />
-        <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+        {/* No preconnect to avatars.githubusercontent.com: nothing on the site
+            loads images from it, so the hint only opened a connection to a
+            third party for no benefit. GitHub is reached server-side through
+            /api/github/*, never from the visitor's browser — which is what
+            lets /privacy say Plausible is the only third party this site
+            loads. Removed under A11W-ISS-4. */}
 
         {/* Plausible analytics (PRJ-25 standard) — site-specific script issued for agent-11.com */}
         <script async src="https://plausible.io/js/pa-fMMu1bZfmlPvsdEPvlQo_.js"></script>

@@ -26,7 +26,10 @@ export default function LicensePage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="prose prose-gray max-w-none">
           <h1 className="text-4xl font-bold text-gray-900 mb-8">Open Source License</h1>
-          <p className="text-lg text-gray-600 mb-2">AGENT-11 Core Framework</p>
+          {/* Was "AGENT-11 Core Framework". The "core" qualifier only made
+              sense next to the Enterprise tier that never existed, and implied
+              a non-core edition. A11W-ISS-4. */}
+          <p className="text-lg text-gray-600 mb-2">The whole of AGENT-11, under one licence</p>
           <p className="text-sm text-gray-500 mb-8">
             Last updated{' '}
             <time dateTime={PAGE_UPDATED.license}>{formatUpdated(PAGE_UPDATED.license)}</time> ·{' '}
@@ -74,23 +77,30 @@ export default function LicensePage() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">What This Means</h2>
             <p className="text-gray-700 mb-4">
-              The AGENT-11 core framework is open source under the MIT License, which means you can:
+              AGENT-11 is open source under the MIT License, which means you can:
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
               <li>Use it commercially</li>
               <li>Modify the source code</li>
-              <li>Distribute it</li>
-              <li>Place warranty</li>
+              <li>Distribute it, modified or not</li>
+              <li>Sublicense it as part of something larger</li>
               <li>Use it privately</li>
             </ul>
-            
+
+            {/* The old copy listed "State any significant changes" as a
+                requirement. That is an Apache-2.0 obligation, not an MIT one —
+                the licence above asks for the notice and nothing more.
+                Corrected under A11W-ISS-4. */}
             <p className="text-gray-700 mb-4">
-              The only requirements are:
+              There is one requirement, and it is the whole of it:
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>Include the original license and copyright notice</li>
-              <li>State any significant changes made to the original software</li>
+              <li>Keep the copyright notice and the licence text with any copy you distribute</li>
             </ul>
+            <p className="text-gray-700 mt-4">
+              You do not have to state your changes, publish your source, pay anything, or ask
+              permission. The software comes with no warranty, as the text above says.
+            </p>
           </section>
 
           {/* The former "Enterprise Services" section listed premium mission
@@ -118,14 +128,23 @@ export default function LicensePage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Third-Party Dependencies</h2>
-            <p className="text-gray-700 mb-4">
-              AGENT-11 includes several open source dependencies, each with their own licenses:
+            {/* The old list cited a bundled Node runtime and a requirements.txt
+                that does not exist in the repository. Replaced with what is
+                actually there. A11W-ISS-4. */}
+            <p className="text-gray-700">
+              The framework itself is markdown and shell scripts, not a compiled package, so it
+              bundles no third-party code. Its development dependencies are listed in{' '}
+              <a
+                href="https://github.com/TheWayWithin/agent-11/blob/main/package.json"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700"
+              >
+                package.json
+              </a>{' '}
+              in the repository, each under its own licence. Running AGENT-11 requires Claude Code,
+              which is Anthropic&apos;s and covered by their terms.
             </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>Node.js runtime (MIT License)</li>
-              <li>Various npm packages (see package.json for details)</li>
-              <li>Python dependencies (see requirements.txt for details)</li>
-            </ul>
           </section>
 
           <section className="mb-8">
