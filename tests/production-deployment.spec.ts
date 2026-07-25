@@ -217,17 +217,25 @@ test.describe('Production Deployment - Emergency Fix Validation', () => {
     }
   });
 
-  test('WWW redirect works correctly', async ({ page }) => {
-    // Test that www.agent-11.com redirects properly
+  test('WWW redirects to the apex, which is canonical', async ({ page }) => {
+    // The apex is the canonical host (A11W-ISS-5). This test intentionally
+    // still navigates to www: the point is to prove www redirects away from
+    // itself. It used to accept either host as the destination, which would
+    // have passed even while the site was declaring a canonical it redirects
+    // off — exactly the bug.
     await page.goto('https://www.agent-11.com');
     await page.waitForLoadState('networkidle');
-    
-    // Should either be on www.agent-11.com or agent-11.com (both acceptable)
-    const currentUrl = page.url();
-    expect(currentUrl).toMatch(/https:\/\/(www\.)?agent-11\.com/);
-    
-    // Page should load successfully regardless of redirect
+
+    expect(page.url()).toMatch(/^https:\/\/agent-11\.com/);
+
     await expect(page).toHaveTitle(/AGENT-11/);
+
+    // And the page we landed on must name the apex as canonical.
+    const canonical = await page
+      .locator('link[rel="canonical"]')
+      .first()
+      .getAttribute('href');
+    expect(canonical).toMatch(/^https:\/\/agent-11\.com/);
   });
 
   test('No console errors present', async ({ page }) => {

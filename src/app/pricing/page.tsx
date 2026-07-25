@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { getFAQSchema, renderStructuredData } from '@/lib/structured-data'
 import { PAGE_UPDATED } from '@/lib/page-dates'
-import { formatUpdated } from '@/lib/seo'
+import { formatUpdated, SITE_URL } from '@/lib/seo'
 
 interface SupportOption {
   icon: string
@@ -49,7 +49,13 @@ const supportOptions: SupportOption[] = [
     title: 'Share Your Experience',
     description: 'Built something cool with AGENT-11? Share your success story. Tweet about your wins, write a blog post, tell other founders. Authentic word-of-mouth is the highest compliment.',
     cta: 'Share on Twitter/X',
-    link: 'https://twitter.com/intent/tweet?text=Just%20shipped%20with%20%40agent11_dev%20-%20multi-agent%20dev%20framework%20that%20actually%20works.%20100%25%20free%20and%20open%20source.%20Check%20it%20out%3A%20https%3A%2F%2Fwww.agent-11.com',
+    // Built from SITE_URL rather than hardcoded: this link seeds the URL into
+    // every tweet a visitor sends, so a www address here would manufacture
+    // inbound links to a host that redirects. A11W-ISS-5.
+    link: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+      'Just shipped with @agent11_dev - multi-agent dev framework that actually works. 100% free and open source. Check it out: ' +
+        SITE_URL
+    )}`,
     buttonStyle: 'bg-blue-500 hover:bg-blue-600 text-white',
     benefit: 'Community-driven • No cost • Genuine impact'
   }

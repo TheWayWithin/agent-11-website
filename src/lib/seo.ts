@@ -5,8 +5,21 @@
  * sites behave the same way under the MASTERY-AI checks.
  */
 
-/** Canonical origin. Matches metadataBase, sitemap.ts and robots.ts. */
-export const SITE_URL = 'https://www.agent-11.com'
+/**
+ * Canonical origin — the APEX, with no www.
+ *
+ * This is the one place the host is written down. metadataBase, every page
+ * layout's canonical and openGraph.url, sitemap.ts, robots.ts and every
+ * JSON-LD block derive from it, so the site cannot disagree with itself
+ * about where it lives.
+ *
+ * It must stay the apex. Netlify serves here and 301s www to it, Plausible is
+ * registered against it, and llms.txt is published on it. Declaring www
+ * canonical — as this did until A11W-ISS-5 — pointed every crawler at a host
+ * that immediately redirects away, which AImpactScanner read as a
+ * cross-domain canonical.
+ */
+export const SITE_URL = 'https://agent-11.com'
 
 /**
  * The framework release the site currently describes, and the day it shipped.

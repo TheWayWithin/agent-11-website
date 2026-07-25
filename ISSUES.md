@@ -16,6 +16,8 @@ ID or another repo's. Raise issues here with `python3 ~/shared/scripts/repo-issu
 
 | ID | Title | Status | Severity | Detail | MC-SYNC |
 |----|-------|--------|----------|--------|---------|
+| A11W-ISS-11 | Share-on-X link tags @agent11_dev, a third handle variant that may not exist (site elsewhere uses @Jamie_within) | Open | low | — | pending |
+| A11W-ISS-10 | security.txt Policy line points at /security-policy which 404s, and its Contact is a different domain's mailbox | Open | medium | — | pending |
 | A11W-ISS-9 | Confirm privacy@agent-11.com actually delivers - it is the only contact on /terms and /privacy and its deliverability is unverified | Open | medium | — | pending |
 | A11W-ISS-8 | /pricing contradicts the rest of the site: funds 'maintain servers'/'server costs' (no such infra) and counts '11 agents + coordinator' (12) against 11-inclusive everywhere else | Open | low | — | pending |
 | A11W-ISS-7 | Site changelog lists versions and dates not in the framework CHANGELOG (e.g. v2.1.0) | Open | medium | — | pending |

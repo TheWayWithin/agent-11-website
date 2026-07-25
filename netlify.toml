@@ -58,7 +58,9 @@
   for = "/api/*"
   [headers.values]
     Cache-Control = "public, max-age=300, stale-while-revalidate=3600"
-    Access-Control-Allow-Origin = "https://www.agent-11.com"
+    # Apex, matching SITE_URL in src/lib/seo.ts. www 301s here, so a www
+    # origin would never have matched a real request anyway. A11W-ISS-5.
+    Access-Control-Allow-Origin = "https://agent-11.com"
 
 # Fonts and media optimization
 [[headers]]
@@ -95,7 +97,9 @@
   package = "netlify-plugin-submit-sitemap"
   
   [plugins.inputs]
-    baseUrl = "https://www.agent-11.com"
+    # Apex: this is the URL submitted to Google and Bing on every deploy, so
+    # it has to be the canonical host. A11W-ISS-5.
+    baseUrl = "https://agent-11.com"
     sitemapPath = "/sitemap.xml"
     providers = [
       "google",

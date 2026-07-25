@@ -1,7 +1,10 @@
 import { MetadataRoute } from 'next'
+import { SITE_URL } from '@/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.agent-11.com'
+  // Derived, never re-typed: a sitemap listing a different host from the
+  // canonicals is the mismatch A11W-ISS-5 was about.
+  const baseUrl = SITE_URL
 
   // All site pages with their priorities and update frequencies
   const routes = [

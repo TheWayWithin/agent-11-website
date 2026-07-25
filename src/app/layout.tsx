@@ -19,7 +19,10 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.agent-11.com'),
+  // SITE_URL is the apex. metadataBase also resolves every relative URL in
+  // metadata (opengraph-image, icons), so it must not name a host that
+  // redirects. A11W-ISS-5.
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'AGENT-11 | Your Personal Dev Team That Never Sleeps - by Jamie Watters',
     template: '%s | AGENT-11'
@@ -57,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.agent-11.com',
+    url: SITE_URL,
     title: 'AGENT-11 | Your Personal Dev Team That Never Sleeps - by Jamie Watters',
     description: 'Stop wearing 11 hats. AGENT-11 deploys 11 specialist AI agents into Claude Code with one install command. Free and open source, MIT licensed, by Jamie Watters.',
     siteName: 'AGENT-11',
@@ -73,7 +76,7 @@ export const metadata: Metadata = {
     creator: '@Jamie_within',
   },
   alternates: {
-    canonical: 'https://www.agent-11.com',
+    canonical: SITE_URL,
   },
   verification: {
     google: '5Nh5uUhbcSpIrNu4URA_5U9kUMvbx1zP0NWRNFF0SXg',

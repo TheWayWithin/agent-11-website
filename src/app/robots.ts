@@ -1,7 +1,10 @@
 import { MetadataRoute } from 'next'
+import { SITE_URL } from '@/lib/seo'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://www.agent-11.com'
+  // Derived, never re-typed. The Sitemap: and Host: lines below are the first
+  // thing a crawler reads, so they must name the same host as the canonicals.
+  const baseUrl = SITE_URL
 
   return {
     rules: [
