@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getFAQSchema, renderStructuredData, type FAQItem } from '@/lib/structured-data'
 import { FRAMEWORK_VERSION, FRAMEWORK_RELEASED, SITE_UPDATED, formatUpdated } from '@/lib/seo'
 
@@ -69,6 +70,13 @@ export default function FAQ() {
               it is present in the initial HTML that crawlers read. */}
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-base font-semibold text-gray-900 mb-3">How this project works</h3>
+            <Image
+              src="/jamie-watters.jpg"
+              alt="Jamie Watters, the solo founder who builds and maintains AGENT-11"
+              width={72}
+              height={72}
+              className="rounded-full mb-4"
+            />
             <p className="text-gray-600 leading-relaxed">
               AGENT-11 is built and maintained by{' '}
               <a

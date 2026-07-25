@@ -27,8 +27,11 @@ export default function Hero() {
           </div>
 
           {/* Main Headline - Mission-Focused */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up">
-            <span className="block text-gray-900">Execute Complex Missions</span>
+          {/* The first line is a direct text node, not a <span>. Extractors
+              that read an h1's immediate text (rather than walking children)
+              were seeing an empty heading and reporting "no H1". */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up text-gray-900">
+            Execute Complex Missions
             <span className="block text-gradient">With One /coord Command</span>
           </h1>
 
