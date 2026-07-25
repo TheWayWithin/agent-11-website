@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import { SITE_URL, SITE_UPDATED, FRAMEWORK_VERSION, FRAMEWORK_RELEASED } from '@/lib/seo'
 
 // Optimize font loading
 const inter = Inter({
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     default: 'AGENT-11 | Your Personal Dev Team That Never Sleeps - by Jamie Watters',
     template: '%s | AGENT-11'
   },
-  description: 'Stop wearing 11 hats. Get 11 specialists instead. Free, open source multi-agent development framework by Jamie Watters. Ship faster with your personal team of AI specialists. Install in seconds.',
+  description: 'Stop wearing 11 hats. AGENT-11 deploys 11 specialist AI agents into Claude Code with one install command. Free and open source, MIT licensed, by Jamie Watters.',
   keywords: [
     'AI development',
     'developer tools',
@@ -58,23 +59,18 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.agent-11.com',
     title: 'AGENT-11 | Your Personal Dev Team That Never Sleeps - by Jamie Watters',
-    description: 'Stop wearing 11 hats. Get 11 specialists instead. Free, open source multi-agent development framework by Jamie Watters. Ship faster with your personal team of AI specialists.',
+    description: 'Stop wearing 11 hats. AGENT-11 deploys 11 specialist AI agents into Claude Code with one install command. Free and open source, MIT licensed, by Jamie Watters.',
     siteName: 'AGENT-11',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'AGENT-11 - Multi-Agent Development Framework'
-      }
-    ],
+    // No explicit images array: the file-based src/app/opengraph-image.tsx
+    // generates /opengraph-image. The previous '/og-image.png' override
+    // pointed at a file that does not exist and returned 404.
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AGENT-11 | Your Personal Dev Team That Never Sleeps - by Jamie Watters',
-    description: 'Stop wearing 11 hats. Get 11 specialists instead. Free, open source multi-agent development framework by Jamie Watters. Ship faster with your personal team of AI specialists.',
-    creator: '@agent11dev',
-    images: ['/og-image.png'],
+    description: 'Stop wearing 11 hats. AGENT-11 deploys 11 specialist AI agents into Claude Code with one install command. Free and open source, MIT licensed, by Jamie Watters.',
+    // Jamie's own account — the handle published on /about and /pricing.
+    creator: '@Jamie_within',
   },
   alternates: {
     canonical: 'https://www.agent-11.com',
@@ -106,8 +102,10 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "AGENT-11",
-    "url": "https://www.agent-11.com",
-    "logo": "https://www.agent-11.com/logo.png",
+    "url": SITE_URL,
+    // favicon.svg is the only logo asset that actually exists; the previous
+    // /logo.png returned 404.
+    "logo": `${SITE_URL}/favicon.svg`,
     "description": "Multi-agent development framework for solo founders and development teams",
     "founder": {
       "@type": "Person",
@@ -115,7 +113,8 @@ export default function RootLayout({
       "url": "https://jamiewatters.work"
     },
     "sameAs": [
-      "https://github.com/TheWayWithin/agent-11"
+      "https://github.com/TheWayWithin/agent-11",
+      "https://jamiewatters.work"
     ]
   }
 
@@ -125,6 +124,12 @@ export default function RootLayout({
     "name": "AGENT-11",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Cross-platform",
+    "softwareVersion": FRAMEWORK_VERSION,
+    // Release date of v6.2.0 per the GitHub release tag and CHANGELOG.
+    "datePublished": FRAMEWORK_RELEASED,
+    "dateModified": FRAMEWORK_RELEASED,
+    "license": "https://github.com/TheWayWithin/agent-11/blob/main/LICENSE",
+    "downloadUrl": "https://github.com/TheWayWithin/agent-11",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -132,15 +137,32 @@ export default function RootLayout({
     },
     "creator": {
       "@type": "Person",
-      "name": "Jamie Watters"
+      "name": "Jamie Watters",
+      "url": "https://jamiewatters.work"
     },
     "description": "Multi-agent development framework that provides 11 specialized AI agents for building software faster"
+  }
+
+  // The site itself, carrying the date any page's copy last changed.
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AGENT-11",
+    "url": SITE_URL,
+    "inLanguage": "en",
+    "dateModified": SITE_UPDATED,
+    "publisher": {
+      "@type": "Person",
+      "name": "Jamie Watters",
+      "url": "https://jamiewatters.work"
+    }
   }
 
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <meta name="theme-color" content="#1e3a8a" />
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="dns-prefetch" href="https://api.github.com" />
         <link rel="preconnect" href="https://avatars.githubusercontent.com" />
 
@@ -161,6 +183,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className={`antialiased font-sans ${inter.className}`}>
