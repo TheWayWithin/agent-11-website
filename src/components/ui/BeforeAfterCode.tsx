@@ -30,7 +30,7 @@ export default function BeforeAfterCode({
           <ul className="space-y-1">
             {improvements.map((improvement, index) => (
               <li key={index} className="flex items-center gap-2 text-green-700 text-sm">
-                <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 {improvement}

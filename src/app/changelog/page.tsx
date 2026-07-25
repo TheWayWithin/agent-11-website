@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { PAGE_UPDATED } from '@/lib/page-dates'
+import { formatUpdated } from '@/lib/seo'
 
 interface ChangelogEntry {
   version: string
@@ -390,8 +392,21 @@ export default function ChangelogPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Changelog
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 mb-4">
               Track the evolution of AGENT-11 with detailed release notes and feature updates.
+            </p>
+            <p className="text-sm text-gray-500">
+              Updated{' '}
+              <time dateTime={PAGE_UPDATED.changelog}>{formatUpdated(PAGE_UPDATED.changelog)}</time>{' '}
+              ·{' '}
+              <a
+                href="https://github.com/TheWayWithin/agent-11/blob/main/CHANGELOG.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-primary-600"
+              >
+                the repository CHANGELOG is authoritative
+              </a>
             </p>
           </div>
 

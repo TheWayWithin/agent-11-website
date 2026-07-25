@@ -3,6 +3,9 @@
 import { lazy, Suspense } from 'react'
 import Hero from '@/components/sections/Hero'
 import Problem from '@/components/sections/Problem'
+// Imported eagerly, not lazily: the FAQPage JSON-LD it renders must be in the
+// initial HTML for crawlers, and a Suspense fallback would hide it.
+import FAQ from '@/components/sections/FAQ'
 import PerformanceMonitor from '@/components/ui/PerformanceMonitor'
 // Email capture system temporarily disabled for build stability
 
@@ -78,6 +81,8 @@ export default function Home() {
         <TechnicalConfidence />
       </Suspense>
       
+      <FAQ />
+
       <Suspense fallback={<SectionSkeleton />}>
         <GetStarted />
       </Suspense>

@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { PAGE_UPDATED } from '@/lib/page-dates'
+import { formatUpdated } from '@/lib/seo'
 
 export default function LicensePage() {
   return (
@@ -24,7 +26,19 @@ export default function LicensePage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="prose prose-gray max-w-none">
           <h1 className="text-4xl font-bold text-gray-900 mb-8">Open Source License</h1>
-          <p className="text-lg text-gray-600 mb-8">AGENT-11 Core Framework</p>
+          <p className="text-lg text-gray-600 mb-2">AGENT-11 Core Framework</p>
+          <p className="text-sm text-gray-500 mb-8">
+            Last updated{' '}
+            <time dateTime={PAGE_UPDATED.license}>{formatUpdated(PAGE_UPDATED.license)}</time> ·{' '}
+            <a
+              href="https://github.com/TheWayWithin/agent-11/blob/main/LICENSE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-primary-600"
+            >
+              the authoritative licence text is in the repository
+            </a>
+          </p>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">MIT License</h2>

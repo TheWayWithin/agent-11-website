@@ -2,6 +2,9 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { getFAQSchema, renderStructuredData } from '@/lib/structured-data'
+import { PAGE_UPDATED } from '@/lib/page-dates'
+import { formatUpdated } from '@/lib/seo'
 
 interface SupportOption {
   icon: string
@@ -123,6 +126,9 @@ export default function PricingPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* FAQPage JSON-LD built from the same `faqs` array the section below
+          renders, so the markup always matches the visible answers. */}
+      {renderStructuredData(getFAQSchema(faqs))}
       {/* Header */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -150,12 +156,19 @@ export default function PricingPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               100% Free & Open Source Forever
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
               Fork it. Tweak it. Make it yours. AGENT-11 is fully open source under MIT license—copy the code, customize the agents, adapt it to your workflow, or just benefit from ongoing development. Built by solo founders, for solo founders. No strings attached.
+            </p>
+            <p className="text-sm text-gray-500">
+              Updated{' '}
+              <time dateTime={PAGE_UPDATED.pricing}>{formatUpdated(PAGE_UPDATED.pricing)}</time>
             </p>
           </div>
 
-          {/* Two-Column Layout */}
+          {/* Two-Column Layout. The <h2> keeps the heading order intact: the
+              card headings below are <h3> and must not sit directly under the
+              page <h1>. */}
+          <h2 className="sr-only">What you get, and how to support the project</h2>
           <div className="grid lg:grid-cols-2 gap-8 mb-16">
             {/* Left Column: Free & Open Source */}
             <div className="bg-white rounded-2xl border-2 border-gray-200 shadow-sm p-8">
@@ -280,7 +293,7 @@ export default function PricingPage() {
                   aria-label={`Toggle answer for: ${faq.question}`}
                 >
                   <span className="font-semibold text-gray-900">{faq.question}</span>
-                  <svg
+                  <svg aria-hidden="true"
                     className={`w-5 h-5 text-gray-500 transition-transform ${
                       expandedFaq === index ? 'rotate-180' : ''
                     }`}
