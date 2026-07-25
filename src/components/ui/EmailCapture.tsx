@@ -72,13 +72,7 @@ export default function EmailCapture({
       onSuccess?.()
 
       // Track conversion event
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'conversion', {
-          event_category: 'lead_magnet',
-          event_label: leadMagnet,
-          value: 1
-        })
-      }
+      window.plausible?.('Signup', { props: { lead_magnet: leadMagnet } })
 
     } catch (err) {
       setError('Something went wrong. Please try again.')

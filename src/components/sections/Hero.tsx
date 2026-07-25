@@ -7,18 +7,6 @@ import EmailCapture from '@/components/ui/EmailCapture'
 export default function Hero() {
   const [showEmailCapture, setShowEmailCapture] = useState(false)
 
-
-  const handleEmailSuccess = () => {
-    // Track conversion
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'conversion', {
-        event_category: 'hero_lead_magnet',
-        event_label: 'quick_start_kit',
-        value: 1
-      })
-    }
-  }
-
   return (
     <section className="relative bg-gradient-to-br from-gray-50 to-white section-padding">
       <div className="container">
@@ -107,7 +95,10 @@ export default function Hero() {
                   <span className="text-gray-300 truncate">bash &lt;(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)</span>
                 </div>
                 <button
-                  onClick={() => navigator.clipboard.writeText('bash <(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)')}
+                  onClick={() => {
+                    navigator.clipboard.writeText('bash <(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)')
+                    window.plausible?.('Install Copy')
+                  }}
                   className="ml-4 px-3 py-1 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded transition-colors shrink-0"
                   title="Copy install command"
                 >
@@ -171,7 +162,6 @@ export default function Hero() {
                 placeholder="Enter your email for instant access"
                 buttonText="Download Free Kit"
                 showSocialProof={true}
-                onSuccess={handleEmailSuccess}
               />
             </div>
           )}

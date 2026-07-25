@@ -469,15 +469,6 @@ export default function SolutionDemo() {
               placeholder="Enter your email for advanced examples"
               buttonText="Get Advanced Content"
               showSocialProof={true}
-              onSuccess={() => {
-                if (typeof window !== 'undefined' && window.gtag) {
-                  window.gtag('event', 'conversion', {
-                    event_category: 'post_demo_capture',
-                    event_label: 'advanced_examples',
-                    value: 1
-                  })
-                }
-              }}
             />
           </div>
         </div>

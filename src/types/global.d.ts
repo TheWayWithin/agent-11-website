@@ -2,10 +2,12 @@
 
 declare global {
   interface Window {
-    gtag?: (
-      command: 'config' | 'event' | 'js' | 'set',
-      targetId: string | Date | Record<string, unknown>,
-      config?: Record<string, unknown>
+    plausible?: (
+      event: string,
+      options?: {
+        props?: Record<string, string | number | boolean>;
+        callback?: () => void;
+      }
     ) => void;
   }
 }

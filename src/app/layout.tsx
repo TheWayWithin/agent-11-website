@@ -144,6 +144,15 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://api.github.com" />
         <link rel="preconnect" href="https://avatars.githubusercontent.com" />
 
+        {/* Plausible analytics (PRJ-25 standard) — site-specific script issued for agent-11.com */}
+        <script async src="https://plausible.io/js/pa-fMMu1bZfmlPvsdEPvlQo_.js"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()',
+          }}
+        />
+
         {/* Schema.org structured data for SEO */}
         <script
           type="application/ld+json"

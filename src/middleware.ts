@@ -18,11 +18,11 @@ export function middleware(request: NextRequest) {
   response.headers.set(
     'Content-Security-Policy',
     "default-src 'self'; " +
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; " +
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io; " +
     "style-src 'self' 'unsafe-inline'; " +
     "img-src 'self' data: https:; " +
     "font-src 'self' data:; " +
-    "connect-src 'self' https://www.google-analytics.com https://api.github.com; " +
+    "connect-src 'self' https://plausible.io https://api.github.com; " +
     "frame-ancestors 'none'; " +
     "base-uri 'self'; " +
     "form-action 'self'"
