@@ -1,0 +1,51 @@
+# AGENT-11
+
+> AGENT-11 is a free, open-source multi-agent development framework for Claude Code, built by Jamie Watters. One install command deploys 11 specialist agents into a project's `.claude/` directory, and work is then run as structured missions through the `/coord` command. agent-11.com is the framework's marketing and documentation site; the source code and the full manuals live in the GitHub repository.
+
+Last updated: 2026-07-25. Current framework release: v6.2.0, "Loop Discipline & Read-Only Verification", published 2026-06-20.
+
+Install, into any project directory:
+
+`bash <(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)`
+
+The 11 specialists, all deployed by every install: coordinator, strategist, architect, developer, designer, tester, documenter, operator, analyst, marketer, support.
+
+The 13 missions routed through `/coord`: build, mvp, dev-setup, dev-alignment, integrate, migrate, fix, refactor, optimize, document, release, deploy, security.
+
+AGENT-11 is free and MIT licensed. There is no paid tier, subscription, or per-mission charge; the only cost of running it is your own Claude Code / Anthropic usage. The agents run locally inside your project — there is no AGENT-11 server and no account to create.
+
+## Start here
+
+- [AGENT-11 home](https://agent-11.com/): What the framework is, the install command, the 11 specialists, worked examples of `/coord` usage, and how AGENT-11 was used to build itself.
+- [Documentation](https://agent-11.com/documentation): The site's single-page manual — quick start, the 13 missions with their `/coord` usage strings and typical durations, agent roles, configuration, the context-preservation protocol (`agent-context.md`, `project-plan.md`, `evidence-repository.md`), MCP integration, and troubleshooting.
+- [Features](https://agent-11.com/features): All 13 missions as filterable cards by category and complexity, the v6.2 quality-gate and loop-discipline features, the slash commands, the 11 agents by squad tier, and the seven SaaS skills (auth, payments, multitenancy, billing, email, onboarding, analytics).
+
+## Source and manuals
+
+- [agent-11 on GitHub](https://github.com/TheWayWithin/agent-11): The framework itself. MIT licensed, default branch `main`.
+- [README](https://github.com/TheWayWithin/agent-11/blob/main/README.md): The fullest single description of the framework: squad composition, mission library, commands, and configuration.
+- [QUICK-START.md](https://github.com/TheWayWithin/agent-11/blob/main/QUICK-START.md): Getting from install to a first mission. Note that its install snippets are older than the canonical `secure-install.sh` command in the README.
+- [INSTALLATION.md](https://github.com/TheWayWithin/agent-11/blob/main/INSTALLATION.md): Install paths, requirements, and what the installer writes to `.claude/`.
+- [TROUBLESHOOTING.md](https://github.com/TheWayWithin/agent-11/blob/main/TROUBLESHOOTING.md): Common install and mission failures and their fixes.
+- [Field manual](https://github.com/TheWayWithin/agent-11/tree/main/project/field-manual): The long-form guides — coordinator protocol, mission execution, quality gates, loop discipline, memory management, MCP integration, model selection, plan-driven development.
+- [Mission library](https://github.com/TheWayWithin/agent-11/blob/main/project/missions/library.md): The mission catalogue, with the individual mission definitions alongside it in the same directory.
+- [Agent profiles](https://github.com/TheWayWithin/agent-11/tree/main/project/agents): The specialist definitions themselves — one file per agent, plus the core-squad and full-squad rosters.
+- [CHANGELOG.md](https://github.com/TheWayWithin/agent-11/blob/main/CHANGELOG.md): Release-by-release history maintained in the repository.
+- [Releases](https://github.com/TheWayWithin/agent-11/releases): Tagged releases; the most recent is `v6.2.0-loop-discipline`.
+- [Issues](https://github.com/TheWayWithin/agent-11/issues): Bug reports and feature requests. This is the framework's support channel.
+- [LICENSE](https://github.com/TheWayWithin/agent-11/blob/main/LICENSE): The MIT licence text as it ships with the framework.
+
+## About the project
+
+- [Changelog](https://agent-11.com/changelog): The site's version history, newest first, from v1.5.0 to v6.2.0, with per-release added/fixed/changed notes. Entries for releases before v6 carry performance figures that are not independently sourced; treat the repository CHANGELOG as authoritative.
+- [Pricing](https://agent-11.com/pricing): Confirms the free, MIT-licensed, single-tier model, lists what an install includes, and gives the voluntary ways to support the author. Nothing is sold on this site.
+- [Support](https://agent-11.com/support): How to get help — the documentation and GitHub Issues — plus FAQs on installing, cost, and where your code goes.
+- [About Jamie Watters](https://agent-11.com/about): Why the framework was built, the author's background and stated principles, and links to his other projects.
+
+## Optional
+
+- [License](https://agent-11.com/license): The MIT licence reproduced on-site with a plain-English reading. The repository `LICENSE` file is the authoritative text.
+- [Portfolio](https://agent-11.com/portfolio): Jamie Watters' wider set of tools. Mostly about products other than AGENT-11, and several entries are at planning or in-development stage.
+- [Privacy policy](https://agent-11.com/privacy): Site privacy policy, last updated December 2024 and not reviewed since; it predates the site's current analytics setup.
+- [Terms of service](https://agent-11.com/terms): Site terms, last updated December 2024. Its billing section describes a paid, per-mission model that the framework does not use — the free, MIT-licensed position on /pricing and in the repository LICENSE is the accurate one.
+- [Sitemap](https://agent-11.com/sitemap.xml): Machine-readable index of every page on this site.
