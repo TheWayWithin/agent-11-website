@@ -1,10 +1,30 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
+
+/**
+ * Release-updates signup.
+ *
+ * This was a lead-magnet capture that promised an "AGENT-11 Quick Start Kit"
+ * and "Advanced Collaboration Patterns" by email. Neither artifact existed and
+ * nothing sent them — the success state said "check your inbox" for a message
+ * that was never going to arrive (A11W-ISS-6).
+ *
+ * It is now what it always actually was: a list of addresses. The copy asks
+ * for exactly that and promises exactly that. Everything the old kits claimed
+ * to contain is already public in the repository, so the success state links
+ * straight to it rather than pretending it is in transit.
+ *
+ * The Netlify Forms submission, the honeypot and the Plausible Signup event
+ * are unchanged in mechanism. The form's Netlify name is still
+ * "lead-magnet-capture": it is an internal slug, changing it would start a new
+ * form and orphan existing submissions, and no visitor is promised anything
+ * by it.
+ */
 
 interface EmailCaptureProps {
   variant?: 'hero' | 'inline' | 'footer' | 'exit-intent'
-  leadMagnet: string
   title?: string
   description?: string
   placeholder?: string
@@ -14,13 +34,14 @@ interface EmailCaptureProps {
   className?: string
 }
 
+const REPO_URL = 'https://github.com/TheWayWithin/agent-11'
+
 export default function EmailCapture({
   variant = 'inline',
-  leadMagnet,
   title,
   description,
   placeholder = 'Enter your email',
-  buttonText = 'Get Free Guide',
+  buttonText = 'Keep me posted',
   showSocialProof = true,
   onSuccess,
   className = ''
@@ -33,13 +54,13 @@ export default function EmailCapture({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     // Check honeypot - if filled, it's likely spam
     if (honeypot) {
       console.log('Bot detected, ignoring submission')
       return
     }
-    
+
     if (!email.trim()) {
       setError('Email is required')
       return
@@ -57,7 +78,7 @@ export default function EmailCapture({
       // Use native form submission for better Netlify Forms compatibility
       const form = e.target as HTMLFormElement
       const formData = new FormData(form)
-      
+
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -71,8 +92,9 @@ export default function EmailCapture({
       setIsSuccess(true)
       onSuccess?.()
 
-      // Track conversion event
-      window.plausible?.('Signup', { props: { lead_magnet: leadMagnet } })
+      // Track conversion event. The prop is now where on the site the signup
+      // came from — there is no lead magnet to name.
+      window.plausible?.('Signup', { props: { source: variant } })
 
     } catch (err) {
       setError('Something went wrong. Please try again.')
@@ -84,24 +106,59 @@ export default function EmailCapture({
 
   if (isSuccess) {
     return (
-      <div className={`text-center p-6 bg-green-50 border border-green-200 rounded-xl ${className}`}>
-        <div className="text-3xl mb-3">🎉</div>
-        <h3 className="text-lg font-semibold text-green-900 mb-2">
-          Check Your Email!
+      <div className={`p-6 bg-green-50 border border-green-200 rounded-xl ${className}`}>
+        <div className="text-3xl mb-3 text-center">✅</div>
+        <h3 className="text-lg font-semibold text-green-900 mb-2 text-center">
+          You&apos;re on the list
         </h3>
-        <p className="text-green-700 mb-4">
-          Your <strong>{leadMagnet}</strong> is on its way. Check your inbox (and spam folder) in the next few minutes.
+        <p className="text-green-800 mb-4">
+          Your address is recorded for AGENT-11 release updates. Nothing is arriving in your
+          inbox today — there is no welcome sequence and no attachment. You will hear from us
+          when there is a release worth telling you about.
         </p>
-        <div className="text-sm text-green-600">
-          While you wait, <a 
-            href="https://github.com/TheWayWithin/agent-11/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="underline hover:text-green-800"
-          >
-            star our GitHub repo
-          </a> to stay updated!
-        </div>
+        <p className="text-green-800 font-medium mb-2">
+          Everything is already public. Start here:
+        </p>
+        <ul className="text-green-800 space-y-2 mb-4">
+          <li>
+            →{' '}
+            <Link href="/documentation" className="underline underline-offset-4 hover:text-green-900">
+              The quick start guide
+            </Link>{' '}
+            — install and run your first mission
+          </li>
+          <li>
+            →{' '}
+            <a
+              href={REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-green-900"
+            >
+              The framework on GitHub
+            </a>{' '}
+            — every agent, mission and template, MIT licensed
+          </li>
+          <li>
+            →{' '}
+            <a
+              href={`${REPO_URL}/releases`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-green-900"
+            >
+              Watch the repo&apos;s releases
+            </a>{' '}
+            — the one way to get notified that does not depend on us
+          </li>
+        </ul>
+        <p className="text-sm text-green-700">
+          Want your address removed? See the{' '}
+          <Link href="/privacy" className="underline underline-offset-4 hover:text-green-900">
+            privacy policy
+          </Link>
+          .
+        </p>
       </div>
     )
   }
@@ -131,15 +188,12 @@ export default function EmailCapture({
     <div className={`rounded-xl p-6 ${variantStyles[variant]} ${className}`}>
       {/* Header */}
       <div className="text-center mb-6">
-        <div className="text-2xl mb-3">📚</div>
+        <div className="text-2xl mb-3">📬</div>
         {title && (
           <h3 className={`text-xl font-bold mb-3 ${variant === 'footer' ? 'text-white' : 'text-gray-900'}`}>
             {title}
           </h3>
         )}
-        <div className={`text-lg font-semibold mb-2 ${variant === 'footer' ? 'text-primary-100' : 'text-primary-600'}`}>
-          Get Your Free: {leadMagnet}
-        </div>
         {description && (
           <p className={`text-sm ${variant === 'footer' ? 'text-primary-100' : 'text-gray-600'}`}>
             {description}
@@ -148,34 +202,37 @@ export default function EmailCapture({
       </div>
 
       {/* Form */}
-      <form 
-        onSubmit={handleSubmit} 
-        className="space-y-4" 
-        name="lead-magnet-capture" 
-        method="POST" 
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-4"
+        name="lead-magnet-capture"
+        method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
         <input type="hidden" name="form-name" value="lead-magnet-capture" />
-        <input type="hidden" name="lead-magnet" value={leadMagnet} />
-        <input type="hidden" name="variant" value={variant} />
+        <input type="hidden" name="source" value={variant} />
         <input type="hidden" name="timestamp" value={new Date().toISOString()} />
-        
+
         {/* Honeypot field - hidden from users but visible to bots */}
         <div style={{ display: 'none' }}>
           <label>
-            Don&apos;t fill this out if you&apos;re human: 
-            <input 
-              name="bot-field" 
+            Don&apos;t fill this out if you&apos;re human:
+            <input
+              name="bot-field"
               value={honeypot}
               onChange={(e) => setHoneypot(e.target.value)}
             />
           </label>
         </div>
-        
+
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="flex-1">
+            <label htmlFor={`email-${variant}`} className="sr-only">
+              Email address
+            </label>
             <input
+              id={`email-${variant}`}
               type="email"
               name="email"
               value={email}
@@ -218,7 +275,7 @@ export default function EmailCapture({
       {showSocialProof && (
         <div className="mt-4 text-center">
           <div className={`text-xs ${variant === 'footer' ? 'text-primary-200' : 'text-gray-500'}`}>
-            🔒 No spam ever. Unsubscribe anytime.
+            🔒 Release updates only. Nothing else, ever.
           </div>
         </div>
       )}
@@ -226,9 +283,9 @@ export default function EmailCapture({
       {/* Value Props */}
       <div className="mt-4 text-center">
         <div className={`text-xs ${variant === 'footer' ? 'text-primary-200' : 'text-gray-500'} space-x-4`}>
-          <span>✓ Instant download</span>
-          <span>✓ Production-ready</span>
-          <span>✓ No credit card</span>
+          <span>✓ Free and MIT licensed</span>
+          <span>✓ No account needed</span>
+          <span>✓ Ask any time to be removed</span>
         </div>
       </div>
     </div>

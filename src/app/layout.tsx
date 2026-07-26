@@ -210,8 +210,7 @@ export default function RootLayout({
           <input type="hidden" name="form-name" value="lead-magnet-capture" />
           <input name="bot-field" />
           <input type="email" name="email" />
-          <input name="lead-magnet" />
-          <input name="variant" />
+          <input name="source" />
           <input name="timestamp" />
         </form>
       </body>

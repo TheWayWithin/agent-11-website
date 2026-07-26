@@ -70,8 +70,8 @@ export default function PrivacyPage() {
                 copy the install command. It records that it happened, not who did it.
               </li>
               <li>
-                <strong>Signup</strong> — someone submitted the email form, and which resource they
-                asked for. The email address itself is not sent to Plausible.
+                <strong>Signup</strong> — someone submitted the release-updates form, and which
+                form on the site it was. The email address itself is not sent to Plausible.
               </li>
             </ul>
             <p className="text-gray-700 mb-6">
@@ -89,21 +89,22 @@ export default function PrivacyPage() {
 
             <h3 className="text-xl font-semibold text-gray-900 mb-3">If you submit the email form</h3>
             <p className="text-gray-700 mb-4">
-              The form on this site is handled by Netlify Forms. What the page sends is exactly
-              this, and nothing else:
+              The form on this site signs you up for AGENT-11 release updates, and does nothing
+              else. It is handled by Netlify Forms. What the page sends is exactly this:
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
               <li>The email address you typed</li>
-              <li>Which resource you asked for</li>
-              <li>Which form on the site you used, and which page it was on</li>
+              <li>Which form on the site you used</li>
               <li>The time you submitted it</li>
               <li>A hidden honeypot field, used only to discard bot submissions</li>
             </ul>
             <p className="text-gray-700 mb-6">
               Netlify records its own delivery details alongside that, as any form host does. The
-              submission is stored in this site&apos;s Netlify account, where Jamie can read it and
-              send you what you asked for. It is not sold, shared, published, or used for
-              advertising, and it is not passed on to any other service.
+              submission is stored in this site&apos;s Netlify account so Jamie can tell you when a
+              new version of the framework ships. It is used for that and nothing else: not sold,
+              not shared, not published, not used for advertising, and not passed on to any other
+              service. There is no automated sequence, so signing up does not put anything in your
+              inbox today.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Hosting</h3>

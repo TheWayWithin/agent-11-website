@@ -146,7 +146,7 @@ export default function Hero() {
               <svg aria-hidden="true" className="w-5 h-5 mr-2 group-hover:animate-bounce-gentle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15" />
               </svg>
-              Read the Case Study
+              Get release updates
               <svg aria-hidden="true" className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -159,11 +159,10 @@ export default function Hero() {
             <div className="max-w-lg mx-auto mb-16 animate-slide-up">
               <EmailCapture
                 variant="hero"
-                leadMagnet="AGENT-11 Quick Start Kit + Templates"
-                title="🚀 Get Started in Under 5 Minutes"
-                description="Everything you need: setup scripts, configuration templates, real-world examples, and performance optimization tips."
-                placeholder="Enter your email for instant access"
-                buttonText="Download Free Kit"
+                title="Get AGENT-11 release updates"
+                description="A note when a new version ships and what changed in it. The framework itself is free on GitHub right now — this is only how you hear when it moves."
+                placeholder="Enter your email"
+                buttonText="Keep me posted"
                 showSocialProof={true}
               />
             </div>

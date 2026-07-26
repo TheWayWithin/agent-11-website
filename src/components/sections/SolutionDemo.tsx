@@ -463,11 +463,10 @@ export default function SolutionDemo() {
           <div className="max-w-2xl mx-auto">
             <EmailCapture
               variant="inline"
-              leadMagnet="Advanced Collaboration Patterns + Enterprise Templates"
-              title="Want More Advanced Examples?"
-              description="Get advanced collaboration patterns and templates for building with AGENT-11."
-              placeholder="Enter your email for advanced examples"
-              buttonText="Get Advanced Content"
+              title="Follow the build"
+              description="AGENT-11 is developed in the open. Get a note when a new release lands, with what changed and why."
+              placeholder="Enter your email"
+              buttonText="Keep me posted"
               showSocialProof={true}
             />
           </div>

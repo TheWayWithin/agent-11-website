@@ -28,11 +28,13 @@ export const PAGE_UPDATED = {
   /** 2026-07-25: removed the non-functional email support card. */
   support: '2026-07-25',
   /**
+   * 2026-07-26 (A11W-ISS-6): the email-capture section rewritten now the form
+   * is a release-updates list rather than a lead-magnet capture.
    * 2026-07-25 (A11W-ISS-4): rewritten to describe what the site actually
    * does — Plausible, Netlify Forms, no cookies — replacing a policy that
    * referenced accounts and payments that have never existed.
    */
-  privacy: '2026-07-25',
+  privacy: '2026-07-26',
   /**
    * 2026-07-25 (A11W-ISS-4): rewritten for the free, MIT-licensed reality,
    * replacing a pay-per-mission billing section for a product that is not
@@ -42,4 +44,9 @@ export const PAGE_UPDATED = {
   /** 2026-07-25 (A11W-ISS-4): removed the unreal "Enterprise Services" tier
    *  and corrected the copyright line to match the repository LICENSE. */
   license: '2026-07-25',
+  /**
+   * 2026-07-26 (A11W-ISS-10): new page. security.txt's Policy line pointed at
+   * /security-policy, which 404'd; this is the page it should have pointed at.
+   */
+  security: '2026-07-26',
 } as const

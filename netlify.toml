@@ -132,15 +132,18 @@
       enabled = true
       # Add your email for notifications
       # to = ["your-email@example.com"]
-      subject = "New AGENT-11 Lead Magnet Request"
-      
+      subject = "New AGENT-11 release-updates signup"
+
   # Spam detection
   [forms.settings.spam]
     honeypot = "bot-field"
-    
-  # Custom success message (optional)
+
+  # Custom success message. The old one told people to check their email for a
+  # "Quick Start Kit" that did not exist and that nothing sent (A11W-ISS-6).
+  # The form name below is a legacy slug kept so existing submissions are not
+  # orphaned; the form itself is a release-updates list.
   [forms.settings.success]
-    message = "Thanks! Check your email for the AGENT-11 Quick Start Kit."
+    message = "Thanks - you're on the list for AGENT-11 release updates. Nothing is being emailed to you now; everything is already public at github.com/TheWayWithin/agent-11."
 
 # Large Media (if needed for future assets)
 [lfs]
