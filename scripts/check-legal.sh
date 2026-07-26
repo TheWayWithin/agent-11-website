@@ -11,7 +11,7 @@
 # Usage:
 #   scripts/check-legal.sh                     # check production
 #   scripts/check-legal.sh http://localhost:3000
-#   EXPECTED_DATE=2026-08-01 scripts/check-legal.sh
+#   PRIVACY_DATE=2026-08-01 scripts/check-legal.sh
 #
 # Exits 0 if every assertion passes, 1 otherwise.
 # Assertions, per page:
@@ -24,7 +24,10 @@ set -uo pipefail
 
 BASE_URL="${1:-https://agent-11.com}"
 BASE_URL="${BASE_URL%/}"
-EXPECTED_DATE="${EXPECTED_DATE:-2026-07-25}"
+# Per-page, because these pages change independently. Each must match the
+# matching entry in src/lib/page-dates.ts.
+TERMS_DATE="${TERMS_DATE:-2026-07-25}"
+PRIVACY_DATE="${PRIVACY_DATE:-2026-07-26}"
 UA="agent-11-legal-check/1.0"
 
 pass=0
@@ -107,13 +110,14 @@ for path in /terms /privacy /license; do
       check_present "$out" "$label" "MIT"
       check_present "$out" "$label" "No Payment, No Account"
       check_present "$out" "$label" "no account to create"
-      check_present "$out" "$label" "$EXPECTED_DATE"
+      check_present "$out" "$label" "$TERMS_DATE"
       ;;
     /privacy)
       check_present "$out" "$label" "Plausible"
       check_present "$out" "$label" "sets no cookies"
       check_present "$out" "$label" "Netlify"
-      check_present "$out" "$label" "$EXPECTED_DATE"
+      check_present "$out" "$label" "release updates"
+      check_present "$out" "$label" "$PRIVACY_DATE"
       ;;
     /license)
       check_present "$out" "$label" "MIT"
@@ -144,6 +148,113 @@ if [ "$status" = "200" ]; then
   done
 else
   bad "homepage returned $status (expected 200)"
+fi
+
+# --- security.txt: every field must resolve (A11W-ISS-10) --------------------
+printf '\n/.well-known/security.txt\n'
+sec="$workdir/security.txt"
+status="$(fetch "/.well-known/security.txt" "$sec")"
+if [ "$status" = "200" ]; then
+  ok "security.txt returns 200"
+
+  # Contact: must be the GitHub advisories URL. A mailbox whose deliverability
+  # nobody has proven is not a security contact (see A11W-ISS-9).
+  if grep -qiF 'Contact: https://github.com/TheWayWithin/agent-11/security/advisories' "$sec"; then
+    ok "security.txt Contact is the GitHub advisories URL"
+  else
+    bad "security.txt Contact is not the agreed GitHub advisories URL"
+  fi
+
+  if grep -qiE '^Contact: *mailto:' "$sec"; then
+    bad "security.txt lists a mailto Contact — confirm the mailbox delivers first (A11W-ISS-9)"
+  else
+    ok "security.txt lists no unverified mailbox"
+  fi
+
+  # Policy: must be a URL that actually serves something.
+  policy_url="$(grep -iE '^Policy:' "$sec" | head -1 | sed -E 's/^[Pp]olicy: *//; s/[[:space:]]*$//')"
+  if [ -z "$policy_url" ]; then
+    bad "security.txt has no Policy line"
+  else
+    policy_code="$(curl -sS -L -A "$UA" --max-time 30 -o /dev/null -w '%{http_code}' "$policy_url" || echo 000)"
+    if [ "$policy_code" = "200" ]; then
+      ok "security.txt Policy URL returns 200 -> $policy_url"
+    else
+      bad "security.txt Policy URL returned $policy_code -> $policy_url"
+    fi
+  fi
+
+  # Canonical must be the apex, consistent with A11W-ISS-5.
+  if grep -qiF 'Canonical: https://agent-11.com/.well-known/security.txt' "$sec"; then
+    ok "security.txt Canonical is the apex"
+  else
+    bad "security.txt Canonical is missing or not the apex"
+  fi
+
+  # Expires must exist and must not be in the past or about to lapse. This is
+  # the field that rots silently, so it fails rather than warns.
+  expires="$(grep -iE '^Expires:' "$sec" | head -1 | sed -E 's/^[Ee]xpires: *//; s/[[:space:]]*$//')"
+  if [ -z "$expires" ]; then
+    bad "security.txt has no Expires line (required by RFC 9116)"
+  else
+    exp_day="${expires%%T*}"
+    # macOS date -j -f, GNU date -d; try both.
+    exp_epoch="$(date -j -f '%Y-%m-%d' "$exp_day" '+%s' 2>/dev/null || date -d "$exp_day" '+%s' 2>/dev/null || echo '')"
+    now_epoch="$(date '+%s')"
+    if [ -z "$exp_epoch" ]; then
+      bad "security.txt Expires could not be parsed -> $expires"
+    elif [ "$exp_epoch" -le "$now_epoch" ]; then
+      bad "security.txt Expires has LAPSED -> $exp_day"
+    elif [ "$(( (exp_epoch - now_epoch) / 86400 ))" -lt 30 ]; then
+      bad "security.txt Expires is under 30 days away ($exp_day) — renew it"
+    else
+      ok "security.txt Expires is $exp_day ($(( (exp_epoch - now_epoch) / 86400 )) days away)"
+    fi
+  fi
+else
+  bad "security.txt returned $status (expected 200)"
+fi
+
+# --- retired promises must stay gone (A11W-ISS-6, A11W-ISS-11) ---------------
+# The signup form once promised kits by email that did not exist and that
+# nothing sent, and the share link tagged an X account that returns 404.
+printf '\nretired promises\n'
+RETIRED='on its way
+Check your inbox
+Check Your Email
+Get Your Free
+Quick Start Kit
+Advanced Collaboration Patterns
+agent11_dev
+agent11dev
+Download Free Kit
+Get Advanced Content
+instant access'
+
+home2="$workdir/home2.html"
+if [ "$(fetch "/" "$home2")" = "200" ]; then
+  hit=0
+  while IFS= read -r term; do
+    [ -z "$term" ] && continue
+    if grep -qiF -- "$term" "$home2"; then
+      bad "homepage still contains \"$term\""
+      hit=1
+    fi
+  done <<< "$RETIRED"
+  [ "$hit" -eq 0 ] && ok "homepage free of retired email-capture promises"
+else
+  bad "could not fetch homepage for retired-promise check"
+fi
+
+pricing="$workdir/pricing.html"
+if [ "$(fetch "/pricing" "$pricing")" = "200" ]; then
+  if grep -qiF 'agent11_dev' "$pricing" || grep -qiF 'agent11dev' "$pricing"; then
+    bad "/pricing still tags a non-existent X handle"
+  else
+    ok "/pricing tags no non-existent X handle"
+  fi
+else
+  bad "could not fetch /pricing for handle check"
 fi
 
 printf '\n%s passed, %s failed\n\n' "$pass" "$fail"

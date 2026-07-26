@@ -1,10 +1,20 @@
-Contact: mailto:support@aisearchmastery.com
 Contact: https://github.com/TheWayWithin/agent-11/security/advisories
-Expires: 2026-10-28T00:00:00.000Z
-Canonical: https://agent-11.com/.well-known/security.txt
+Expires: 2027-07-26T00:00:00.000Z
+Policy: https://agent-11.com/security
 Preferred-Languages: en
-Policy: https://agent-11.com/security-policy
+Canonical: https://agent-11.com/.well-known/security.txt
 
-# Security Disclosure for AGENT-11
-# Report vulnerabilities via GitHub Security Advisories or email.
-# We take security seriously and respond to reports within 48 hours.
+# Security disclosure for AGENT-11 (RFC 9116).
+#
+# Report privately through GitHub Security Advisories at the Contact URL above.
+# The full policy — scope, what to include, what to expect — is at
+# https://agent-11.com/security
+#
+# AGENT-11 is maintained by one person. There is no bug bounty and no
+# guaranteed response time.
+#
+# Changed 2026-07-26 (A11W-ISS-10). Previously this file listed a Policy URL
+# that returned 404, a Contact mailbox on an unrelated domain, and a promise to
+# respond within 48 hours that nothing backed. Every field here now resolves;
+# scripts/check-legal.sh asserts it against production on every run, including
+# that Expires has not lapsed.
