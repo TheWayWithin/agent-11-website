@@ -87,7 +87,10 @@ const whySupportMatters = [
 ]
 
 const freeTierFeatures = [
-  'All 11 specialist agents + coordinator',
+  // 11 total, coordinator included — project/agents/specialists/ holds
+  // exactly 11 files and coordinator.md is one of them. The old copy read
+  // "11 specialist agents + coordinator", which counted 12. A11W-ISS-8.
+  'All 11 specialists, coordinator included',
   '13 missions',
   '6 slash commands (/coord, /recon, /design-review, /pmd, /meeting, /report)',
   'Context preservation system (zero context loss)',
@@ -121,7 +124,7 @@ const faqs = [
   },
   {
     question: 'Where does my Buy Me a Coffee contribution go?',
-    answer: '100% to Jamie Watters for continued development. Contributions fund his time to build new features, fix bugs, improve documentation, maintain servers, and respond to community requests. It\'s direct support, no middlemen, no corporate overhead. Think of it like tipping an open-source maintainer who saved you dozens of hours.'
+    answer: '100% to Jamie Watters for continued development. Contributions fund his time to build new features, fix bugs, improve documentation, and respond to community requests. It\'s direct support, no middlemen, no corporate overhead. Think of it like tipping an open-source maintainer who saved you dozens of hours.'
   },
   {
     question: 'Can I use AGENT-11 commercially without paying?',
@@ -263,7 +266,7 @@ export default function PricingPage() {
               Why Your Support Matters
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              AGENT-11 is built and maintained by Jamie Watters - a solo founder who gets the struggle. Every contribution directly funds development time, server costs, and improvements that benefit the entire community.
+              AGENT-11 is built and maintained by Jamie Watters - a solo founder who gets the struggle. Every contribution directly funds development time and improvements that benefit the entire community. There is no infrastructure to pay for - AGENT-11 runs on your machine, not on servers of ours.
             </p>
           </div>
 
