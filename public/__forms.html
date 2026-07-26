@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Netlify form definitions</title>
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+    <!--
+      Netlify detects forms by scanning STATIC HTML at deploy time. On a Next.js
+      site behind @netlify/plugin-nextjs, a POST to "/" is routed to the Next
+      handler and never reaches Netlify's form processing — which is why every
+      submission to this site returned HTTP 200 and was recorded nowhere
+      (verified 2026-07-26: three POSTs, including one to an already-registered
+      form name, all 200, zero submissions in the dashboard).
+
+      This file is the documented fix: a real static HTML form for Netlify to
+      find, which the app posts to directly. It is never shown to anyone.
+
+      The field list must stay in sync with src/components/ui/EmailCapture.tsx.
+    -->
+    <form name="release-updates" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="release-updates" />
+      <input name="bot-field" />
+      <input type="email" name="email" />
+      <input name="source" />
+      <input name="timestamp" />
+    </form>
+  </body>
+</html>

@@ -199,20 +199,11 @@ export default function RootLayout({
       <body className={`antialiased font-sans ${inter.className}`}>
         {children}
         
-        {/* Static form for Netlify form detection - hidden from users */}
-        <form 
-          name="lead-magnet-capture" 
-          method="POST" 
-          data-netlify="true" 
-          data-netlify-honeypot="bot-field"
-          style={{ display: 'none' }}
-        >
-          <input type="hidden" name="form-name" value="lead-magnet-capture" />
-          <input name="bot-field" />
-          <input type="email" name="email" />
-          <input name="source" />
-          <input name="timestamp" />
-        </form>
+        {/* The Netlify form-detection stub used to live here. It never worked:
+            Netlify scans static HTML at deploy time, and a stub rendered by
+            Next.js into a server-rendered page is not that. The real definition
+            is now the static public/__forms.html, which the form posts to
+            directly. A11W-ISS-6. */}
       </body>
     </html>
   )

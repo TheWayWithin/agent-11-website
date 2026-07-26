@@ -120,7 +120,7 @@
 # Form processing configuration
 # Using array syntax for multiple form definitions
 [[forms]]
-  name = "lead-magnet-capture"
+  name = "release-updates"
   
   # Form settings
   [forms.settings]

@@ -16,11 +16,11 @@ import Link from 'next/link'
  * to contain is already public in the repository, so the success state links
  * straight to it rather than pretending it is in transit.
  *
- * The Netlify Forms submission, the honeypot and the Plausible Signup event
- * are unchanged in mechanism. The form's Netlify name is still
- * "lead-magnet-capture": it is an internal slug, changing it would start a new
- * form and orphan existing submissions, and no visitor is promised anything
- * by it.
+ * The honeypot and the Plausible Signup event are unchanged. The form is now
+ * named "release-updates" and posts to the static /__forms.html so that
+ * Netlify actually records it — see that file for why posting to "/" silently
+ * discarded every submission this form ever took. There were no historical
+ * submissions to orphan by renaming: the dashboard held zero.
  */
 
 interface EmailCaptureProps {
@@ -75,11 +75,16 @@ export default function EmailCapture({
     setError(null)
 
     try {
-      // Use native form submission for better Netlify Forms compatibility
       const form = e.target as HTMLFormElement
       const formData = new FormData(form)
 
-      const response = await fetch('/', {
+      // POST to the static /__forms.html, not to "/". Netlify's form handler
+      // never sees a POST to "/" on a Next.js site — @netlify/plugin-nextjs
+      // routes it to the Next handler, which returns 200 and drops it. That is
+      // why this form recorded nothing for its entire life: the success state
+      // was driven by a 200 that meant "Next.js answered", not "Netlify saved
+      // your address". Verified 2026-07-26. See public/__forms.html.
+      const response = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData as unknown as Record<string, string>).toString()
@@ -205,12 +210,12 @@ export default function EmailCapture({
       <form
         onSubmit={handleSubmit}
         className="space-y-4"
-        name="lead-magnet-capture"
+        name="release-updates"
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
-        <input type="hidden" name="form-name" value="lead-magnet-capture" />
+        <input type="hidden" name="form-name" value="release-updates" />
         <input type="hidden" name="source" value={variant} />
         <input type="hidden" name="timestamp" value={new Date().toISOString()} />
 
