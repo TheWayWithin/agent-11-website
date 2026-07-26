@@ -46,7 +46,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/changelog`,
-      lastModified: new Date('2025-06-01'), // v2.3.0 release date
+      // The newest real release documented on the page. Was 2025-06-01
+      // labelled "v2.3.0 release date" — a version that never existed.
+      lastModified: new Date('2026-06-20'), // v6.2.0 release date
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },

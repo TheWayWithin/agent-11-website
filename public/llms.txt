@@ -2,7 +2,7 @@
 
 > AGENT-11 is a free, open-source multi-agent development framework for Claude Code, built by Jamie Watters. One install command deploys 11 specialist agents into a project's `.claude/` directory, and work is then run as structured missions through the `/coord` command. agent-11.com is the framework's marketing and documentation site; the source code and the full manuals live in the GitHub repository.
 
-Last updated: 2026-07-25. Current framework release: v6.2.0, "Loop Discipline & Read-Only Verification", published 2026-06-20.
+Last updated: 2026-07-26. Current framework release: v6.2.0, "Loop Discipline & Read-Only Verification", published 2026-06-20.
 
 Install, into any project directory:
 
@@ -37,7 +37,7 @@ AGENT-11 is free and MIT licensed. There is no paid tier, subscription, or per-m
 
 ## About the project
 
-- [Changelog](https://agent-11.com/changelog): The site's version history, newest first, from v1.5.0 to v6.2.0, with per-release added/fixed/changed notes. Entries for releases before v6 carry performance figures that are not independently sourced; treat the repository CHANGELOG as authoritative.
+- [Changelog](https://agent-11.com/changelog): The framework's release history, newest first, from v1.0.0 (2023-12-01) to v6.2.0 (2026-06-20), with per-release added/fixed/changed notes. Every version listed is mirrored from the repository CHANGELOG, which remains authoritative. Note there is no 3.x line, and two repository tags have no CHANGELOG entry so are not listed.
 - [Pricing](https://agent-11.com/pricing): Confirms the free, MIT-licensed, single-tier model, lists what an install includes, and gives the voluntary ways to support the author. Nothing is sold on this site.
 - [Support](https://agent-11.com/support): How to get help — the documentation and GitHub Issues — plus FAQs on installing, cost, and where your code goes.
 - [About Jamie Watters](https://agent-11.com/about): Why the framework was built, the author's background and stated principles, and links to his other projects.

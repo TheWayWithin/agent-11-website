@@ -2,9 +2,25 @@ import Link from 'next/link'
 import { PAGE_UPDATED } from '@/lib/page-dates'
 import { formatUpdated } from '@/lib/seo'
 
+/**
+ * Release history, mirrored from the framework's own CHANGELOG.md.
+ *
+ * Every version and date here exists in
+ * https://github.com/TheWayWithin/agent-11/blob/main/CHANGELOG.md.
+ * Before A11W-ISS-7 this page listed v2.3.0, v2.2.0, v2.1.0, v2.0.3, v1.5.2
+ * and v1.5.0 — none of which the framework ever released. The CHANGELOG has
+ * no 3.x line at all, and its unversioned "[Previous Releases]" block is the
+ * most likely origin of the invented 2.x entries.
+ *
+ * Rules for editing: copy versions, dates and substance from the CHANGELOG.
+ * Never invent a version to fill a gap. `type` is derived from semver
+ * (X.0.0 major, X.Y.0 minor, X.Y.Z patch), not asserted.
+ * scripts/check-changelog.sh enforces the first rule against production.
+ */
 interface ChangelogEntry {
   version: string
   date: string
+  title?: string
   type: 'Major' | 'Minor' | 'Patch'
   changes: {
     category: 'Added' | 'Fixed' | 'Changed' | 'Removed' | 'Security'
@@ -16,24 +32,24 @@ const changelogEntries: ChangelogEntry[] = [
   {
     version: '6.2.0',
     date: '2026-06-20',
+    title: 'Loop Discipline & Read-Only Verification',
     type: 'Minor',
     changes: [
       {
-        category: 'Security',
+        category: 'Added',
         items: [
-          'Read-only quality gates: .quality-gates.json and gates/ are unwritable by every agent via permissions.deny, so an agent cannot loosen the criteria that judge its own work',
-          'PreToolUse read-only gate guard hook blocks Bash writes (redirection, tee, sed -i, cp, mv) to gate paths, closing the route the deny rules do not cover',
-          'Default-fail verification: every success criterion starts failing and flips to pass only on captured command output'
+          'Coordinator phase-gated meta-loop: /coord continue converges on two clean verify rounds rather than a fixed count, spends a per-phase error budget then escalates to the human instead of burning forward, and restarts from the last evidence-passed gate',
+          'Ratchet loops: mission-optimize isolates work in a git worktree, sets a median-of-3 baseline, makes one change on a named surface, re-measures, and keeps it only if it beats the baseline — otherwise hard-reverts',
+          'code-review-loop skill: a read-only critic raises evidence-backed findings, a read-write fixer addresses only those findings, repeating until two clean rounds or a cap',
+          'Read-only quality gates: .quality-gates.json and gates/ are unwritable by every deployed agent, enforced at the tool layer rather than by prompt convention',
+          'Default-fail verification contract in tester, developer and coordinator: every success criterion starts failing and flips to pass only on captured command output',
+          'Bulk-ops toolkit for running AGENT-11 across multiple repositories (audit, apply-file, apply-upgrade)'
         ]
       },
       {
-        category: 'Added',
+        category: 'Changed',
         items: [
-          'Ratchet mission-optimize: optimisation as a measured loop in an isolated worktree, keep-or-revert against a baseline, fully logged, hard-capped, never auto-merged',
-          'code-review-loop skill: a read-only critic raises evidence-backed findings, a read-write fixer addresses only those, re-audit until clean or capped',
-          'Phase-gated meta-loop in /coord continue: converges on two clean rounds, spends a per-phase error budget then escalates, restarts from the last evidence-passed gate',
-          'Loop discipline field-manual guide and a mission-optimize input template',
-          'Bulk-ops toolkit for fleet-wide updates across multiple repos'
+          'Opus tier references raised from 4.6 to 4.7 and Sonnet from 4.5 to 4.6 across the documentation'
         ]
       }
     ]
@@ -41,13 +57,14 @@ const changelogEntries: ChangelogEntry[] = [
   {
     version: '6.1.1',
     date: '2026-05-07',
+    title: 'Subprocess advisory cleanup',
     type: 'Patch',
     changes: [
       {
         category: 'Fixed',
         items: [
-          'Stale "Manual merge recommended" advisory no longer appears when migrate-v5-to-v6.sh runs as a subprocess of install.sh --upgrade',
-          'Standalone migrate-v5-to-v6.sh now points users at install.sh --upgrade as the recommended automatic path'
+          'migrate-v5-to-v6.sh no longer prints a stale "Manual merge recommended" advisory when install.sh --upgrade invokes it as a subprocess — the warning appeared just before the success line and looked like the merge had failed',
+          'Standalone migrate-v5-to-v6.sh now points at install.sh --upgrade as the recommended automatic path'
         ]
       }
     ]
@@ -55,25 +72,24 @@ const changelogEntries: ChangelogEntry[] = [
   {
     version: '6.1.0',
     date: '2026-05-07',
+    title: 'Hardened Upgrade Path',
     type: 'Minor',
     changes: [
       {
         category: 'Added',
         items: [
-          'install.sh --upgrade flag — single-command v5 to v6 migration with full rollback',
-          'install.sh --dry-run — preview the migration plan without making changes',
-          'install.sh --non-interactive — bulk-mode contract for CI and multi-repo scripts',
-          'Settings.json surgical merge — your values win on conflict; user customisations preserved through upgrade',
-          'restore-pre-upgrade.sh — first-class rollback with --list, --latest, --backup, --settings modes',
-          'docs/UPGRADE.md — focused upgrade guide for v5.x users',
-          'Five end-to-end test fixtures (43/43 checks) covering clean v5, custom settings, malformed JSON, partial migration, and already-v6 cases'
+          'install.sh --upgrade: one command replaces the two-script v5 to v6 flow, with full rollback support',
+          'install.sh --dry-run to print the plan without making changes, plus --non-interactive / --batch-safe for CI',
+          'Surgical settings.json merge: user values win on every conflict, with backup, merge, re-validate and auto-restore on failure',
+          'restore-pre-upgrade.sh to undo an upgrade from backups',
+          'docs/UPGRADE.md and five end-to-end install fixtures'
         ]
       },
       {
-        category: 'Changed',
+        category: 'Fixed',
         items: [
-          'migrate-v5-to-v6.sh distinguishes three previously-ambiguous cases (already-v6, completed-previously, in-progress) with itemised actions',
-          'Post-install summary no longer claims tool deferring is enabled when settings.json was not actually merged'
+          'install.sh no longer reports "Tool deferring enabled" when it did not actually update settings.json',
+          'A v5 install followed by a plain install.sh no longer leaves a hybrid v6-library plus v5-residue state'
         ]
       }
     ]
@@ -81,36 +97,32 @@ const changelogEntries: ChangelogEntry[] = [
   {
     version: '6.0.0',
     date: '2026-05-03',
+    title: 'The Lean Orchestrator',
     type: 'Major',
     changes: [
       {
         category: 'Added',
         items: [
-          'Karpathy operating constitution — seven behavioural principles (PAUSE-AND-PLAN, state assumptions, prefer minimal diffs, verify by running) replace prompt-based "always do X" rules',
-          'Universal Router (/coord [mission]) — deterministic mission-based routing across 13 missions in three modes (greenfield, surgical, maintenance). No more NLP intent inference',
-          'Native MCP tool deferring via ENABLE_TOOL_SEARCH=auto — roughly 80% context reduction on MCP-heavy sessions',
-          'Quality-gate hooks in .claude/settings.json — advisory PostToolUse for tsc/ruff/rubocop, PreToolUse confirmation for destructive Bash',
-          'Phase Handoff blocks — structured 5-field schema (Findings / Decisions / Warnings / Open Items / Evidence) appended to agent-context.md',
-          '3-tier skills model aligned with Anthropic\'s Agent Skills open standard',
-          'Routines for Mode C operational work (PR review, nightly QA, backlog triage)',
-          'migrate-v5-to-v6.sh — one-command migration script for v5.x users'
+          'Universal Router: deterministic mission routing across 13 missions in greenfield, surgical and maintenance modes',
+          'Karpathy operating constitution: seven principles applied by every specialist, including read before writing and verify by running',
+          'Dynamic context loading: the coordinator reads only the files the mission mode requires',
+          'Phase Handoff blocks: a 5-field schema appended to agent-context.md at phase boundaries',
+          'Quality-gate hooks in .claude/settings.json for tsc, ruff and rubocop, plus a confirmation prompt on destructive Bash',
+          'Native MCP tool deferring via ENABLE_TOOL_SEARCH=auto'
         ]
       },
       {
         category: 'Changed',
         items: [
-          'library/CLAUDE.md shrunk from 575 lines to 78 lines (-86%)',
-          'project/commands/coord.md shrunk from 549 lines to 134 lines',
-          'Active context tracking reduced from 5 files to 3',
-          'progress.md demoted to write-only by default (read only on staleness checks)'
+          'library/CLAUDE.md shrunk from 575 lines to 78, and the /coord command file from 549 lines to 134',
+          'install.sh always installs all 11 specialists, where it previously defaulted to a 4-agent core squad'
         ]
       },
       {
         category: 'Removed',
         items: [
-          'MCP profile system (.mcp-profiles/, /mcp-switch command) — replaced by native tool deferring',
-          'Static handoff-notes.md workflow — folded into agent-context.md as Phase Handoff blocks',
-          'NLP-based mission intent inference in /coord — replaced by deterministic dispatch'
+          'handoff-notes.md retired as a separate file and folded into agent-context.md',
+          'The .mcp-profiles/ directory and profile-switching system, replaced by native tool deferring'
         ]
       }
     ]
@@ -118,17 +130,16 @@ const changelogEntries: ChangelogEntry[] = [
   {
     version: '5.0.0',
     date: '2025-12-31',
+    title: 'SaaS Boilerplate Killer Architecture',
     type: 'Major',
     changes: [
       {
         category: 'Added',
         items: [
-          'Plan-Driven Development System — /foundations init, /bootstrap [template], /plan status, /coord continue, /skills',
-          '7 production-ready SaaS skills with auto-loading by task keywords (auth, payments, multitenancy, billing, email, onboarding, analytics)',
-          'Quality Gates System — Python gate runner with build/test/lint/security/review/deploy gates and 3 severity levels',
-          'Stack Profiles for multi-framework support (nextjs-supabase, remix-railway, sveltekit-supabase)',
-          'Smart Delegation Routing — 10-path routing table with skill injection',
-          'Vision Integrity Verification (ALIGNED, MINOR_DRIFT, MAJOR_DRIFT, OUT_OF_SCOPE)'
+          '/foundations init to create vision and PRD documents from a BOS-AI handoff',
+          '/bootstrap [template] to generate project-plan.md from saas-mvp, saas-full or api templates',
+          '/plan status and /plan phase [N] to read mission state out of project-plan.md',
+          '/coord continue for autonomous execution until blocked'
         ]
       }
     ]
@@ -136,228 +147,112 @@ const changelogEntries: ChangelogEntry[] = [
   {
     version: '4.1.0',
     date: '2025-11-28',
-    type: 'Major',
+    title: 'MCP Context Optimization',
+    type: 'Minor',
     changes: [
       {
         category: 'Added',
         items: [
-          'MCP Context Optimization with 60-90% token reduction',
-          '13 mission-specific MCP profiles (minimal-core, research-only, frontend-deploy, etc.)',
-          '/mcp-switch [profile] command for dynamic profile switching',
-          'Sprint 6: Persistence Protocol Enforcement for guaranteed file operations'
-        ]
-      },
-      {
-        category: 'Changed',
-        items: [
-          'Optimized context window usage across all missions',
-          'Enhanced profile switching for mission-specific tool sets',
-          'Improved token efficiency for long-running operations'
+          '13 MCP profiles for context optimization',
+          '/mcp-switch [profile] command'
         ]
       }
     ]
   },
   {
     version: '4.0.0',
-    date: '2025-11-15',
+    date: '2025-11-27',
+    title: 'Opus 4.5 Dynamic Model Selection',
     type: 'Major',
     changes: [
       {
         category: 'Added',
         items: [
-          'Opus 4.5 Dynamic Model Selection for intelligent task routing',
-          'Task tool model parameter (opus, sonnet, haiku) for per-delegation control',
-          'Tiered model strategy: Opus (complex) → Sonnet (standard) → Haiku (simple)',
-          'Coordinator-as-Executor Pattern for 100% file persistence',
-          'Structured JSON output from specialists with automatic file operation execution'
-        ]
-      },
-      {
-        category: 'Changed',
-        items: [
-          '+15% mission success rate with better orchestration decisions',
-          '-28% iterations with fewer retry cycles',
-          '-24% total cost through efficiency gains',
-          'Zero silent failures - file persistence guaranteed by architecture'
-        ]
-      },
-      {
-        category: 'Fixed',
-        items: [
-          'Critical file persistence bug causing 100% reproducible silent failures',
-          'Files now persist reliably (up from ~30% baseline to 100%)'
-        ]
-      }
-    ]
-  },
-  {
-    version: '2.3.0',
-    date: '2025-06-01',
-    type: 'Major',
-    changes: [
-      {
-        category: 'Added',
-        items: [
-          'Field Manual launch with 1,370+ line Architecture SOP',
-          '17 mission types catalog (expanded from 6)',
-          '6 slash commands (/coord, /recon, /design-review, /pmd, /report, /meeting)',
-          'MCP integration framework (15+ supported MCPs)',
-          'Security-First Development principles documentation',
-          'Tool permission framework for agent safety',
-          'Extended thinking guidance for complex decisions',
-          'Agent-specific tool specification standards'
-        ]
-      },
-      {
-        category: 'Changed',
-        items: [
-          'Enhanced agent documentation (7,777+ lines total)',
-          'Improved coordination protocols with Task tool enforcement',
-          'Better context editing guidance with strategic clearing points',
-          'Strengthened self-verification protocols for quality'
-        ]
-      }
-    ]
-  },
-  {
-    version: '2.2.0',
-    date: '2025-03-15',
-    type: 'Major',
-    changes: [
-      {
-        category: 'Added',
-        items: [
-          'Context Preservation System (87.5% reduction in rework)',
-          'Agent-to-agent handoff protocols (agent-context.md, handoff-notes.md)',
-          'Evidence repository for comprehensive audit trails',
-          'Pause/resume capability for long-running missions',
-          'Zero context loss across multi-agent workflows',
-          'Rolling context accumulation system'
-        ]
-      },
-      {
-        category: 'Changed',
-        items: [
-          'Improved mission completion time (37.5% faster delivery)',
-          'Enhanced coordinator delegation protocol',
-          'Better context file integrity throughout missions',
-          'Stronger enforcement mechanisms for handoffs'
-        ]
-      }
-    ]
-  },
-  {
-    version: '2.1.0',
-    date: '2024-12-15',
-    type: 'Major',
-    changes: [
-      {
-        category: 'Added',
-        items: [
-          '/coord command for mission execution',
-          'Mission-based workflow system',
-          'Project-local agent deployment',
-          'Automatic project context detection',
-          'Squad size selection (minimal, core, full)',
-          'Interactive mission progress tracking'
-        ]
-      },
-      {
-        category: 'Changed',
-        items: [
-          'Simplified installation to single command',
-          'Restructured agent roles and responsibilities',
-          'Improved mission handoff between agents',
-          'Enhanced error handling and recovery'
-        ]
-      }
-    ]
-  },
-  {
-    version: '2.0.3',
-    date: '2024-12-01',
-    type: 'Patch',
-    changes: [
-      {
-        category: 'Fixed',
-        items: [
-          'Memory leak in long-running missions',
-          'Windows compatibility issues',
-          'Agent communication timeouts',
-          'Project context parsing errors'
-        ]
-      },
-      {
-        category: 'Security',
-        items: [
-          'Enhanced API key protection',
-          'Improved sandbox isolation',
-          'Updated dependency vulnerabilities'
+          'Opus 4.5 for coordinator orchestration',
+          'Task tool model parameter (opus, sonnet, haiku)',
+          'Tiered model strategy documentation'
         ]
       }
     ]
   },
   {
     version: '2.0.0',
-    date: 'November 18, 2024',
+    date: '2024-01-15',
+    title: 'Mission-driven orchestration',
     type: 'Major',
     changes: [
       {
         category: 'Added',
         items: [
-          'Complete rewrite with improved architecture',
-          '11 specialized AI agents',
-          'Automated deployment pipeline',
-          'Real-time collaboration features',
-          'Enterprise-grade security',
-          'Advanced mission analytics'
-        ]
-      },
-      {
-        category: 'Removed',
-        items: [
-          'Legacy command structure',
-          'Manual agent coordination',
-          'Deprecated configuration options'
-        ]
-      }
-    ]
-  },
-  {
-    version: '1.5.2',
-    date: 'October 25, 2024',
-    type: 'Patch',
-    changes: [
-      {
-        category: 'Fixed',
-        items: [
-          'Performance issues with large codebases',
-          'Agent timeout handling',
-          'Deployment rollback mechanism'
-        ]
-      }
-    ]
-  },
-  {
-    version: '1.5.0',
-    date: 'October 10, 2024',
-    type: 'Minor',
-    changes: [
-      {
-        category: 'Added',
-        items: [
-          'Multi-language support',
-          'Custom mission templates',
-          'Enhanced logging and debugging',
-          'Team collaboration features'
+          'Mission-driven orchestration system and the /coord command',
+          'Mission library with BUILD, FIX, REFACTOR and MVP missions',
+          'Mission template system for custom workflows',
+          'Multi-input document processing and mission progress tracking'
         ]
       },
       {
         category: 'Changed',
         items: [
-          'Improved agent communication protocol',
-          'Faster mission execution times',
-          'Better resource management'
+          'Major architecture update to support mission-based workflows',
+          'Documentation restructured around the field manual'
+        ]
+      }
+    ]
+  },
+  {
+    version: '1.2.0',
+    date: '2024-01-01',
+    type: 'Minor',
+    changes: [
+      {
+        category: 'Added',
+        items: [
+          'Advanced usage guide and multi-project workflow documentation',
+          'Custom squad configurations',
+          'Backup and restore system'
+        ]
+      },
+      {
+        category: 'Changed',
+        items: [
+          'Installation system enhanced with project detection'
+        ]
+      }
+    ]
+  },
+  {
+    version: '1.1.0',
+    date: '2023-12-15',
+    type: 'Minor',
+    changes: [
+      {
+        category: 'Added',
+        items: [
+          'Full squad deployment: all 11 specialists',
+          'Individual agent profile documentation and collaboration protocols',
+          'Troubleshooting guide'
+        ]
+      },
+      {
+        category: 'Changed',
+        items: [
+          'Improved installation reliability and project detection'
+        ]
+      }
+    ]
+  },
+  {
+    version: '1.0.0',
+    date: '2023-12-01',
+    title: 'Initial release',
+    type: 'Major',
+    changes: [
+      {
+        category: 'Added',
+        items: [
+          'Core squad deployment: strategist, developer, tester and operator',
+          'Project-local agent installation system',
+          'Claude Code integration, project detection and verification'
         ]
       }
     ]
@@ -408,14 +303,30 @@ export default function ChangelogPage() {
                 the repository CHANGELOG is authoritative
               </a>
             </p>
+            <p className="text-sm text-gray-500 mt-4 max-w-2xl mx-auto">
+              Every entry below appears in that CHANGELOG. Two release tags in the repository have
+              no CHANGELOG entry and so are not listed here rather than being described from
+              guesswork; the{' '}
+              <a
+                href="https://github.com/TheWayWithin/agent-11/tags"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-primary-600"
+              >
+                repository tags
+              </a>{' '}
+              are the complete record. There is no 3.x line — the framework went from 2.x to 4.x.
+            </p>
           </div>
 
           {/* Changelog Entries */}
           <div className="space-y-12">
             {changelogEntries.map((entry, index) => (
-              <div key={index} className="relative">
+              // data-version is what scripts/check-changelog.sh reads to diff
+              // this page against the framework CHANGELOG. Keep it.
+              <div key={index} className="relative" data-version={entry.version}>
                 {/* Version Header */}
-                <div className="flex items-center mb-6">
+                <div className="flex flex-wrap items-center mb-6">
                   <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mr-4 ${
                     entry.type === 'Major' ? 'bg-red-100 text-red-700' :
                     entry.type === 'Minor' ? 'bg-blue-100 text-blue-700' :
@@ -427,6 +338,11 @@ export default function ChangelogPage() {
                     v{entry.version}
                   </h2>
                   <span className="text-gray-500 ml-4">{entry.date}</span>
+                  {entry.title && (
+                    <span className="text-gray-700 ml-4 w-full sm:w-auto mt-2 sm:mt-0">
+                      {entry.title}
+                    </span>
+                  )}
                 </div>
 
                 {/* Changes */}

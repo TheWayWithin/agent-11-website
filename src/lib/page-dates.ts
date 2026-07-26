@@ -17,10 +17,18 @@ export const PAGE_UPDATED = {
   features: '2026-06-20',
   /** 2026-06-20: rewritten for the v6.2.0 release. */
   documentation: '2026-06-20',
-  /** 2026-06-20: rewritten for the v6.2.0 release. */
-  pricing: '2026-06-20',
-  /** 2026-06-20: v6.2.0 entry added. */
-  changelog: '2026-06-20',
+  /**
+   * 2026-07-26 (A11W-ISS-8): dropped the "maintain servers"/"server costs"
+   * funding claims (there is no infrastructure) and corrected the agent count
+   * from "11 specialists + coordinator" (12) to 11, coordinator included.
+   */
+  pricing: '2026-07-26',
+  /**
+   * 2026-07-26 (A11W-ISS-7): rebuilt from the framework CHANGELOG. The page
+   * had listed v2.3.0, v2.2.0, v2.1.0, v2.0.3, v1.5.2 and v1.5.0, none of
+   * which the framework ever released.
+   */
+  changelog: '2026-07-26',
   /** 2026-06-20: rewritten for the v6.2.0 release. */
   portfolio: '2026-06-20',
   /** 2025-12-05: last substantive edit to the about copy. */

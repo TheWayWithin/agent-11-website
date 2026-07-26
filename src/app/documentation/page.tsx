@@ -163,7 +163,7 @@ const docSections: DocSection[] = [
                 name: 'RELEASE',
                 description: 'Release management (2-4 hours)',
                 usage: '/coord release [version]',
-                example: '/coord release v2.1.0'
+                example: '/coord release v6.2.0'
               }
             ].map((mission, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg p-6">
