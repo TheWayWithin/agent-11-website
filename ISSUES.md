@@ -16,6 +16,7 @@ ID or another repo's. Raise issues here with `python3 ~/shared/scripts/repo-issu
 
 | ID | Title | Status | Severity | Detail | MC-SYNC |
 |----|-------|--------|----------|--------|---------|
+| A11W-ISS-12 | /portfolio links 'Read the Case Study' to agent-11/blob/main/CASE-STUDY.md which 404s (only dead link on the page; other 11 external links resolve) | Open | medium | — | pending |
 | A11W-ISS-11 | Share-on-X link tags @agent11_dev, a third handle variant that may not exist (site elsewhere uses @Jamie_within) | Open | low | — | pending |
 | A11W-ISS-10 | security.txt Policy line points at /security-policy which 404s, and its Contact is a different domain's mailbox | Open | medium | — | pending |
 | A11W-ISS-9 | Confirm privacy@agent-11.com actually delivers - it is the only contact on /terms and /privacy and its deliverability is unverified | Open | medium | — | pending |

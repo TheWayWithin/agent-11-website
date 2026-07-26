@@ -53,7 +53,9 @@ const supportOptions: SupportOption[] = [
     // every tweet a visitor sends, so a www address here would manufacture
     // inbound links to a host that redirects. A11W-ISS-5.
     link: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      'Just shipped with @agent11_dev - multi-agent dev framework that actually works. 100% free and open source. Check it out: ' +
+      // @agent11_dev did not exist (x.com/agent11_dev returns 404). The site's
+      // one real handle is @Jamie_within, used everywhere else. A11W-ISS-11.
+      'Just shipped with @Jamie_within - multi-agent dev framework that actually works. 100% free and open source. Check it out: ' +
         SITE_URL
     )}`,
     buttonStyle: 'bg-blue-500 hover:bg-blue-600 text-white',
