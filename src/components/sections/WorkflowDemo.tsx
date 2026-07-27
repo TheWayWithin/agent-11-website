@@ -229,7 +229,11 @@ export default function WorkflowDemo() {
                 </Link>
                 
                 <Link 
-                  href="https://github.com/TheWayWithin/agent-11/blob/main/MULTI-AGENT-WORKFLOWS.md" 
+                  // Was MULTI-AGENT-WORKFLOWS.md, which 404s — it has been
+                  // archived to project/.archive/. WORKFLOWS.md is the live
+                  // guide this button's label promises. Found by
+                  // scripts/check-links.sh. A11W-ISS-12.
+                  href="https://github.com/TheWayWithin/agent-11/blob/main/WORKFLOWS.md"
                   className="btn-secondary group hover-glow"
                   target="_blank"
                   rel="noopener noreferrer"

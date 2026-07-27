@@ -36,10 +36,19 @@ export default function PortfolioPage() {
         'Developers shipping complex features while maintaining quality'
       ],
       techStack: 'Claude Code, Multi-Agent Orchestration, File-Based Agent System',
+      // A third link, "Read the Case Study", pointed at
+      // agent-11/blob/main/CASE-STUDY.md and returned 404 (A11W-ISS-12).
+      // Not repointed: the only case study in the repo lives under
+      // project/.archive/ — the project has retired it — and it is built on
+      // unsourced numbers ("98% success rate", "6 weeks to 3 weeks",
+      // "definitive proof") of exactly the kind this site removed in its
+      // accuracy pass. project/community/SUCCESS-STORIES.md is a single
+      // empty heading. A dead link is better replaced by no link than by a
+      // live link to claims the site will not stand behind.
       links: [
         { label: 'Deploy AGENT-11', url: 'https://github.com/TheWayWithin/agent-11', external: true },
         { label: 'Live Demo', url: '/', external: false },
-        { label: 'Read the Case Study', url: 'https://github.com/TheWayWithin/agent-11/blob/main/CASE-STUDY.md', external: true }
+        { label: 'Read the Changelog', url: '/changelog', external: false }
       ]
     },
     {
