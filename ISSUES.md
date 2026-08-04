@@ -16,6 +16,7 @@ ID or another repo's. Raise issues here with `python3 ~/shared/scripts/repo-issu
 
 | ID | Title | Status | Severity | Detail | MC-SYNC |
 |----|-------|--------|----------|--------|---------|
+| A11W-ISS-16 | npm run dev fails under Turbopack: @import rules must precede all rules in globals.css, so Playwright cannot start its own webServer | Open | medium | — | pending |
 | A11W-ISS-15 | Hero: animated paragraph and metrics grid overlap the CTA button at Pixel 5 width, intercepting pointer events | Open | low | — | pending |
 | A11W-ISS-14 | Playwright suite is stale: 70 failures assert lead-magnet UI removed in July 2026 | ✅ Resolved 2026-08-04 — Rewrote email-capture-integration.spec.ts against the real release-updates form; reduced core-integration-test.spec.ts to its one real assertion; removed manual-integration-validation.spec.ts as a duplicate of the removed lead-magnet suite; replaced production-deployment's component-name section selectors with structural ones; moved the three live-site specs into a single live-site-smoke project so 5 device projects no longer hammer agent-11.com in parallel. npx playwright test now exits 0, 61 passed. | medium | — | pending |
 | A11W-ISS-13 | Four orphaned Netlify forms (email-capture-hero/inline/modal/footer) remain registered with zero submissions - delete once release-updates is proven | ✅ Resolved 2026-07-27 — Jamie deleted the four orphaned forms 2026-07-27; Netlify now shows 1 form (release-updates, 2 submissions) - verified in the dashboard | low | — | pending |
