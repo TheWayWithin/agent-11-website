@@ -21,7 +21,7 @@ interface ChangelogEntry {
   version: string
   date: string
   title?: string
-  type: 'Major' | 'Minor' | 'Patch'
+  type: 'Major' | 'Minor' | 'Patch' | 'Unreleased'
   changes: {
     category: 'Added' | 'Fixed' | 'Changed' | 'Removed' | 'Security'
     items: string[]
@@ -29,6 +29,37 @@ interface ChangelogEntry {
 }
 
 const changelogEntries: ChangelogEntry[] = [
+  {
+    // Unreleased. FRAMEWORK_VERSION stays at 6.2.0 until a release is cut:
+    // this block mirrors the CHANGELOG's [Unreleased] section, not a version.
+    // data-version deliberately carries no semver, so check-changelog.sh does
+    // not read it as a claimed release.
+    version: 'Unreleased',
+    date: '2026-08-03',
+    title: 'Map-First Orientation & Honest Enforcement Claims',
+    type: 'Unreleased',
+    changes: [
+      {
+        category: 'Added',
+        items: [
+          'Map-first orientation across all 11 specialists and all 18 missions: Glob and Grep to locate before you read, read only the lines you need, never read a whole file to find one symbol. Orientation is the largest avoidable token cost in a session and was previously an implied habit rather than a stated instruction',
+          'connect-mcp and operation-recon now actually deploy. Both existed in the library but were missing from the installer’s mission list, so no deployed project ever received them. Re-run the install command to pick them up',
+          'Three repo checks, each silent and exit 0 when compliant: orientation coverage, enforcement claims against what the rules actually provide, and deployment coverage across both of the installer’s mission lists'
+        ]
+      },
+      {
+        category: 'Changed',
+        items: [
+          'Every claim about what protects your quality gates is now scoped to what is actually enforced. The shipped permissions.deny set is four Edit() rules covering .quality-gates.json, **/*.quality-gates.json, gates/** and .gates/**. Eleven places in the library previously implied it also covered an acceptance-criteria test, a benchmark or a metric command. None of those is covered by any shipped rule. Behaviour is unchanged and the deny rules are byte-identical: what changed is that the documentation is now true',
+          'The Bash gate guard blocks 12 command forms, up from 5, adding rm, truncate, shred, unlink, dd of=, ln -s and in-place perl and ruby edits against gate paths. Deleting a gate passes it as effectively as lowering it',
+          'The guard is no longer described as closing the Bash route. It narrows it: a write through an interpreter or via a path held in a variable passes straight through, and no shell hook can catch those. Treat it as a speed bump. The enforceable guarantee is the Edit() deny rules',
+          'mission-optimize now creates the protection it used to assume. Phase 2 writes Edit() deny rules for the run’s own metric command, benchmark and fixtures, and proves they work by attempting an edit and attaching the refusal',
+          'code-review-loop defaults the critic and fixer to different models. Read-only separates the incentives; a different model separates the blind spots. A critic sharing the generator’s weights tends to return agreement rather than verification',
+          'Installation verification checks all 20 deployed mission files, up from 14. A failed copy of the missing six previously still reported a clean install'
+        ]
+      }
+    ]
+  },
   {
     version: '6.2.0',
     date: '2026-06-20',
@@ -41,7 +72,7 @@ const changelogEntries: ChangelogEntry[] = [
           'Coordinator phase-gated meta-loop: /coord continue converges on two clean verify rounds rather than a fixed count, spends a per-phase error budget then escalates to the human instead of burning forward, and restarts from the last evidence-passed gate',
           'Ratchet loops: mission-optimize isolates work in a git worktree, sets a median-of-3 baseline, makes one change on a named surface, re-measures, and keeps it only if it beats the baseline — otherwise hard-reverts',
           'code-review-loop skill: a read-only critic raises evidence-backed findings, a read-write fixer addresses only those findings, repeating until two clean rounds or a cap',
-          'Read-only quality gates: .quality-gates.json and gates/ are unwritable by every deployed agent, enforced at the tool layer rather than by prompt convention',
+          'Read-only quality gates: .quality-gates.json and gates/ are unwritable by every deployed agent, enforced at the tool layer rather than by prompt convention. Scoped in the entry above: the rules cover those gate paths and nothing beyond them',
           'Default-fail verification contract in tester, developer and coordinator: every success criterion starts failing and flips to pass only on captured command output',
           'Bulk-ops toolkit for running AGENT-11 across multiple repositories (audit, apply-file, apply-upgrade)'
         ]
@@ -103,7 +134,7 @@ const changelogEntries: ChangelogEntry[] = [
       {
         category: 'Added',
         items: [
-          'Universal Router: deterministic mission routing across 13 missions in greenfield, surgical and maintenance modes',
+          'Universal Router: deterministic mission routing across the mission library in greenfield, surgical and maintenance modes',
           'Karpathy operating constitution: seven principles applied by every specialist, including read before writing and verify by running',
           'Dynamic context loading: the coordinator reads only the files the mission mode requires',
           'Phase Handoff blocks: a 5-field schema appended to agent-context.md at phase boundaries',
@@ -328,14 +359,15 @@ export default function ChangelogPage() {
                 {/* Version Header */}
                 <div className="flex flex-wrap items-center mb-6">
                   <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mr-4 ${
+                    entry.type === 'Unreleased' ? 'bg-amber-100 text-amber-800' :
                     entry.type === 'Major' ? 'bg-red-100 text-red-700' :
                     entry.type === 'Minor' ? 'bg-blue-100 text-blue-700' :
                     'bg-green-100 text-green-700'
                   }`}>
-                    {entry.type} Release
+                    {entry.type === 'Unreleased' ? 'On main, unreleased' : `${entry.type} Release`}
                   </div>
                   <h2 className="text-2xl font-bold text-gray-900">
-                    v{entry.version}
+                    {entry.type === 'Unreleased' ? 'Unreleased' : `v${entry.version}`}
                   </h2>
                   <span className="text-gray-500 ml-4">{entry.date}</span>
                   {entry.title && (

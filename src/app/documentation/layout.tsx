@@ -4,7 +4,7 @@ import { PAGE_UPDATED } from '@/lib/page-dates'
 import { SITE_URL } from '@/lib/seo'
 
 const DESCRIPTION =
-  'AGENT-11 documentation: install the framework, run the 13 /coord missions, configure the 11 specialist agents, and troubleshoot. Covers release v6.2.0.'
+  'AGENT-11 documentation: install the framework, run the 18 /coord missions, configure the 11 specialist agents, and troubleshoot. Covers release v6.2.0.'
 
 export const metadata: Metadata = {
   title: 'Field Manual - Documentation',

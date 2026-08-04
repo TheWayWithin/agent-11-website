@@ -11,11 +11,11 @@ interface Mission {
   emoji: string
   description: string
   duration: string
-  complexity: 'Low' | 'Medium' | 'High'
+  /** Only where the mission file states one. Four missions do not. */
+  complexity?: 'Low' | 'Medium' | 'High' | 'Low to High' | 'Medium to High'
   category: 'Development' | 'Strategic'
   features: string[]
   useCases: string[]
-  cost: string
 }
 
 const missions: Mission[] = [
@@ -25,9 +25,8 @@ const missions: Mission[] = [
     emoji: '🏗️',
     description: 'New feature development with full stack implementation',
     duration: '4-8 hours',
-    complexity: 'Medium',
+    complexity: 'Medium to High',
     category: 'Development',
-    cost: '$200-500',
     features: ['Full-stack feature implementation', 'Database schema design', 'API endpoint creation', 'Frontend component development', 'Integration testing', 'Code documentation'],
     useCases: ['User authentication system', 'Payment processing integration', 'Real-time notifications', 'Data visualization dashboard', 'File upload functionality']
   },
@@ -37,9 +36,8 @@ const missions: Mission[] = [
     emoji: '🚨',
     description: 'Emergency bug resolution and system recovery',
     duration: '1-3 hours',
-    complexity: 'Low',
+    complexity: 'Low to High',
     category: 'Development',
-    cost: '$50-200',
     features: ['Root cause analysis', 'Critical bug fixes', 'System stability restoration', 'Regression testing', 'Hotfix deployment', 'Incident documentation'],
     useCases: ['Production outage recovery', 'Security vulnerability patches', 'Performance bottleneck resolution', 'Data corruption fixes', 'Integration failures']
   },
@@ -51,7 +49,6 @@ const missions: Mission[] = [
     duration: '1-3 days',
     complexity: 'High',
     category: 'Strategic',
-    cost: '$800-2000',
     features: ['Full product architecture', 'Core feature implementation', 'User interface design', 'Database setup', 'Authentication system', 'Deployment pipeline'],
     useCases: ['SaaS platform launch', 'E-commerce marketplace', 'Social media application', 'Project management tool', 'Content management system']
   },
@@ -61,9 +58,8 @@ const missions: Mission[] = [
     emoji: '🌐',
     description: 'Production deployment and infrastructure setup',
     duration: '1-2 hours',
-    complexity: 'Low',
+    complexity: 'Medium',
     category: 'Development',
-    cost: '$100-300',
     features: ['Production environment setup', 'CI/CD pipeline configuration', 'Domain and SSL setup', 'Database migration', 'Performance monitoring', 'Backup systems'],
     useCases: ['First production deployment', 'Multi-environment setup', 'Auto-scaling configuration', 'CDN integration', 'Database clustering']
   },
@@ -72,10 +68,9 @@ const missions: Mission[] = [
     name: 'OPTIMIZE',
     emoji: '⚡',
     description: 'Performance optimization and system tuning',
-    duration: '3-6 hours',
-    complexity: 'Medium',
+    duration: '2-6 hours',
+    complexity: 'Medium to High',
     category: 'Strategic',
-    cost: '$300-800',
     features: ['Performance profiling', 'Database query optimization', 'Caching strategy implementation', 'Bundle size reduction', 'Load testing', 'Monitoring setup'],
     useCases: ['Slow page load optimization', 'Database performance tuning', 'API response time improvement', 'Mobile performance enhancement', 'Memory usage optimization']
   },
@@ -87,7 +82,6 @@ const missions: Mission[] = [
     duration: '4-6 hours',
     complexity: 'High',
     category: 'Strategic',
-    cost: '$400-1000',
     features: ['Security vulnerability scanning', 'Penetration testing', 'Authentication hardening', 'Data encryption implementation', 'Access control review', 'Compliance assessment'],
     useCases: ['Pre-launch security audit', 'GDPR compliance implementation', 'PCI DSS certification', 'OAuth/SSO integration', 'API security hardening']
   },
@@ -99,7 +93,6 @@ const missions: Mission[] = [
     duration: '2-4 hours',
     complexity: 'Medium',
     category: 'Development',
-    cost: '$150-400',
     features: ['Code structure improvement', 'Design pattern implementation', 'Dependency updates', 'Test coverage expansion', 'Documentation updates', 'Performance optimization'],
     useCases: ['Legacy code modernization', 'Architecture improvement', 'Module extraction', 'API redesign', 'Database schema optimization']
   },
@@ -109,9 +102,8 @@ const missions: Mission[] = [
     emoji: '📚',
     description: 'Comprehensive technical documentation creation',
     duration: '2-4 hours',
-    complexity: 'Low',
+    complexity: 'Medium',
     category: 'Development',
-    cost: '$150-400',
     features: ['API documentation', 'Architecture guides', 'Setup instructions', 'Code examples', 'Troubleshooting guides', 'Deployment procedures'],
     useCases: ['API documentation', 'Architecture documentation', 'User guides', 'Developer onboarding', 'Knowledge base creation']
   },
@@ -123,7 +115,6 @@ const missions: Mission[] = [
     duration: '4-8 hours',
     complexity: 'High',
     category: 'Strategic',
-    cost: '$400-1000',
     features: ['Data migration', 'Zero-downtime deployment', 'Rollback procedures', 'Compatibility testing', 'Performance validation', 'Documentation updates'],
     useCases: ['Database migration', 'Framework upgrades', 'Cloud platform migration', 'Microservices transition', 'API versioning']
   },
@@ -133,9 +124,8 @@ const missions: Mission[] = [
     emoji: '🔌',
     description: 'Third-party service and API integration',
     duration: '3-6 hours',
-    complexity: 'Medium',
+    complexity: 'Medium to High',
     category: 'Development',
-    cost: '$250-700',
     features: ['API integration', 'Webhook handling', 'Error handling', 'Rate limiting', 'Data synchronization', 'Testing suite'],
     useCases: ['Payment gateway integration', 'Email service integration', 'Analytics platforms', 'CRM systems', 'Social media APIs']
   },
@@ -147,7 +137,6 @@ const missions: Mission[] = [
     duration: '2-4 hours',
     complexity: 'Medium',
     category: 'Strategic',
-    cost: '$200-500',
     features: ['Version management', 'Release notes', 'Changelog generation', 'Deployment automation', 'Rollback planning', 'Stakeholder communication'],
     useCases: ['Major version release', 'Feature rollout', 'Hotfix deployment', 'Beta releases', 'Deprecation management']
   },
@@ -156,10 +145,8 @@ const missions: Mission[] = [
     name: 'DEV-SETUP',
     emoji: '🛠️',
     description: 'Development environment initialization for new projects',
-    duration: '2-3 hours',
-    complexity: 'Low',
+    duration: '30-45 minutes',
     category: 'Development',
-    cost: '$150-350',
     features: ['Repository setup', 'Architecture documentation', 'Development tooling', 'CI/CD configuration', 'Team onboarding', 'Best practices'],
     useCases: ['New project kickoff', 'Team onboarding', 'Development standards', 'Toolchain setup', 'Repository structure']
   },
@@ -168,12 +155,63 @@ const missions: Mission[] = [
     name: 'DEV-ALIGNMENT',
     emoji: '🎯',
     description: 'Analyze and document existing codebase for team alignment',
-    duration: '2-4 hours',
-    complexity: 'Medium',
+    duration: '45-60 minutes',
     category: 'Strategic',
-    cost: '$200-500',
     features: ['Codebase analysis', 'Architecture review', 'Technical debt assessment', 'Documentation creation', 'Team alignment', 'Optimization recommendations'],
     useCases: ['Existing project onboarding', 'Technical audit', 'Team handoff', 'Legacy system understanding', 'Architecture documentation']
+  },
+  {
+    id: 'connect-mcp',
+    name: 'CONNECT-MCP',
+    emoji: '🔗',
+    description: 'MCP server discovery, assessment and connection',
+    duration: '45-90 minutes',
+    category: 'Development',
+    features: ['MCP requirement discovery', 'Server assessment', 'Credential and environment setup', 'Connection verification', 'Fallback strategy when a server is unavailable', 'Configuration documentation'],
+    useCases: ['First MCP setup on a project', 'Adding a database or deployment MCP', 'Diagnosing a failed connection', 'Documenting which servers a project needs']
+  },
+  {
+    id: 'operation-recon',
+    name: 'RECON',
+    emoji: '🔍',
+    description: 'UI/UX reconnaissance and interface assessment',
+    duration: '2-4 hours',
+    complexity: 'High',
+    category: 'Strategic',
+    features: ['Interaction and user-flow assessment', 'Responsive testing across viewports', 'Visual polish review', 'Accessibility check', 'Console and network health', 'Prioritised findings report'],
+    useCases: ['Pre-launch interface review', 'Design system audit', 'Accessibility assessment', 'Post-redesign verification']
+  },
+  {
+    id: 'operation-genesis',
+    name: 'GENESIS',
+    emoji: '🌱',
+    description: 'Complete feature development from concept to production',
+    duration: '1-3 days',
+    category: 'Strategic',
+    features: ['Requirements definition', 'Technical design', 'Full-team implementation', 'Test coverage', 'Deployment', 'Post-launch monitoring'],
+    useCases: ['Major feature launch', 'New product surface', 'Concept to production in one run', 'Full-squad engagement']
+  },
+  {
+    id: 'architecture',
+    name: 'ARCHITECTURE',
+    emoji: '📐',
+    description: 'Create or update system architecture documentation',
+    duration: '2-3 hours',
+    complexity: 'Medium',
+    category: 'Strategic',
+    features: ['System design capture', 'Technology decisions and rationale', 'Data flow documentation', 'Integration mapping', 'Scalability considerations', 'architecture.md output'],
+    useCases: ['Documenting an undocumented system', 'Pre-refactor architecture baseline', 'Onboarding reference', 'Recording a major design decision']
+  },
+  {
+    id: 'product-description',
+    name: 'PRODUCT-DESCRIPTION',
+    emoji: '📋',
+    description: 'Comprehensive product description with risk management',
+    duration: '2-3 hours',
+    complexity: 'Medium',
+    category: 'Strategic',
+    features: ['Product definition', 'Target user and positioning', 'Feature inventory', 'Risk register', 'Success measures', 'Stakeholder-ready document'],
+    useCases: ['Pre-build product definition', 'Investor or stakeholder brief', 'Risk assessment before commitment', 'Aligning a team on what is being built']
   }
 ]
 
@@ -183,7 +221,12 @@ export default function FeaturesPage() {
 
   const filteredMissions = missions.filter(mission => {
     const categoryMatch = selectedCategory === 'All' || mission.category === selectedCategory
-    const complexityMatch = selectedComplexity === 'All' || mission.complexity === selectedComplexity
+    // A mission whose file states "Medium to High" matches both filters, and
+    // one whose file states no complexity at all matches only "All". Neither
+    // is guessed on its behalf.
+    const complexityMatch =
+      selectedComplexity === 'All' ||
+      (mission.complexity?.includes(selectedComplexity) ?? false)
     return categoryMatch && complexityMatch
   })
 
@@ -220,7 +263,7 @@ export default function FeaturesPage() {
 
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              13 Proven Missions, One <span className="text-gradient">/coord</span> Command
+              18 Proven Missions, One <span className="text-gradient">/coord</span> Command
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
               From emergency fixes to complete MVPs, execute complex development missions
@@ -235,7 +278,7 @@ export default function FeaturesPage() {
 
           {/* The mission cards below are <h3>. This <h2> keeps them from
               sitting directly under the page <h1>. */}
-          <h2 className="sr-only">The 13 missions</h2>
+          <h2 className="sr-only">The 18 missions</h2>
 
           {/* Mission Filters */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -290,15 +333,19 @@ export default function FeaturesPage() {
                       }`}>
                         {mission.category}
                       </span>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        mission.complexity === 'Low' 
-                          ? 'bg-green-100 text-green-700' 
-                          : mission.complexity === 'Medium'
-                          ? 'bg-yellow-100 text-yellow-700'
-                          : 'bg-red-100 text-red-700'
-                      }`}>
-                        {mission.complexity}
-                      </span>
+                      {mission.complexity && (
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          mission.complexity === 'Low'
+                            ? 'bg-green-100 text-green-700'
+                            : mission.complexity === 'Medium'
+                            ? 'bg-yellow-100 text-yellow-700'
+                            : mission.complexity.includes('to')
+                            ? 'bg-orange-100 text-orange-700'
+                            : 'bg-red-100 text-red-700'
+                        }`}>
+                          {mission.complexity}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -348,10 +395,10 @@ export default function FeaturesPage() {
               <span>Loop Discipline</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Agents that cannot game their own tests
+              Agents cannot edit the gate files that judge them
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              The trust problem with autonomous agents is simple: an agent that can edit the test can pass the test. v6.2 closes that gap. Loops are watched first and merged by you. A passing gate means the work was done, not that the bar was lowered.
+              The trust problem with autonomous agents is simple: an agent that can edit the test can pass the test. Gate files are unwritable at the tool layer. Anything outside them is instruction, not enforcement. Loops are watched first and merged by you.
             </p>
           </div>
 
@@ -359,22 +406,22 @@ export default function FeaturesPage() {
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <div className="text-3xl mb-4">🔒</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Read-only quality gates</h3>
-              <div className="text-red-600 font-bold mb-3">Unwritable by every agent</div>
+              <div className="text-red-600 font-bold mb-3">Unwritable at the tool layer</div>
               <p className="text-gray-600 mb-4">
-                The files that judge an agent&apos;s work are off limits to the agent. A passing gate means the work was done, not that the bar was lowered.
+                The gate files, <code className="text-xs bg-gray-50 px-1 rounded">.quality-gates.json</code> and <code className="text-xs bg-gray-50 px-1 rounded">gates/</code>, are off limits at the tool layer. A test elsewhere that acts as acceptance criteria is not covered by any shipped rule.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2 mt-1.5"></div>
-                  <span><code className="text-xs bg-gray-50 px-1 rounded">.quality-gates.json</code> and <code className="text-xs bg-gray-50 px-1 rounded">gates/</code> locked by permissions.deny</span>
+                  <span>Four <code className="text-xs bg-gray-50 px-1 rounded">Edit()</code> rules in permissions.deny cover <code className="text-xs bg-gray-50 px-1 rounded">.quality-gates.json</code> and <code className="text-xs bg-gray-50 px-1 rounded">**/*.quality-gates.json</code> anywhere in the tree, plus <code className="text-xs bg-gray-50 px-1 rounded">gates/</code> and <code className="text-xs bg-gray-50 px-1 rounded">.gates/</code> at the repo root. Those two are root-anchored, so a nested <code className="text-xs bg-gray-50 px-1 rounded">packages/api/gates/</code> needs its own rule</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2 mt-1.5"></div>
-                  <span>A Bash-write guard hook backs up the permission block</span>
+                  <span>A Bash guard hook blocks 12 common write forms against gate paths. It narrows the Bash route rather than closing it: the enforceable guarantee is the <code className="text-xs bg-gray-50 px-1 rounded">Edit()</code> deny rules</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2 mt-1.5"></div>
-                  <span>No agent can rewrite its own success criteria</span>
+                  <span>Outside those paths, an agent is instructed not to touch the criteria. Nothing refuses it</span>
                 </li>
               </ul>
             </div>
@@ -435,6 +482,10 @@ export default function FeaturesPage() {
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Critic and fixer default to different models. A critic sharing the generator&apos;s weights returns agreement rather than verification</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 mt-1.5"></div>
                   <span>Critic cannot edit the code it judges</span>
                 </li>
                 <li className="flex items-start">
@@ -467,6 +518,29 @@ export default function FeaturesPage() {
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2 mt-1.5"></div>
                   <span>Restarts from the last passed gate</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="text-3xl mb-4">🗺️</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Map-first orientation</h3>
+              <div className="text-teal-600 font-bold mb-3">Locate before you read</div>
+              <p className="text-gray-600 mb-4">
+                On a large repo the expensive step is finding what to change, not changing it. Every one of the 11 specialists and 18 missions now carries the same stated rule: map the codebase first, then read narrowly.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Glob and Grep to locate, before opening a file</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Read only the lines you need, not the whole file</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 mt-1.5"></div>
+                  <span>Tokens spent on irrelevant files are the largest avoidable cost in a session</span>
                 </li>
               </ul>
             </div>
@@ -536,7 +610,7 @@ export default function FeaturesPage() {
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <div className="text-3xl mb-4">📚</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Field Manual</h3>
-              <div className="text-purple-600 font-bold mb-3">32 Guides</div>
+              <div className="text-purple-600 font-bold mb-3">31 Guides</div>
               <p className="text-gray-600 mb-4">
                 Professional-grade architecture documentation with comprehensive system design guides and best practices.
               </p>
@@ -702,7 +776,7 @@ export default function FeaturesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              6 Slash Commands for Workflow Automation
+              14 Slash Commands for Workflow Automation
             </h2>
             <p className="text-xl text-gray-600">
               Pre-configured workflows for common development scenarios

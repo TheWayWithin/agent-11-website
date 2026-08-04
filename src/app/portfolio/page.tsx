@@ -23,12 +23,12 @@ export default function PortfolioPage() {
       problem: 'Solo developers lose huge chunks of their time to coordination, context-switching, and rework. You have the skills to build it, but wearing every hat (strategist, developer, tester, deployer) simultaneously is crushing productivity.',
       solution: 'AGENT-11 deploys 11 specialized AI agents directly into Claude Code as your personal dev team. Execute complex missions with a single /coord command. Each agent has specialist-level expertise, explicit tool permissions, and context preservation that cuts rework between specialists.',
       capabilities: [
-        '13 pre-built missions (BUILD, FIX, MVP, DEPLOY, OPTIMIZE, and more)',
+        '18 pre-built missions (BUILD, FIX, MVP, DEPLOY, OPTIMIZE, and more)',
         'Context Preservation System (zero context loss between specialists)',
         'Extended Thinking Protocols (deeper reasoning on complex tasks)',
-        '32-guide Field Manual (professional-grade architecture templates)',
+        '31-guide Field Manual (professional-grade architecture templates)',
         'Native MCP tool-search (agents find and load any connected MCP on demand)',
-        'Read-only quality gates and measured keep-or-revert loops (v6.2): agents cannot game their own success criteria'
+        'Read-only quality gates and measured keep-or-revert loops (v6.2): agents cannot edit the gate files that judge them'
       ],
       perfectFor: [
         'Solo founders building MVPs in weeks, not months',

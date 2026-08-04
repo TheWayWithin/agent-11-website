@@ -12,7 +12,7 @@ export default function GetStarted() {
     {
       step: '02',
       title: 'Start Building',
-      description: 'Run a mission with deterministic dispatch — no NLP guessing about intent. 13 missions across greenfield, surgical, and maintenance modes.',
+      description: 'Run a mission with deterministic dispatch — no NLP guessing about intent. 18 missions across greenfield, surgical, and maintenance modes.',
       command: '/coord build requirements.md',
       time: '2 minutes'
     },

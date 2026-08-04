@@ -2,7 +2,7 @@
 
 > AGENT-11 is a free, open-source multi-agent development framework for Claude Code, built by Jamie Watters. One install command deploys 11 specialist agents into a project's `.claude/` directory, and work is then run as structured missions through the `/coord` command. agent-11.com is the framework's marketing and documentation site; the source code and the full manuals live in the GitHub repository.
 
-Last updated: 2026-07-26. Current framework release: v6.2.0, "Loop Discipline & Read-Only Verification", published 2026-06-20.
+Last updated: 2026-08-04. Current framework release: v6.2.0, "Loop Discipline & Read-Only Verification", published 2026-06-20.
 
 Install, into any project directory:
 
@@ -10,15 +10,15 @@ Install, into any project directory:
 
 The 11 specialists, all deployed by every install: coordinator, strategist, architect, developer, designer, tester, documenter, operator, analyst, marketer, support.
 
-The 13 missions routed through `/coord`: build, mvp, dev-setup, dev-alignment, integrate, migrate, fix, refactor, optimize, document, release, deploy, security.
+The 18 missions routed through `/coord`: build, mvp, dev-setup, dev-alignment, integrate, migrate, fix, refactor, optimize, document, release, deploy, security, connect-mcp, operation-recon, operation-genesis, architecture, product-description. The `missions/` directory holds 20 files: `README.md` and `library.md` are catalogues rather than runnable missions.
 
 AGENT-11 is free and MIT licensed. There is no paid tier, subscription, or per-mission charge; the only cost of running it is your own Claude Code / Anthropic usage. The agents run locally inside your project — there is no AGENT-11 server and no account to create.
 
 ## Start here
 
 - [AGENT-11 home](https://agent-11.com/): What the framework is, the install command, the 11 specialists, worked examples of `/coord` usage, and how AGENT-11 was used to build itself.
-- [Documentation](https://agent-11.com/documentation): The site's single-page manual — quick start, the 13 missions with their `/coord` usage strings and typical durations, agent roles, configuration, the context-preservation protocol (`agent-context.md`, `project-plan.md`, `evidence-repository.md`), MCP integration, and troubleshooting.
-- [Features](https://agent-11.com/features): All 13 missions as filterable cards by category and complexity, the v6.2 quality-gate and loop-discipline features, the slash commands, the 11 agents by squad tier, and the seven SaaS skills (auth, payments, multitenancy, billing, email, onboarding, analytics).
+- [Documentation](https://agent-11.com/documentation): The site's single-page manual — quick start, the 18 missions with their `/coord` usage strings and typical durations, agent roles, configuration, the context-preservation protocol (`agent-context.md`, `project-plan.md`, `evidence-repository.md`), MCP integration, and troubleshooting.
+- [Features](https://agent-11.com/features): All 18 missions as filterable cards by category and complexity, the v6.2 quality-gate and loop-discipline features, the slash commands, the 11 agents by squad tier, and the seven SaaS skills (auth, payments, multitenancy, billing, email, onboarding, analytics).
 
 ## Source and manuals
 

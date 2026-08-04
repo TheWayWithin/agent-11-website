@@ -25,7 +25,7 @@ const techTabs = [
         },
         {
           name: 'Read-only quality gates',
-          description: 'The criteria that judge the work are unwritable by the agents doing it, so a passing gate means the work was done.'
+          description: 'The gate files, .quality-gates.json and gates/, are unwritable by the agents doing the work. Criteria kept anywhere else are covered by instruction, not by a rule.'
         }
       ],
       codeExample: `# Installed into your project
@@ -121,7 +121,7 @@ name: developer
         },
         {
           name: 'Read-only gates + Bash guard',
-          description: 'Agents cannot edit the quality gates that judge them, enforced by permissions.deny plus a pre-tool-use hook.'
+          description: 'Agents cannot edit the gate files that judge them: four permissions.deny rules refuse it at the tool layer. A Bash guard hook blocks 12 common write forms against the same paths, which narrows the Bash route rather than closing it.'
         },
         {
           name: 'Honest about Claude',
@@ -137,12 +137,14 @@ name: developer
   "permissions": {
     "deny": [
       "Edit(.quality-gates.json)",
-      "Write(.quality-gates.json)",
+      "Edit(**/*.quality-gates.json)",
       "Edit(gates/**)",
-      "Write(gates/**)"
+      "Edit(.gates/**)"
     ]
   }
-  // + a PreToolUse hook blocks Bash writes to gate paths
+  // Edit() covers every file-editing tool. Write() and
+  // MultiEdit() rule forms are ignored by Claude Code.
+  // + a PreToolUse hook blocks 12 Bash write forms to gate paths
 }`
     }
   }

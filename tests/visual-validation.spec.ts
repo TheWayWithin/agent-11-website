@@ -1,5 +1,14 @@
 import { test, expect } from '@playwright/test';
 
+/*
+ * Serialised deliberately: this file asserts against the live
+ * https://agent-11.com, not the local build. Run in parallel across five
+ * device projects it overloads the live site and fails on contention rather
+ * than on anything real. See playwright.config.ts for the wider note.
+ */
+test.describe.configure({ mode: 'serial' })
+
+
 /**
  * VISUAL VALIDATION TESTS
  * Capture screenshot evidence of successful deployment

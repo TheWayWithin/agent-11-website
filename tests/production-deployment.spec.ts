@@ -1,5 +1,14 @@
 import { test, expect } from '@playwright/test';
 
+/*
+ * Serialised deliberately: this file asserts against the live
+ * https://agent-11.com, not the local build. Run in parallel across five
+ * device projects it overloads the live site and fails on contention rather
+ * than on anything real. See playwright.config.ts for the wider note.
+ */
+test.describe.configure({ mode: 'serial' })
+
+
 /**
  * EMERGENCY DEPLOYMENT VALIDATION TESTS
  * Testing the technology stack stabilization fix deployed to Netlify
@@ -45,25 +54,23 @@ test.describe('Production Deployment - Emergency Fix Validation', () => {
     expect(computedStyle.fontSize).not.toBe('16px'); // Default browser size
   });
 
-  test('All 7 landing page sections are visible and styled', async ({ page }) => {
-    const sections = [
-      'Hero',
-      'Problem', 
-      'Solution Demo',
-      'Social Proof',
-      'Technical Confidence',
-      'Proof of Speed',
-      'Get Started'
-    ];
+  /*
+   * Rewritten 2026-08-04. This used to look for the literal words "Hero",
+   * "Problem", "Solution Demo" and so on as headings or data-testids. Those
+   * are the React component names — they have never been rendered text and
+   * no data-testid was ever added, so the test could only ever fail. It
+   * asserts the same underlying concern structurally instead: the homepage
+   * renders its sections, they are visible, and they carry real styling
+   * rather than falling back to unstyled defaults.
+   */
+  test('Landing page sections are visible and styled', async ({ page }) => {
+    const sectionCount = await page.locator('section').count();
+    expect(sectionCount, 'homepage should render its content sections').toBeGreaterThanOrEqual(7);
 
-    for (const section of sections) {
-      // Look for section by various possible selectors
-      const sectionElement = page.locator(`[data-testid="${section.toLowerCase().replace(' ', '-')}-section"]`)
-        .or(page.locator(`section:has-text("${section}")`))
-        .or(page.locator(`h2:has-text("${section}")`))
-        .or(page.locator(`h1:has-text("${section}")`))
-        .first();
-      
+    const toCheck = Math.min(sectionCount, 7);
+    for (let i = 0; i < toCheck; i++) {
+      const sectionElement = page.locator('section').nth(i);
+
       await expect(sectionElement).toBeVisible({ timeout: 10000 });
       
       // Verify section has proper styling (not default)

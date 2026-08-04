@@ -32,10 +32,10 @@ const testimonials = [
     id: 'squad',
     type: 'The Full Squad',
     name: 'Eleven Specialists',
-    role: '13 Missions',
+    role: '18 Missions',
     avatar: '✅',
-    quote: "Every install deploys all 11 specialist agents and 13 missions, ready for your codebase from the first command. The same squad that built this is ready to build your next project.",
-    metrics: "11 agents, 13 missions",
+    quote: "Every install deploys all 11 specialist agents and 18 missions, ready for your codebase from the first command. The same squad that built this is ready to build your next project.",
+    metrics: "11 agents, 18 missions",
     featured: false
   },
   {
@@ -72,9 +72,11 @@ export default function SocialProof() {
   // Genuine, observable facts about AGENT-11 (no unsourced comparisons)
   const authenticMetrics = {
     agents: '11', // Specialist agents deployed on every install
-    missions: '13', // Missions available via /coord
-    filePersistence: '100%', // Architectural fact: file-based agents persist to disk
-    installationTime: '<1s', // Observable install time
+    missions: '18', // Missions available via /coord
+    // Neither a percentage nor a stopwatch figure is traceable to anything
+    // in the repo, so neither ships. Both were unsourced tiles (brief C).
+    filePersistence: 'On disk', // Agents are files in your project, not a service
+    installationTime: 'One command', // Not measured; do not restate as a duration
   }
 
   // Dynamic values that can update from API (but with stability)

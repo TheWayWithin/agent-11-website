@@ -18,7 +18,7 @@ export default function Hero() {
             <span className="font-bold">v6.2.0 LOOP DISCIPLINE:</span>
             <span>read-only quality gates, measured keep-or-revert loops, evidence-gated verification</span>
             <span className="mx-2 text-blue-600">•</span>
-            <span className="font-bold">Agents cannot game their own tests</span>
+            <span className="font-bold">Agents cannot edit the gate files that judge them</span>
           </div>
 
           {/* Mission-Focused Tagline */}
@@ -37,7 +37,7 @@ export default function Hero() {
 
           {/* Mission-Focused Subheadline */}
           <p className="text-xl text-gray-600 mb-6 max-w-4xl mx-auto text-balance animate-slide-up" style={{animationDelay: '0.2s'}}>
-            From <strong>BUILD</strong> to <strong>MVP</strong> to <strong>DEPLOY</strong> — execute 13 proven missions with project-local agents that understand your codebase.
+            From <strong>BUILD</strong> to <strong>MVP</strong> to <strong>DEPLOY</strong> — execute 18 proven missions with project-local agents that understand your codebase.
             v6.2 adds <strong>read-only quality gates</strong>, the <strong>ratchet optimiser</strong>, and a <strong>scored review loop</strong> on top of the v6 Karpathy posture and native tool deferring.
           </p>
 
@@ -47,7 +47,7 @@ export default function Hero() {
               <span>📚</span>
               <span className="font-medium">Professional-Grade Documentation</span>
               <span className="mx-1 text-purple-500">•</span>
-              <span className="font-bold">1,370+ Line Field Manual</span>
+              <span className="font-bold">31-Guide Field Manual</span>
             </div>
           </div>
 
@@ -62,24 +62,16 @@ export default function Hero() {
               <div className="text-sm text-gray-600">SaaS Skills</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-indigo-600">32</div>
+              <div className="text-2xl font-bold text-indigo-600">31</div>
               <div className="text-sm text-gray-600">Field Guides</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-pink-600">26</div>
-              <div className="text-sm text-gray-600">Templates</div>
+              <div className="text-2xl font-bold text-red-600">18</div>
+              <div className="text-sm text-gray-600">Missions</div>
             </div>
             <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-red-600">13</div>
-              <div className="text-sm text-gray-600">Mission Types</div>
-            </div>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-yellow-600">&lt;1s</div>
-              <div className="text-sm text-gray-600">Deploy Time</div>
-            </div>
-            <div className="text-center bg-white rounded-lg p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-2xl font-bold text-green-600">100%</div>
-              <div className="text-sm text-gray-600">Schema Validation</div>
+              <div className="text-2xl font-bold text-yellow-600">One</div>
+              <div className="text-sm text-gray-600">Command to Install</div>
             </div>
           </div>
 

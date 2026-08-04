@@ -4,14 +4,14 @@ import { PAGE_UPDATED } from '@/lib/page-dates'
 import { SITE_URL } from '@/lib/seo'
 
 const DESCRIPTION =
-  'All 13 AGENT-11 missions, the 11 specialist agents, and the v6.2 quality gates that stop agents grading their own work. Free and open source, MIT licensed.'
+  'All 18 AGENT-11 missions, the 11 specialist agents, and and the v6.2 quality gates: agents cannot edit the gate files that judge them. Free and open source, MIT licensed.'
 
 export const metadata: Metadata = {
-  title: '13 Mission Types - Features',
+  title: '18 Mission Types - Features',
   description: DESCRIPTION,
   keywords: [
     'agent-11 features',
-    '13 mission types',
+    '18 mission types',
     'build mission',
     'fix mission',
     'mvp mission',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'software development automation'
   ],
   openGraph: {
-    title: '13 Mission Types - AGENT-11 Features',
+    title: '18 Mission Types - AGENT-11 Features',
     description: DESCRIPTION,
     url: `${SITE_URL}/features`,
   },

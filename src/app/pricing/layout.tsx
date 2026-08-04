@@ -4,7 +4,7 @@ import { PAGE_UPDATED } from '@/lib/page-dates'
 import { SITE_URL } from '@/lib/seo'
 
 const DESCRIPTION =
-  'AGENT-11 is free and open source under the MIT licence: all 11 agents, all 13 missions, unlimited commercial use. Nothing is sold here; support is voluntary.'
+  'AGENT-11 is free and open source under the MIT licence: all 11 agents, all 18 missions, unlimited commercial use. Nothing is sold here; support is voluntary.'
 
 export const metadata: Metadata = {
   title: 'Open Source Framework - Pricing',

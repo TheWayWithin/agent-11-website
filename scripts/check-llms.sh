@@ -17,7 +17,7 @@
 set -uo pipefail
 
 LLMS_URL="${1:-https://agent-11.com/llms.txt}"
-EXPECTED_DATE="${EXPECTED_DATE:-2026-07-26}"
+EXPECTED_DATE="${EXPECTED_DATE:-2026-08-04}"
 UA="agent-11-llms-check/1.0"
 
 pass=0

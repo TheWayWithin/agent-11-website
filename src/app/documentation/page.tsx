@@ -28,6 +28,7 @@ const docSections: DocSection[] = [
             </div>
           </div>
           <p className="text-sm text-gray-500 mt-2">This deploys all 11 specialist agents to your project directory.</p>
+          <p className="text-gray-600 mt-4">Already installed? Run the same command again to upgrade, and it is worth doing: <code className="text-sm bg-gray-100 px-1 rounded">connect-mcp</code> and <code className="text-sm bg-gray-100 px-1 rounded">operation-recon</code> existed in the library but were missing from the installer&apos;s mission list, so no project installed before 3 August 2026 ever received them.</p>
           <p className="text-gray-600 mt-4 mb-2">Already on v5? Upgrade to v6 with:</p>
           <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
             <div className="text-green-400">
@@ -44,7 +45,7 @@ const docSections: DocSection[] = [
             <div className="text-blue-400">🎯 Mission: BUILD initiated | Duration: 4-8 hours</div>
             <div className="text-purple-400">🧠 COORDINATOR: Breaking down requirements...</div>
             <div className="text-yellow-400">🏗️ ARCHITECT: Designing system architecture...</div>
-            <div className="text-green-300">✅ Mission complete! 47 tests passed, security validated.</div>
+            <div className="text-green-300">✅ Mission complete! All tests passed, security validated.</div>
           </div>
         </div>
       </div>
@@ -53,7 +54,7 @@ const docSections: DocSection[] = [
   {
     id: 'mission-reference',
     title: 'Mission Reference',
-    description: 'Complete guide to all 13 missions',
+    description: 'Complete guide to all 18 missions',
     content: (
       <div className="space-y-8">
         <div>
@@ -101,6 +102,12 @@ const docSections: DocSection[] = [
                 description: 'Documentation creation (2-4 hours)',
                 usage: '/coord document "Documentation scope"',
                 example: '/coord document "API endpoints and authentication flow"'
+              },
+              {
+                name: 'CONNECT-MCP',
+                description: 'MCP server discovery and connection (45-90 minutes)',
+                usage: '/coord connect-mcp',
+                example: '/coord connect-mcp'
               }
             ].map((mission, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg p-6">
@@ -143,7 +150,7 @@ const docSections: DocSection[] = [
               },
               {
                 name: 'OPTIMIZE',
-                description: 'Performance optimization (3-6 hours)',
+                description: 'Performance optimization (2-6 hours)',
                 usage: '/coord optimize "Optimization target"',
                 example: '/coord optimize "Database queries and API response times"'
               },
@@ -164,6 +171,30 @@ const docSections: DocSection[] = [
                 description: 'Release management (2-4 hours)',
                 usage: '/coord release [version]',
                 example: '/coord release v6.2.0'
+              },
+              {
+                name: 'RECON',
+                description: 'UI/UX reconnaissance and interface assessment (2-4 hours)',
+                usage: '/coord operation-recon [scope]',
+                example: '/coord operation-recon "checkout flow"'
+              },
+              {
+                name: 'GENESIS',
+                description: 'Feature from concept to production (1-3 days)',
+                usage: '/coord operation-genesis "Feature description"',
+                example: '/coord operation-genesis "Team workspaces with role-based access"'
+              },
+              {
+                name: 'ARCHITECTURE',
+                description: 'Create or update architecture documentation (2-3 hours)',
+                usage: '/coord architecture',
+                example: '/coord architecture'
+              },
+              {
+                name: 'PRODUCT-DESCRIPTION',
+                description: 'Product description with risk register (2-3 hours)',
+                usage: '/coord product-description',
+                example: '/coord product-description'
               }
             ].map((mission, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg p-6">
@@ -282,14 +313,14 @@ const docSections: DocSection[] = [
   },
   {
     id: 'field-manual',
-    title: 'Field Manual - 32 Guides',
-    description: '32 professional guides (around 14,400 lines) covering core workflows to advanced features',
+    title: 'Field Manual - 31 Guides',
+    description: '31 professional guides covering core workflows to advanced features',
     content: (
       <div className="space-y-8">
         <div>
           <h3 className="text-2xl font-semibold text-gray-900 mb-3">Complete Documentation Library</h3>
           <p className="text-gray-600 mb-6">
-            The AGENT-11 Field Manual provides 32 guides (around 14,400 lines) covering everything from getting started to advanced optimization techniques. A selection is shown below.
+            The AGENT-11 Field Manual provides 31 guides covering everything from getting started to advanced optimization techniques. A selection is shown below.
           </p>
         </div>
 
@@ -436,7 +467,7 @@ const docSections: DocSection[] = [
 
         {/* Total Summary */}
         <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 text-center border border-primary-200">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">Total: 32 Guides</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Total: 31 Guides</h3>
           <p className="text-gray-600 mb-4">
             Complete documentation covering all aspects of AGENT-11 from basic setup to advanced optimization
           </p>

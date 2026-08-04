@@ -74,7 +74,7 @@ const metrics = [
   { label: 'Build', before: 'Solo, every role at once', after: 'A coordinated 11-agent squad', improvement: 'Open to read' },
   { label: 'Installation', before: 'Multi-step manual setup', after: 'One command, seconds', improvement: 'Observable' },
   { label: 'Architecture', before: 'Runtime agents', after: 'File-based agents in .claude/', improvement: 'Portable, version-controlled' },
-  { label: 'Documentation', before: 'Basic README', after: 'A full field manual (32 guides)', improvement: 'In the open' },
+  { label: 'Documentation', before: 'Basic README', after: 'A full field manual (31 guides)', improvement: 'In the open' },
   { label: 'Verification', before: 'Trust the agent', after: 'Read-only gates, evidence-gated', improvement: 'Cannot self-certify' }
 ]
 

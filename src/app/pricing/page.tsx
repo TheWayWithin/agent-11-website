@@ -91,14 +91,14 @@ const freeTierFeatures = [
   // exactly 11 files and coordinator.md is one of them. The old copy read
   // "11 specialist agents + coordinator", which counted 12. A11W-ISS-8.
   'All 11 specialists, coordinator included',
-  '13 missions',
-  '6 slash commands (/coord, /recon, /design-review, /pmd, /meeting, /report)',
+  '18 missions',
+  '14 slash commands (/coord, /meeting, /design-review, /recon, /report, /pmd, /dailyreport, /blog, /planarchive, /foundations, /bootstrap, /plan, /skills, /architect)',
   'Context preservation system (zero context loss)',
-  'Read-only quality gates (agents cannot game their own tests)',
+  'Read-only quality gates (agents cannot edit the gate files that judge them)',
   'Ratchet optimiser + scored code-review loop',
   'Phase-gated /coord meta-loop',
   'Extended thinking capabilities',
-  'Field Manual (32 guides)',
+  'Field Manual (31 guides)',
   'Memory management system',
   'Unlimited projects & commercial use',
   'Community support (GitHub)',
