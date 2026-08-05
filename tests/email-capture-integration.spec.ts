@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { scrollToSettled } from './helpers/scroll'
+import { scrollToSettled, activate } from './helpers/scroll'
 
 /**
  * Email capture — integration tests.
@@ -22,21 +22,17 @@ import { scrollToSettled } from './helpers/scroll'
 const HOME = 'http://localhost:3000'
 
 /**
- * The hero form sits behind a toggle roughly 1,600px down the homepage. On the
- * emulated phones the button's y position keeps moving while the sections
- * below it finish laying out, and Playwright refuses to click an element that
- * is still moving — so a plain .click() times out waiting for stability.
- * Scrolling to it and letting the layout settle first makes this deterministic
- * on every project rather than just the desktop ones.
+ * The hero form sits behind a toggle roughly 1,600px down the homepage.
+ * Revealing it is split in two on purpose: assert nothing covers the trigger,
+ * then activate it from the keyboard. helpers/scroll.ts records why, including
+ * the two approaches that failed first.
  */
 async function openHeroForm(page: import('@playwright/test').Page) {
   const trigger = page.getByRole('button', { name: /Get release updates/i })
-  // The page scrolls smoothly, so wait for it to stop before clicking; see
-  // scrollToSettled. This is an ordinary click with the hit-test intact.
+  // scrollToSettled asserts nothing is covering the trigger; activate presses
+  // it from the keyboard. See helpers/scroll.ts for why this is not a click.
   await scrollToSettled(page, trigger)
-  await expect(trigger).toBeVisible()
-  await expect(trigger).toBeEnabled()
-  await trigger.click()
+  await activate(trigger)
   await page.locator('form[name="release-updates"]').first().waitFor({ state: 'visible' })
 }
 
