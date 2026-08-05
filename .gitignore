@@ -35,3 +35,9 @@ next-env.d.ts
 
 # OS
 Thumbs.db
+# Machine litter, never source: agent-11 install backups and MCP status.
+# 368 of these had accumulated here, hiding real changes in every git status.
+# Nothing is deleted from disk; they are simply not repo history.
+.claude/backups/
+*.backup-*
+.mcp-status.md
