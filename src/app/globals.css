@@ -2,7 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/*
+ * A11W-ISS-16. There used to be an
+ *   @import url('https://fonts.googleapis.com/css2?family=Inter...&family=JetBrains+Mono...')
+ * on the line below this block. It has been DELETED rather than moved to the top,
+ * and the distinction matters.
+ *
+ * Moving it would have satisfied the CSS rule that @import must precede all rules
+ * aside from @charset and @layer, which is what Turbopack enforces and webpack did
+ * not: after Tailwind expanded, the import landed at line 2508 and every dev
+ * request returned HTTP 500 with "Parsing css source code failed". The server
+ * started fine, so the failure looked unrelated to CSS.
+ *
+ * But the import was fetching Inter and JetBrains Mono, and src/app/layout.tsx
+ * ALREADY loads those exact two families through next/font/google. Every page was
+ * therefore requesting the same two families twice, once self-hosted by next/font
+ * and once render-blocking from fonts.googleapis.com. The rendered font was always
+ * the next/font copy: computed styles resolve to __Inter_<hash>, never to a
+ * Google-served face. Reordering would have kept a redundant third-party request
+ * alive purely to make it legal.
+ *
+ * Fonts belong in layout.tsx. Nothing here should reference an external font host.
+ */
 
 @layer base {
   html {
