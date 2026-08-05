@@ -98,7 +98,7 @@ export default function Hero() {
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
                 <div className="flex items-start min-w-0 flex-1">
                   <span className="text-green-400 mr-2 shrink-0">$</span>
-                  <span className="text-gray-300 break-all">bash &lt;(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)</span>
+                  <span className="text-gray-300">bash &lt;(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)</span>
                 </div>
                 <button
                   onClick={() => {

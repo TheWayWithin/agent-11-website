@@ -219,7 +219,7 @@ export default function GetStartedGuide() {
                           <div className="flex items-start gap-3">
                             <div className="flex items-start min-w-0 flex-1">
                               <span className="text-green-400 shrink-0">$</span>
-                              <span className="ml-2 text-gray-300 break-all">bash &lt;(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)</span>
+                              <span className="ml-2 text-gray-300">bash &lt;(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)</span>
                             </div>
                             <button
                               onClick={() => copyToClipboard('bash <(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)')}
