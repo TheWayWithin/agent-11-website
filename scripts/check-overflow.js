@@ -20,6 +20,8 @@
  */
 
 const { chromium } = require('@playwright/test')
+const fs = require('fs')
+const path = require('path')
 
 const BASE = (process.argv[2] || 'http://localhost:3000').replace(/\/$/, '')
 const WIDTHS = [320, 375, 393, 768]
@@ -30,10 +32,39 @@ const WIDTHS = [320, 375, 393, 768]
 // homepage nav. A checklist silently becomes a lie the moment someone adds a page,
 // and a green check on a broken site is worse than no check, because it is trusted.
 // So: crawl every internal link reachable from the homepage and test all of them.
+//
+// Crawling alone is still not enough, which the first crawling version proved:
+// /security exists as src/app/security/page.tsx and has NO inbound internal link,
+// so no crawl from the homepage can ever reach it. It measured clean, but a route
+// nothing links to is exactly the one nobody notices breaking. So the app router
+// on disk is the authoritative set, and the crawl is unioned on top to catch
+// anything the filesystem scan cannot express.
+function routesOnDisk() {
+  const appDir = path.join(__dirname, '..', 'src', 'app')
+  const out = []
+  const walk = (dir, prefix) => {
+    let entries = []
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }) } catch { return }
+    if (entries.some(e => e.isFile() && /^page\.(t|j)sx?$/.test(e.name))) out.push(prefix || '/')
+    for (const e of entries) {
+      if (!e.isDirectory()) continue
+      // Route groups (auth) contribute no URL segment; dynamic [slug] and
+      // catch-all segments cannot be visited without knowing a real value, so
+      // they are left to the crawl.
+      if (e.name.startsWith('[') || e.name.startsWith('@')) continue
+      if (e.name.startsWith('(') && e.name.endsWith(')')) { walk(path.join(dir, e.name), prefix); continue }
+      if (e.name === 'api') continue
+      walk(path.join(dir, e.name), `${prefix}/${e.name}`)
+    }
+  }
+  walk(appDir, '')
+  return out
+}
+
 const SEEDS = ['/']
 async function discoverRoutes(page) {
-  const seen = new Set(SEEDS)
-  const queue = [...SEEDS]
+  const seen = new Set([...SEEDS, ...routesOnDisk()])
+  const queue = [...seen]
   while (queue.length) {
     const route = queue.shift()
     try {
