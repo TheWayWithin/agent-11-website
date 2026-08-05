@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { scrollToSettled } from './helpers/scroll'
 
 /**
  * Email capture — integration tests.
@@ -30,19 +31,12 @@ const HOME = 'http://localhost:3000'
  */
 async function openHeroForm(page: import('@playwright/test').Page) {
   const trigger = page.getByRole('button', { name: /Get release updates/i })
-  await trigger.scrollIntoViewIfNeeded()
+  // The page scrolls smoothly, so wait for it to stop before clicking; see
+  // scrollToSettled. This is an ordinary click with the hit-test intact.
+  await scrollToSettled(page, trigger)
   await expect(trigger).toBeVisible()
   await expect(trigger).toBeEnabled()
-  /*
-   * force: true, deliberately. At Pixel 5 width the hero's animated paragraph
-   * and metrics grid overlap the button's box, so Playwright's actionability
-   * check reports "<p …animate-slide-up> intercepts pointer events" and waits
-   * out the full timeout. Visibility and enabled-ness are asserted above, so
-   * what is skipped is only the hit-target check — and the overlap is a real
-   * layout quirk of the hero on narrow viewports, logged as A11W-ISS-15
-   * rather than papered over here.
-   */
-  await trigger.click({ force: true })
+  await trigger.click()
   await page.locator('form[name="release-updates"]').first().waitFor({ state: 'visible' })
 }
 

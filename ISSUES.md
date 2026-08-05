@@ -16,6 +16,7 @@ ID or another repo's. Raise issues here with `python3 ~/shared/scripts/repo-issu
 
 | ID | Title | Status | Severity | Detail | MC-SYNC |
 |----|-------|--------|----------|--------|---------|
+| A11W-ISS-17 | PreToolUse prompt hook fires on benign Bash: its if-glob fails open on multi-line loops, heredocs and redirections (A11-ISS-4 failure mode), and the LLM judge then refuses the command with incoherent reasoning, invisibly to the user | Open | high | — | pending |
 | A11W-ISS-16 | npm run dev fails under Turbopack: @import rules must precede all rules in globals.css, so Playwright cannot start its own webServer | Open | medium | — | pending |
 | A11W-ISS-15 | Hero: animated paragraph and metrics grid overlap the CTA button at Pixel 5 width, intercepting pointer events | Open | low | — | pending |
 | A11W-ISS-14 | Playwright suite is stale: 70 failures assert lead-magnet UI removed in July 2026 | ✅ Resolved 2026-08-04 — Rewrote email-capture-integration.spec.ts against the real release-updates form; reduced core-integration-test.spec.ts to its one real assertion; removed manual-integration-validation.spec.ts as a duplicate of the removed lead-magnet suite; replaced production-deployment's component-name section selectors with structural ones; moved the three live-site specs into a single live-site-smoke project so 5 device projects no longer hammer agent-11.com in parallel. npx playwright test now exits 0, 61 passed. | medium | — | pending |
