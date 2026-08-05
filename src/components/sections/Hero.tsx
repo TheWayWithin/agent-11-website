@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="container">
         <div className="text-center max-w-5xl mx-auto">
           {/* Modernization Badge */}
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-6 py-3 rounded-full text-sm font-medium mb-8 animate-fade-in hover-glow transition-all duration-300 hover:scale-105 border border-blue-200">
+          <div className="inline-flex flex-wrap justify-center max-w-full items-center gap-2 bg-blue-50 text-blue-700 px-6 py-3 rounded-full text-sm font-medium mb-8 animate-fade-in hover-glow transition-all duration-300 hover:scale-105 border border-blue-200">
             <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse-gentle"></span>
             <span className="animate-bounce-gentle">⚡</span>
             <span className="font-bold">v6.2.0 LOOP DISCIPLINE:</span>
@@ -84,17 +84,28 @@ export default function Hero() {
               <span className="text-gray-400 text-sm ml-4">Execute Your First Mission in &lt;1 Minute</span>
             </div>
             <div className="font-mono text-green-400 text-sm sm:text-base bg-gray-800 rounded-lg p-4 space-y-2">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center min-w-0 flex-1">
-                  <span className="text-green-400 mr-2">$</span>
-                  <span className="text-gray-300 truncate">bash &lt;(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)</span>
+              {/* A11W-ISS-19. This span carried `truncate`, which is
+                  white-space:nowrap + overflow:hidden. At 320px that showed 123px
+                  of a 1042px command: 88% of the single most important string on
+                  the site was unreadable and unselectable, and the nowrap also
+                  defeated the `overflow-wrap: anywhere` its font-mono ancestor
+                  provides. Wrapping instead of clipping: the whole command is
+                  visible and selectable at every width, and a wrapped string has
+                  no min-content floor to push the page wide.
+                  items-start, not items-center: once the command occupies three
+                  lines on a phone, centring would float the `$` and the Copy
+                  button against its middle. */}
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
+                <div className="flex items-start min-w-0 flex-1">
+                  <span className="text-green-400 mr-2 shrink-0">$</span>
+                  <span className="text-gray-300 break-all">bash &lt;(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)</span>
                 </div>
                 <button
                   onClick={() => {
                     navigator.clipboard.writeText('bash <(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)')
                     window.plausible?.('Install Copy')
                   }}
-                  className="ml-4 px-3 py-1 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded transition-colors shrink-0"
+                  className="self-start px-3 py-1 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded transition-colors shrink-0"
                   title="Copy install command"
                 >
                   Copy

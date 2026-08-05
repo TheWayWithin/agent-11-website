@@ -129,7 +129,14 @@ const CodeBlock = memo(function CodeBlock({
   }
 
   return (
-    <div className={`relative group ${className}`}>
+    // min-w-0 and max-w-full are load-bearing (A11W-ISS-19). A flex or grid
+    // item defaults to min-width:auto, which means it refuses to shrink below
+    // its content. A code block's content is long unbreakable lines, so every
+    // CodeBlock inside a grid was sizing to its widest line and dragging the
+    // whole page with it: the homepage measured 941px wide inside a 393px
+    // viewport, and the overflow-x-auto below could not help because the
+    // scroll container had already been stretched to fit.
+    <div className={`relative group min-w-0 max-w-full ${className}`}>
       {/* Header */}
       {(title || showCopy) && (
         <div className="flex items-center justify-between bg-gray-800 px-4 py-2 rounded-t-lg">

@@ -295,15 +295,23 @@ export default function PortfolioPage() {
         <div className="container max-w-6xl">
           <div className="space-y-12">
             {projects.map((project) => (
-              <div key={project.number} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all">
+              <div key={project.number} className="bg-white rounded-2xl p-5 sm:p-8 shadow-sm hover:shadow-md transition-all">
                 {/* Project Header */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex-1">
+                {/* A11W-ISS-19. This card overflowed a 320px viewport by 16px.
+                    `flex-1` is `flex: 1 1 0%`, but a flex item also defaults to
+                    `min-width: auto`, which refuses to shrink below its content's
+                    min-content width. Titles here are unbreakable single tokens
+                    ("JamieWatters.work"), so that floor was wider than the card and
+                    the excess pushed the page. min-w-0 removes the floor and
+                    break-words gives the title somewhere to break. p-5 on mobile
+                    also returns 24px of usable width per side. */}
+                <div className="flex items-start justify-between mb-6 gap-3">
+                  <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-4xl font-bold text-primary-600">
+                      <span className="text-4xl font-bold text-primary-600 shrink-0">
                         {String(project.number).padStart(2, '0')}
                       </span>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{project.title}</h3>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 break-words min-w-0">{project.title}</h3>
                     </div>
                     <p className="text-lg text-gray-600 mb-3">{project.tagline}</p>
                     <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${project.statusColor}`}>

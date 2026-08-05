@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { scrollToSettled, activate } from './helpers/scroll'
+import { scrollToSettled } from './helpers/scroll'
 
 /**
  * Email capture — integration tests.
@@ -23,16 +23,17 @@ const HOME = 'http://localhost:3000'
 
 /**
  * The hero form sits behind a toggle roughly 1,600px down the homepage.
- * Revealing it is split in two on purpose: assert nothing covers the trigger,
- * then activate it from the keyboard. helpers/scroll.ts records why, including
- * the two approaches that failed first.
+ * Revealing it asserts nothing covers the trigger, then clicks it normally.
+ * helpers/scroll.ts records the four approaches that failed first and why the
+ * real cause turned out to be a horizontal overflow (A11W-ISS-19).
  */
 async function openHeroForm(page: import('@playwright/test').Page) {
   const trigger = page.getByRole('button', { name: /Get release updates/i })
-  // scrollToSettled asserts nothing is covering the trigger; activate presses
-  // it from the keyboard. See helpers/scroll.ts for why this is not a click.
+  // scrollToSettled asserts nothing is covering the trigger, then this is an
+  // ordinary click with the full hit-test intact. It only became reliable once
+  // A11W-ISS-19 (the page overflowing to 941px) was fixed; see helpers/scroll.ts.
   await scrollToSettled(page, trigger)
-  await activate(trigger)
+  await trigger.click()
   await page.locator('form[name="release-updates"]').first().waitFor({ state: 'visible' })
 }
 

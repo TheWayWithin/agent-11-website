@@ -363,7 +363,7 @@ export default function GetStarted() {
               <span className="hidden sm:inline">|</span>
               <span>Open source and proud of it.</span>
             </div>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap justify-center gap-6">
               <Link href="/portfolio" className="hover:text-primary-600 transition-colors">Portfolio</Link>
               <Link href="https://github.com/TheWayWithin/agent-11" className="hover:text-primary-600 transition-colors" target="_blank" rel="noopener noreferrer">GitHub</Link>
               <Link href="/privacy" className="hover:text-primary-600 transition-colors">Privacy</Link>

@@ -270,7 +270,12 @@ export default function SolutionDemo() {
           {viewMode === 'demo' && (
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Command Input */}
-              <div className="space-y-4">
+              {/* min-w-0: a grid item defaults to min-width:auto and so refuses
+                  to shrink below its content. The terminal below holds long
+                  unbreakable command strings, so without this the item sized to
+                  its widest line and dragged the page to 941px inside a 393px
+                  viewport (A11W-ISS-19). */}
+              <div className="space-y-4 min-w-0">
                 <div className="bg-gray-900 rounded-xl p-6">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>

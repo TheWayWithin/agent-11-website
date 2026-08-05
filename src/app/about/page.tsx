@@ -371,7 +371,12 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="flex justify-center gap-6 text-gray-600">
+          {/* A11W-ISS-19. Three social links on one nowrap row measured wider
+              than a 320px viewport, and because the row is centred it spilled off
+              BOTH edges: the GitHub link sat at left -20 and the LinkedIn link at
+              right 340, for 20px of page overflow. flex-wrap lets the row become
+              two lines on a narrow screen instead of pushing the page wide. */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-gray-600">
             <Link
               href="https://github.com/TheWayWithin"
               className="flex items-center gap-2 hover:text-primary-600 transition-colors"

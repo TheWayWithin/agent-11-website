@@ -17,6 +17,52 @@
   * {
     @apply border-gray-200;
   }
+
+  /*
+   * A11W-ISS-19. Long unbreakable strings must not drag the page wider than
+   * the viewport. This site is full of them: install commands, raw
+   * githubusercontent URLs, `/coord` invocations. A string with no break
+   * opportunity has a min-content width equal to its full length, and that
+   * minimum propagates up through every grid and flex ancestor, none of which
+   * can shrink below it. The homepage measured 941px wide inside a 393px
+   * viewport, so every phone visitor could drag the page sideways by 548px.
+   *
+   * `min-width: 0` on the ancestors does NOT fix this, which was the first
+   * thing tried: it lowers the item's own floor but the track still sizes to
+   * the content's min-content, and the content is what has no break points.
+   * The fix has to make the string breakable.
+   *
+   * `anywhere` rather than `break-word` on purpose: only `anywhere` reduces
+   * the min-content contribution, which is precisely the thing forcing the
+   * layout wide. Scoped to monospace and code contexts so ordinary prose
+   * keeps normal word wrapping.
+   */
+  pre,
+  code,
+  .font-mono {
+    overflow-wrap: anywhere;
+  }
+
+  /*
+   * A11W-ISS-19, second half. That wrap rule fixed /documentation but left the
+   * homepage exactly as wide, because its overflow was a grid track rather
+   * than a string.
+   *
+   * Tailwind's `grid-cols-*` utilities expand to `repeat(n, minmax(0, 1fr))`,
+   * and the `minmax(0, …)` is what stops a track growing past its container.
+   * A grid declared as `grid lg:grid-cols-2` has NO base definition, so below
+   * `lg` it falls back to a single implicit track sized by `grid-auto-columns`,
+   * whose default is `auto` — and `auto` resolves to max-content. One long
+   * line then sizes the track wider than the page, which is why the homepage
+   * sat at 941px regardless of `min-w-0` on the item inside it.
+   *
+   * Setting the implicit column to `minmax(0, 1fr)` gives those grids the same
+   * floor the explicit utilities already have. Any grid that sets
+   * `grid-template-columns` is unaffected: this only governs implicit tracks.
+   */
+  .grid {
+    grid-auto-columns: minmax(0, 1fr);
+  }
 }
 
 @layer components {
