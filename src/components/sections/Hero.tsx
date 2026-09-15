@@ -102,8 +102,14 @@ export default function Hero() {
                 </div>
                 <button
                   onClick={() => {
-                    navigator.clipboard.writeText('bash <(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)')
-                    window.plausible?.('Install Copy')
+                    // Count the copy only once it has actually happened. The
+                    // clipboard write can be refused (no permission, insecure
+                    // context) and firing alongside it inflated the one number
+                    // that stands in for an install.
+                    navigator.clipboard
+                      .writeText('bash <(curl -fsSL https://raw.githubusercontent.com/TheWayWithin/agent-11/main/project/deployment/scripts/secure-install.sh)')
+                      .then(() => window.plausible?.('Install Copy'))
+                      .catch(() => {})
                   }}
                   className="self-start px-3 py-1 bg-primary-600 hover:bg-primary-700 text-white text-xs rounded transition-colors shrink-0"
                   title="Copy install command"
